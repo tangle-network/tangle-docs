@@ -62,7 +62,7 @@ const navigation = {
   community: [
     {
       name: "GitHub",
-      href: "https://github.com/webb-tools",
+      href: "https://github.com/webb-tools/tangle",
     },
     {
       name: "Telegram",
