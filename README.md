@@ -1,12 +1,11 @@
 <div align="center">
-<a href="https://www.webb.tools/">
-    
-![Webb Logo](.github/assets/webb_banner_light.png#gh-light-mode-only)
-![Webb Logo](.github/assets/webb_banner_dark.png#gh-dark-mode-only)
+<a href="https://www.tangle.tools/">
+    ![image](https://github.com/webb-tools/tangle-docs/assets/38070512/12b7b949-89be-4c9d-9be1-2115d2ea15a2)
+
   </a>
   </div>
 <p align="left">
-    <strong>🚀 Official Documentation of the Webb Ecosystem 🚀 </strong>
+    <strong>🚀 Official Documentation of the Tangle Network 🚀 </strong>
 </p>
 
 <!-- Badges -->
@@ -15,7 +14,7 @@
 
 ❗ **Note:** This is a fork of [Vercel Docs](https://github.com/vercel/turbo/tree/main/docs).
 
-This repository serves as the **documentation** for the **[Webb](https://www.webb.tools/)** ecosystem. The docs are written in [MDX](https://mdxjs.com/) format an extension of [markdown](https://www.markdownguide.org/), processed by [Nextra](https://github.com/shuding/nextra/tree/main), and published to Webb Docs. For support on using Nextra see [https://nextra.site/docs].(https://nextra.site/docs)
+This repository serves as the **documentation** for the **[Tangle Network](https://www.Tangle.tools/)** . The docs are written in [MDX](https://mdxjs.com/) format an extension of [markdown](https://www.markdownguide.org/), processed by [Nextra](https://github.com/shuding/nextra/tree/main), and published to Webb Docs. For support on using Nextra see [https://nextra.site/docs].(https://nextra.site/docs)
 
 ### Directory structure
 
@@ -32,17 +31,17 @@ if image assets are added to a given section you must provide both a dark and li
 
 **Updating existing content**
 
-1. Navigate to the desired page to update (e.g. `/pages/docs/anchor-system/overview.mdx`)
+1. Navigate to the desired page to update (e.g. `/pages/docs/overview.mdx`)
 2. Make applicable changes
 3. Test those changes locally `yarn install && yarn dev`
 
 **Adding content for existing section**
 
-1. Navigate to the desired documentation section (e.g. `/pages/docs/anchor-system/`)
+1. Navigate to the desired documentation section (e.g. `/pages/docs/overview.mdx/`)
 2. Create a new mdx file that represents new page for desired section (e.g. `advanced.mdx`)
 3. Write desired content for the new mdx file
 4. Update the `_meta.json` file within the section directory to include your new page into the navigation
-5. Test those changes locally `yarn install && yarn dev`
+5. Test those changes locally `yarn install && yarn dev`. We request that you also run Prettier.
 
 **Note:** To create a section with dropdown navigation, simply create a folder and specify the new navigation in `_meta.json`, create new your new files in the new directory along with its own `_meta.json` to outline the desired
 navigation.
