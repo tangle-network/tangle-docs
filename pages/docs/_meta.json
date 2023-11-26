@@ -1,15 +1,17 @@
 {
   "index": {
-    "title": "Quickstart"
+    "title": "Overview"
   },
-  "tangle-network": "Tangle Network",
-  "overview": "About Webb",
-  "concepts": "Concepts",
-  "projects": "Projects",
-  "protocols": "Protocols",
-  "ecosystem-roles": "Ecosystem Roles",
+  "build": "Build",
+  "node": "Node",
+  "learn": "Learn",
+  "governance": "Govern",
   "community": "Community",
   "faqs": "FAQs",
   "glossary": "Glossary",
-  "contribute": "Contribute or Submit a Bug"
+  "contribute": "Contribute or Submit a Bug",
+  "webb_docs_link": {
+    "title": "Webb Docs",
+    "href": "https://docs.webb.tools/docs"
+  }
 }

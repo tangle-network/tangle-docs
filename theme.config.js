@@ -73,11 +73,11 @@ const theme = {
         <link rel="canonical" href={fullUrl} />
         <meta
           property="twitter:image"
-          content="https://webb-assets.s3.amazonaws.com/WebbLogo.svg"
+          content="https://assets-global.website-files.com/6494562b44a28080aafcbad4/6494599436915879aa403230_Tangle%20Logo.png"
         />
         <meta
           property="og:image"
-          content="https://webb-assets.s3.amazonaws.com/WebbLogo.svg"
+          content="https://assets-global.website-files.com/6494562b44a28080aafcbad4/6494599436915879aa403230_Tangle%20Logo.png"
         />
         <meta property="og:locale" content="en_IE" />
         <meta property="og:site_name" content="Webb" />
