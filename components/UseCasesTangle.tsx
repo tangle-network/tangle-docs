@@ -53,34 +53,18 @@ export const ParticipateArea = () => {
       <DetailedFeatureLink
         feature={{
           Icon: ServerIcon,
-          description: `Tangle Network runs independently without a relay chain.`,
-          name: "Tangle Network (Testnet)",
+          description: `Tangle Network on Polkadot Apps`,
+          name: "Interact with Tangle using Polkadot Apps",
         }}
         href="https://polkadot.js.org/apps/?rpc=wss://rpc.tangle.tools#/explorer"
       ></DetailedFeatureLink>
       <DetailedFeatureLink
         feature={{
-          Icon: CloudIcon,
-          description: `Running a relayer helps keep our bridges up to date by relaying the necessary data between both applications and the Tangle Network.`,
-          name: "Run a Relayer",
-        }}
-        href="/docs/ecosystem-roles/relayer/running-relayer/running-docker/"
-      ></DetailedFeatureLink>
-      <DetailedFeatureLink
-        feature={{
           Icon: BookOpenIcon,
           description: `Through governance, you can create proposals for updating cross-chain applications.`,
-          name: "Participate in Governance ",
+          name: "Participate in Testnet Governance ",
         }}
         href="https://polkadot.js.org/apps/?rpc=wss://rpc.tangle.tools#/democracy"
-      ></DetailedFeatureLink>
-      <DetailedFeatureLink
-        feature={{
-          Icon: BeakerIcon,
-          description: `Reach out and build new applications on Webb!`,
-          name: "Develop new applications and research",
-        }}
-        href="mailto:drew@webb.tools"
       ></DetailedFeatureLink>
     </div>
   );

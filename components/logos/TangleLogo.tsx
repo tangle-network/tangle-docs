@@ -1,4 +1,4 @@
-export const Logo = () => (
+const TangleLogo = (props) => (
   <svg
     width="453"
     height="200"
@@ -55,3 +55,5 @@ export const Logo = () => (
     </defs>
   </svg>
 );
+
+export default TangleLogo;

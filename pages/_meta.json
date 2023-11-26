@@ -13,12 +13,12 @@
   },
   "home": {
     "title": "Home",
-    "href": "https://webb.tools/",
+    "href": "https://tangle.tools/",
     "newWindow": true
   },
   "docs": {
     "title": "Docs",
-    "href": "https://docs.webb.tools/",
+    "href": "https://docs.tangle.tools/",
     "newWindow": false
   },
   "faucet": {
@@ -36,8 +36,8 @@
         "newWindow": true
       },
       "resourcesWhitepaper": {
-        "title": "Webb Protocol Whitepaper",
-        "href": "https://github.com/webb-tools",
+        "title": "Tangle Network Whitepaper",
+        "href": "https://github.com/webb-tools/tangle/blob/main/Tangle_Network_Whitepaper_V1.pdf",
         "newWindow": true
       },
       "resourcesCommunity": {
@@ -90,7 +90,7 @@
   },
   "whitepaper": {
     "title": "Whitepaper",
-    "href": "https://eprint.iacr.org/2023/260",
+    "href": "https://github.com/webb-tools/tangle/blob/main/Tangle_Network_Whitepaper_V1.pdf",
     "newWindow": true,
     "display": "hidden"
   },

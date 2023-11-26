@@ -20,38 +20,6 @@ export const QuickStartArea = () => {
         }}
         href="/docs/tangle-network/node/quickstart/"
       ></DetailedFeatureLink>
-      <DetailedFeatureLink
-        feature={{
-          Icon: GitHubIcon,
-          description: `Check out our open source repos on GitHub. Open a pull request or an issue!`,
-          name: "Contribute to Webb Ecosystem.",
-        }}
-        href="https://github.com/webb-tools"
-      ></DetailedFeatureLink>
-      <DetailedFeatureLink
-        feature={{
-          Icon: DiscordIcon,
-          description: `Interested in the latest announcements? Join our Discord server.`,
-          name: "Join our Discord community.",
-        }}
-        href="https://discord.com/invite/cv8EfJu3Tn"
-      />
-      <DetailedFeatureLink
-        feature={{
-          Icon: TelegramIcon,
-          description: `Want to connect with Webb Developers, or have questions? Join our Telegram group.`,
-          name: "Join our Telegram group.",
-        }}
-        href="https://t.me/webbprotocol"
-      />
-      <DetailedFeatureLink
-        feature={{
-          Icon: TwitterIcon,
-          description: `Looking to keep up with our latest announcements and updates? Follow us on Twitter. `,
-          name: "Follow us on Twitter.",
-        }}
-        href="https://twitter.com/webbprotocol"
-      />
     </div>
   );
 };
@@ -82,14 +50,6 @@ export const DeployArea = () => {
           name: "Deploy a Tangle Node!",
         }}
         href="/docs/tangle-network/node/docker-node"
-      ></DetailedFeatureLink>
-      <DetailedFeatureLink
-        feature={{
-          Icon: CloudIcon,
-          description: `Help support the Webb ecosystem. Run a relayer and earn!`,
-          name: "Deploy a relayer!",
-        }}
-        href="/docs/ecosystem-roles/relayer/running-relayer/running-docker/"
       ></DetailedFeatureLink>
     </div>
   );
