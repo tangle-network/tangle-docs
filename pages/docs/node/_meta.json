@@ -6,6 +6,7 @@
   "docker-node": "Deploy with Docker",
   "monitoring": "Node Monitoring",
   "validator": "Validate",
+  "upgrade-node": "Upgrade your Validator",
   "flags": "Flags",
   "troubleshooting": "Troubleshooting",
   "quicknode": "Launch a Quick Node"
