@@ -3,6 +3,7 @@
     "title": "Overview"
   },
   "usecases": "Use Cases",
+  "network-information-configuration": "Network Configuration",
   "build": "Build",
   "node": "Node",
   "learn": "Learn",

@@ -1,0 +1,113 @@
+.networkinfo {
+  font-family: "Arial", sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.networkInfo h1,
+.networkInfo h2 {
+  color: #000;
+  text-align: left;
+}
+
+.titleContainer {
+  display: flex; /* Use flexbox to lay out the title and icon */
+  align-items: center; /* Align items vertically in the center */
+  cursor: pointer; /* Change the cursor to indicate it's clickable */
+  border-bottom: 2px solid white;
+}
+
+.chevronIcon {
+  height: 3em;
+  width: 3em;
+  color: white;
+  margin-left: 0.5em;
+}
+.networkCard {
+  border-radius: 8px;
+  padding: 48px;
+  margin: 20px 0 0 0;
+  background: linear-gradient(45deg, rgb(168 0 198), rgba(255, 0, 0, 0) 70%),
+    linear-gradient(-45deg, rgb(190 0 255 / 90%), rgba(0, 0, 255, 0) 70%),
+    linear-gradient(135deg, rgb(0 242 245), rgba(0, 255, 0, 0) 70%),
+    linear-gradient(-135deg, rgb(117 119 251 / 32%), rgba(255, 255, 0, 0) 70%);
+  background-blend-mode: multiply;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+}
+
+.networkTitle {
+  margin-right: 0.5em; /* Add some space between the title and the icon */
+}
+
+.networkCard h2 {
+  margin-top: 0;
+  color: #fff;
+  font-size: 2.8em;
+  font-weight: 600;
+  line-height: 1.2em;
+  padding-bottom: 8px;
+  margin-bottom: 2px;
+}
+
+.networkCard h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.networkType {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8em;
+  margin-bottom: 0;
+  font-weight: 700;
+}
+.section {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 0;
+  margin-bottom: 8px;
+}
+
+.tableRow {
+  text-align: left;
+}
+
+.tableHeader {
+  color: #fff;
+  font-weight: 400;
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #e1e4e8;
+}
+
+.tableCell {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #e1e4e8;
+  color: #fff;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .networkinfo {
+    padding: 10px;
+  }
+
+  .table,
+  .th,
+  .td {
+    font-size: 14px;
+  }
+}
