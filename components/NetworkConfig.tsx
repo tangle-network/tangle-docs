@@ -23,8 +23,9 @@ const NetworkCard = ({
 
   return (
     <div className={styles.networkCard}>
-      {cardTitle}
-      <div className={styles.networkType}>{type}</div>
+      <div className={styles.networkType}>
+        {type} {cardTitle}
+      </div>
       <div className={styles.titleContainer} onClick={toggleCollapse}>
         <h2 className={styles.networkTitle}>{network}</h2>
         {isCollapsed ? (

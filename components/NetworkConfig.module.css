@@ -24,7 +24,10 @@
   height: 3em;
   width: 3em;
   color: white;
-  margin-left: 0.5em;
+  border: 1px white solid;
+  border-radius: 10px;
+  background-color: #0001d33b;
+  margin-left: auto;
 }
 .networkCard {
   border-radius: 8px;
