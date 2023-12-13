@@ -1,9 +1,8 @@
 <div align="center">
-<a href="https://www.tangle.tools/">
-    ![image](https://github.com/webb-tools/tangle-docs/assets/38070512/12b7b949-89be-4c9d-9be1-2115d2ea15a2)
-
+  <a href="https://www.tangle.tools/">
+    <img src="https://github.com/webb-tools/tangle-docs/assets/38070512/12b7b949-89be-4c9d-9be1-2115d2ea15a2" alt="Image">
   </a>
-  </div>
+</div>
 <p align="left">
     <strong>🚀 Official Documentation of the Tangle Network 🚀 </strong>
 </p>
