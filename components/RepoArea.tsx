@@ -21,14 +21,6 @@ export const RepoArea = () => {
         }}
         href="https://github.com/webb-tools/tangle-docs"
       ></DetailedFeatureLink>
-      <DetailedFeatureLink
-        feature={{
-          Icon: GitHubIcon,
-          description: `Multy-party threshold ECDSA (GG20) Substrate node`,
-          name: "dkg-substrate",
-        }}
-        href="https://github.com/webb-tools/dkg-substrate"
-      ></DetailedFeatureLink>
     </div>
   );
 };
