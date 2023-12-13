@@ -22,7 +22,8 @@ const NetworkCard = ({
   };
 
   return (
-    <div className={styles.networkCard}>{cardTitle}
+    <div className={styles.networkCard}>
+      {cardTitle}
       <div className={styles.networkType}>{type}</div>
       <div className={styles.titleContainer} onClick={toggleCollapse}>
         <h2 className={styles.networkTitle}>{network}</h2>
@@ -90,7 +91,8 @@ const NetworkCard = ({
 const NetworkInfo = () => {
   // Define the network details here or fetch from an API
   const networks = [
-    { cardTitle: "Network Information",
+    {
+      cardTitle: "Network Information",
       network: "Tangle Network",
       type: "Testnet",
       symbol: "tTNT",
