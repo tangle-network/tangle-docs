@@ -1,9 +1,8 @@
 <div align="center">
-<a href="https://www.tangle.tools/">
-    ![image](https://github.com/webb-tools/tangle-docs/assets/38070512/12b7b949-89be-4c9d-9be1-2115d2ea15a2)
-
+  <a href="https://www.tangle.tools/">
+    <img src="https://github.com/webb-tools/tangle-docs/assets/38070512/12b7b949-89be-4c9d-9be1-2115d2ea15a2" alt="Image">
   </a>
-  </div>
+</div>
 <p align="left">
     <strong>🚀 Official Documentation of the Tangle Network 🚀 </strong>
 </p>
@@ -14,7 +13,7 @@
 
 ❗ **Note:** This is a fork of [Vercel Docs](https://github.com/vercel/turbo/tree/main/docs).
 
-This repository serves as the **documentation** for the **[Tangle Network](https://www.Tangle.tools/)** . The docs are written in [MDX](https://mdxjs.com/) format an extension of [markdown](https://www.markdownguide.org/), processed by [Nextra](https://github.com/shuding/nextra/tree/main), and published to Webb Docs. For support on using Nextra see [https://nextra.site/docs].(https://nextra.site/docs)
+This repository serves as the **documentation** for the **[Tangle Network](https://www.Tangle.tools/)** . The docs are written in [MDX](https://mdxjs.com/) format an extension of [markdown](https://www.markdownguide.org/), processed by [Nextra](https://github.com/shuding/nextra/tree/main), and published to Webb Docs. For support on using Nextra see [https://nextra.site/docs](https://nextra.site/docs)
 
 ### Directory structure
 
