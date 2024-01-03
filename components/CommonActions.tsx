@@ -14,14 +14,14 @@ const features = [
     Icon: ServerIcon,
     title: "Node Deployment",
     description: `Want to spin up a full node on the Tangle Network? We've made it easier than ever!`,
-    href: "/docs/tangle-network/node/docker-node",
+    href: "/docs/node/docker-node",
     action: "Deploy a Docker Node",
   },
   {
     Icon: ServerIcon,
     title: "Validators",
     description: `Start your journey on Tangle Network. This guide will walk you through the steps to become a validator, ensuring network security and integrity.`,
-    href: "/docs/tangle-network/node/quickstart/",
+    href: "/docs/node/quickstart/",
     action: "Launch a Quick Validator Node",
   },
   {

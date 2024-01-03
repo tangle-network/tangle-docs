@@ -58,7 +58,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 
         ```sh filename="mv" copy
         # Move the tangle-standalone binary to the bin directory (assumes you are in repo root directory)
-        sudo mv ./target/release/tangle-standalone /usr/bin/
+        sudo mv ./target/release/tangle /usr/bin/
         ```
 
         Add the following contents to the service configuration file. Make sure to replace the **USERNAME** with the username you created in the previous step, add your own node name, and update
@@ -149,7 +149,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 
         ```sh filename="Acco" copy
         # it will ask for your suri, enter it.
-        ./target/release/tangle-standalone key insert --base-path /data/validator/<USERNAME> \
+        ./target/release/tangle key insert --base-path /data/validator/<USERNAME> \
         --chain ./chainspecs/tangle-standalone.json \
         --scheme Sr25519 \
         --suri <"12-MNEMONIC-PHARSE"> \
@@ -160,7 +160,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 
         ```sh filename="Aura" copy
         # it will ask for your suri, enter it.
-        ./target/release/tangle-standalone key insert --base-path /data/validator/<USERNAME> \
+        ./target/release/tangle key insert --base-path /data/validator/<USERNAME> \
         --chain ./chainspecs/tangle-standalone.json \
         --scheme Sr25519 \
         --suri <"12-MNEMONIC-PHARSE"> \
@@ -171,7 +171,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 
         ```sh filename="Imonline" copy
         # it will ask for your suri, enter it.
-        ./target/release/tangle-standalone key insert --base-path /data/validator/<USERNAME> \
+        ./target/release/tangle key insert --base-path /data/validator/<USERNAME> \
         --chain ./chainspecs/tangle-standalone.json \
         --scheme Sr25519 \
         --suri <"12-MNEMONIC-PHARSE"> \
@@ -182,7 +182,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 
         ```sh filename="Role" copy
         # it will ask for your suri, enter it.
-        ./target/release/tangle-standalone key insert --base-path /data/validator/<USERNAME> \
+        ./target/release/tangle key insert --base-path /data/validator/<USERNAME> \
         --chain ./chainspecs/tangle-standalone.json \
         --scheme Ecdsa \
         --suri <"12-MNEMONIC-PHARSE"> \
@@ -193,7 +193,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 
         ```sh filename="Grandpa" copy
         # it will ask for your suri, enter it.
-        ./target/release/tangle-standalone key insert --base-path /data/validator/<USERNAME> \
+        ./target/release/tangle key insert --base-path /data/validator/<USERNAME> \
         --chain ./chainspecs/tangle-standalone.json \
         --scheme Ed25519 \
         --suri <"12-MNEMONIC-PHARSE"> \
@@ -213,7 +213,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 
         ```sh filename="mv" copy
         # Move the tangle-standalone binary to the bin directory (assumes you are in repo root directory)
-        sudo mv ./target/release/tangle-standalone /usr/bin/
+        sudo mv ./target/release/tangle /usr/bin/
         ```
 
         Add the following contents to the service configuration file. Make sure to replace the **USERNAME** with the username you created in the previous step, add your own node name, and update any paths or ports to your own preference.
