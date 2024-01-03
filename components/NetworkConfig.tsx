@@ -15,7 +15,7 @@ const NetworkCard = ({
   explorerUrls,
   fundingInfo,
 }) => {
-  const [isCollapsed, setIsCollapsed] = useState(true);
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   const toggleCollapse = () => {
     setIsCollapsed(!isCollapsed);

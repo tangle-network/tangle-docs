@@ -136,7 +136,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
         We need to generate the required keys for our node. For more information on these keys, please see the [Required Keys](https://wiki.polkadot.network/docs/learn-cryptography) section.
         The keys we need to generate include the following:
 
-        - DKG key (Ecdsa)
+        - Role key (Ecdsa)
         - Aura key (Sr25519)
         - Account key (Sr25519)
         - Grandpa key (Ed25519)
@@ -178,15 +178,15 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
         --key-type imon
         ```
 
-        **DKG Keys**
+        **Role Keys**
 
-        ```sh filename="DKG" copy
+        ```sh filename="Role" copy
         # it will ask for your suri, enter it.
         ./target/release/tangle-standalone key insert --base-path /data/validator/<USERNAME> \
         --chain ./chainspecs/tangle-standalone.json \
         --scheme Ecdsa \
         --suri <"12-MNEMONIC-PHARSE"> \
-        --key-type wdkg
+        --key-type role
         ```
 
         **Grandpa Keys**
