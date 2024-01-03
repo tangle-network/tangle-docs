@@ -98,14 +98,14 @@ const NetworkInfo = () => {
       type: "Testnet",
       symbol: "tTNT",
       decimals: 18,
-      chainId: "4006",
-      rpcUrl: "https://rpc.tangle.tools",
-      wssUrl: "wss://rpc.tangle.tools",
+      chainId: "4007",
+      rpcUrl: "https://testnet-rpc.tangle.tools",
+      wssUrl: "wss://testnet-rpc.tangle.tools",
       explorerUrls: [
         { name: "BlockScout", url: "https://explorer.tangle.tools" },
         {
           name: "PolkadotJS",
-          url: "https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.tangle.tools#/explorer",
+          url: "https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ftestnet-rpc.tangle.tools#/explorer",
         },
       ],
       fundingInfo: {
