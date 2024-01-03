@@ -1,14 +1,14 @@
 # General FAQ: Frequently Asked questions
 
-##  Where can I get help?
+## Where can I get help?
 
 Our Discord is the best place to get assistance with your node or other questions about the project. See http://webb.tools/community for links to that Discord and more.
 
-##  How do I stay up to date?
+## How do I stay up to date?
 
 All upgrades and important technical information are announced on Discord and Twitter, in the #tangle-network channel. See http://webb.tools/community for links to that Discord and more.
 
-##  What are the hardware requirements?
+## What are the hardware requirements?
 
 The following specifications are the ideal or recommended, but nodes can be run with less. Testnet nodes have also been run using AWS `t3.Large` instances.
 
@@ -21,11 +21,11 @@ The following specifications are the ideal or recommended, but nodes can be run 
 
 See https://docs.webb.tools/docs/ecosystem-roles/validator/requirements/ for more information.
 
-##  What about backup nodes?
+## What about backup nodes?
 
 We recommedend that you run two machines with the same specifications, in different countries and service providers in order to decentralize and make your services more robust. If your primary fails you can quickly resume services on your backup and continue to produce blocks and earn rewards. Please refer to the Q&A on failovers below.
 
-##  What are the different networks?
+## What are the different networks?
 
 There are two networks, each will require dedicated hardware. The Tangle TestNet is free and should be used to familiarize yourself with the setup.
 
@@ -33,7 +33,7 @@ Tangle Network - Mainnet, not launched yet.
 
 Tangle Testnet - Launched.
 
-##  What ports do I allow on my firewall?
+## What ports do I allow on my firewall?
 
 As stated before, the standalone nodes will listen on multiple ports. The default Substrate ports are used in the standalone, while the relay chain will listen on the next higher port.
 
@@ -54,34 +54,34 @@ The only ports that need to be open for incoming traffic are those designated fo
 | WS          | 9944        |
 | Prometheus  | 9615        |
 
-##  Is there a binary?
+## Is there a binary?
 
 We're working on this, check back soon!
 
-##  What are the recommendations on monitoring my node?
+## What are the recommendations on monitoring my node?
 
 Monitoring is critical for success as a node operator. See our full Monitoring guide at https://docs.webb.tools/docs/ecosystem-roles/validator/monitoring/quickstart//
 
-##  What are the KPIs I should be monitoring?
+## What are the KPIs I should be monitoring?
 
 The main key performance indicator for a node operator is the number of blocks produced. The prometheus metric for this is called substrate_proposer_block_constructed_count.
 
-##  How should I setup alerting?
+## How should I setup alerting?
 
 Alerting is critical for your success as a node operator, see our full guide to using our recommended AlertManager at https://docs.webb.tools/docs/ecosystem-roles/validator/monitoring/alert-manager/
 
-##  What is the failover process if my primary node is down?
+## What is the failover process if my primary node is down?
 
 When the primary server is down, the best way to perform a failover to the backup server is to perform a key association update. Each server should have a unique set of keys already. Run the setKeys author mapping extrinsic. You can follow the Mapping Extrinsic instructions and modify the instructions to use the setKeys extrinsic.
 
-##  What should I look for in the logs?
+## What should I look for in the logs?
 
 For full support, see our guides on logging at https://docs.webb.tools/docs/ecosystem-roles/validator/monitoring/loki/ .
 
-##  How much stake do I need to become an validator in the active set?
+## How much stake do I need to become an validator in the active set?
 
 Per era, the NPoS system selects a certain number of nodes with the most TNT to validate. Therefore, minimum amount required to become an active nominator and earn rewards may change from era to era. You can check the active validator set's stake at https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ftangle-standalone-archive.webb.tools#/staking
 
-##  How do I set an identity on my account?
+## How do I set an identity on my account?
 
 Setting an identity on chain will help to identify your node and attract delegations. You can set an identity by following the instructions on Polkadot's Identity Documentation at https://wiki.polkadot.network/docs/learn-identity
