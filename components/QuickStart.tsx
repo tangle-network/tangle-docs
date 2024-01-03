@@ -18,7 +18,7 @@ export const QuickStartArea = () => {
           description: `Start your journey on Tangle Network. This guide will walk you through the steps to become a validator, ensuring network security and integrity.`,
           name: "Validate on Tangle Network",
         }}
-        href="/docs/tangle-network/node/quickstart/"
+        href="/docs/node/quickstart/"
       ></DetailedFeatureLink>
     </div>
   );
@@ -49,7 +49,7 @@ export const DeployArea = () => {
           description: `Want to spin up a full node on the Tangle Network? We've made it easier than ever!`,
           name: "Deploy a Tangle Node!",
         }}
-        href="/docs/tangle-network/node/docker-node"
+        href="/docs/node/docker-node"
       ></DetailedFeatureLink>
     </div>
   );
