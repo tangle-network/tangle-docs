@@ -84,7 +84,7 @@ We need to generate the required keys for our node. For more information on thes
 The keys we need to generate include the following:
 
 - Role key (Ecdsa)
-- Aura key (Sr25519)
+- Babe key (Sr25519)
 - Account key (Sr25519)
 - Grandpa key (Ed25519)
 - ImOnline key (Sr25519)
@@ -104,15 +104,15 @@ ghcr.io/webb-tools/tangle/tangle:main \
     --key-type acco
 ```
 
-**Aura Keys**
+**Babe Keys**
 
-```sh filename="Aura" copy
+```sh filename="Babe" copy
 docker run --rm -it --platform linux/amd64 --network="host" -v "/var/lib/data" \
 ghcr.io/webb-tools/tangle/tangle:main \
     key insert --base-path /var/lib/tangle/ \
     --chain /data/chainspecs/tangle-standalone.json \
     --scheme Sr25519 \
-    --key-type aura
+    --key-type babe
 ```
 
 **Im-online Keys** - **these keys are optional (required if you are running as a validator)**

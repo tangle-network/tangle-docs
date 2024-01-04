@@ -137,7 +137,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
         The keys we need to generate include the following:
 
         - Role key (Ecdsa)
-        - Aura key (Sr25519)
+        - Babe key (Sr25519)
         - Account key (Sr25519)
         - Grandpa key (Ed25519)
         - ImOnline key (Sr25519)
@@ -156,15 +156,15 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
         --key-type acco
         ```
 
-        **Aura Keys**
+        **Babe Keys**
 
-        ```sh filename="Aura" copy
+        ```sh filename="Babe" copy
         # it will ask for your suri, enter it.
         ./target/release/tangle key insert --base-path /data/validator/<USERNAME> \
         --chain ./chainspecs/tangle-standalone.json \
         --scheme Sr25519 \
         --suri <"12-MNEMONIC-PHARSE"> \
-        --key-type aura
+        --key-type babe
         ```
 
         **Im-online Keys** - **these keys are optional**

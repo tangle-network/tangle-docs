@@ -27,7 +27,7 @@ In the future, validators may be able to participate in other forms of reward-wi
 
 </Callout>
 
-2. **Setting Up Validator Infrastructure:** This includes ensuring that the node is properly configured, connected to the network, has the necessary keys set up, etc. Part of this setup will involve generating and injecting session keys (like DKG, Aura, Grandpa, etc.) which are crucial for various consensus and validation processes.
+2. **Setting Up Validator Infrastructure:** This includes ensuring that the node is properly configured, connected to the network, has the necessary keys set up, etc. Part of this setup will involve generating and injecting session keys (like RoleKey, Babe, Grandpa, etc.) which are crucial for various consensus and validation processes.
 
 3. **Nominating or Registering as a Validator:** After bonding tokens and setting up the validator node, the operator then registers or nominate their node as a validator candidate. This involves submitting a transaction to the network indicating their intention to validate.
 
@@ -86,7 +86,7 @@ Your bonded account will available under `Stashes.` You should now see a new car
 In order to participate in the distributed key generation (DKG) protocol, block production, and block finalization, you will be required to set up several keys. These keys include:
 
 - Role key (Ecdsa)
-- Aura key (Sr25519)
+- Babe key (Sr25519)
 - Account key (Sr25519)
 - Grandpa key (Ed25519)
 - ImOnline key (Sr25519)
