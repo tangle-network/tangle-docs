@@ -101,6 +101,7 @@ const NetworkInfo = () => {
       chainId: "4007",
       rpcUrl: "https://testnet-rpc.tangle.tools",
       wssUrl: "wss://testnet-rpc.tangle.tools",
+      prefix: "Testnet addresses will start with prefix tt",
       explorerUrls: [
         { name: "BlockScout", url: "https://explorer.tangle.tools" },
         {

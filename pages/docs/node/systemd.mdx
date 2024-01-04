@@ -9,10 +9,9 @@ import { Tabs } from 'nextra/components'
 
 You can run your **full** or **validator** node as a systemd process so that it will automatically restart on server reboots or crashes, helping to avoid getting slashed. This guide now includes additional steps for setting up dependencies and Rust configuration, ensuring a smoother setup process.
 
-Before following this guide, ensure that your machine's environment is set up and the Tangle binary is compiled. If you haven't done so, please refer to the [Requirements](https://docs.webb.tools/docs/ecosystem-roles/validator/requirements/) page.
+Before following this guide, ensure that your machine's environment is set up and the Tangle binary is compiled. If you haven't done so, please refer to the [Requirements](docs/node/hardware/) page.
 
 ## Setup
-
 ### 1. Fetch the Tangle Network Binary
 
 Use the latest release version in the url in place of `<VERSION>`, you can visit [releases](https://github.com/webb-tools/tangle/releases) page to view the latest info
@@ -330,7 +329,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
   </Tabs.Tab>
   <Tabs.Tab>
   The following is the service configuration file, use this while completing the Full Node guide.
-            **Note:** To run with evm trace, you should use a binary built with `txpool` flag, refer [requirements](/docs/ecosystem-roles/validator/requirements/) page for more details.
+            **Note:** To run with evm trace, you should use a binary built with `txpool` flag, refer [requirements](/docs/node/hardware/) page for more details.
 
           ```sh filename="full.service" copy
           sudo tee /etc/systemd/system/full.service > /dev/null << EOF
