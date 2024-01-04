@@ -12,6 +12,12 @@ import Callout from '/components/Callout';
 
 If you'd like to run the node with verbose logs, you may add the following arguments during initial setup. Adjust the target for the desired logging level (debug | error | info| trace | warn):
 
+```bash
+RUST_LOG=runtime=debug ./target/release/<YOUR-NODE-TEMPLATE> --dev
+```
+
+Refer substrate [doc](https://docs.substrate.io/test/debug/) for more details 
+
 </Callout>
 
 ### P2P Ports Not Open
