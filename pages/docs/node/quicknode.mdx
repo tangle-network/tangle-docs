@@ -19,13 +19,13 @@ compiled the Tangle binary. If you have not done so, please refer to the [Requir
 Use the latest release version in the url in place of `<VERSION>`, you can visit [releases](https://github.com/webb-tools/tangle/releases) page to view the latest info
 
 ```
-wget https://github.com/webb-tools/tangle/releases/download/<VERSION>/tangle-standalone-linux-amd64
+wget https://github.com/webb-tools/tangle/releases/download/<VERSION>/tangle-testnet-linux-amd64
 ```
 
 For example, at the time of writing this document, the latest release is v0.4.7 and the link would be as follows
 
 ```
-wget https://github.com/webb-tools/tangle/releases/download/v0.4.7/tangle-standalone-linux-amd64
+wget https://github.com/webb-tools/tangle/releases/download/v0.4.7/tangle-testnet-linux-amd64
 ```
 
 ### 2. Start the node binary
@@ -38,7 +38,7 @@ Make sure to change the following params before executing the command
 2. `<NODE_NAME>` : This is a unique node name for your node, use a unique name here to help identity your node to other validators and telemetry data
 
 ```
-./tangle-standalone-linux-amd64 \
+./tangle-testnet-linux-amd64 \
   --base-path <BASE_PATH> \
   --name <NODE_NAME> \
   --chain tangle-testnet \

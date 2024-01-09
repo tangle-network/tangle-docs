@@ -17,7 +17,7 @@ export const QuickDeployArea = () => {
           description: `Deploy a Tangle node in two steps`,
           name: "Quick Deployment",
         }}
-        href="/docs/ecosystem-roles/validator/systemd/quick-node/"
+        href="/docs/node/quickstart"
       ></DetailedFeatureLink>
     </div>
   );
@@ -32,7 +32,7 @@ export const DeployArea = () => {
           description: `Deploy a Tangle node in minutes using Docker.`,
           name: "Deploy with Docker",
         }}
-        href="/docs/ecosystem-roles/validator/deploy-with-docker/full-node/"
+        href="/docs/node/docker-node"
       ></DetailedFeatureLink>
       <DetailedFeatureLink
         feature={{
@@ -40,7 +40,7 @@ export const DeployArea = () => {
           description: `Run a Tangle node using Systemd.`,
           name: "Run with Systemd",
         }}
-        href="/docs/ecosystem-roles/validator/systemd/full-node/"
+        href="/docs/node/systemd"
       />
     </div>
   );
