@@ -105,7 +105,7 @@ const NetworkInfo = () => {
         { name: "BlockScout", url: "https://explorer.tangle.tools" },
         {
           name: "PolkadotJS",
-          url: "https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ftestnet-rpc.tangle.tools#/explorer",
+          url: "https://polkadot.js.org/apps/?rpc=wss://testnet-rpc.tangle.tools#/explorer",
         },
       ],
       fundingInfo: {
