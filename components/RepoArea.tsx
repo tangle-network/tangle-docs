@@ -8,7 +8,7 @@ export const RepoArea = () => {
       <DetailedFeatureLink
         feature={{
           Icon: GitHubIcon,
-          description: `Multy-party threshold ECDSA (GG20) Substrate node`,
+          description: `An MPC-as-a-service blockchain infrastructure for empowering cross-chain and zero-knowledge applications development.`,
           name: "Tangle Network Repo",
         }}
         href="https://github.com/webb-tools/tangle"

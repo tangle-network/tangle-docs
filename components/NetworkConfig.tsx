@@ -15,7 +15,7 @@ const NetworkCard = ({
   explorerUrls,
   fundingInfo,
 }) => {
-  const [isCollapsed, setIsCollapsed] = useState(true);
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   const toggleCollapse = () => {
     setIsCollapsed(!isCollapsed);
@@ -75,13 +75,6 @@ const NetworkCard = ({
                 </td>
               </tr>
             ))}
-            <tr className={styles.tableRow}>
-              <th className={styles.tableHeader}>Faucet</th>
-              <td className={styles.tableCell}>
-                <p>{fundingInfo.description}</p>
-                <Link href={fundingInfo.url}>{fundingInfo.url}</Link>
-              </td>
-            </tr>
           </tbody>
         </table>
       )}
