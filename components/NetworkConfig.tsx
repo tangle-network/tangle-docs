@@ -75,13 +75,6 @@ const NetworkCard = ({
                 </td>
               </tr>
             ))}
-            <tr className={styles.tableRow}>
-              <th className={styles.tableHeader}>Faucet</th>
-              <td className={styles.tableCell}>
-                <p>{fundingInfo.description}</p>
-                <Link href={fundingInfo.url}>{fundingInfo.url}</Link>
-              </td>
-            </tr>
           </tbody>
         </table>
       )}
@@ -98,14 +91,14 @@ const NetworkInfo = () => {
       type: "Testnet",
       symbol: "tTNT",
       decimals: 18,
-      chainId: "4007",
+      chainId: "3799",
       rpcUrl: "https://testnet-rpc.tangle.tools",
       wssUrl: "wss://testnet-rpc.tangle.tools",
       explorerUrls: [
         { name: "BlockScout", url: "https://explorer.tangle.tools" },
         {
           name: "PolkadotJS",
-          url: "https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ftestnet-rpc.tangle.tools#/explorer",
+          url: "https://polkadot.js.org/apps/?rpc=wss://testnet-rpc.tangle.tools#/explorer",
         },
       ],
       fundingInfo: {
