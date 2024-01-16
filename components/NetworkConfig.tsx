@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import styles from "./NetworkConfig.module.css";
-import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/outline";
 
 const NetworkCard = ({
   cardTitle,
@@ -15,12 +14,6 @@ const NetworkCard = ({
   explorerUrls,
   fundingInfo,
 }) => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
-
-  const toggleCollapse = () => {
-    setIsCollapsed(!isCollapsed);
-  };
-
   return (
     <div className={styles.networkCard}>
       <div className={styles.networkType}>
@@ -28,56 +21,49 @@ const NetworkCard = ({
       </div>
       <div className={styles.titleContainer} onClick={toggleCollapse}>
         <h2 className={styles.networkTitle}>{network}</h2>
-        {isCollapsed ? (
-          <ChevronDownIcon className={styles.chevronIcon} />
-        ) : (
-          <ChevronUpIcon className={styles.chevronIcon} />
-        )}
       </div>
-      {!isCollapsed && (
-        <table className={styles.table}>
-          <tbody>
-            <tr className={styles.tableRow}>
-              <th className={styles.tableHeader}>Network Type</th>
-              <td className={styles.tableCell}>{type}</td>
-            </tr>
-            <tr className={styles.tableRow}>
-              <th className={styles.tableHeader}>Native Asset Symbol</th>
-              <td className={styles.tableCell}>{symbol}</td>
-            </tr>
-            <tr className={styles.tableRow}>
-              <th className={styles.tableHeader}>Native Asset Decimals</th>
-              <td className={styles.tableCell}>{decimals}</td>
-            </tr>
-            <tr className={styles.tableRow}>
-              <th className={styles.tableHeader}>Chain ID</th>
-              <td className={styles.tableCell}>{chainId}</td>
-            </tr>
-            <tr className={styles.tableRow}>
-              <th className={styles.tableHeader}>Public RPC URL</th>
+      <table className={styles.table}>
+        <tbody>
+          <tr className={styles.tableRow}>
+            <th className={styles.tableHeader}>Network Type</th>
+            <td className={styles.tableCell}>{type}</td>
+          </tr>
+          <tr className={styles.tableRow}>
+            <th className={styles.tableHeader}>Native Asset Symbol</th>
+            <td className={styles.tableCell}>{symbol}</td>
+          </tr>
+          <tr className={styles.tableRow}>
+            <th className={styles.tableHeader}>Native Asset Decimals</th>
+            <td className={styles.tableCell}>{decimals}</td>
+          </tr>
+          <tr className={styles.tableRow}>
+            <th className={styles.tableHeader}>Chain ID</th>
+            <td className={styles.tableCell}>{chainId}</td>
+          </tr>
+          <tr className={styles.tableRow}>
+            <th className={styles.tableHeader}>Public RPC URL</th>
+            <td className={styles.tableCell}>
+              <Link href={rpcUrl}>{rpcUrl}</Link>
+            </td>
+          </tr>
+          <tr className={styles.tableRow}>
+            <th className={styles.tableHeader}>Public WSS URL</th>
+            <td className={styles.tableCell}>
+              <Link href={wssUrl}>{wssUrl}</Link>
+            </td>
+          </tr>
+          {explorerUrls.map((explorer, index) => (
+            <tr key={index}>
+              <th className={styles.tableHeader}>
+                {index === 0 ? "Interfaces & Explorers" : ""}
+              </th>
               <td className={styles.tableCell}>
-                <Link href={rpcUrl}>{rpcUrl}</Link>
+                <Link href={explorer.url}>{explorer.name}</Link>
               </td>
             </tr>
-            <tr className={styles.tableRow}>
-              <th className={styles.tableHeader}>Public WSS URL</th>
-              <td className={styles.tableCell}>
-                <Link href={wssUrl}>{wssUrl}</Link>
-              </td>
-            </tr>
-            {explorerUrls.map((explorer, index) => (
-              <tr key={index}>
-                <th className={styles.tableHeader}>
-                  {index === 0 ? "Interfaces & Explorers" : ""}
-                </th>
-                <td className={styles.tableCell}>
-                  <Link href={explorer.url}>{explorer.name}</Link>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
