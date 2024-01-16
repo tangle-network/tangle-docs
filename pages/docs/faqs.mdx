@@ -1,16 +1,16 @@
-# General FAQ: Frequently Asked questions
+# General FAQ: Frequently Asked Questions
 
-Q: Where can I get help?
+## Where can I get help?
 
-A: Our Discord is the best place to get assistance with your node or other questions about the project. See http://webb.tools/community for links to that Discord and more.
+Our Discord is the best place to get assistance with your node or other questions about the project. See http://webb.tools/community for links to Discord and more.
 
-Q: How do I stay up to date?
+## How do I stay up to date?
 
-A: All upgrades and important technical information are announced on Discord and Twitter, in the #tangle-network channel. See http://webb.tools/community for links to that Discord and more.
+All upgrades and important technical information are announced on Discord and Twitter, in the #tangle-network channel. See http://webb.tools/community for links to Discord and more.
 
-Q: What are the hardware requirements?
+## What are the hardware requirements?
 
-A: The following specifications are the ideal or recommended, but nodes can be run with less. Testnet nodes have also been run using AWS `t3.Large` instances.
+The following specifications are the ideal or recommended, but nodes can be run with less. Testnet nodes have also been run using AWS `t3.Large` instances.
 
 | Component | Requirements                                                                                           |
 | --------- | ------------------------------------------------------------------------------------------------------ |
@@ -21,18 +21,19 @@ A: The following specifications are the ideal or recommended, but nodes can be r
 
 See https://docs.webb.tools/docs/ecosystem-roles/validator/requirements/ for more information.
 
-Q: What about backup nodes?
+## What about backup nodes?
 
-A: We recommedend that you run two machines with the same specifications, in different countries and service providers in order to decentralize and make your services more robust. If your primary fails you can quickly resume services on your backup and continue to produce blocks and earn rewards. Please refer to the Q&A on failovers below.
+We recommend that you run two machines with the same specifications, in different countries and service providers to decentralize and make your services more robust. If your primary fails you can quickly resume services on your backup and continue to produce blocks and earn rewards. Please refer to the Q&A on failovers below.
 
-Q: What are the different networks?
+## What are the different networks?
 
-A: There are three networks, each will require dedicated hardware. The Moonbase Alpha TestNet is free and should be used to familiarize yourself with the setup.
+There are two networks, each will require dedicated hardware. The Tangle TestNet is free and should be used to familiarize yourself with the setup.
 
 Tangle Network - Mainnet, not launched yet.
+
 Tangle Testnet - Launched.
 
-Q: What ports do I allow on my firewall?
+## What ports do I allow on my firewall?
 
 As stated before, the standalone nodes will listen on multiple ports. The default Substrate ports are used in the standalone, while the relay chain will listen on the next higher port.
 
@@ -53,74 +54,34 @@ The only ports that need to be open for incoming traffic are those designated fo
 | WS          | 9944        |
 | Prometheus  | 9615        |
 
-Q: Is there a binary?
+## Is there a binary?
 
-A: We're working on this, check back soon!
+We're working on this, check back soon!
 
-Q: What are the recommendations on monitoring my node?
+## What are the recommendations for monitoring my node?
 
-A: Monitoring is critical for success as a node operator. See our full Monitoring guide at https://docs.webb.tools/docs/ecosystem-roles/validator/monitoring/quickstart//
+Monitoring is critical for success as a node operator. See our full Monitoring guide at https://docs.webb.tools/docs/node/monitoring/quickstart//
 
-Q: What are the KPIs I should be monitoring?
+## What are the KPIs I should be monitoring?
 
-A: The main key performance indicator for a node operator is the number of blocks produced. The prometheus metric for this is called substrate_proposer_block_constructed_count.
+The main key performance indicator for a node operator is the number of blocks produced. The Prometheus metric for this is called substrate_proposer_block_constructed_count.
 
-Q: How should I setup alerting?
+## How should I set up alerting?
 
-A: Alerting is critical for your success as a node operator, see our full guide to using our recommended AlertManager at https://docs.webb.tools/docs/ecosystem-roles/validator/monitoring/alert-manager/
+Alerting is critical for your success as a node operator, see our full guide to using our recommended AlertManager at https://docs.webb.tools/docs/node/monitoring/alert-manager/
 
-Q: What is the failover process if my primary node is down?
+## What is the failover process if my primary node is down?
 
-A: When the primary server is down, the best way to perform a failover to the backup server is to perform a key association update. Each server should have a unique set of keys already. Run the setKeys author mapping extrinsic. You can follow the Mapping Extrinsic instructions and modify the instructions to use the setKeys extrinsic.
+When the primary server is down, the best way to perform a failover to the backup server is to perform a key association update. Each server should have a unique set of keys already. Run the setKeys author mapping extrinsic. You can follow the Mapping Extrinsic instructions and modify the instructions to use the setKeys extrinsic.
 
-Q: What should I look for in the logs?
+## What should I look for in the logs?
 
-A: For full support, see our guides on logging at https://docs.webb.tools/docs/ecosystem-roles/validator/monitoring/loki/ .
+For full support, see our guides on logging at https://docs.webb.tools/docs/node/monitoring/loki/.
 
-Q: How much stake do I need to become an validator in the active set?
+## How much stake do I need to become a validator in the active set?
 
-Per era, the NPoS system selects a certain number of nodes with the most TNT to validate. Therefore, minimum amount required to become an active nominator and earn rewards may change from era to era. You can check the active validator set's stake at https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ftangle-standalone-archive.webb.tools#/staking
+Per era, the NPoS system selects a certain number of nodes with the most TNT to validate. Therefore, the minimum amount required to become an active nominator and earn rewards may change from era to era. You can check the active validator set's stake at https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ftangle-standalone-archive.webb.tools#/staking
 
-Q: How do I set an identity on my account?
+## How do I set an identity on my account?
 
-A: Setting an identity on chain will help to identify your node and attract delegations. You can set an identity by following the instructions on Polkadot's Identity Documentation at https://wiki.polkadot.network/docs/learn-identity
-
-## Privacy and Security FAQs
-
-**Q: How does Webb Protocol ensure the privacy and security of its users?**
-
-A: Webb Protocol employs cutting-edge privacy technologies, such as zero-knowledge proofs, distributed key generation, and secure relayer systems, to maintain the privacy and security of users' assets and information.
-
-## Anchor System and Relayer System
-
-**Q: Can you explain the role of the Anchor System and the Relayer System in the Webb Protocol?**
-
-A: The Anchor System connects merkle trees on different blockchains, ensuring liveness and safety. The Relayer System acts as an oracle, data relayer, and protocol governance participant, relaying information for connected Anchors and enhancing the overall security of the system.
-
-**Q: How does the Anchor System work, and what is its significance in the Webb Protocol?**
-
-A: The Anchor System connects merkle trees on different blockchains using a graph-like framework, allowing anchors to maintain the latest state of their neighboring anchors. This interconnectedness enables users to prove the existence of data in any anchor from any anchor, satisfying the properties of liveness and safety.
-
-**Q: What role do relayers play in the Webb Protocol, and how do they contribute to the overall security of the system?**
-
-A: Relayers in the Webb Protocol serve as multi-faceted oracles, data relayers, and protocol governance participants. They relay information for a connected set of anchors on a bridge, updating each anchor's state and allowing applications to reference data stored across connected anchors. By fulfilling their roles, relayers enhance the overall security of the system.
-
-**Q: Can you explain the Distributed Key Generation (DKG) protocol and its significance in ensuring the safety and liveness of the Anchor System?**
-
-A: The DKG protocol governs the Anchor System by acting as a security tool. Trust is placed in the DKG to sign the data it is meant to sign, ensuring bridge updates are valid. The protocol guarantees the safety and liveness of the Anchor System, maintaining its ability to be updated in a partially-synchronous environment while ensuring all updates are valid.
-
-## Cross-Chain and Asset Transfers
-
-**Q: What are the benefits of using Tangle Network**
-
-A: Tangle Network employs a set of technologies that faciliate secure and private governance and easy bridging of cross-chain and private applications, in ways that improve the privacy of all applications that connect.
-
-**Q: What advantages does Hubble Bridge offer for users?**
-
-A: Hubble Bridge offers an easy-to-use interface for privately moving assets cross-chain, leveraging Webb's Shielded Asset Protocol for secure and private transactions. This allows users to maintain privacy while transferring assets between blockchains efficiently.
-
-## Collaboration, Governance, and Platform
-
-**Q: What are the latest innovations and research in the field of privacy and blockchain that Webb Protocol is working on?**
-
-A: Webb Protocol is continually working on innovations in privacy and blockchain, focusing on areas such as zero-knowledge proofs, cross-chain privacy solutions, secure messaging, and privacy-preserving identity systems.
+Setting an identity on-chain will help to identify your node and attract delegations. You can set an identity by following the instructions on Polkadot's Identity Documentation at https://wiki.polkadot.network/docs/learn-identity

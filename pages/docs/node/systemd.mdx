@@ -9,7 +9,7 @@ import { Tabs } from 'nextra/components'
 
 You can run your **full** or **validator** node as a systemd process so that it will automatically restart on server reboots or crashes, helping to avoid getting slashed. This guide now includes additional steps for setting up dependencies and Rust configuration, ensuring a smoother setup process.
 
-Before following this guide, ensure that your machine's environment is set up and the Tangle binary is compiled. If you haven't done so, please refer to the [Requirements](https://docs.webb.tools/docs/ecosystem-roles/validator/requirements/) page.
+Before following this guide, ensure that your machine's environment is set up and the Tangle binary is compiled. If you haven't done so, please refer to the [Requirements](docs/node/hardware/) page.
 
 ## Setup
 
@@ -21,10 +21,10 @@ Use the latest release version in the url in place of `<VERSION>`, you can visit
 wget https://github.com/webb-tools/tangle/releases/download/<VERSION>/tangle-testnet-linux-amd64
 ```
 
-For example, at the time of writing this document, the latest release is v0.4.7 and the link would be as follows
+For example, at the time of writing this document, the latest release is v0.6.1 and the link would be as follows
 
 ```
-wget https://github.com/webb-tools/tangle/releases/download/v0.4.7/tangle-testnet-linux-amd64
+wget https://github.com/webb-tools/tangle/releases/download/v0.6.1/tangle-testnet-linux-amd64
 ```
 
 ### 2. Install Dependencies
@@ -58,7 +58,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 
         ```sh filename="mv" copy
         # Move the tangle-standalone binary to the bin directory (assumes you are in repo root directory)
-        sudo mv ./target/release/tangle-standalone /usr/bin/
+        sudo mv ./target/release/tangle /usr/bin/
         ```
 
         Add the following contents to the service configuration file. Make sure to replace the **USERNAME** with the username you created in the previous step, add your own node name, and update
@@ -149,7 +149,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 
         ```sh filename="Acco" copy
         # it will ask for your suri, enter it.
-        ./target/release/tangle-standalone key insert --base-path /data/validator/<USERNAME> \
+        ./target/release/tangle key insert --base-path /data/validator/<USERNAME> \
         --chain ./chainspecs/tangle-standalone.json \
         --scheme Sr25519 \
         --suri <"12-MNEMONIC-PHARSE"> \
@@ -160,7 +160,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 
         ```sh filename="Babe" copy
         # it will ask for your suri, enter it.
-        ./target/release/tangle-standalone key insert --base-path /data/validator/<USERNAME> \
+        ./target/release/tangle key insert --base-path /data/validator/<USERNAME> \
         --chain ./chainspecs/tangle-standalone.json \
         --scheme Sr25519 \
         --suri <"12-MNEMONIC-PHARSE"> \
@@ -171,7 +171,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 
         ```sh filename="Imonline" copy
         # it will ask for your suri, enter it.
-        ./target/release/tangle-standalone key insert --base-path /data/validator/<USERNAME> \
+        ./target/release/tangle key insert --base-path /data/validator/<USERNAME> \
         --chain ./chainspecs/tangle-standalone.json \
         --scheme Sr25519 \
         --suri <"12-MNEMONIC-PHARSE"> \
@@ -180,9 +180,9 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 
         **Role Keys**
 
-        ```sh filename="DKG" copy
+        ```sh filename="Role" copy
         # it will ask for your suri, enter it.
-        ./target/release/tangle-standalone key insert --base-path /data/validator/<USERNAME> \
+        ./target/release/tangle key insert --base-path /data/validator/<USERNAME> \
         --chain ./chainspecs/tangle-standalone.json \
         --scheme Ecdsa \
         --suri <"12-MNEMONIC-PHARSE"> \
@@ -193,7 +193,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 
         ```sh filename="Grandpa" copy
         # it will ask for your suri, enter it.
-        ./target/release/tangle-standalone key insert --base-path /data/validator/<USERNAME> \
+        ./target/release/tangle key insert --base-path /data/validator/<USERNAME> \
         --chain ./chainspecs/tangle-standalone.json \
         --scheme Ed25519 \
         --suri <"12-MNEMONIC-PHARSE"> \
@@ -213,7 +213,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 
         ```sh filename="mv" copy
         # Move the tangle-standalone binary to the bin directory (assumes you are in repo root directory)
-        sudo mv ./target/release/tangle-standalone /usr/bin/
+        sudo mv ./target/release/tangle /usr/bin/
         ```
 
         Add the following contents to the service configuration file. Make sure to replace the **USERNAME** with the username you created in the previous step, add your own node name, and update any paths or ports to your own preference.
@@ -330,7 +330,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
   </Tabs.Tab>
   <Tabs.Tab>
   The following is the service configuration file, use this while completing the Full Node guide.
-            **Note:** To run with evm trace, you should use a binary built with `txpool` flag, refer [requirements](/docs/ecosystem-roles/validator/requirements/) page for more details.
+            **Note:** To run with evm trace, you should use a binary built with `txpool` flag, refer [requirements](/docs/node/hardware/) page for more details.
 
           ```sh filename="full.service" copy
           sudo tee /etc/systemd/system/full.service > /dev/null << EOF

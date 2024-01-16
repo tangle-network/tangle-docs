@@ -9,7 +9,7 @@ import { Tabs } from 'nextra/components';
 # Deploying a Tangle Network Node with Docker
 
 A Tangle Network node can be spun up quickly using Docker. **This guide covers both Full Node and Validator Node deployment.** . For more information on installing Docker,
-please visit the official Docker [docs](https://docs.docker.com/get-docker/). Make sure that your system meets the requirements which can read [here](https://docs.webb.tools/docs/ecosystem-roles/validator/requirements/).
+please visit the official Docker [docs](https://docs.docker.com/get-docker/). Make sure that your system meets the requirements which can read [here](docs/node/hardware/).
 
 ## Setup the Docker Environment
 
@@ -21,7 +21,7 @@ set their keys, fetch the applicable chainspec and run the start command to get 
 ```sh filename="pull" copy
 # Only use "main" if you know what you are doing, it will use the latest and maybe unstable version of the node.
 
-docker pull ghcr.io/webb-tools/tangle/tangle-standalone:main
+docker pull ghcr.io/webb-tools/tangle/tangle:main
 ```
 
 ### 2. Create a local directory to store the chain data:
@@ -55,7 +55,7 @@ Please make a reference where you have stored this `json` file as we will need i
 To start the node run the following command:
 
 ```sh filename="docker run" copy
-docker run --rm -it -v /var/lib/tangle/:/data ghcr.io/webb-tools/tangle/tangle-standalone:main \
+docker run --rm -it -v /var/lib/tangle/:/data ghcr.io/webb-tools/tangle/tangle:main \
   --chain tangle-testnet \
   --name="YOUR-NODE-NAME" \
   --base-path /data \
@@ -97,7 +97,7 @@ should paste your SURI when the command asks for it.
 ```sh filename="Acco" copy
 # it will ask for your suri, enter it.
 docker run --rm -it --platform linux/amd64 --network="host" -v "/var/lib/data" \
-ghcr.io/webb-tools/tangle/tangle-standalone:main \
+ghcr.io/webb-tools/tangle/tangle:main \
      key insert --base-path /var/lib/tangle/ \
     --chain /data/chainspecs/tangle-standalone.json \
     --scheme Sr25519 \
@@ -108,7 +108,7 @@ ghcr.io/webb-tools/tangle/tangle-standalone:main \
 
 ```sh filename="Babe" copy
 docker run --rm -it --platform linux/amd64 --network="host" -v "/var/lib/data" \
-ghcr.io/webb-tools/tangle/tangle-standalone:main \
+ghcr.io/webb-tools/tangle/tangle:main \
     key insert --base-path /var/lib/tangle/ \
     --chain /data/chainspecs/tangle-standalone.json \
     --scheme Sr25519 \
@@ -119,18 +119,18 @@ ghcr.io/webb-tools/tangle/tangle-standalone:main \
 
 ```sh filename="Imonline" copy
 docker run --rm -it --platform linux/amd64 --network="host" -v "/var/lib/data" \
-ghcr.io/webb-tools/tangle/tangle-standalone:main \
+ghcr.io/webb-tools/tangle/tangle:main \
     key insert --base-path /var/lib/tangle/ \
     --chain /data/chainspecs/tangle-standalone.json \
     --scheme Sr25519 \
     --key-type imon
 ```
 
-**Role Key**
+**Role Keys**
 
-```sh filename="DKG" copy
+```sh filename="Role" copy
 docker run --rm -it --platform linux/amd64 --network="host" -v "/var/lib/data" \
-ghcr.io/webb-tools/tangle/tangle-standalone:main \
+ghcr.io/webb-tools/tangle/tangle:main \
     tangle-standalone key insert --base-path /data \
     --chain /data/chainspecs/tangle-standalone.json \
     --scheme Ecdsa \
@@ -141,7 +141,7 @@ ghcr.io/webb-tools/tangle/tangle-standalone:main \
 
 ```sh filename="Grandpa" copy
 docker run --rm -it --platform linux/amd64 --network="host" -v "/var/lib/data" \
-ghcr.io/webb-tools/tangle/tangle-standalone:main \
+ghcr.io/webb-tools/tangle/tangle:main \
     tangle-standalone key insert --base-path /data \
     --chain /data/chainspecs/tangle-standalone.json \
     --scheme Ed25519 \
@@ -164,7 +164,7 @@ To start the node run the following command:
 
 ```sh filename="docker run" copy
 docker run --platform linux/amd64 --network="host" -v "/var/lib/data" --entrypoint ./tangle-standalone \
-ghcr.io/webb-tools/tangle/tangle-standalone:main \
+ghcr.io/webb-tools/tangle/tangle:main \
 --base-path=/data \
 --chain tangle-testnet \
 --name="YOUR-NODE-NAME" \
@@ -246,10 +246,10 @@ The upgrade process is straightforward and is the same for a full node.
 sudo docker stop `CONTAINER_ID`
 ```
 
-2. Get the latest version of Tangle from the Tangle GitHub Release [page](https://github.com/webb-tools/tangle/pkgs/container/tangle%2Ftangle-standalone)
+2. Get the latest version of Tangle from the Tangle GitHub Release [page](https://github.com/webb-tools/tangle/pkgs/container/tangle%2Ftangle
 
-3. Pull the latest version of Tangle binary by doing `docker pull ghcr.io/webb-tools/tangle/tangle-standalone:{VERSION_CODE}`.
-   Example, if the latest version of Tangle is v0.1.2, then the command would be `docker pull ghcr.io/webb-tools/tangle/tangle-standalone:v0.1.12`
+3. Pull the latest version of Tangle binary by doing `docker pull ghcr.io/webb-tools/tangle/tangle:{VERSION_CODE}`.
+   Example, if the latest version of Tangle is v0.1.2, then the command would be `docker pull ghcr.io/webb-tools/tangle/tangle:v0.1.12`
 
 4. Restart the tangle container and you should have the updated version of the client.
 

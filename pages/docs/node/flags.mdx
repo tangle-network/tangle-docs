@@ -77,7 +77,7 @@ Confirm the path and image with your image name:
 ```
 docker run --network="host" -v "/var/lib/data:/data"
 -u $(id -u ${USER}):$(id -g ${USER})
-ghcr.io/webb-tools/tangle/tangle-standalone:main --help
+ghcr.io/webb-tools/tangle/tangle:main --help
 ```
 
 ### Using Systemd:
@@ -88,7 +88,7 @@ If you used the binary directly:
 
 If you compiled the binary:
 
-`./target/release/tangle-standalone-YOUR-VERSION-HERE> --help`
+`./target/release/tangle-YOUR-VERSION-HERE> --help`
 
 <Callout>
 Currently, your release may be one the following.

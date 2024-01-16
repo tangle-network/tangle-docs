@@ -78,7 +78,7 @@ export const MonitoringArea = () => {
           description: `Power your metrics and alerting with the leading open-source monitoring solution.`,
           name: "Prometheus Setup",
         }}
-        href="docs/ecosystem-roles/validator/monitoring/prometheus/"
+        href="docs/node/monitoring/prometheus/"
       ></DetailedFeatureLink>
       <DetailedFeatureLink
         feature={{
@@ -86,7 +86,7 @@ export const MonitoringArea = () => {
           description: `Handle alerts sent by client applications such as the Prometheus server`,
           name: "AlertManager Setup",
         }}
-        href="/docs/ecosystem-roles/validator/monitoring/alert-manager/"
+        href="/docs/node/monitoring/alert-manager/"
       ></DetailedFeatureLink>
       <DetailedFeatureLink
         feature={{
@@ -94,7 +94,7 @@ export const MonitoringArea = () => {
           description: `Visualize results from multiple data sources simultaneously.`,
           name: "Grafana Dashboards",
         }}
-        href="/docs/ecosystem-roles/validator/monitoring/grafana/"
+        href="/docs/node/monitoring/grafana/"
       ></DetailedFeatureLink>
       <DetailedFeatureLink
         feature={{
@@ -102,7 +102,7 @@ export const MonitoringArea = () => {
           description: `Horizontally scalable, highly available, multi-tenant log aggregation system.`,
           name: "Loki Log Management",
         }}
-        href="/docs/ecosystem-roles/validator/monitoring/loki/"
+        href="/docs/node/monitoring/loki/"
       ></DetailedFeatureLink>
     </div>
   );

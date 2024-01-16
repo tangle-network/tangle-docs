@@ -8,17 +8,15 @@ import Callout from '/components/Callout';
 ## Troubleshooting
 
 <Callout>
-**Logs**
+### Logs
 
 If you'd like to run the node with verbose logs, you may add the following arguments during initial setup. Adjust the target for the desired logging level (debug | error | info| trace | warn):
 
 ```bash
--ldkg=debug \
--ldkg_metadata=debug \
--lruntime::offchain=debug \
--ldkg_proposal_handler=debug \
--ldkg_proposals=debug
+RUST_LOG=runtime=debug ./target/release/<YOUR-NODE-TEMPLATE> --dev
 ```
+
+Refer substrate [doc](https://docs.substrate.io/test/debug/) for more details
 
 </Callout>
 
@@ -61,14 +59,6 @@ After installation, ensure you've added /opt/homebrew/bin to your PATH:
 
 ```bash
 echo 'export PATH=/opt/homebrew/bin:$PATH' >> ~/.bash_profile
-```
-
-#### Building dkg-substrate
-
-To build dkg-substrate in --release mode using the aarch64-apple-darwin Rust toolchain, set the required environment variables:
-
-```bash
-echo 'export RUSTFLAGS="-L /opt/homebrew/lib"' >> ~/.bash_profile
 ```
 
 #### Dependencies
