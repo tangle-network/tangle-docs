@@ -40,29 +40,26 @@ const theme = {
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href={`/images/favicon-${systemTheme}/apple-touch-icon.png`}
+          href={`/images/favicon/apple-touch-icon.png`}
         />
         <link
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href={`/images/favicon-${systemTheme}/favicon-32x32.png`}
+          href={`/images/favicon/favicon-32x32.png`}
         />
         <link
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href={`/images/favicon-${systemTheme}/favicon-16x16.png`}
+          href={`/images/favicon/favicon-16x16.png`}
         />
         <link
           rel="mask-icon"
-          href={`/images/favicon-${systemTheme}/webb.svg`}
+          href={`/images/favicon/safari-pinned-tab.svg`}
           color="#000000"
         />
-        <link
-          rel="shortcut icon"
-          href={`/images/favicon-${systemTheme}/favicon.ico`}
-        />
+        <link rel="shortcut icon" href={`/images/favicon/favicon.ico`} />
         <meta name="msapplication-TileColor" content="#000000" />
         <meta name="theme-color" content="#1F1D2B" />
         <meta name="twitter:card" content="summary_medium_image" />
