@@ -66,22 +66,14 @@ export const DappsArea = () => {
         }}
         href="https://app.webb.tools"
       />
-      <DetailedFeatureLink
+      {/* <DetailedFeatureLink
         feature={{
           Icon: BeakerIcon,
           description: `Our easy-to-use testnet faucet allows you to claim test tokens with just a few clicks. Start experimenting with Hubble Bridge today.`,
           name: "Faucet dApp",
         }}
         href="https://faucet.tangle.tools"
-      />
-      <DetailedFeatureLink
-        feature={{
-          Icon: ChartBarIcon,
-          description: `The DKG Stats dApp provides insights into the DKG protocol running on the Tangle Network.`,
-          name: "DKG Stats dApp",
-        }}
-        href="https://stats.tangle.tools"
-      />
+      /> */}
       <DetailedFeatureLink
         feature={{
           Icon: ChartSquareBarIcon,

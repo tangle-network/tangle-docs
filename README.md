@@ -52,7 +52,7 @@ navigation.
 
     ```bash
     # create a new folder to get going
-    git clone https://github.com/webb-tools/webb-docs.git
+    git clone https://github.com/webb-tools/tangle-docs.git
     ```
 
 2.  **Install dependencies**
@@ -60,7 +60,7 @@ navigation.
     Navigate into your new site’s directory and install all dependencies.
 
     ```bash
-    cd webb-docs/
+    cd tangle-docs/
     yarn install
     ```
 
