@@ -61,7 +61,7 @@ jobs:
       - name: Link Checker
         uses: lycheeverse/lychee-action@v1.9.0
         with:
-          args: --base, --verbose --no-progress './**/*.md' './**/*.html' './**/*.mdx'
+          args: --base --verbose --no-progress './**/*.md' './**/*.html' './**/*.mdx'
           fail: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
