@@ -59,8 +59,9 @@ jobs:
           access_token: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/checkout@v3
       - name: Link Checker
-        uses: lycheeverse/lychee-action@v1.5.4
+        uses: lycheeverse/lychee-action@v1.9.0
         with:
+          args: --verbose --no-progress './**/*.md' './**/*.html' './**/*.mdx'
           fail: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

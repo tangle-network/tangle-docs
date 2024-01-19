@@ -55,10 +55,10 @@ Controller accounts are deprecated in Substrate. For more information, [see this
 It is now time to set up our validator. We will do the following:
 
 1. Bond the TNT of the Stash account on the Tangle Network. These TNT will be put at stake for the security of the network and can be slashed.
-2. Select the [staking proxy account](./proxyaccount) account. This is the account that will decide when to start or stop validating.
+2. Select the [staking proxy account](./proxyaccount.mdx) account. This is the account that will decide when to start or stop validating.
 
 <Callout>
-See how to setup a [proxy account](./proxyaccount)
+See how to setup a [proxy account](./proxyaccount.mdx)
 </Callout>
 
 First, go to the Staking section. Click on "Account Actions", and then the "+ Stash" button.
@@ -69,11 +69,11 @@ Make sure not to bond all your TNT balance since you will be unable to pay trans
 
 **Stash account** - Select your Stash account. In this example, we will bond 1 DOT, where the minimum bonding amount is 1. Make sure that your Stash account contains at least this much. You can, of course, stake more than this.
 
-**Staking proxy account** - Select the staking [proxy account](./proxyaccount) created earlier. This account will also need a small amount of DOT in order to start and stop validating.
+**Staking proxy account** - Select the staking [proxy account](./proxyaccount.mdx) created earlier. This account will also need a small amount of DOT in order to start and stop validating.
 
 **Value bonded** - How much DOT from the Stash account you want to bond/stake. Note that you do not need to bond all of the DOT in that account. Also note that you can always bond more DOT later. However, withdrawing any bonded amount requires the duration of the unbonding period. On Kusama, the unbonding period is 7 days. On Polkadot, the planned unbonding period is 28 days.
 
-**Payment destination** - The account where the rewards from validating are sent. More info here. Payouts can go to any custom address. If you'd like to redirect payments to an account that is neither the staking [proxy account](./proxyaccount) nor the stash account, set one up. Note that it is extremely unsafe to set an exchange address as the recipient of the staking rewards.
+**Payment destination** - The account where the rewards from validating are sent. More info here. Payouts can go to any custom address. If you'd like to redirect payments to an account that is neither the staking [proxy account](./proxyaccount.mdx) nor the stash account, set one up. Note that it is extremely unsafe to set an exchange address as the recipient of the staking rewards.
 
 Once everything is filled in properly, click `Bond` and sign the transaction with your Stash account.
 
@@ -91,7 +91,7 @@ In order to participate in the tangle protocol, block production, and block fina
 - Grandpa key (Ed25519)
 - ImOnline key (Sr25519)
 
-See the guides for [launching Tangle Network with Docker](/docs/validator/deploy-with-docker/validator-node/) and [Launching with Systemd](/docs/validator/systemd/validator-node/) for exact guides on this step.
+See the guides for [launching Tangle Network with Docker](../docker-node.mdx) and [Launching with Systemd](../systemd.mdx) for exact guides on this step.
 
 Once your node and keys are setup and your node is synced, proceed to the following:
 

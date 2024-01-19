@@ -95,7 +95,7 @@ const NetworkInfo = () => {
       rpcUrl: "https://testnet-rpc.tangle.tools",
       wssUrl: "wss://testnet-rpc.tangle.tools",
       explorerUrls: [
-        { name: "BlockScout", url: "https://explorer.tangle.tools" },
+        { name: "BlockScout", url: "https://testnet-explorer.tangle.tools" },
         {
           name: "PolkadotJS",
           url: "https://polkadot.js.org/apps/?rpc=wss://testnet-rpc.tangle.tools#/explorer",
