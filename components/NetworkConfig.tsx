@@ -19,7 +19,7 @@ const NetworkCard = ({
       <div className={styles.networkType}>
         {type} {cardTitle}
       </div>
-      <div className={styles.titleContainer} onClick={toggleCollapse}>
+      <div className={styles.titleContainer}>
         <h2 className={styles.networkTitle}>{network}</h2>
       </div>
       <table className={styles.table}>
