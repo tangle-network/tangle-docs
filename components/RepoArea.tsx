@@ -30,14 +30,6 @@ export const StatsdApp = () => {
     <div className="grid grid-cols-1 mt-10 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-10 lg:gap-x-8 lg:gap-y-12">
       <DetailedFeatureLink
         feature={{
-          Icon: ChartBarIcon,
-          description: `The Stats dApp provides insights into the DKG protocol running on the Tangle Network.`,
-          name: "Tangle DKG Stats dApp",
-        }}
-        href="https://stats.tangle.tools"
-      ></DetailedFeatureLink>
-      <DetailedFeatureLink
-        feature={{
           Icon: GitHubIcon,
           description: "Monorepo for Webb dApps",
           name: "webb-dapp",

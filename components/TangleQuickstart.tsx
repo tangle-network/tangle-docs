@@ -78,7 +78,7 @@ export const MonitoringArea = () => {
           description: `Power your metrics and alerting with the leading open-source monitoring solution.`,
           name: "Prometheus Setup",
         }}
-        href="docs/node/monitoring/prometheus/"
+        href="/docs/node/monitoring/prometheus/"
       ></DetailedFeatureLink>
       <DetailedFeatureLink
         feature={{

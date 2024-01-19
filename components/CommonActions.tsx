@@ -52,20 +52,13 @@ const features = [
     href: "https://polkadot.js.org/apps/?rpc=wss://testnet-rpc.tangle.tools#/democracy",
     action: "Interact with Governance",
   },
-  {
-    Icon: BeakerIcon,
-    title: "Faucet",
-    description: `Our easy-to-use testnet faucet allows you to claim test tokens with just a few clicks. Start experimenting with Hubble Bridge today.`,
-    href: "https://faucet.tangle.tools",
-    action: "Go to Faucet",
-  },
-  {
-    Icon: ChartBarIcon,
-    title: "DKG Stats dApp",
-    description: `The DKG Stats dApp provides insights into the DKG protocol running on the Tangle Network.`,
-    href: "https://stats.tangle.tools",
-    action: "View DKG Functionality",
-  },
+  // {
+  //   Icon: BeakerIcon,
+  //   title: "Faucet",
+  //   description: `Our easy-to-use testnet faucet allows you to claim test tokens with just a few clicks. Start experimenting with Hubble Bridge today.`,
+  //   href: "https://faucet.tangle.tools",
+  //   action: "Go to Faucet",
+  // },
 ];
 
 const Card = ({ Icon, title, description, href, action }) => (
