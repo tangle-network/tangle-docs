@@ -30,8 +30,8 @@ const TangleLogo = (props) => (
         y2="161.468"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#8E59FF" />
-        <stop offset="1" stop-color="#6888F9" />
+        <stop stopColor="#8E59FF" />
+        <stop offset="1" stopColor="#6888F9" />
       </linearGradient>
       <linearGradient
         id="paint1_linear_4390_53415"
@@ -41,8 +41,8 @@ const TangleLogo = (props) => (
         y2="38.5305"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#8E59FF" />
-        <stop offset="1" stop-color="#6888F9" />
+        <stop stopColor="#8E59FF" />
+        <stop offset="1" stopColor="#6888F9" />
       </linearGradient>
       <clipPath id="clip0_4390_53415">
         <rect
