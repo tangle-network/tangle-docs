@@ -8,7 +8,7 @@
     "start": "next start",
     "build": "next build",
     "export": "next export",
-    "lint": "next lint",
+    "lint": "next lint && yarn format",
     "schema": "turbo-gen ./public/schema.json",
     "format": "prettier --write \"{components,pages}/**/*.{mdx,ts,js,jsx,tsx,json}\" ",
     "format:check": "prettier --check \"{components,pages}/**/*.{mdx,ts,js,jsx,tsx,json}\" "

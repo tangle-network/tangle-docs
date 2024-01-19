@@ -9,7 +9,7 @@ import Callout from "../../../../components/Callout";
 # Alert Manager Setup
 
 The following is a guide outlining the steps to setup AlertManager to send alerts when a Tangle node or DKG is being disrupted. If you do not have Tangle node setup yet, please
-review the **Tangle Node Quickstart** setup guide [here](/docs/node/quickstart/).
+review the **Tangle Node Quickstart** setup guide [here](../quickstart.mdx).
 
 In this guide we will configure the following modules to send alerts from a running Tangle node.
 
@@ -20,11 +20,11 @@ In this guide we will configure the following modules to send alerts from a runn
 The Alertmanager handles alerts sent by client applications such as the Prometheus server. It takes care of deduplicating, grouping,
 and routing them to the correct receiver integration such as email, PagerDuty, or OpsGenie. It also takes care of silencing and
 inhibition of alerts. To learn more about Alertmanager, please
-visit the official docs site [here](https://prometheus.io/docs/alerting/latest/alertmanager/).
+visit the official docs site [here](https://prometheus.io/docs/alerting/latest/alertmanager).
 
 ### Getting Started
 
-Let's first start by downloading the latest releases of the above mentioned modules (Alertmanager).
+Start by downloading the latest releases of the [AlertManager](https://prometheus.io/docs/alerting/latest/alertmanager).
 
 <Callout type="info">
   This guide assumes the user has root access to the machine running the Tangle node, and following the below steps inside that machine. As well as,
@@ -57,7 +57,7 @@ Let's first start by downloading the latest releases of the above mentioned modu
     wget https://github.com/prometheus/alertmanager/releases/download/v0.24.0/alertmanager-0.24.0.linux-arm64.tar.gz &&
     ```
 
-    For other linux distrubutions please visit official release page [here](https://github.com/prometheus/prometheus/releases).
+    For other linux distrubutions visit the [Prometheus releases](https://github.com/prometheus/prometheus/releases).
 
   </Tab>
   <Tab>
@@ -133,7 +133,7 @@ Great! You have now installed and setup your environment. The next series of ste
 
 ## Configuration
 
-If you are interested to see how we configure the Tangle Network nodes for monitoring check out https://github.com/webb-tools/tangle/tree/main/monitoring.
+For implementation examples, [refer to our GitHub.](https://github.com/webb-tools/tangle/tree/main/monitoring).
 
 ### Prometheus
 
@@ -147,7 +147,7 @@ sudo nano /etc/prometheus/rules.yml
 ```
 
 We are going to create 2 basic rules that will trigger an alert in case the instance is down or the CPU usage crosses 80%.
-You can create all kinds of rules that can triggered, for an exhausted list of rules see our rules list [here](https://github.com/webb-tools/tangle/blob/main/monitoring/prometheus/rules.yml).
+You can create all kinds of rules that can triggered, [refer to our full list.](https://github.com/webb-tools/tangle/blob/main/monitoring/prometheus/rules.yml).
 
 Add the following lines and save the file:
 
@@ -192,8 +192,8 @@ promtool check config /etc/prometheus/prometheus.yml
 
 We can use a Gmail address to send the alert emails. For that, we will need to generate an app password from our Gmail account.
 
-Note: we recommend you here to use a dedicated email address for your alerts. Review Google's own guide for
-proper set up [here](https://support.google.com/mail/answer/185833?hl=en).
+Note: we recommend you here to use a dedicated email address for your alerts. [Review Google's own guide for
+proper set-up](https://support.google.com/mail/answer/185833?hl=en).
 
 ### Slack notifications
 

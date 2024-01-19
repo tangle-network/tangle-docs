@@ -9,12 +9,12 @@ import Callout from "../../../../components/Callout";
 # Loki Log Management
 
 The following is a guide outlining the steps to setup Loki for log management of a Tangle node. If you do not have Tangle node setup yet, please
-review the **Tangle Node Quickstart** setup guide [here](/docs/node/quickstart/).
+review the **Tangle Node Quickstart** setup guide [here](https://docs.tangle.tools/docs/node/quickstart//).
 
 In this guide we will configure the following modules to scrape metrics from the running Tangle node.
 
-- **Loki** provides log aggregation system and metrics.
-- **Promtail** is the agent responsible for gathering logs, and sending them to Loki.
+- **Loki** provides log aggregation system and metrics. [Download](https://grafana.com/docs/loki/latest/setup/install/)
+- **Promtail** is the agent responsible for gathering logs, and sending them to Loki.[Download](https://grafana.com/docs/loki/latest/send-data/promtail/installation/)
 
 Let's first start by downloading the latest releases of the above mentioned modules (Loki, Promtail download pages).
 
@@ -48,7 +48,7 @@ Let's first start by downloading the latest releases of the above mentioned modu
     curl -O -L "https://github.com/grafana/loki/releases/download/v2.7.0/loki-linux-arm64.zip"
     ```
 
-    For other linux distrubutions please visit official release page [here](https://github.com/grafana/loki/releases).
+    For other linux distrubutions, [visit the official Loki release page](https://github.com/grafana/loki/releases).
 
   </Tab>
   <Tab>
@@ -148,12 +148,12 @@ The next series of steps will be configuring each service.
 
 ## Configuration
 
-If you are interested to see how we configure the Tangle Network nodes for monitoring check out https://github.com/webb-tools/tangle/tree/main/monitoring.
+For configuration examples, see [Monitoring](https://github.com/webb-tools/tangle/tree/main/monitoring).
 
 ### Loki
 
 Loki's configuration details what ports to listen to, how to store the logs, and other configuration options.
-There are many other config options for Loki, and you can read more about Loki configuration at: https://grafana.com/docs/loki/latest/configuration/
+There are many other config options for Loki, [read more.](https://grafana.com/docs/loki/latest/configuration/)
 
 Let’s create the file:
 
@@ -216,7 +216,7 @@ table_manager:
 
 The Promtail configuration details what logs to send to Loki. In the below configuration we are indicating
 to send the logs to Loki from the `/var/log/dkg` directory. This directory can be changed based on what logs you
-want to pick up. There are many other config options for Promtail, and you can read more about Promtail configuration at: https://grafana.com/docs/loki/latest/clients/promtail/configuration/
+want to pick up. There are many other config options for Promtail, refer to the [Promtail documentation](https://grafana.com/docs/loki/latest/clients/promtail/configuration/)
 
 Let’s create the file:
 
