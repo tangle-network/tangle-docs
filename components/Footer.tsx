@@ -27,15 +27,16 @@ function FooterHeader({ children }: { children: ReactNode }) {
 const navigation = {
   general: [
     {
-      name: "Whitepaper",
-      href: "https://eprint.iacr.org/2023/260",
+      name: "Tangle Network Whitepaper",
+      href: "https://github.com/webb-tools/tangle/blob/main/Tangle_Network_Whitepaper_V1.pdf",
     },
     // { name: "FAQ", href: "/faq" },
   ],
   source: [
-    { name: "DKG", href: "https://webb-tools.github.io/dkg-substrate/" },
-    { name: "Relayer", href: "https://webb-tools.github.io/relayer/" },
-    { name: "Webb.js", href: "https://webb-tools.github.io/webb.js/" },
+    {
+      name: "Webb.js API Tools",
+      href: "https://webb-tools.github.io/webb.js/",
+    },
     {
       name: "Solidity",
       href: "https://webb-tools.github.io/protocol-solidity/",
@@ -49,10 +50,9 @@ const navigation = {
   ],
   ecosystem: [
     {
-      name: "Tangle",
+      name: "Tangle Network on Polkadot Apps",
       href: "https://polkadot.js.org/apps/?rpc=wss://testnet-rpc.tangle.tools#/explorer",
     },
-    { name: "DKG Statistics", href: "https://stats.tangle.tools" },
     {
       name: "Hubble Bridge",
       href: "https://app.webb.tools",
@@ -74,7 +74,7 @@ const navigation = {
     },
     {
       name: "Twitter",
-      href: "https://twitter.com/webbprotocol",
+      href: "https://twitter.com/tangle_network",
     },
     {
       name: "Commonwealth",

@@ -22,8 +22,8 @@
     "newWindow": false
   },
   "faucet": {
-    "title": "Faucet",
-    "href": "https://faucet.tangle.tools/",
+    "title": "Faucet on Discord",
+    "href": "https://webb.tools/community",
     "newWindow": true
   },
   "resourcesMenu": {
@@ -61,6 +61,11 @@
     "title": "Community",
     "type": "menu",
     "items": {
+      "communityTwitterNetwork": {
+        "title": "Twitter",
+        "href": "https://twitter.com/tangle_network",
+        "newWindow": true
+      },
       "communityDiscord": {
         "title": "Discord",
         "href": "https://discord.com/invite/cv8EfJu3Tn",
@@ -79,11 +84,6 @@
       "communityTwitterFounder": {
         "title": "Twitter (Founder)",
         "href": "https://twitter.com/zknark",
-        "newWindow": true
-      },
-      "communityTwitterNetwork": {
-        "title": "Twitter (Organization)",
-        "href": "https://twitter.com/webbprotocol",
         "newWindow": true
       }
     }

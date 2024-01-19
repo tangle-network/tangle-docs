@@ -37,7 +37,7 @@ class MyDocument extends Document {
           <NextScript />
           <Script
             defer
-            data-domain="docs.webb.tools"
+            data-domain="docs.tangle.tools"
             src="https://plausible.io/js/script.js"
             strategy="beforeInteractive"
           />
