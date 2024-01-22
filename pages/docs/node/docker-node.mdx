@@ -83,7 +83,7 @@ should paste your SURI when the command asks for it.
 **Account Keys**
 
 ```sh filename="Acco" copy
-# it will ask for your suri, enter it.
+
 docker run --rm -it --platform linux/amd64 --network="host" -v "/var/lib/data" \
 ghcr.io/webb-tools/tangle/tangle:main \
      key insert --base-path /var/lib/tangle/ \
@@ -139,7 +139,7 @@ ghcr.io/webb-tools/tangle/tangle:main \
 To ensure you have successfully generated the keys correctly run:
 
 ```sh filename="ls" copy
-ls ~/webb/tangle/chains/*/keystore
+ls ~/data/validator/<USERNAME>/chains/tangle-testnet/keystore/
 # You should see a some file(s) there, these are the keys.
 ```
 
