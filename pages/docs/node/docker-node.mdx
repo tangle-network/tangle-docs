@@ -49,7 +49,7 @@ docker run --rm -it -v /var/lib/tangle/:/data ghcr.io/webb-tools/tangle/tangle:m
   --base-path /data \
   --rpc-cors all \
   --port 9946 \
-  --telemetry-url "wss://telemetry.polkadot.io/submit/ 0" --name <NODE_NAME>
+  --telemetry-url "wss://telemetry.polkadot.io/submit/ 0"
 ```
 
 <Callout type="info">
@@ -160,7 +160,7 @@ ghcr.io/webb-tools/tangle/tangle:main \
 --wasm-execution compiled \
 --trie-cache-size 0 \
 --validator \
---telemetry-url "wss://telemetry.polkadot.io/submit/ 0" --name <NODE_NAME>
+--telemetry-url "wss://telemetry.polkadot.io/submit/ 0"
 ```
 
 <Callout type="info">
