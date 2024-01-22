@@ -24,19 +24,7 @@ wget https://github.com/webb-tools/tangle/releases/download/<LATEST_RELEASE>/tan
 **Get tangle binary with txpool feature**
 
 ```sh filename="Get binary txpool" copy
-wget https://github.com/webb-tools/tangle/releases/download/<LATEST_RELEASE>/tangle-standalone-txpool-linux-amd64
-```
-
-**Get tangle binary with relayer feature**
-
-```sh filename="Get binary relayer" copy
-wget https://github.com/webb-tools/tangle/releases/download/<LATEST_RELEASE>/tangle-standalone-relayer-linux-amd64
-```
-
-**Get tangle binary with light-client feature**
-
-```sh filename="Get binary light" copy
-wget https://github.com/webb-tools/tangle/releases/download/<LATEST_RELEASE>/tangle-standalone-light-client-linux-amd64
+wget https://github.com/webb-tools/tangle/releases/download/<LATEST_RELEASE>/tangle-txpool-linux-amd64
 ```
 
 ### Synchronize Chain Data
@@ -44,7 +32,7 @@ wget https://github.com/webb-tools/tangle/releases/download/<LATEST_RELEASE>/tan
 Once installed, you can begin syncing your node by running the following command. **Your path may vary depend on whether you used the binary, or built from source**:
 
 ```sh filename="Syncing node" copy
-./tangle-standalone
+./tangle
 ```
 
 Once your node has fully syncronized with Tangle Network you may proceed to setup the
@@ -141,7 +129,7 @@ cargo build --release
 > NOTE: You _must_ use the release builds! The optimizations here are required
 > as in debug mode, it is expected that nodes are not able to run fast enough to produce blocks.
 
-You will now have the `tangle-standalone` binary built in `target/release/` dir
+You will now have the `tangle` binary built in `target/release/` dir
 
 ### Synchronize Chain Data
 
