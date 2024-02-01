@@ -84,7 +84,7 @@ should paste your SURI when the command asks for it.
 
 ```sh filename="Acco" copy
 
-docker run --rm -it --platform linux/amd64 --network="host" -v "/var/lib/data" \
+docker run --rm -it --platform linux/amd64 --network="host"  \
 ghcr.io/webb-tools/tangle/tangle:main \
      key insert --base-path /var/lib/tangle/ \
     --chain tangle-testnet \
@@ -95,7 +95,7 @@ ghcr.io/webb-tools/tangle/tangle:main \
 **Babe Keys**
 
 ```sh filename="Babe" copy
-docker run --rm -it --platform linux/amd64 --network="host" -v "/var/lib/data" \
+docker run --rm -it --platform linux/amd64 --network="host"  \
 ghcr.io/webb-tools/tangle/tangle:main \
     key insert --base-path /var/lib/tangle/ \
     --chain tangle-testnet \
@@ -106,7 +106,7 @@ ghcr.io/webb-tools/tangle/tangle:main \
 **Im-online Keys** - **these keys are optional (required if you are running as a validator)**
 
 ```sh filename="Imonline" copy
-docker run --rm -it --platform linux/amd64 --network="host" -v "/var/lib/data" \
+docker run --rm -it --platform linux/amd64 --network="host"  \
 ghcr.io/webb-tools/tangle/tangle:main \
     key insert --base-path /var/lib/tangle/ \
     --chain tangle-testnet \
@@ -117,7 +117,7 @@ ghcr.io/webb-tools/tangle/tangle:main \
 **Role Keys**
 
 ```sh filename="Role" copy
-docker run --rm -it --platform linux/amd64 --network="host" -v "/var/lib/data" \
+docker run --rm -it --platform linux/amd64 --network="host"  \
 ghcr.io/webb-tools/tangle/tangle:main \
     tangle key insert --base-path /data \
     --chain tangle-testnet \
@@ -128,7 +128,7 @@ ghcr.io/webb-tools/tangle/tangle:main \
 **Grandpa Keys**
 
 ```sh filename="Grandpa" copy
-docker run --rm -it --platform linux/amd64 --network="host" -v "/var/lib/data" \
+docker run --rm -it --platform linux/amd64 --network="host"  \
 ghcr.io/webb-tools/tangle/tangle:main \
     tangle key insert --base-path /data \
     --chain tangle-testnet \
@@ -151,7 +151,7 @@ if you want the node to auto generate the keys, add the `--auto-insert-keys` fla
 To start the node run the following command:
 
 ```sh filename="docker run" copy
-docker run --platform linux/amd64 --network="host" -v "/var/lib/data" --entrypoint ./tangle \
+docker run --platform linux/amd64 --network="host" \
 ghcr.io/webb-tools/tangle/tangle:main \
 --base-path=/data \
 --chain tangle-testnet \
