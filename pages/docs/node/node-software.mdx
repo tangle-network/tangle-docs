@@ -13,18 +13,24 @@ import Callout from "/components/Callout";
 Every release of tangle node includes a Precompiled binary, its currently limited to amd-64 architecture but we plan to
 support more soon. You can view all releases [here](https://github.com/webb-tools/tangle/releases).
 
-In the below commands, substitute `LATEST_RELEASE` with the version you want to use, the current latest version is `0.4.6`
+In the below commands, substitute `LATEST_RELEASE` with the version you want to use, the current latest version is `0.6.1`
 
 **Get tangle binary**
 
+Use this if running a full node or validating.
+
 ```sh filename="Get binary" copy
-wget https://github.com/webb-tools/tangle/releases/download/<LATEST_RELEASE>/tangle-testnet-linux-amd64
+export LATEST_RELEASE=v0.6.1
+wget https://github.com/webb-tools/tangle/releases/download/${LATEST_RELEASE}>/tangle-testnet-linux-amd64
 ```
 
 **Get tangle binary with txpool feature**
 
+The tx-pool feature allows transaction tracing and is only relavant if you are running an EVM explorer. 
+
 ```sh filename="Get binary txpool" copy
-wget https://github.com/webb-tools/tangle/releases/download/<LATEST_RELEASE>/tangle-txpool-linux-amd64
+export LATEST_RELEASE=v0.6.1
+wget https://github.com/webb-tools/tangle/releases/download/${LATEST_RELEASE}/tangle-txpool-linux-amd64
 ```
 
 ### Synchronize Chain Data
