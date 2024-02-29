@@ -63,7 +63,13 @@
   },
   "prettier": {
     "embeddedLanguageFormatting": "off",
-    "htmlWhitespaceSensitivity": "strict"
+    "htmlWhitespaceSensitivity": "strict",
+    "overrides": [
+      {
+        "files": "*.mdx",
+        "options": { "parser": "mdx" }
+      }
+    ]
   },
   "engines": {
     "npm": "please-use-yarn",
