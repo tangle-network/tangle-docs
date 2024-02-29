@@ -67,7 +67,10 @@
     "overrides": [
       {
         "files": "*.mdx",
-        "options": { "parser": "mdx" }
+        "options": {
+          "parser": "mdx",
+          "plugins": ["prettier/parser-babel"]
+        }
       }
     ]
   },
