@@ -7,19 +7,23 @@ tags:
 
 
 
-### Prototypical Genesis Allocations
+### Overview: Genesis Allocations
 
-Using aggregated data on successful networks as a benchmark,Tangle Network has tailored its genesis allocation to meet its unique needs and goals. 
+Observing successful networks as a benchmark, Tangle Network has tailored its genesis allocation to meet its unique needs and goals. 
 
 ![Allocation Pie Cahrt](/allocation-pie-chart.png)
 
 
-### Vesting Schedule
+### Vesting Schedules
 Vesting schedules in Tangle Network are meticulously designed to promote long-term commitment and ensure a phased distribution of tokens. The network adopts a structured vesting strategy with distinct categories:
 
-- **A-Vesting**: This category entails a vesting period of 2 years with a 1-year cliff. This means that upon completing the first year, the allocation for that year vests immediately, ensuring a staggered release of tokens. The remaining year is distributed monthly in 1/12 increments. 
+**A-Vesting:** This category is characterized by a vesting period of 2 years, with a 12-month cliff. This means that no tokens are released in the first year. After completing the first year (the cliff period), the tokens allocated for that year become immediately available in full. The remainder of the allocation is then distributed monthly in equal 1/12 increments over the second year, facilitating a gradual release of tokens. This approach aligns with the policy of Immediate Vesting Post-Cliff with Retroactive Accumulation.
 
-- **B-Vesting**: Upon claiming, 5% of the tokens become immediately liquid, while the remaining 95% of tokens under B-Vesting are distributed over 2 years with a commencement one month post-allocation. Post-cliff, tokens vest linearly with each blockchain block, distributing a proportionate amount of tokens until the conclusion of the 2-year period. 
+**B-Vesting:** For participants in this category, a small portion of the tokens (as specified, 5% or a different predetermined percentage based on individual agreements) becomes immediately available upon claiming. The remaining 95% of the tokens are then vested over a period of 2 years, with the vesting commencing one month after allocation. The first month serves as a cliff, during which no tokens are vested. Following this cliff, the tokens begin to vest linearly each month, ensuring a steady distribution until the end of the 2-year period. This vesting schedule adheres to the policy of Immediate Vesting Post-Cliff with Retroactive Accumulation, allowing for a proportional monthly distribution of tokens.
+
+**C-Vesting:** This vesting category is tailored for airdrop participants, featuring a 2-year vesting period with a notably short cliff of just 1 month. A predefined percentage of tokens becomes immediately available at the start. Subsequent to the cliff period, the remaining tokens are distributed on a monthly basis, ensuring a consistent flow of tokens into circulation. This strategy also follows the Immediate Vesting Post-Cliff with Retroactive Accumulation policy, aiming to reward early supporters while promoting long-term holding.
+
+
 
 
 ### Detailed Allocation Overview
@@ -27,25 +31,81 @@ Vesting schedules in Tangle Network are meticulously designed to promote long-te
 The Tangle Network's allocation model is designed to support our foundational structures, incentivize community participation, and ensure long-term sustainability and success:
 
 - **Contributors** allocation supports the core teams, core-team investors and advisors essential for the network's development and strategic direction.
-- **Airdrops** are aimed at rewarding early supporters and participants, fostering a strong and engaged community from the outset.
-- **Treasury** funds are earmarked for community decisionmaking, future development, network success programs, liquidity provisions, and partnerships critical for launch and growth.
+- **Airdrops** are aimed at rewardingand incentivizing early supporters and participants, fostering a strong and engaged community from the outset.
+- **Governance-Managed** funds are earmarked for community decisionmaking, future development, network success programs, liquidity provisions, and partnerships critical for launch and growth.
 
 
-Here is a breakdown of the Tangle Network's token allocation:
 
-| Category                    | Allocation         | Subtotals                  | Vesting            |
-|-----------------------------|--------------------|----------------------------|--------------------|
-| **Contributors**            |                    | **60.00%**                 |                    |
-| Foundation                  | 15.00%             |                            | None               |
-| Webb                        | 31.36%             |                            | A-Vesting          |
-| Investors and Advisors      | 13.64%             |                            | A-Vesting          |
-| **Airdrops**                |                    | **5.00%**                  |                    |
-| Leaderboard                 | 2.00%              |                            | B-Vesting          |
-| EDG Genesis                 | 1.00%              |                            | B-Vesting          |
-| EDG Snapshot                | 1.00%              |                            | B-Vesting          |
-| DOT Validators Snapshot     | 1.00%              |                            | B-Vesting          |
-| **Treasury**                |                    | **35.00%**                 |                    |
-| Treasury Allocation         | 20.00%             |                            | None               |
-| Recom. Budgeted for Network Success & Liquidity Programs | 14.00% |           | None               |
-| Recomd. Budgeted for Launch Partners | 1.00%     |                            | None               |
-| **Total**                   |                    | **100.00%**                |                    |
+| Allocation Category | Entity Name              | Allocated Share (%) | Vesting Plan | Cliff (Months) | Vesting Period (Months) | Immediate Liquidity (%) | Initial Liquid Tokens | Cliff-Release Tokens | Monthly Vesting Rate | Total Tokens Allocated |
+|---------------------|--------------------------|---------------------|--------------|----------------|-------------------------|-------------------------|-----------------------|----------------------|-----------------------|------------------------|
+| Contributors        | Webb (Developer)         | 29.93%              | B-Vesting    | 12             | 24                      | 5%                      | 1,424,500.00          | 13,532,750.00        | 2,255,458.33          | 28,490,000.00         |
+| Contributors        | Investors                | 13.64%              | A-Vesting    | 12             | 24                      | 0%                      | 0.00                  | 6,820,000.00         | 1,136,666.67          | 13,640,000.00         |
+| Contributors        | Indiv. Contributors     | 1.44%               | B-Vesting    | 12             | 48                      | 5%                      | 71,750.00             | 340,812.50           | 37,868.06             | 1,435,000.00          |
+| Contributors Total  |                          | 45.00%              |              |                |                         |                         | 1,496,250.00          |                      |                       | 43,565,000.00         |
+|---------------------|--------------------------|---------------------|--------------|----------------|-------------------------|-------------------------|-----------------------|----------------------|-----------------------|------------------------|
+| Governance-Managed  | Treasury                 | 35.00%              | n/a          | n/a            | n/a                     | 100%                    | 35,000,000.00         | n/a                  | n/a                   | 35,000,000.00         |
+| Governance-Managed  | Foundation               | 15.00%              | n/a          | n/a            | n/a                     | 100%                    | 15,000,000.00         | n/a                  | n/a                   | 15,000,000.00         |
+| Governance-Managed Total|                       | 50%                 |              |                |                         |                         | 50,000,000.00         |                      |                       | 50,000,000.00         |
+|---------------------|--------------------------|---------------------|--------------|----------------|-------------------------|-------------------------|-----------------------|----------------------|-----------------------|------------------------|
+| Airdrops            | Leaderboard Participants| 2%                  | C-Vesting    | 1              | 24                      | 5%                      | 100,000.00            | 79,166.67            | 82,608.70             | 2,000,000.00          |
+| Airdrops            | DOT Validators Snapshot | 1%                  | C-Vesting    | 1              | 24                      | 5%                      | 50,000.00             | 39,583.33            | 41,304.35             | 1,000,000.00          |
+| Airdrops            | EDG Genesis Participants| 1%                  | C-Vesting    | 1              | 24                      | 5%                      | 50,000.00             | 39,583.33            | 41,304.35             | 1,000,000.00          |
+| Airdrops            | EDG 2023 Snapshot       | 1%                  | C-Vesting    | 1              | 24                      | 5%                      | 50,000.00             | 39,583.33            | 41,304.35             | 1,000,000.00          |
+| Airdrops Subtotal   |                          | 5%                  |              |                |                         |                         | 250,000.00            | 197,916.67           |                       | 5,000,000.00          |
+|---------------------|--------------------------|---------------------|--------------|----------------|-------------------------|-------------------------|-----------------------|----------------------|-----------------------|------------------------|
+| Total Supply        |                          | 100%                |              |                |                         |                         | 51,746,250.00         |                      |                       | 100,000,000.00        |
+
+
+
+# Token Allocation and Vesting Schedule Formulas
+
+This section outlines the formulas used to calculate various aspects of our token allocation and vesting schedules, presented in a way that's compatible with Markdown rendering.
+
+### Initial Liquid Tokens
+```plaintext
+=Total_Tokens_Allocated * Immediate_Liquidity_Percentage
+```
+**Description:** Calculates the number of tokens that are immediately liquid and available at launch, based on the total tokens allocated to an entity and the percentage designated as immediately liquid.
+
+### Cliff-Release Tokens (for entities with a retroactive vesting cliff)
+```plaintext
+=Total_Tokens_Allocated * (Cliff_Duration / Total_Vesting_Period)
+```
+**Description:** For allocations with a retroactive vesting cliff, this calculates the number of tokens released at the end of the cliff period, based on the total allocation and the proportion of the vesting period represented by the cliff.
+
+### Monthly Vesting Rate (for entities with post-cliff monthly vesting)
+```plaintext
+=(Total_Tokens_Allocated - Initial_Liquid_Tokens - Cliff_Release_Tokens) / (Vesting_Period - Cliff_Duration)
+```
+**Description:** Determines the monthly rate at which tokens vest after the cliff period, considering the total tokens allocated minus any initially liquid tokens and tokens released at the cliff, divided by the remaining months of the vesting period.
+
+
+### Special Considerations
+For entities without a vesting plan (e.g., Treasury, Foundation)
+**Entire allocation is considered liquid at launch,** though it is only utilized through governance and so not 'liquid' in the traditional tokenomic sense.
+```plaintext
+=Total_Tokens_Allocated
+```
+
+
+## Definitions
+
+1. **Allocation Category**: A grouping used to categorize the distribution of tokens or shares within a project or organization, typically indicating the purpose or recipient of the allocation.
+2. **Entity Name**: The name of the individual or organization receiving the allocation of tokens or shares.
+3. **Allocated Share (%)**: The percentage of the total token supply allocated to a specific entity or category.
+4. **Vesting Plan**: A structured timeline outlining how allocated tokens or shares become available to the recipient over a period, usually to incentivize long-term commitment or performance.
+5. **Cliff (Months)**: The initial period after which a portion of the allocated tokens or shares becomes accessible to the recipient, often used as a safeguard against early departures or underperformance.
+6. **Vesting Period (Months)**: The total duration over which allocated tokens or shares gradually become available to the recipient according to the vesting schedule.
+7. **Immediate Liquidity (%)**: The percentage of allocated tokens or shares that are immediately accessible or liquid upon allocation, without being subject to vesting restrictions.
+8. **Initial Liquid Tokens**: The number of tokens or shares initially available for immediate use or transfer upon allocation.
+9. **Cliff-Release Tokens**: The number of tokens or shares released after the cliff period, becoming accessible to the recipient according to the vesting schedule.
+10. **Monthly Vesting Rate**: The rate at which tokens or shares vest on a monthly basis after the cliff period, determining the pace of distribution to the recipient.
+11. **Total Tokens Allocated**: The overall sum of tokens or shares allocated to a specific entity or category, representing the total amount of ownership or participation assigned.
+12. **Contributors**: Individuals or entities actively involved in contributing to the project's development, growth, or success.
+13. **Governance-Managed**: Tokens allocated for governance purposes and managed by a designated entity or organization within the project, typically used for decision-making or protocol governance.
+14. **Airdrops**: Distribution of tokens to a specific group of recipients, often as a promotional or community-building activity, without requiring direct financial investment.
+15. **Leaderboard Participants**: Participants who engage with the project's leaderboard, often in competitions or challenges, and receive tokens as rewards or incentives.
+16. **DOT Validators Snapshot**: Participants included in a specific snapshot of DOT (Polkadot) validators and rewarded with tokens accordingly.
+17. **EDG Genesis Participants**: Participants involved in the project's genesis event or initial launch phase and eligible for token rewards.
+18. **EDG 2023 Snapshot**: Participants included in a snapshot taken in the year 2023 and eligible for token rewards based on their inclusion in the snapshot.
+19. **Total Supply**: The overall quantity of tokens or shares in existence within the project or organization, representing the maximum potential ownership or participation.
