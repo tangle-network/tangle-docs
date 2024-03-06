@@ -2,13 +2,21 @@
   "index": {
     "title": "Overview"
   },
+  "launch": "Network Launch",
   "tokenomics": "Tokenomics",
   "usecases": "Use Cases",
+  "services": "Services",
+  "---": {
+    "type": "separator"
+  },
   "network-information-configuration": "Network Configuration",
   "build": "Build",
   "node": "Node",
-  "use": "Use",
+  "use": "Basic Blockchain Interactions",
   "governance": "Govern",
+  "": {
+    "type": "separator"
+  },
   "community": "Community",
   "faq": "FAQ",
   "glossary": "Glossary",
