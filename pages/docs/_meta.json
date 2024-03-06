@@ -12,7 +12,7 @@
   "network-information-configuration": "Network Configuration",
   "build": "Build",
   "node": "Node",
-  "use": "Basic Blockchain Interactions",
+  "use": "Basics",
   "governance": "Govern",
   "": {
     "type": "separator"
