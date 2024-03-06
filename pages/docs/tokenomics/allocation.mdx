@@ -5,17 +5,18 @@ tags:
   - Tokenomics
 ---
 
+import AllocationTable from 'components/AllocationTable.tsx';
 
 
 ### Overview: Genesis Allocations
 
 Observing successful networks as a benchmark, Tangle Network has tailored its genesis allocation to meet its unique needs and goals. 
 
-![Allocation Pie Cahrt](/allocation-pie-chart.png)
+![Allocation Pie Chart](/../public/images/allocation-pie-chart.png)
 
 
 ### Vesting Schedules
-Vesting schedules in Tangle Network are meticulously designed to promote long-term commitment and ensure a phased distribution of tokens. The network adopts a structured vesting strategy with distinct categories:
+Vesting schedules in Tangle Network are designed to promote long-term commitment and ensure a phased distribution of tokens. The network adopts a structured vesting strategy with distinct categories:
 
 **A-Vesting:** This category is characterized by a vesting period of 2 years, with a 12-month cliff. This means that no tokens are released in the first year. After completing the first year (the cliff period), the tokens allocated for that year become immediately available in full. The remainder of the allocation is then distributed monthly in equal 1/12 increments over the second year, facilitating a gradual release of tokens. This approach aligns with the policy of Immediate Vesting Post-Cliff with Retroactive Accumulation.
 
@@ -31,29 +32,10 @@ Vesting schedules in Tangle Network are meticulously designed to promote long-te
 The Tangle Network's allocation model is designed to support our foundational structures, incentivize community participation, and ensure long-term sustainability and success:
 
 - **Contributors** allocation supports the core teams, core-team investors and advisors essential for the network's development and strategic direction.
-- **Airdrops** are aimed at rewardingand incentivizing early supporters and participants, fostering a strong and engaged community from the outset.
+- **Airdrops** are aimed at rewardingg and incentivizing validators, early supporters and participants, fostering a strong and engaged community from the outset.
 - **Governance-Managed** funds are earmarked for community decisionmaking, future development, network success programs, liquidity provisions, and partnerships critical for launch and growth.
 
-
-
-| Allocation Category | Entity Name              | Allocated Share (%) | Vesting Plan | Cliff (Months) | Vesting Period (Months) | Immediate Liquidity (%) | Initial Liquid Tokens | Cliff-Release Tokens | Monthly Vesting Rate | Total Tokens Allocated |
-|---------------------|--------------------------|---------------------|--------------|----------------|-------------------------|-------------------------|-----------------------|----------------------|-----------------------|------------------------|
-| Contributors        | Webb (Developer)         | 29.93%              | B-Vesting    | 12             | 24                      | 5%                      | 1,424,500.00          | 13,532,750.00        | 2,255,458.33          | 28,490,000.00         |
-| Contributors        | Investors                | 13.64%              | A-Vesting    | 12             | 24                      | 0%                      | 0.00                  | 6,820,000.00         | 1,136,666.67          | 13,640,000.00         |
-| Contributors        | Indiv. Contributors     | 1.44%               | B-Vesting    | 12             | 48                      | 5%                      | 71,750.00             | 340,812.50           | 37,868.06             | 1,435,000.00          |
-| Contributors Total  |                          | 45.00%              |              |                |                         |                         | 1,496,250.00          |                      |                       | 43,565,000.00         |
-|---------------------|--------------------------|---------------------|--------------|----------------|-------------------------|-------------------------|-----------------------|----------------------|-----------------------|------------------------|
-| Governance-Managed  | Treasury                 | 35.00%              | n/a          | n/a            | n/a                     | 100%                    | 35,000,000.00         | n/a                  | n/a                   | 35,000,000.00         |
-| Governance-Managed  | Foundation               | 15.00%              | n/a          | n/a            | n/a                     | 100%                    | 15,000,000.00         | n/a                  | n/a                   | 15,000,000.00         |
-| Governance-Managed Total|                       | 50%                 |              |                |                         |                         | 50,000,000.00         |                      |                       | 50,000,000.00         |
-|---------------------|--------------------------|---------------------|--------------|----------------|-------------------------|-------------------------|-----------------------|----------------------|-----------------------|------------------------|
-| Airdrops            | Leaderboard Participants| 2%                  | C-Vesting    | 1              | 24                      | 5%                      | 100,000.00            | 79,166.67            | 82,608.70             | 2,000,000.00          |
-| Airdrops            | DOT Validators Snapshot | 1%                  | C-Vesting    | 1              | 24                      | 5%                      | 50,000.00             | 39,583.33            | 41,304.35             | 1,000,000.00          |
-| Airdrops            | EDG Genesis Participants| 1%                  | C-Vesting    | 1              | 24                      | 5%                      | 50,000.00             | 39,583.33            | 41,304.35             | 1,000,000.00          |
-| Airdrops            | EDG 2023 Snapshot       | 1%                  | C-Vesting    | 1              | 24                      | 5%                      | 50,000.00             | 39,583.33            | 41,304.35             | 1,000,000.00          |
-| Airdrops Subtotal   |                          | 5%                  |              |                |                         |                         | 250,000.00            | 197,916.67           |                       | 5,000,000.00          |
-|---------------------|--------------------------|---------------------|--------------|----------------|-------------------------|-------------------------|-----------------------|----------------------|-----------------------|------------------------|
-| Total Supply        |                          | 100%                |              |                |                         |                         | 51,746,250.00         |                      |                       | 100,000,000.00        |
+<AllocationTable />
 
 
 
