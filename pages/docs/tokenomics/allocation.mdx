@@ -7,15 +7,14 @@ tags:
 
 import AllocationTable from 'components/AllocationTable.tsx';
 
-
 ### Overview: Genesis Allocations
 
-Observing successful networks as a benchmark, Tangle Network has tailored its genesis allocation to meet its unique needs and goals. 
+Observing successful networks as a benchmark, Tangle Network has tailored its genesis allocation to meet its unique needs and goals.
 
 ![Allocation Pie Chart](/images/allocation-pie-chart.png)
 
-
 ### Vesting Schedules
+
 Vesting schedules in Tangle Network are designed to promote long-term commitment and ensure a phased distribution of tokens. The network adopts a structured vesting strategy with distinct categories:
 
 **A-Vesting:** This category is characterized by a vesting period of 2 years, with a 12-month cliff. This means that no tokens are released in the first year. After completing the first year (the cliff period), the tokens allocated for that year become immediately available in full. The remainder of the allocation is then distributed monthly in equal 1/12 increments over the second year, facilitating a gradual release of tokens. This approach aligns with the policy of Immediate Vesting Post-Cliff with Retroactive Accumulation.
@@ -23,9 +22,6 @@ Vesting schedules in Tangle Network are designed to promote long-term commitment
 **B-Vesting:** For participants in this category, a small portion of the tokens (as specified, 5% or a different predetermined percentage based on individual agreements) becomes immediately available upon claiming. The remaining 95% of the tokens are then vested over a period of 2 years, with the vesting commencing one month after allocation. The first month serves as a cliff, during which no tokens are vested. Following this cliff, the tokens begin to vest linearly each month, ensuring a steady distribution until the end of the 2-year period. This vesting schedule adheres to the policy of Immediate Vesting Post-Cliff with Retroactive Accumulation, allowing for a proportional monthly distribution of tokens.
 
 **C-Vesting:** This vesting category is tailored for airdrop participants, featuring a 2-year vesting period with a notably short cliff of just 1 month. A predefined percentage of tokens becomes immediately available at the start. Subsequent to the cliff period, the remaining tokens are distributed on a monthly basis, ensuring a consistent flow of tokens into circulation. This strategy also follows the Immediate Vesting Post-Cliff with Retroactive Accumulation policy, aiming to reward early supporters while promoting long-term holding.
-
-
-
 
 ### Detailed Allocation Overview
 
@@ -37,38 +33,42 @@ The Tangle Network's allocation model is designed to support our foundational st
 
 <AllocationTable />
 
-
-
 # Token Allocation and Vesting Schedule Formulas
 
 This section outlines the formulas used to calculate various aspects of our token allocation and vesting schedules, presented in a way that's compatible with Markdown rendering.
 
 ### Initial Liquid Tokens
+
 ```plaintext
 =Total_Tokens_Allocated * Immediate_Liquidity_Percentage
 ```
+
 **Description:** Calculates the number of tokens that are immediately liquid and available at launch, based on the total tokens allocated to an entity and the percentage designated as immediately liquid.
 
 ### Cliff-Release Tokens (for entities with a retroactive vesting cliff)
+
 ```plaintext
 =Total_Tokens_Allocated * (Cliff_Duration / Total_Vesting_Period)
 ```
+
 **Description:** For allocations with a retroactive vesting cliff, this calculates the number of tokens released at the end of the cliff period, based on the total allocation and the proportion of the vesting period represented by the cliff.
 
 ### Monthly Vesting Rate (for entities with post-cliff monthly vesting)
+
 ```plaintext
 =(Total_Tokens_Allocated - Initial_Liquid_Tokens - Cliff_Release_Tokens) / (Vesting_Period - Cliff_Duration)
 ```
+
 **Description:** Determines the monthly rate at which tokens vest after the cliff period, considering the total tokens allocated minus any initially liquid tokens and tokens released at the cliff, divided by the remaining months of the vesting period.
 
-
 ### Special Considerations
+
 For entities without a vesting plan (e.g., Treasury, Foundation)
 **Entire allocation is considered liquid at launch,** though it is only utilized through governance and so not 'liquid' in the traditional tokenomic sense.
+
 ```plaintext
 =Total_Tokens_Allocated
 ```
-
 
 ## Definitions
 
