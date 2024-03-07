@@ -70,15 +70,15 @@ export default function AllocationTable() {
           <Row>
             <Cell>Contributors</Cell>
             <Cell>Webb (Developer)</Cell>
-            <Cell>29.93%</Cell>
+            <Cell>28.56%</Cell>
             <Cell>B-Vesting</Cell>
             <Cell>12</Cell>
             <Cell>24</Cell>
             <Cell>5%</Cell>
-            <Cell>1,424,500.00</Cell>
-            <Cell>13,532,750.00</Cell>
-            <Cell>2,255,458.33</Cell>
-            <Cell>28,490,000.00</Cell>
+            <Cell>1,356,250.00</Cell>
+            <Cell>12,884,375.00</Cell>
+            <Cell>2,147,395.83</Cell>
+            <Cell>27,125,000.00</Cell>
           </Row>
           <Row>
             <Cell>Contributors</Cell>
@@ -95,7 +95,7 @@ export default function AllocationTable() {
           </Row>
           <Row>
             <Cell>Contributors</Cell>
-            <Cell>Indiv. Contributors</Cell>
+            <Cell>Indiv. Webb Contributors</Cell>
             <Cell>1.44%</Cell>
             <Cell>B-Vesting</Cell>
             <Cell>12</Cell>
@@ -110,16 +110,16 @@ export default function AllocationTable() {
             <Cell colSpan={2}>
               <strong>Contributors Subtotal</strong>
             </Cell>
-            <Cell>45.00%</Cell>
+            <Cell>43.64%</Cell>
             <Cell colSpan={4}></Cell>
-            <Cell>1,496,250.00</Cell>
+            <Cell>1,428,000.00</Cell>
             <Cell colSpan={2}></Cell>
-            <Cell>43,565,000.00</Cell>
+            <Cell>42,200,000.00</Cell>
           </SubtotalRow>
           <Row>
             <Cell>Governance-Managed</Cell>
             <Cell>Treasury</Cell>
-            <Cell>35.00%</Cell>
+            <Cell>36.36%</Cell>
             <Cell>n/a</Cell>
             <Cell>n/a</Cell>
             <Cell>n/a</Cell>
@@ -127,7 +127,7 @@ export default function AllocationTable() {
             <Cell>n/a</Cell>
             <Cell>n/a</Cell>
             <Cell>n/a</Cell>
-            <Cell>35,000,000.00</Cell>
+            <Cell>36,360,000.00</Cell>
           </Row>
           <Row>
             <Cell>Governance-Managed</Cell>
@@ -146,9 +146,9 @@ export default function AllocationTable() {
             <Cell colSpan={2}>
               <strong>Governance-Managed Subtotal</strong>
             </Cell>
-            <Cell>50%</Cell>
+            <Cell>51%</Cell>
             <Cell colSpan={7}></Cell>
-            <Cell>50,000,000.00</Cell>
+            <Cell>51,360,000.00</Cell>
           </SubtotalRow>
           <Row>
             <Cell>Airdrops</Cell>
