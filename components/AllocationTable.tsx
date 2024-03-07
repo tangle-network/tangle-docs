@@ -217,7 +217,9 @@ export default function AllocationTable() {
               <strong>Total Supply</strong>
             </Cell>
             <Cell>100%</Cell>
-            <Cell colSpan={7}></Cell>
+            <Cell colSpan={4}></Cell>
+            <Cell>1,678,000.00</Cell>
+            <Cell colSpan={2}></Cell>
             <Cell>100,000,000.00</Cell>
           </TotalRow>
         </tbody>
