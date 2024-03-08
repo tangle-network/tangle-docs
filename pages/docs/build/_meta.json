@@ -1,4 +1,5 @@
 {
+  "developer-overview": "Understanding Tangle for Developers",
   "deploy-using-hardhat": "Deploy on Tangle with Hardhat",
   "json-rpc-endpoints": "RPC Endpoints",
   "integrate": "Integrate Tangle",
