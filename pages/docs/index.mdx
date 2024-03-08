@@ -1,6 +1,6 @@
 ---
 title: Overview, Use Cases and Actions
-description: Explore the Tangle Network ecosystem at a glance including use cases including interoperable shielded pools, identity-based systems, decentralized private finance, and secure multi-party computation, as well as features, and roadmap.
+description: Explore the Tangle Network ecosystem at a glance including use cases including secure multi-party computation, as well as features, and roadmap.
 ---
 
 import { RepoArea } from "../../components/RepoArea";
@@ -13,33 +13,45 @@ import { CommonActions } from "../../components/CommonActions";
 <NetworkInfo />
 <CommonActions />
 
+# Tangle Network: An MPC-as-a-service blockchain restaking infrastructure
+
 ## Introduction
 
-Tangle Network is a Substrate-based mainnet crafted to deliver decentralized cloud services, emphasizing Multi-Party Computation (MPC) as a Service (MPCaaS). Enabled by validator restaking, Tangle provides an ideal framework for application development that prioritizes privacy through the secure computation of private inputs.
+The Tangle Network is a groundbreaking blockchain platform designed to support cross-chain and zero-knowledge (ZK) applications. Built on the advanced Substrate framework, Tangle Network offers a suite of multi-party computation (MPC) primitives on-demand, empowering developers to create privacy-enhancing ZK applications, cross-chain solutions, and other complex, cryptographically secure decentralized applications.
 
-Our platform supports an array of critical services tailored for developers working on advanced Zero-Knowledge (ZK) and cross-chain solutions. Central to that is the fusion of cross-chain interoperability, Ethereum Virtual Machine (EVM) compatibility, sophisticated governance protocols, and ZK services.
-
-These services include zkSNARKS-as-a-Service (zk-SNARKsaaS) and Trusted Setups-as-a-Service, as well as non-ZK MPC services like Threshold Signature Schemes as-a-Service (TSSaaS) and threshold encryption. Together, these strengths set the stage for an era of rapid implementation of privacy-centric applications.
+At the core of Tangle Network is its innovative restaking mechanism. This allows validators from Tangle and other networks to provide MPC services to paying customers over a decentralized network, earning rewards in the process. The combination of restaking and MPC services enables Tangle to function as an outsourced, crypto-economically secured service provider.
 
 ## Key Features
 
-**1. Cross-Chain Functionality and EVM Compatibility**
+- **MPC-as-a-Service (MaaS)**: Tangle natively supports various multi-party computation primitives and zero-knowledge proving services that facilitate the development of new applications, particularly in the privacy-preserving space. These services benefit the Tangle community by positioning the network as a core infrastructure for any ZK application across multiple ecosystems.
 
-The Tangle Network breaks traditional chain boundaries, allowing seamless interaction, data exchange, and operation of ZK applications across different blockchain networks. Leveraging the power of the Ethereum Virtual Machine (EVM) on Substrate, developers can utilize familiar EVM tooling and compatibility to build decentralized applications (DApps), create Non-Fungible Tokens (NFTs), and utilize ERC20 tokens across multiple networks.
+- **Restaking**: Tangle's restaking system is directly integrated into its MPC-as-a-Service infrastructure. Validators can restake directly on the set of roles available to them in the runtime, with each role representing an eligible service. This mechanism incentivizes validators to provide high-quality MPC services.
 
-**2. Advanced Governance**
+- **Interoperability**: Tangle is dedicated to enabling fluid cross-chain interactions, from asset bridging to advanced cross-chain communication. We imagine this will be achieved through various technologies such as private bridges, zkBridges, IBC pallets, and XCM.
 
-The Tangle Network implements an innovative governance model based on Distributed Key Generation (DKG) protocol. The DKG protocol serves as a security instrument for the Tangle Network's cross-chain Anchor zkApps, ensuring the validity of bridge updates with crypto-economically secured threshold-signatures.
+- **EVM Compatibility**: The Ethereum Virtual Machine (EVM) is a critical component of Tangle Network, serving as a conduit for compatibility and interoperability with Ethereum-based tools and applications. Developers can seamlessly construct decentralized applications (DApps), generate Non-Fungible Tokens (NFTs), and utilize ERC20 tokens across diverse networks.
 
-DKG is a cryptographic method where multiple entities collaboratively produce a shared public and private key. In the Tangle Network, DKG fortifies the governance of distributed applications, particularly the Anchor System. It bolsters the security of the network by ensuring the integrity of signed messages via threshold signatures. This not only provides resistance against potential threats but also amplifies the Tangle Network's credibility.
+## Services
 
-**3. Privacy-Enhancing ZK Applications**
+Tangle Network offers a range of services to support the development and deployment of advanced cryptographic applications:
 
-Privacy is a paramount concern in the Tangle Network. By providing an infrastructure for Zero-Knowledge (ZK) applications, we enable users to experience a new generation of privacy-enhancing functionalities. ZK applications empower users to transact, communicate, and interact privately while maintaining the security and immutability of blockchain technology.
+- **Signing as a Service (TSSaaS)**: Tangle provides threshold signatures as a service, enabling the creation of decentralized bridges, oracles, and custody solutions. This service leverages a distributed key generation protocol to ensure robust security.
 
-**4. Built on Substrate**
+- **zkSNARKs as a Service (zkSaaS)**: To address the computational challenges faced by resource-constrained devices when running ZK applications, Tangle offers proof generation as a service. This allows developers to outsource the proof generation process to a privacy-preserving infrastructure.
 
-The Tangle Network is built on Substrate, an advanced blockchain framework renowned for its flexibility, scalability, and cutting-edge features. This strategic choice ensures that our platform remains at the forefront of speed, security, and scalability, serving as a reliable backbone for the Tangle Network. Leveraging Substrate's modular architecture, we enable seamless interaction and interoperability with other blockchain networks.
+- **Trusted Setups as a Service (TaaS)**: Tangle streamlines the trusted setup process for ZK applications by providing this as a service. This reduces the friction for developers, enabling them to deploy ZK applications to production without organizing a trusted setup themselves.
+
+## Governance and Community
+
+Tangle Network employs an advanced governance model underpinned by a Distributed Key Generation (DKG) protocol. This protocol serves as a security mechanism for the network's cross-chain applications, validating bridge updates with crypto-economically protected threshold signatures.
+
+The Tangle community is a vibrant mix of developers, privacy researchers, decentralized app (dApp) users, bridge users, and token holders. Community members assume various roles within the ecosystem, including technology advocates, validators, data relayers, governance participants, and open-source contributors.
+
+## Conclusion
+
+Tangle Network introduces an innovative platform to support cross-chain Zero-Knowledge (ZK) applications and enhance privacy in the blockchain ecosystem. With its unique offering of MPC-as-a-Service, restaking mechanism, and commitment to interoperability, Tangle is well-positioned to become a core infrastructure for enabling privacy-first and interoperable blockchain solutions.
+
+As the network continues to evolve, it aims to expand its services, foster community growth, and drive the adoption of advanced cryptographic techniques in the blockchain space. Tangle Network invites developers, validators, and users to join its mission of building a more private, secure, and interconnected decentralized future.
 
 ---
 
@@ -47,28 +59,28 @@ The Tangle Network is built on Substrate, an advanced blockchain framework renow
 
 The following is subject to change as DAO governance supports different initiatives.
 
-**Phase 1**
+**COMPLETE: Phase 1**
 
-- Test Runtime Upgrade
+- Launch democracy governance.
 - Finalize Tangle Token Distribution
 - Launch Incentivized testnet
 
 **Phase 2**
 
-- Update Tangle Genesis for Launch
-- Distribute TNT Tokens
-- Launch Democracy Governance
-- Launch OFAC VAnchor Bridges
+- Launch mainnet on **April 10, 2024** and allocate TNT tokens.
+- Deploy threshold signature scheme (TSS) as a service.
+- Deploy restaking: linking validators to the MPC services.
 
 **Phase 3**
 
-- Launch Cross-chain Transfers
-- Validator Staking Upgrades
-- Launch Semaphore VAnchor bridges
+- Launch cross-chain transfers.
+- Initialize proof generation (ZKSaaS) as a service.
+- Deploy ETH2 Light Client
 
 **Phase 4**
 
-- Remove Sudo
-- Improve Relayer & Proposer Security
+- Remove Sudo and fully delegate authority to the on-chain community.
+- Expand MPC service offerings.
+- Integrate with EigenLayer.
 
 <FullWebbCTA />
