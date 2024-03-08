@@ -1,0 +1,68 @@
+---
+title: Services on Tangle Network
+---
+
+# Services on Tangle Network
+
+Tangle Network provides developers with a suite of multi-party computation (MPC) services to power privacy-enhancing applications, cross-chain applications, and other complex cryptographically secure decentralized applications. By leveraging restaking, Tangle Network enables staked validators to provide these MPC services to paying developers over a decentralized network.
+
+![MPC User Flow](/images/MPCaaS-flow.png)
+
+Through these services, Tangle Network aims to achieve the following for these developers:
+
+1. Reduced friction in deploying advanced cryptographic and zero-knowledge applications.
+2. Expanded frontier of possible zero-knowledge application space through cross-chain interoperability and privacy-preserving tools.
+3. Simplified APIs for interacting with zero-knowledge applications.
+4. Outsourced proof generation and trusted setup generation, eliminating operational burdens.
+
+## Core Services
+
+### Multi-Party Computation (MPC)
+
+#### Threshold Signing as a Service (TSSaaS) MPC
+
+Signatures are pervasive in the design of blockchain bridges, oracles, and custody solutions. Tangle Network offers signature schemes as a service using threshold cryptography, enabling developers to build private and non-private cross-chain applications.
+
+Tangle currently supports several Threshold signature schemes:
+
+- DfnsCGGMP21Secp256k1
+- DfnsCGGMP21Secp256r1
+- DfnsCGGMP21Stark
+- ZcashFrostP256
+- ZcashFrostP384
+- ZcashFrostSecp256k1
+- ZcashFrostEd25519
+- ZcashFrostEd448
+- ZcashFrostRistretto255
+- GennaroDKGBls381
+
+Use cases include bridges, oracles, interoperable shielded pools, and social and identity bridges.
+
+### Proof Generation
+
+#### zkSNARKs as a Service (zkSaaS)
+
+Proof generation is critical for maintaining privacy and implementation of complex cryptographic protocols within decentralized applications. Tangle's zkSnark service allows users to access proof generation functionality directly through the network. This allows developers to outsource the computationally expensive tasks to a privacy-preserving infrastructure.
+
+Tangle currently supports zkSaaS for Groth16 proofs, and our targeted systems will include:
+
+- Groth16
+- PLONK
+- Nova
+- Halo2
+- Stark
+
+#### Trusted Setups as a Service (TaaS)
+
+Tangle Network streamlines the trusted setup process for zero-knowledge applications, reducing friction and enabling faster deployment to production.
+
+## Future Services
+
+We're exploring the development of new privacy technologies for the future:
+
+- Witness generation
+- Data storage and availability for privacy applications
+- Private information retrieval as a service
+- Threshold decryption as a service
+- Sequencing as a service
+- Randomness beacons

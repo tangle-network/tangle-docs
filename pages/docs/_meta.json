@@ -1,19 +1,69 @@
 {
   "index": {
-    "title": "Overview"
+    "title": "Overview",
+    "type": "doc"
   },
-  "usecases": "Use Cases",
-  "network-information-configuration": "Network Configuration",
-  "build": "Build",
-  "node": "Node",
-  "use": "Use",
-  "governance": "Govern",
-  "community": "Community",
-  "faq": "FAQ",
-  "glossary": "Glossary",
-  "contribute": "Contribute or Submit a Bug",
+  "launch": {
+    "title": "Network Launch",
+    "type": "doc"
+  },
+  "tokenomics": {
+    "title": "Tokenomics",
+    "type": "doc"
+  },
+  "usecases": {
+    "title": "Use Cases",
+    "type": "doc"
+  },
+  "services": {
+    "title": "Services",
+    "type": "doc"
+  },
+  "----": {
+    "type": "separator"
+  },
+  "network-information-configuration": {
+    "title": "Network Configuration",
+    "type": "doc"
+  },
+  "build": {
+    "title": "Build",
+    "type": "doc"
+  },
+  "node": {
+    "title": "Node",
+    "type": "doc"
+  },
+  "use": {
+    "title": "Basics",
+    "type": "doc"
+  },
+  "governance": {
+    "title": "Govern",
+    "type": "doc"
+  },
+  "---": {
+    "type": "separator"
+  },
+  "community": {
+    "title": "Community",
+    "type": "doc"
+  },
+  "faq": {
+    "title": "FAQ",
+    "type": "doc"
+  },
+  "glossary": {
+    "title": "Glossary",
+    "type": "doc"
+  },
+  "contribute": {
+    "title": "Contribute or Submit a Bug",
+    "type": "doc"
+  },
   "webb_docs_link": {
     "title": "Webb Docs",
-    "href": "https://docs.webb.tools/docs"
+    "href": "https://docs.webb.tools/docs",
+    "type": "doc"
   }
 }
