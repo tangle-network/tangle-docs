@@ -146,7 +146,7 @@ export default function AllocationTable() {
             <Cell colSpan={2}>
               <strong>Governance-Managed Subtotal</strong>
             </Cell>
-            <Cell>51%</Cell>
+            <Cell>51.36%</Cell>
             <Cell colSpan={7}></Cell>
             <Cell>51,360,000.00</Cell>
           </SubtotalRow>
