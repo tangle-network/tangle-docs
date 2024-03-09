@@ -99,11 +99,11 @@ export default function AllocationTable() {
             <Cell>1.44%</Cell>
             <Cell>B-Vesting</Cell>
             <Cell>12</Cell>
-            <Cell>48</Cell>
+            <Cell>24</Cell>
             <Cell>0%</Cell>
             <Cell>0.00</Cell>
-            <Cell>358,750.00</Cell>
-            <Cell>39,861.11</Cell>
+            <Cell>717,500.00</Cell>
+            <Cell>119,583.33</Cell>
             <Cell>1,435,000.00</Cell>
           </Row>
           <SubtotalRow>
