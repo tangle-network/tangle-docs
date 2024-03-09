@@ -112,7 +112,7 @@ export default function AllocationTable() {
             </Cell>
             <Cell>43.64%</Cell>
             <Cell colSpan={4}></Cell>
-            <Cell>1,356,250.00</Cell>
+            <Cell>0.00</Cell>
             <Cell colSpan={2}></Cell>
             <Cell>42,200,000.00</Cell>
           </SubtotalRow>
@@ -218,7 +218,7 @@ export default function AllocationTable() {
             </Cell>
             <Cell>100%</Cell>
             <Cell colSpan={4}></Cell>
-            <Cell>1,678,000.00</Cell>
+            <Cell>250,000.00</Cell>
             <Cell colSpan={2}></Cell>
             <Cell>100,000,000.00</Cell>
           </TotalRow>
