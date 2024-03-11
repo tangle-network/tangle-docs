@@ -99,11 +99,11 @@ export default function AllocationTable() {
             <Cell>1.44%</Cell>
             <Cell>B-Vesting</Cell>
             <Cell>12</Cell>
-            <Cell>48</Cell>
+            <Cell>24</Cell>
             <Cell>0%</Cell>
             <Cell>0.00</Cell>
-            <Cell>358,750.00</Cell>
-            <Cell>39,861.11</Cell>
+            <Cell>717,500.00</Cell>
+            <Cell>119,583.33</Cell>
             <Cell>1,435,000.00</Cell>
           </Row>
           <SubtotalRow>
@@ -112,7 +112,7 @@ export default function AllocationTable() {
             </Cell>
             <Cell>43.64%</Cell>
             <Cell colSpan={4}></Cell>
-            <Cell>1,356,250.00</Cell>
+            <Cell>0.00</Cell>
             <Cell colSpan={2}></Cell>
             <Cell>42,200,000.00</Cell>
           </SubtotalRow>
@@ -146,7 +146,7 @@ export default function AllocationTable() {
             <Cell colSpan={2}>
               <strong>Governance-Managed Subtotal</strong>
             </Cell>
-            <Cell>51%</Cell>
+            <Cell>51.36%</Cell>
             <Cell colSpan={7}></Cell>
             <Cell>51,360,000.00</Cell>
           </SubtotalRow>
@@ -218,7 +218,7 @@ export default function AllocationTable() {
             </Cell>
             <Cell>100%</Cell>
             <Cell colSpan={4}></Cell>
-            <Cell>1,678,000.00</Cell>
+            <Cell>250,000.00</Cell>
             <Cell colSpan={2}></Cell>
             <Cell>100,000,000.00</Cell>
           </TotalRow>
