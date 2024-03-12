@@ -139,8 +139,8 @@ export default function AllocationTable() {
             <Cell>24</Cell>
             <Cell>5%</Cell>
             <Cell>750,000.00</Cell>
-            <Cell>7,496,250.00</Cell>
-            <Cell>1,249,375.00</Cell>
+            <Cell>593,750.00</Cell>
+            <Cell>619,565.22</Cell>
             <Cell>15,000,000.00</Cell>
           </Row>
           <SubtotalRow>
@@ -150,12 +150,12 @@ export default function AllocationTable() {
             <Cell>51.36000%</Cell>
             <Cell colSpan={4}></Cell>
             <Cell>750,000.00</Cell>
-            <Cell>7,496,250.00</Cell>
+            <Cell>593,750.00</Cell>
             <Cell colSpan={1}></Cell>
             <Cell>51,360,000.00</Cell>
           </SubtotalRow>
           <Row>
-            <Cell>Airdrops</Cell>
+            <Cell>Airdrop Pool</Cell>
             <Cell>Leaderboard Participants</Cell>
             <Cell>2.00000%</Cell>
             <Cell>B-Vesting</Cell>
@@ -163,12 +163,12 @@ export default function AllocationTable() {
             <Cell>24</Cell>
             <Cell>5%</Cell>
             <Cell>100,000.00</Cell>
-            <Cell>83,291.67</Cell>
-            <Cell>86,913.04</Cell>
+            <Cell>79,166.67</Cell>
+            <Cell>82,608.70</Cell>
             <Cell>2,000,000.00</Cell>
           </Row>
           <Row>
-            <Cell>Airdrops</Cell>
+            <Cell>Airdrop Pool</Cell>
             <Cell>DOT Validators Snapshot</Cell>
             <Cell>1.00000%</Cell>
             <Cell>B-Vesting</Cell>
@@ -176,12 +176,12 @@ export default function AllocationTable() {
             <Cell>24</Cell>
             <Cell>5%</Cell>
             <Cell>50,000.00</Cell>
-            <Cell>41,645.83</Cell>
-            <Cell>43,456.52</Cell>
+            <Cell>39,583.33</Cell>
+            <Cell>41,304.35</Cell>
             <Cell>1,000,000.00</Cell>
           </Row>
           <Row>
-            <Cell>Airdrops</Cell>
+            <Cell>Airdrop Pool</Cell>
             <Cell>EDG Genesis Participants</Cell>
             <Cell>1.00000%</Cell>
             <Cell>B-Vesting</Cell>
@@ -189,12 +189,12 @@ export default function AllocationTable() {
             <Cell>24</Cell>
             <Cell>5%</Cell>
             <Cell>50,000.00</Cell>
-            <Cell>41,645.83</Cell>
-            <Cell>43,456.52</Cell>
+            <Cell>39,583.33</Cell>
+            <Cell>41,304.35</Cell>
             <Cell>1,000,000.00</Cell>
           </Row>
           <Row>
-            <Cell>Airdrops</Cell>
+            <Cell>Airdrop Pool</Cell>
             <Cell>EDG 2023 Snapshot</Cell>
             <Cell>1.00000%</Cell>
             <Cell>B-Vesting</Cell>
@@ -202,19 +202,19 @@ export default function AllocationTable() {
             <Cell>24</Cell>
             <Cell>5%</Cell>
             <Cell>50,000.00</Cell>
-            <Cell>41,645.83</Cell>
-            <Cell>43,456.52</Cell>
+            <Cell>39,583.33</Cell>
+            <Cell>41,304.35</Cell>
             <Cell>1,000,000.00</Cell>
           </Row>
           <SubtotalRow>
             <Cell colSpan={2}>
-              <strong>Airdrops Subtotal</strong>
+              <strong>Airdrop Pools Subtotal</strong>
             </Cell>
             <Cell>5.00000%</Cell>
             <Cell colSpan={4}></Cell>
             <Cell>250,000.00</Cell>
-            <Cell>208,229.17</Cell>
-            <Cell>217,282.61</Cell>
+            <Cell>197,916.67</Cell>
+            <Cell>206,521.74</Cell>
             <Cell>5,000,000.00</Cell>
           </SubtotalRow>
           <TotalRow>
