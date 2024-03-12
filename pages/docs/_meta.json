@@ -7,6 +7,10 @@
     "title": "Network Launch",
     "type": "doc"
   },
+  "claim-airdrop": {
+    "title": "Airdrop Claim Guide",
+    "type": "doc"
+  },
   "tokenomics": {
     "title": "Tokenomics",
     "type": "doc"
