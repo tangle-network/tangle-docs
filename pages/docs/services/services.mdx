@@ -2,7 +2,7 @@
 title: Services on Tangle Network
 ---
 
-# Services on Tangle Network
+# Restaking for Services on Tangle Network
 
 Tangle Network provides developers with a suite of multi-party computation (MPC) services to power privacy-enhancing applications, cross-chain applications, and other complex cryptographically secure decentralized applications. By leveraging restaking, Tangle Network enables staked validators to provide these MPC services to paying developers over a decentralized network.
 
@@ -66,3 +66,35 @@ We're exploring the development of new privacy technologies for the future:
 - Threshold decryption as a service
 - Sequencing as a service
 - Randomness beacons
+
+# Tangle Restaking Rewards Documentation
+
+## Overview
+
+Tangle blockchain introduces a comprehensive restaking system embedded within its runtime environment. This system is designed to encourage validators to commit to multi-party computation (MPC) service roles by offering an array of rewards. This documentation provides a detailed overview of the restaking process, reward mechanisms, and the benefits for validators and nominators participating in the Tangle blockchain network.
+
+## Restaking Rewards
+
+- Validators on the Tangle blockchain can establish a restaking profile by allocating 50% of their locked and nominated stake towards restaking.
+- Nominators associated with these validators receive proportional rewards, enhancing the benefits of participating in the restaking system.
+
+### Inflationary and Validation Rewards
+
+- To motivate validators to opt into MPC service roles, Tangle rewards them with additional inflationary rewards on top of their standard validation rewards, merely for restaking their tokens.
+
+### Performance and Service Fee Rewards
+
+- Validators are required to execute the services and tasks demanded by network users efficiently. Failure to fulfill these obligations results in penalties, including the slashing of their stake.
+- Successful service execution leads to service fee rewards for validators, calculated proportionally to their restaked funds for the specific service rendered.
+
+### Scaling of Rewards
+
+- The rewards for restakers adjust proportionally based on several factors, including the amount of tokens restaked, the number of jobs completed, and the diversity of roles engaged in restaking.
+
+### Reward Function Structure
+
+- The reward distribution mechanism for restakers is bifurcated into two segments:
+  a) Active Participation Rewards: Rewards are based on the validator's participation in and completion of total job opportunities, benefiting the most active and reliable restakers.
+  b) Proportional Restaking Rewards: Rewards are allocated in proportion to the overall restaking distribution, maintaining the incentive for continuous restaking. The reward rate for this is programatically limited to a range of 0.1% and 2%, in a similar style to the core staking rewards system of Substrate blockchains.
+
+Tangle's restaking system is intricately designed to maximize the security and efficiency of MPC services by incentivizing validators through multiple reward avenues. This system not only rewards active job performance but also encourages widespread restaking, ensuring a robust and secure network.
