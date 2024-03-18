@@ -40,6 +40,6 @@ const withNextra = nextra({
   latex: true, // Ensure this is enabled to use Nextra's native LaTeX support
 });
 
-const withPlausible = require('next-plausible').withPlausibleProxy;
+const withPlausible = require("next-plausible").withPlausibleProxy;
 
 export default withPlausible()(withNextra(nextConfig));
