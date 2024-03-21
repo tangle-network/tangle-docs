@@ -77,43 +77,6 @@ To opt into roles and restake TNT, validators should follow these steps:
 
 3. **Restake Execution**: Allocate TNT to the selected roles through the Tangle Blockchain's interface using the appropriate dispatchable calls (detailed in Section 7).
 
-## 5. Economic Incentives and Rewards
-
-The Tangle Blockchain employs a comprehensive rewards system to incentivize validators for their active participation and contributions to the network.
-
-### Rewards System Breakdown
-
-Validator rewards are calculated based on two main factors:
-
-1. **Active Validator Rewards (50%)**: Rewards for validators who have completed jobs in the current era.
-
-   - The total jobs completed (TJC) by all active validators are calculated.
-   - Each validator's share (VS) of the rewards is determined by the proportion of their completed jobs relative to the TJC.
-   - The validator reward (VR) is computed as: VR = VS × Total Rewards
-
-2. **Validator Rewards by Restake (50%)**: Rewards for validators based on their restaked amount.
-   - The total restake (TR) in the system is calculated by summing all validators' restaked amounts.
-   - The restake-to-stake ratio (RSR) is computed as: RSR = TR / Total Stake in the Era
-   - The missing restake ratio (MRR) is calculated as: MRR = Maximum Restake Ratio - RSR
-   - The adjusted total rewards (ATR) are computed based on the MRR to ensure proper reward distribution.
-   - Each validator's reward share (RS) is determined by their restaked amount relative to the TR.
-   - The final reward for each validator is calculated as: Reward = RS × ATR
-
-#### Example Reward Calculation
-
-Let's consider an example in era 100, with 20 restakers and a total role reward of 1000 TNT:
-
-- **Active Validator Rewards**:
-
-  - 10 restakers have completed 5 jobs each.
-  - 50% of the 1000 TNT (500 TNT) is equally divided among the 10 active restakers.
-  - If one restaker had completed more jobs than the others, they would receive a larger share of the rewards.
-
-- **Rewards by Restake**:
-  - The remaining 50% of the 1000 TNT (500 TNT) is distributed among all restakers based on their restaked amount.
-  - If a restaker has restaked 100 TNT out of a total restake of 1000 TNT, they are eligible for 10% of the rewards.
-  - The rewards are adjusted based on the total restake relative to the total stake in the system.
-
 ### Capital Efficiency and Reward Optimization
 
 Restaking allows validators to earn rewards from multiple roles without requiring additional capital. This mechanism encourages efficient stake allocation and active participation in the network. By strategically allocating their staked TNT to various roles, validators can optimize their potential rewards while contributing to the network's security and functionality.
@@ -155,8 +118,6 @@ The Tangle Blockchain provides a set of dispatchable calls for validators to man
 - `unbond_funds`: Allows validators to unbond funds. These operations are only allowed when the validator has no active roles.
 
 - `withdraw_unbonded`: Enables validators to withdraw unbonded funds after a certain period. These operations are only allowed when the validator has no active roles.
-
-_Detailed examples and technical steps for each call will be provided in the technical documentation._
 
 ### Best Practices for Managing Validator Profiles
 

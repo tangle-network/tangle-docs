@@ -1,4 +1,5 @@
 import nextra from "nextra";
+import { withPlausibleProxy } from "next-plausible";
 
 /**
  * @type {import('next').NextConfig}
@@ -38,7 +39,6 @@ const withNextra = nextra({
   staticImage: true,
   flexsearch: true,
   latex: true, // Ensure this is enabled to use Nextra's native LaTeX support
-  // Since Nextra supports LaTeX natively, remove the custom MDX option for remarkMath and rehypeKatex
 });
 
-export default withNextra(nextConfig);
+export default withPlausibleProxy()(withNextra(nextConfig));
