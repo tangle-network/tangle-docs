@@ -1,4 +1,8 @@
 {
-  "services": "MPC and ZK Services",
-  "service-provider": "Restaking and Jobs"
+  "services": "Intro to MPC and ZK Services",
+  "service-provider": "Restaking Jobs",
+  "restaking-rewards": "Restaking Rewards",
+  "restaking-reward-calc": {
+    "display": "hidden"
+  }
 }

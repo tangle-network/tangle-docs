@@ -23,9 +23,6 @@
     "title": "Services",
     "type": "doc"
   },
-  "----": {
-    "type": "separator"
-  },
   "network-information-configuration": {
     "title": "Network Configuration",
     "type": "doc"
@@ -45,9 +42,6 @@
   "governance": {
     "title": "Govern",
     "type": "doc"
-  },
-  "---": {
-    "type": "separator"
   },
   "community": {
     "title": "Community",

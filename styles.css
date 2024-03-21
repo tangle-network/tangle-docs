@@ -3,10 +3,6 @@
 @tailwind utilities;
 @tailwind variants;
 
-/* Override the Tailwind preflight */
-button[type="submit"] {
-  @apply bg-black;
-}
 
 @layer utilities {
   /* Hide scrollbar for Chrome, Safari and Opera */
