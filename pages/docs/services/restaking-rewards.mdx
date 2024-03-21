@@ -16,26 +16,30 @@ The rewards for restakers adjust proportionally based on several factors, includ
 The reward distribution mechanism for restakers is bifurcated into two segments:
 
 #### Active Participation Rewards
+
 The main form of reward is the income from providing services. These are fees users pay to have restaked validators perform MPC and ZK services. Rewards are based on the validator's participation in and completion of total job opportunities, benefiting the most active and reliable restakers.
-   - The total jobs completed (TJC) by all active validators are calculated.
-   - Each validator's share (VS) of the rewards is determined by the proportion of their completed jobs relative to the TJC.
-   - The validator reward (VR) is computed as: VR = VS × Total Rewards
+
+- The total jobs completed (TJC) by all active validators are calculated.
+- Each validator's share (VS) of the rewards is determined by the proportion of their completed jobs relative to the TJC.
+- The validator reward (VR) is computed as: VR = VS × Total Rewards
 
 #### Continuous Restaking Rewards:
-In addition, To motivate validators to opt into MPC service roles, Tangle rewards them with additional inflationary rewards on top of their standard validation rewards, merely for restaking their tokens.Rewards are allocated in proportion to the overall restaking distribution, maintaining the incentive for continuous restaking. The reward rate for this is programatically limited to a range of 0.1% and 2%, in a similar style to the core staking rewards system of Substrate blockchains.
-   - The total restake (TR) in the system is calculated by summing all validators' restaked amounts.
-   - The restake-to-stake ratio (RSR) is computed as: RSR = TR / Total Stake in the Era
-   - The missing restake ratio (MRR) is calculated as: MRR = Maximum Restake Ratio - RSR
-   - The adjusted total rewards (ATR) are computed based on the MRR to ensure proper reward distribution.
-   - Each validator's reward share (RS) is determined by their restaked amount relative to the TR.
-   - The final reward for each validator is calculated as: Reward = RS × ATR
 
+In addition, To motivate validators to opt into MPC service roles, Tangle rewards them with additional inflationary rewards on top of their standard validation rewards, merely for restaking their tokens.Rewards are allocated in proportion to the overall restaking distribution, maintaining the incentive for continuous restaking. The reward rate for this is programatically limited to a range of 0.1% and 2%, in a similar style to the core staking rewards system of Substrate blockchains.
+
+- The total restake (TR) in the system is calculated by summing all validators' restaked amounts.
+- The restake-to-stake ratio (RSR) is computed as: RSR = TR / Total Stake in the Era
+- The missing restake ratio (MRR) is calculated as: MRR = Maximum Restake Ratio - RSR
+- The adjusted total rewards (ATR) are computed based on the MRR to ensure proper reward distribution.
+- Each validator's reward share (RS) is determined by their restaked amount relative to the TR.
+- The final reward for each validator is calculated as: Reward = RS × ATR
 
 ### Example Reward Calculation
 
 Let's consider an example in era 100, with 20 restakers and a total role reward of 1000 TNT:
 
 - **Active Validator Rewards**:
+
   - 10 restakers have completed 5 jobs each.
   - 50% of the 1000 TNT (500 TNT) is equally divided among the 10 active restakers.
   - If one restaker had completed more jobs than the others, they would receive a larger share of the rewards.
@@ -44,7 +48,6 @@ Let's consider an example in era 100, with 20 restakers and a total role reward 
   - The remaining 50% of the 1000 TNT (500 TNT) is distributed among all restakers based on their restaked amount.
   - If a restaker has restaked 100 TNT out of a total restake of 1000 TNT, they are eligible for 10% of the rewards.
   - The rewards are adjusted based on the total restake relative to the total stake in the system.
-
 
 ## Calculation Logic for Restaking Reward
 
