@@ -3,5 +3,6 @@
   "addresses": "EVM and Address Conversion",
   "staking-intro": "Staking Introduction",
   "proxy-accounts": "Proxy Accounts",
-  "set-identity": "Set an Identity"
+  "set-identity": "Set an Identity",
+  "transacton-fees": "Transaction Fees"
 }

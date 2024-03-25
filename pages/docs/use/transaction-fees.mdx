@@ -1,0 +1,56 @@
+
+# Transaction Fees on Tangle Network
+
+## Introduction
+
+Tangle Network, like many blockchain platforms, requires users to pay transaction fees to execute transactions on the network. These fees serve multiple purposes:
+
+1. Prevent abuse: By attaching a cost to each transaction, the network discourages users from spamming or consuming excessive resources.
+2. Incentivize block producers: Transaction fees act as a reward for block producers, encouraging them to include transactions in their blocks.
+3. Sustainable economic model: Fees help maintain a sustainable economic model for the network by balancing resource consumption and network usage.
+
+In this article, we'll explore how transaction fees are calculated and handled on Tangle Network.
+
+## The Building Blocks of Transaction Fees
+
+Tangle Network employs a weight-based fee model, which means that fees are calculated based on the computational resources required to execute a transaction. The fee structure consists of three main components:
+
+1. **Base Fee**: A fixed fee applied to every transaction, regardless of its complexity.
+2. **Weight Fee**: A variable fee that depends on the computational resources required by the transaction. Each operation in the transaction is assigned a specific weight, and the total weight determines the weight fee.
+3. **Length Fee**: A fee proportional to the size of the transaction in bytes. Larger transactions incur higher length fees.
+
+In addition to these components, users can optionally include a **tip** to prioritize their transactions. Tips incentivize block producers to include the transaction in the next block.
+
+## Calculating Transaction Fees
+
+The formula for calculating the total transaction fee on Tangle Network is as follows:
+
+`total_fee = base_fee + weight_fee + (length_fee * transaction_size) + tip`
+
+Here's a breakdown of each component:
+
+- **Base Fee**: A fixed value set by the network, e.g., 100 uTNT (micro-TNT).
+- **Weight Fee**: Calculated based on the weights of the individual operations in the transaction. The network defines a weight-to-fee conversion rate.
+- **Length Fee**: A fixed value multiplied by the transaction size in bytes, e.g., 0.1 uTNGL per byte.
+- **Tip**: An optional value determined by the user to prioritize their transaction.
+
+## Dynamic Fee Adjustment
+
+To maintain network stability and performance, Tangle Network implements a dynamic fee adjustment mechanism. This mechanism adjusts the fees based on network congestion and block saturation.
+
+If the network experiences high traffic and blocks are consistently full, the fees will gradually increase to prioritize high-value transactions and prevent network congestion. Conversely, if the network is underutilized, fees will decrease to encourage more transactions.
+
+The fee adjustment is controlled by a multiplier that is updated after each block, taking into account the saturation of the previous block compared to the current block.
+
+## Other Resource Management Strategies
+
+In addition to transaction fees, Tangle Network employs other resource management strategies:
+
+- **Bonds**: Certain actions, such as voting, may require users to lock up funds (bond) that are released or slashed based on the outcome of the action.
+- **Deposits**: Some operations, like registering an identity, require a deposit to cover the long-term storage costs. The deposit is returned if the user frees up the storage.
+- **Burns**: In some cases, the network may burn a portion of the transaction fee to permanently remove it from circulation, effectively reducing the token supply.
+- **Limits**: The network enforces certain limits, such as the maximum number of validators a nominator can nominate, to manage system complexity and resource consumption.
+
+## Learn More
+
+- [Substrate Weights and Fees](https://docs.substrate.io/main-docs/build/tx-weights-fees/)
