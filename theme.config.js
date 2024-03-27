@@ -99,6 +99,15 @@ const theme = {
     text: "Edit this page on GitHub",
   },
   sidebar: {
+    titleComponent({ title, type }) {
+      if (type === "separator") {
+        return <div style={{ fontWeight: 600 }}>{title}</div>;
+      }
+      if (title === "Introduction") {
+        return <>❓ {title}</>;
+      }
+      return <>➖ {title}</>;
+    },
     defaultMenuCollapseLevel: 1,
   },
   navbar: {
