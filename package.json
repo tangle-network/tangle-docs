@@ -54,7 +54,7 @@
   "devDependencies": {
     "@babel/core": "7.20.5",
     "@types/node": "^20.6.3",
-    "@types/react": "18.0.26",
+    "@types/react": "18.2.72",
     "autoprefixer": "10.4.13",
     "broken-link-checker": "^0.7.8",
     "csstype": "3.1.1",

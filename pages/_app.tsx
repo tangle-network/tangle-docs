@@ -1,15 +1,18 @@
-import "../styles.css";
-import "../custom.css";
 import { SSRProvider } from "@react-aria/ssr";
-import type { AppProps } from "next/app";
-import type { ReactNode } from "react";
 import "katex/dist/katex.min.css";
+import type { NextPage } from "next";
 import PlausibleProvider from "next-plausible";
+import type { AppProps } from "next/app";
+import type { ReactElement, ReactNode } from "react";
+import "../custom.css";
+import "../styles.css";
+
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+  getLayout?: (page: ReactElement) => ReactNode;
+};
 
 type NextraAppProps = AppProps & {
-  Component: AppProps["Component"] & {
-    getLayout: (page: ReactNode) => ReactNode;
-  };
+  Component: NextPageWithLayout;
 };
 
 // Shim requestIdleCallback in Safari
