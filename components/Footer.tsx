@@ -28,7 +28,7 @@ const navigation = {
   general: [
     {
       name: "Tangle Network Whitepaper",
-      href: "https://github.com/webb-tools/tangle/blob/main/Tangle_Network_Whitepaper_V1.pdf",
+      href: "https://github.com/webb-tools/tangle/blob/main/Tangle_Network_Whitepaper_March282024.pdf",
     },
     // { name: "FAQ", href: "/faq" },
   ],
