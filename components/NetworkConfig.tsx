@@ -1,9 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "./NetworkConfig.module.css";
 
 const NetworkCard = ({ mainnet, testnet }) => {
   const [activeTab, setActiveTab] = useState("mainnet");
+  const [isMainnetLive, setIsMainnetLive] = useState(false);
+
+  // Function to check if mainnet is live
+  const checkMainnetStatus = () => {
+    const launchTime = new Date("2024-04-10T02:00:00Z"); // 10am EST on April 10, 2024
+    const currentTime = new Date();
+
+    if (currentTime >= launchTime) {
+      setIsMainnetLive(true);
+    }
+  };
+
+  // Check mainnet status on component mount and every minute
+  useEffect(() => {
+    checkMainnetStatus();
+    const interval = setInterval(checkMainnetStatus, 60000); // 60000 ms = 1 minute
+
+    return () => clearInterval(interval);
+  }, []);
 
   const renderTabContent = () => {
     if (activeTab === "mainnet") {
@@ -12,6 +31,9 @@ const NetworkCard = ({ mainnet, testnet }) => {
           <div className={styles.networkType}>{mainnet.cardTitle}</div>
           <div className={styles.titleContainer}>
             <h2 className={styles.networkTitle}>{mainnet.network}</h2>
+            <span className={styles.mainnetStatus}>
+              {isMainnetLive ? "Live Now" : "Launching April 10, 2024"}
+            </span>
           </div>
           <table className={styles.table}>
             <tbody>
