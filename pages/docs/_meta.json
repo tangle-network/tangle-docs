@@ -15,6 +15,10 @@
     "title": "Network Launch",
     "type": "doc"
   },
+  "network-parameters": {
+    "title": "Network Parameters",
+    "type": "doc"
+  },
   "use": {
     "title": "Account Management",
     "type": "doc"

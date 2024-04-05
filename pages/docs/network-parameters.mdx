@@ -1,0 +1,45 @@
+# Network Parameters
+
+This page outlines the key parameters and attributes of the Tangle network. Please note that some of these values may be subject to change via on-chain governance. For the most up-to-date and accurate values, it is recommended to check the constants directly by inspecting the [chain state](https://polkadot.js.org/apps/#/chainstate/constants) and/or [storage](https://polkadot.js.org/apps/#/chainstate).
+
+### Fee Structure
+
+- Dust (small, uneconomical to track amounts) is burned.
+- Fees are split as follows:
+  - 80% goes to the treasury
+  - 20% goes to the block author (validator)
+- 100% of tips go to block authors, similar to gas fees on other networks.
+
+### Epoch and Era Durations
+
+- Slot: 6 seconds (generally one block per slot)
+- Epoch: 4 hours (2,400 slots x 6 seconds)
+- Session: 4 hours (Session and Epoch lengths are the same)
+- Era: 24 hours (6 sessions per Era, 2,400 slots x 6 epochs x 6 seconds)
+
+| Tangle  | Time      | Slots  |
+| ------- | --------- | ------ |
+| Slot    | 6 seconds | 1      |
+| Epoch   | 4 hours   | 2,400  |
+| Session | 4 hours   | 2,400  |
+| Era     | 24 hours  | 14,400 |
+
+### Block Time
+
+The Tangle network targets a 6-second block time.
+
+### Governance
+
+- The total minimum deposit for a governance proposal is `PREIMAGE_DEPOSIT + DEMO_MINIMUM_DEPOSIT = 100 + 1000 + (preimage byte fee) > 1100`.
+
+### Staking, Validating, and Nominating
+
+[Insert details about the maximum number of validators that can be nominated by a nominator, and any other relevant staking, validating, or nominating parameters.]
+
+### Treasury
+
+[Insert details about the treasury, such as the periods between spends and the burn percentage.]
+
+### Precision
+
+TNT has 18 decimal places.
