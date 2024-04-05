@@ -21,10 +21,21 @@
     "href": "https://docs.tangle.tools/",
     "newWindow": false
   },
-  "faucet": {
-    "title": "Faucet on Discord",
-    "href": "https://discord.com/invite/cv8EfJu3Tn",
-    "newWindow": true
+  "explorers": {
+    "title": "Explorers",
+    "type": "menu",
+    "items": {
+      "evmExplorer": {
+        "title": "EVM Explorer",
+        "href": "https://www.explorer.tangle.tools/",
+        "newWindow": true
+      },
+      "substrateExplorer": {
+        "title": "Substrate Explorer",
+        "href": "https://tangle.statescan.io/",
+        "newWindow": true
+      }
+    }
   },
   "resourcesMenu": {
     "title": "Links",
