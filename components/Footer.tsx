@@ -76,10 +76,6 @@ const navigation = {
       name: "Twitter",
       href: "https://twitter.com/tangle_network",
     },
-    {
-      name: "Commonwealth",
-      href: "https://commonwealth.im/webb",
-    },
   ],
   company: [
     { name: "Webb", href: "https://webb.tools" },
