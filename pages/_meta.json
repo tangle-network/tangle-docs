@@ -23,7 +23,7 @@
   },
   "faucet": {
     "title": "Faucet on Discord",
-    "href": "https://webb.tools/community",
+    "href": "https://discord.com/invite/cv8EfJu3Tn",
     "newWindow": true
   },
   "resourcesMenu": {
@@ -32,7 +32,7 @@
     "items": {
       "resourcesBlog": {
         "title": "Blog",
-        "href": "https://blog.webb.tools",
+        "href": "https://www.tangle.tools/blog",
         "newWindow": true
       },
       "resourcesWhitepaper": {
@@ -42,7 +42,7 @@
       },
       "resourcesCommunity": {
         "title": "Community",
-        "href": "https://webb.tools/community",
+        "href": "https://tangle.tools/community",
         "newWindow": true
       },
       "resourcesBugReport": {
@@ -51,8 +51,8 @@
         "newWindow": true
       },
       "resourcesContact": {
-        "title": "Contact Us",
-        "href": "https://t.me/webbprotocol",
+        "title": "Contact",
+        "href": "mailto:hello@tangle.tools",
         "newWindow": true
       }
     }
@@ -74,11 +74,6 @@
       "communityTelegram": {
         "title": "Telegram",
         "href": "https://t.me/webbprotocol",
-        "newWindow": true
-      },
-      "communityCommonwealth": {
-        "title": "Commonwealth Gov",
-        "href": "https://commonwealth.im/webb",
         "newWindow": true
       },
       "communityTwitterFounder": {
