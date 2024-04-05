@@ -5,92 +5,46 @@ description: Overview of use cases for the Tangle Network.
 
 ## Tangle Network: Use Cases
 
-The Tangle Network and Webb Protocol have been designed to serve a variety of use cases. A majority of these applications revolve around enhancing privacy and improving cross-chain interoperability. Here are some key proposed applications for the Tangle Network and Webb Protocol:
+Tangle Network enables various use cases, primarily focusing on enhancing privacy and improving cross-chain interoperability. Here are some key proposed applications:
 
-### AI/ML: Data Integrity and Confidentiality Assurance
+### 1. Signing as a Service (TSSaaS)
 
-Any scenario requiring data integrity verification and confidentiality can be improved through a Zero Knowledge Proof-based system. This framework can be applied broadly to ensure that data or computational processes (like AI model predictions) have not been altered, while simultaneously protecting sensitive information from being disclosed. It's ideal for applications where data security and privacy are paramount, such as financial services, healthcare, or collaborative research involving sensitive data. See examples:
+Tangle provides signatures as a service using threshold cryptography, with validators participating in multi-party distributed key generation protocols to create keys for threshold signing. This enables the development of secure and decentralized:
 
-**1. Verifiable AI Predictions in Decentralized Systems**
+- **Custody Solutions**: By requiring multiple custodians to authorize transactions jointly, TSS enhances asset security and provides flexible key management and recovery.
 
-A system where AI model predictions can be verified for their integrity and accuracy in a decentralized environment. This system uses Zero Knowledge Proofs to ensure the predictions haven't been tampered with, while keeping the actual data confidential. Ideal for collaborations where data privacy is key.
+- **Oracles**: TSS enables a decentralized approach to handling oracle data, ensuring data accuracy and resilience to collusion by requiring consensus among signers.
 
-**2. Secure AI Model Sharing with Zero Knowledge Proofs**
+- **Cross-Chain Bridges**: TSS boosts the security and reliability of cross-chain bridges by decentralizing signing authority, increasing resistance to attacks and collusion.
 
-A framework for securely sharing AI models across different organizations without exposing sensitive information. Using Zero Knowledge Proofs, this system allows for the verification of model predictions and ensures data privacy, making it suitable for sensitive or proprietary models.
+### 2. Interoperable Shielded Pools
 
-### Cross-Chain Privacy Solutions
+The Tangle Network is ideal for maintaining the state of bridged shielded pools, enabling the creation of cross-chain private transaction systems. The Webb Protocol Anchor System provides an architecture for implementing various private bridge protocols, such as:
 
-**1. Interoperable Shielded Pools**
+- **Multi-Asset Shielded Bridges**: The Variable Multi-Asset Anchor System enables users to transfer arbitrary amounts of different assets privately between blockchains using zero-knowledge proofs.
 
-The creation of private bridges for assets, or "interoperable shielded pools." The decentralized, updatable Tangle Network is ideal for maintaining the state of a set of bridge anchors, making it possible to design data to be inserted into these anchors around that of an asset system. Unspent transaction outputs (UTXOs) are inserted into anchors, and users can spend these UTXOs privately across the chains the bridge exists over.
+- **Identity-Based Variable Asset Anchor System**: By combining an identity protocol with the Variable Multi-Asset protocol, a cross-chain shielded pool application can be designed for a restricted identity set, enabling compliance or community-based private transaction systems.
 
-**2. Variable Asset Anchor System**
+### 3. Social and Identity Bridges
 
-This system allows for interoperable shielded pools, wherein users can transfer arbitrary amounts of assets privately between blockchains. The Variable Asset Anchor System uses zero-knowledge proofs and is similar to a shielded UTXO system, but with cross-chain capabilities.
+Tangle's infrastructure supports cross-chain social and identity bridges, enabling content and membership-based applications with customizable zero-knowledge proofs of membership:
 
-**3. Identity-Based Variable Asset Anchor System**
+- **Interoperable Membership Groups / Semaphores**: An extension of the Semaphore protocol to a cross-chain identity set, allowing members of NFT communities to register and interact privately across chains.
 
-By combining the Semaphore Identity protocol and the Variable Asset protocol, a cross-chain shielded pool application over a restricted identity set can be designed. This creates a private transaction system where only users with proofs of membership in a cross-chain identity system can transact. This opens up possibilities for even more diverse use cases in the realm of zero-knowledge applications.
+- **Interoperable Badge System**: Using expressive data blobs for proofs of ownership, participation, and identity, enabling composable application development with zero-knowledge and private data disclosure.
 
-In addition, with the integration of threshold Elliptic Curve Digital Signature Algorithm (ECDSA), the Tangle Network can sign arbitrary Bitcoin transactions, Ethereum transactions, and more. It can also be extended to include a Bitcoin bridge into the system with a proper custody rotation, or to sign messages for other smart contracts across chains for governance purposes.
+### 4. Expansion and Integration of MPC Capabilities
 
-### Decentralized Governance and Identity
+Tangle Network's MPC infrastructure can be expanded and integrated with various cryptographic protocols to enhance its capabilities:
 
-**1. Interoperable Membership Groups**
+- **New Threshold Signature Schemes**: Integrating schemes like ECDSA, Schnorr, BLS, and FROST to enhance security by distributing signature generation across multiple parties.
 
-The Tangle Network and Webb Protocol can support interoperable membership groups. These are communities that exist across chains and leverage privacy. A natural implementation might look like an interoperable Semaphore system, where anyone in the Semaphore membership group can relay a vote or response to a poll from any chain privately, and potentially without even needing a wallet on that chain.
+- **Fully Homomorphic Encryption (FHE)**: Integrating FHE with MPC to enable secure and private computation on encrypted data across multiple parties.
 
-**2. Interoperable Badge System**
+- **Randomness Beacons**: Incorporating randomness beacons, like those from the League of Entropy, to enhance security and fairness in various cryptographic protocols.
 
-An identity-based application, an interoperable badge system, could use expressive data blobs for arbitrary proofs of ownership, participation, and identity. Using Webb's technology stack, these badges can be proven to exist from anywhere, enabling new types of composable application development due to the zero-knowledge and private nature of data disclosure.
+- **Federated Learning Protocols**: Securely computing AI and ML models on distributed data without exposing the underlying data, enabling privacy-preserving data analysis and model training.
 
-**3. Semaphore Anchor System**
+- **Threshold Encryption Protocols**: Integrating protocols that distribute encryption and decryption among multiple parties, enhancing data security.
 
-Semaphore is a popular zero-knowledge protocol that enables members of an on-chain community to create anonymous signals using zero-knowledge proofs of membership in the community’s identity set. This concept can be extended to a cross-chain identity set, allowing any member of a set of non-fungible token (NFT) communities to register.
-
-**4. Decentralized Identity Systems (DID)**
-
-Identity is fundamental in both the physical and digital worlds. However, traditional identity systems are often centralized and vulnerable to attacks. The Tangle Network can support Decentralized Identity Systems (DID), offering privacy, control, and cross-chain compatibility.
-
-In a DID system on the Tangle Network, each user can generate a self-sovereign identity that could be used across different blockchains. With zero-knowledge proofs, users can prove certain attributes of their identity without revealing any unnecessary personal information. This would not only enhance privacy but also give users full control over their identities, avoiding reliance on any single authority.
-
-These use cases showcase the versatility and potential of the Tangle Network and Webb Protocol in various sectors, underscoring its ability to drive forward both privacy and interoperability in the blockchain space.
-
-### Privacy-Enhanced Decentralized Finance (DeFi)
-
-**1. Decentralized Private Finance (Private Defi)**
-
-Decentralized Finance, or DeFi, has experienced significant growth over the past few years, facilitating peer-to-peer financial transactions without intermediaries. However, DeFi transactions on public blockchains are often not private, posing privacy concerns for users. Leveraging Tangle Network's and Webb Protocol's privacy-preserving capabilities, we can establish Decentralized Private DefFi applications.
-
-These allow users to make transactions while keeping their financial activities private. They can engage in yield farming, liquidity provision, lending, borrowing, and other DeFi operations while remaining anonymous. The added privacy benefits could attract users that prefer to keep their financial activities private due to security concerns, thus expanding the overall user base of DeFi.
-
-### Secure Multi-Party Computation and Data Privacy
-
-**1. Secure Multi-Party Computation (SMPC)**
-
-Secure Multi-Party Computation (SMPC) is an area of cryptography concerned with enabling multiple parties to jointly compute a function over their inputs while keeping those inputs private. With its cryptographic properties, Tangle Network can be extended to facilitate SMPC.
-
-For example, consider a consortium of companies willing to collaboratively train a machine learning model using their data without exposing sensitive information to each other. By leveraging SMPC on the Tangle Network, these companies can jointly compute the machine learning model without revealing their individual datasets.
-
-This not only preserves privacy but also fosters collaboration between different entities that would otherwise be reluctant to share sensitive data.
-
-**2. Privacy-Preserving Data Marketplace**
-
-Data is often referred to as the "new oil." However, data transactions can be challenging due to privacy and trust concerns. By leveraging the Tangle Network, we can establish a privacy-preserving data marketplace.
-
-In this marketplace, data sellers can list their datasets without revealing the actual data. Using zero-knowledge proofs, they can provide evidence of the data's authenticity and other characteristics. Buyers, on the other hand, can verify these proofs and make purchases without exposing their identities. The entire transaction can be managed on-chain, ensuring fairness and transparency while preserving privacy.
-
-### Communication and Data Transfer
-
-**1. Cross-chain Atomic Swaps**
-
-In the current state of the blockchain ecosystem, transferring assets between different blockchains (cross-chain) often involves centralized exchanges or trusted intermediaries. With the Tangle Network and Webb Protocol, we can enable cross-chain atomic swaps with enhanced privacy.
-
-An atomic swap is a smart contract technology that enables the exchange of one cryptocurrency for another without using centralized intermediaries. Users will be able to privately and securely exchange tokens between different blockchains directly. For instance, a user can exchange Bitcoin for Ethereum directly from their wallets without an exchange, ensuring privacy and reducing the reliance on intermediaries.
-
-**2. Private and Secure Messaging Systems**
-
-In today's digital age, privacy and security in communication are paramount. With the Tangle Network's zero-knowledge proofs and privacy-oriented architecture, we can develop a private and secure messaging system.
-
-In this system, all communications would be encrypted and can be securely stored across multiple blockchains. This would ensure that only the intended recipients can read the messages. Additionally, the decentralized nature of the system would make it resistant to censorship and control by any single entity.
+- **General MPC Compiler Infrastructure**: Developing a general MPC compiler infrastructure to simplify the process of creating secure multi-party applications.
