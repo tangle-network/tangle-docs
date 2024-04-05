@@ -39,6 +39,8 @@ In addition, To motivate validators to opt into MPC service roles, Tangle reward
 - Each validator's reward share (RS) is determined by their restaked amount relative to the TR.
 - The final reward for each validator is calculated as: Reward = RS × ATR
 
+Additionally, a decay rate ($d$) is used to reduce the rewards rate when restaking participation exceeds the ideal target of 25% of TNT.
+
 ### Example Reward Calculation
 
 Let's consider an example in era 100, with 20 restakers and a total role reward of 1000 TNT:
@@ -76,7 +78,7 @@ Restaking rewards are calculated based on the validator's participation in vario
 
 The reward function for a validator $v$ over a time interval $T$ is defined as:
 
-$R(v, T) = \texttt{payout}(T) \times \left(\sum_{r} \alpha_r \times \texttt{dist}(v, r, T) + \left(1 - \sum_{r} \alpha_r\right) \times f_\texttt{restake}(v)\right)$
+$R(v, T) = \texttt{payout}(T) \times \left(\sum_{r} \alpha_r \times \texttt{dist}(v, r, T) + \left(1 - \sum_{r} \alpha_r\right) \times f_{\texttt{restake}}(v)\right)$
 
 where:
 
