@@ -34,6 +34,16 @@
         "title": "Substrate Explorer",
         "href": "https://tangle.statescan.io/",
         "newWindow": true
+      },
+      "evmTestnetExplorer": {
+        "title": "EVM Explorer (Testnet)",
+        "href": "https://www.testnet-explorer.tangle.tools/",
+        "newWindow": true
+      },
+      "substrateTestnetExplorer": {
+        "title": "Substrate Explorer (Testnet)",
+        "href": "https://tangle-testnet.statescan.io/",
+        "newWindow": true
       }
     }
   },
