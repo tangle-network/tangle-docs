@@ -15,6 +15,10 @@
     "title": "Network Launch",
     "type": "doc"
   },
+  "network-parameters": {
+    "title": "Network Parameters",
+    "type": "doc"
+  },
   "use": {
     "title": "Account Management",
     "type": "doc"
@@ -73,6 +77,7 @@
   },
   "community": {
     "title": "Community",
+    "href": "https://tangle.tools/community",
     "type": "doc"
   },
   "glossary": {
@@ -84,7 +89,7 @@
     "type": "doc"
   },
   "webb_docs_link": {
-    "title": "Webb Docs",
+    "title": "Webb Protocol Docs",
     "href": "https://docs.webb.tools/docs",
     "type": "doc"
   }

@@ -2,11 +2,11 @@
 
 ## Where can I get help?
 
-Our documentation at [https://docs.tangle.tools](/) has the most up-to-date information, and you can ask questions at our Discord, the best place to get assistance with your node or other questions about the project. See http://webb.tools/community for links to Discord and more.
+Our documentation at [https://docs.tangle.tools](/) has the most up-to-date information, and you can ask questions at our Discord, the best place to get assistance with your node or other questions about the project. See http://tangle.tools/community for links to Discord and more.
 
 ## How do I stay up to date?
 
-All upgrades and important technical information are announced on Discord and Twitter, in the #tangle-network channel. See http://webb.tools/community for links to Discord and more.
+All upgrades and important technical information are announced on Discord and Twitter, in the #tangle-network channel. See http://tangle.tools/community for links to Discord and more.
 
 ## What are the hardware requirements?
 
@@ -64,3 +64,33 @@ Per era, the NPoS system selects a certain number of nodes with the most TNT to 
 ## How do I set an identity on my account?
 
 Setting an identity on-chain will help to identify your node and attract delegations. You can set an identity by following the instructions on [Polkadot's Identity Documentation](https://wiki.polkadot.network/docs/learn-identity)
+
+## How to move validator to another machine?
+
+To move your validator to another machine, follow these steps:
+
+1. Stop the validator node on the current machine.
+2. Copy the keystore file containing your validator's keys to the new machine.
+3. Install the necessary software and dependencies on the new machine.
+4. Configure the validator node on the new machine, ensuring that you point to the copied keystore file.
+5. Start the validator node on the new machine.
+
+## How to start a new validator with old account?
+
+To start a new validator with an existing account, you need to:
+
+1. Set up a new machine with the necessary hardware and software requirements.
+2. Copy the keystore file containing your validator's keys to the new machine.
+3. Configure the validator node on the new machine, ensuring that you point to the copied keystore file.
+4. Start the validator node on the new machine.
+
+Your new validator will be associated with your existing account.
+
+## How to stop validating?
+
+To stop validating, follow these steps:
+
+1. Unbond your validator using the chill extrinsic in the Staking module. This will initiate the unbonding process.
+2. Wait for the unbonding period to complete (usually 28 days).
+3. Once the unbonding period is over, you can stop your validator node and safely shut down the machine.
+4. Your staked funds will be available for withdrawal after the unbonding period.

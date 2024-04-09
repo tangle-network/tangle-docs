@@ -13,13 +13,15 @@ Through these services, Tangle Network aims to achieve the following for these d
 1. Reduced friction in deploying advanced cryptographic and zero-knowledge applications.
 2. Expanded frontier of possible zero-knowledge application space through cross-chain interoperability and privacy-preserving tools.
 3. Simplified APIs for interacting with zero-knowledge applications.
-4. Outsourced proof generation and trusted setup generation, eliminating operational burdens.
+4. Outsourced proof generation eliminating operational burdens.
 
 ## Core Services
 
 ### Multi-Party Computation (MPC)
 
 #### Threshold Signing as a Service (TSSaaS) MPC
+
+![TSSaS Diagram][/images/diagram-tssas]
 
 Signatures are pervasive in the design of blockchain bridges, oracles, and custody solutions. Tangle Network offers signature schemes as a service using threshold cryptography, enabling developers to build private and non-private cross-chain applications.
 
@@ -45,6 +47,8 @@ Github: https://github.com/webb-tools/gadget
 
 #### zkSNARKs as a Service (zkSaaS)
 
+![ZKSaaS Diagram][/images/diagram-zksaas]
+
 Proof generation is critical for maintaining privacy and implementation of complex cryptographic protocols within decentralized applications. Tangle's zkSnark service allows users to access proof generation functionality directly through the network. This allows developers to outsource the computationally expensive tasks to a privacy-preserving infrastructure.
 
 Tangle currently supports zkSaaS for Groth16 proofs, and our targeted systems will include:
@@ -56,10 +60,6 @@ Tangle currently supports zkSaaS for Groth16 proofs, and our targeted systems wi
 - Stark
 
 Github: https://github.com/webb-tools/zk-SaaS
-
-#### Trusted Setups as a Service (TaaS)
-
-Tangle Network streamlines the trusted setup process for zero-knowledge applications, reducing friction and enabling faster deployment to production.
 
 ## Future Services
 

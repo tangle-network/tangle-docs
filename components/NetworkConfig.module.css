@@ -1,10 +1,7 @@
-.networkinfo {
+.networkInfo {
   font-family: "Arial", sans-serif;
-  background-color: #f0f2f5;
-  color: #333;
-  max-width: 1000px;
+  max-width: 1200px; /* Increase the max-width */
   margin: 0 auto;
-  padding: 20px;
 }
 
 .networkInfo h1,
@@ -20,18 +17,9 @@
   border-bottom: 2px solid white;
 }
 
-.chevronIcon {
-  height: 3em;
-  width: 3em;
-  color: white;
-  border: 1px white solid;
-  border-radius: 10px;
-  background-color: #0001d33b;
-  margin-left: auto;
-}
 .networkCard {
   border-radius: 8px;
-  padding: 48px;
+  padding: 29px;
   margin: 20px 0 0 0;
   background: linear-gradient(45deg, rgb(168 0 198), rgba(255, 0, 0, 0) 70%),
     linear-gradient(-45deg, rgb(190 0 255 / 90%), rgba(0, 0, 255, 0) 70%),
@@ -41,6 +29,11 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
 }
 
+.networkColumn {
+  flex: 0 0 48%; /* Set a fixed width for columns */
+  max-width: 48%; /* Ensure columns don't exceed this width */
+  padding: 0 10px;
+}
 .networkTitle {
   margin-right: 0.5em; /* Add some space between the title and the icon */
 }
@@ -104,7 +97,7 @@
 }
 
 @media (max-width: 768px) {
-  .networkinfo {
+  .networkInfo {
     padding: 10px;
   }
 
@@ -113,4 +106,49 @@
   .td {
     font-size: 14px;
   }
+
+  .networkColumn {
+    flex: 0 0 100%; /* Make columns take full width on smaller screens */
+    max-width: 100%;
+    padding: 0;
+  }
+}
+
+.tabsContainer {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+  border-bottom: 1px white solid;
+}
+
+.tabButton {
+  color: #fff;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding-left: 10px;
+  padding: 10px 33px 10px 33px;
+  margin-right: 10px;
+}
+
+.activeTab {
+  color: #fff;
+  font-weight: 600;
+  border-bottom: 1px solid white;
+}
+
+.networkTabContent {
+  padding: 20px;
+}
+
+.mainnetStatus {
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600;
+  margin-left: 0.5em;
+  color: #fff;
 }

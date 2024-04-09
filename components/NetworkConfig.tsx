@@ -1,77 +1,187 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "./NetworkConfig.module.css";
 
-const NetworkCard = ({
-  cardTitle,
-  network,
-  type,
-  symbol,
-  decimals,
-  chainId,
-  rpcUrl,
-  wssUrl,
-  explorerUrls,
-  fundingInfo,
-}) => {
+const NetworkCard = ({ mainnet, testnet }) => {
+  const [activeTab, setActiveTab] = useState("mainnet");
+  const [isMainnetLive, setIsMainnetLive] = useState(false);
+
+  // Function to check if mainnet is live
+  const checkMainnetStatus = () => {
+    const launchTime = new Date("2024-04-10T02:00:00Z"); // 10am EST on April 10, 2024
+    const currentTime = new Date();
+
+    if (currentTime >= launchTime) {
+      setIsMainnetLive(true);
+    }
+  };
+
+  // Check mainnet status on component mount and every minute
+  useEffect(() => {
+    checkMainnetStatus();
+    const interval = setInterval(checkMainnetStatus, 60000); // 60000 ms = 1 minute
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const renderTabContent = () => {
+    if (activeTab === "mainnet") {
+      return (
+        <div className={styles.networkTabContent}>
+          <div className={styles.networkType}>{mainnet.cardTitle}</div>
+          <div className={styles.titleContainer}>
+            <h2 className={styles.networkTitle}>{mainnet.network}</h2>
+            <span className={styles.mainnetStatus}>
+              {isMainnetLive ? "Live Now" : "Launching April 10, 2024"}
+            </span>
+          </div>
+          <table className={styles.table}>
+            <tbody>
+              <tr className={styles.tableRow}>
+                <th className={styles.tableHeader}>Network Type</th>
+                <td className={styles.tableCell}>{mainnet.type}</td>
+              </tr>
+              <tr className={styles.tableRow}>
+                <th className={styles.tableHeader}>Native Asset Symbol</th>
+                <td className={styles.tableCell}>{mainnet.symbol}</td>
+              </tr>
+              <tr className={styles.tableRow}>
+                <th className={styles.tableHeader}>Native Asset Decimals</th>
+                <td className={styles.tableCell}>{mainnet.decimals}</td>
+              </tr>
+              <tr className={styles.tableRow}>
+                <th className={styles.tableHeader}>Chain ID</th>
+                <td className={styles.tableCell}>{mainnet.chainId}</td>
+              </tr>
+              <tr className={styles.tableRow}>
+                <th className={styles.tableHeader}>Public RPC URL</th>
+                <td className={styles.tableCell}>
+                  <Link href={mainnet.rpcUrl}>{mainnet.rpcUrl}</Link>
+                </td>
+              </tr>
+              <tr className={styles.tableRow}>
+                <th className={styles.tableHeader}>Public WSS URL</th>
+                <td className={styles.tableCell}>
+                  <Link href={mainnet.wssUrl}>{mainnet.wssUrl}</Link>
+                </td>
+              </tr>
+              {mainnet.explorerUrls.map((explorer, index) => (
+                <tr key={index}>
+                  <th className={styles.tableHeader}>
+                    {index === 0 ? "Interfaces & Explorers" : ""}
+                  </th>
+                  <td className={styles.tableCell}>
+                    <Link href={explorer.url}>{explorer.name}</Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+    } else {
+      return (
+        <div className={styles.networkTabContent}>
+          <div className={styles.networkType}>{testnet.cardTitle}</div>
+          <div className={styles.titleContainer}>
+            <h2 className={styles.networkTitle}>{testnet.network}</h2>
+          </div>
+          <table className={styles.table}>
+            <tbody>
+              <tr className={styles.tableRow}>
+                <th className={styles.tableHeader}>Network Type</th>
+                <td className={styles.tableCell}>{testnet.type}</td>
+              </tr>
+              <tr className={styles.tableRow}>
+                <th className={styles.tableHeader}>Native Asset Symbol</th>
+                <td className={styles.tableCell}>{testnet.symbol}</td>
+              </tr>
+              <tr className={styles.tableRow}>
+                <th className={styles.tableHeader}>Native Asset Decimals</th>
+                <td className={styles.tableCell}>{testnet.decimals}</td>
+              </tr>
+              <tr className={styles.tableRow}>
+                <th className={styles.tableHeader}>Chain ID</th>
+                <td className={styles.tableCell}>{testnet.chainId}</td>
+              </tr>
+              <tr className={styles.tableRow}>
+                <th className={styles.tableHeader}>Public RPC URL</th>
+                <td className={styles.tableCell}>
+                  <Link href={testnet.rpcUrl}>{testnet.rpcUrl}</Link>
+                </td>
+              </tr>
+              <tr className={styles.tableRow}>
+                <th className={styles.tableHeader}>Public WSS URL</th>
+                <td className={styles.tableCell}>
+                  <Link href={testnet.wssUrl}>{testnet.wssUrl}</Link>
+                </td>
+              </tr>
+              {testnet.explorerUrls.map((explorer, index) => (
+                <tr key={index}>
+                  <th className={styles.tableHeader}>
+                    {index === 0 ? "Interfaces & Explorers" : ""}
+                  </th>
+                  <td className={styles.tableCell}>
+                    <Link href={explorer.url}>{explorer.name}</Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+    }
+  };
+
   return (
     <div className={styles.networkCard}>
-      <div className={styles.networkType}>
-        {type} {cardTitle}
+      <div className={styles.tabsContainer}>
+        <button
+          className={`${styles.tabButton} ${
+            activeTab === "mainnet" ? styles.activeTab : ""
+          }`}
+          onClick={() => setActiveTab("mainnet")}
+        >
+          Mainnet
+        </button>
+        <button
+          className={`${styles.tabButton} ${
+            activeTab === "testnet" ? styles.activeTab : ""
+          }`}
+          onClick={() => setActiveTab("testnet")}
+        >
+          Testnet
+        </button>
       </div>
-      <div className={styles.titleContainer}>
-        <h2 className={styles.networkTitle}>{network}</h2>
-      </div>
-      <table className={styles.table}>
-        <tbody>
-          <tr className={styles.tableRow}>
-            <th className={styles.tableHeader}>Network Type</th>
-            <td className={styles.tableCell}>{type}</td>
-          </tr>
-          <tr className={styles.tableRow}>
-            <th className={styles.tableHeader}>Native Asset Symbol</th>
-            <td className={styles.tableCell}>{symbol}</td>
-          </tr>
-          <tr className={styles.tableRow}>
-            <th className={styles.tableHeader}>Native Asset Decimals</th>
-            <td className={styles.tableCell}>{decimals}</td>
-          </tr>
-          <tr className={styles.tableRow}>
-            <th className={styles.tableHeader}>Chain ID</th>
-            <td className={styles.tableCell}>{chainId}</td>
-          </tr>
-          <tr className={styles.tableRow}>
-            <th className={styles.tableHeader}>Public RPC URL</th>
-            <td className={styles.tableCell}>
-              <Link href={rpcUrl}>{rpcUrl}</Link>
-            </td>
-          </tr>
-          <tr className={styles.tableRow}>
-            <th className={styles.tableHeader}>Public WSS URL</th>
-            <td className={styles.tableCell}>
-              <Link href={wssUrl}>{wssUrl}</Link>
-            </td>
-          </tr>
-          {explorerUrls.map((explorer, index) => (
-            <tr key={index}>
-              <th className={styles.tableHeader}>
-                {index === 0 ? "Interfaces & Explorers" : ""}
-              </th>
-              <td className={styles.tableCell}>
-                <Link href={explorer.url}>{explorer.name}</Link>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      {renderTabContent()}
     </div>
   );
 };
 
 const NetworkInfo = () => {
   // Define the network details here or fetch from an API
-  const networks = [
-    {
+  const networks = {
+    mainnet: {
+      cardTitle: "Network Information",
+      network: "Tangle Network",
+      type: "Mainnet",
+      symbol: "TNT",
+      decimals: 18,
+      chainId: "5845",
+      rpcUrl: "https://rpc.tangle.tools",
+      wssUrl: "wss://rpc.tangle.tools",
+      explorerUrls: [
+        { name: "BlockScout", url: "https://explorer.tangle.tools" },
+        {
+          name: "PolkadotJS",
+          url: "https://polkadot.js.org/apps/?rpc=wss://rpc.tangle.tools#/explorer",
+        },
+      ],
+      fundingInfo: {
+        url: "https://faucet.tangle.tools/",
+      },
+    },
+    testnet: {
       cardTitle: "Network Information",
       network: "Tangle Network",
       type: "Testnet",
@@ -91,14 +201,11 @@ const NetworkInfo = () => {
         url: "https://faucet.tangle.tools/",
       },
     },
-    // Add Tangle Mainnet details here when available
-  ];
+  };
 
   return (
     <div className={styles.networkInfo}>
-      {networks.map((network, index) => (
-        <NetworkCard key={index} {...network} />
-      ))}
+      <NetworkCard mainnet={networks.mainnet} testnet={networks.testnet} />
     </div>
   );
 };

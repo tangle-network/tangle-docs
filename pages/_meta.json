@@ -21,10 +21,31 @@
     "href": "https://docs.tangle.tools/",
     "newWindow": false
   },
-  "faucet": {
-    "title": "Faucet on Discord",
-    "href": "https://webb.tools/community",
-    "newWindow": true
+  "explorers": {
+    "title": "Explorers",
+    "type": "menu",
+    "items": {
+      "evmExplorer": {
+        "title": "EVM Explorer",
+        "href": "https://www.explorer.tangle.tools/",
+        "newWindow": true
+      },
+      "substrateExplorer": {
+        "title": "Substrate Explorer",
+        "href": "https://tangle.statescan.io/",
+        "newWindow": true
+      },
+      "evmTestnetExplorer": {
+        "title": "EVM Explorer (Testnet)",
+        "href": "https://www.testnet-explorer.tangle.tools/",
+        "newWindow": true
+      },
+      "substrateTestnetExplorer": {
+        "title": "Substrate Explorer (Testnet)",
+        "href": "https://tangle-testnet.statescan.io/",
+        "newWindow": true
+      }
+    }
   },
   "resourcesMenu": {
     "title": "Links",
@@ -32,7 +53,7 @@
     "items": {
       "resourcesBlog": {
         "title": "Blog",
-        "href": "https://blog.webb.tools",
+        "href": "https://www.tangle.tools/blog",
         "newWindow": true
       },
       "resourcesWhitepaper": {
@@ -42,7 +63,7 @@
       },
       "resourcesCommunity": {
         "title": "Community",
-        "href": "https://webb.tools/community",
+        "href": "https://tangle.tools/community",
         "newWindow": true
       },
       "resourcesBugReport": {
@@ -51,8 +72,8 @@
         "newWindow": true
       },
       "resourcesContact": {
-        "title": "Contact Us",
-        "href": "https://t.me/webbprotocol",
+        "title": "Contact",
+        "href": "mailto:hello@tangle.tools",
         "newWindow": true
       }
     }
@@ -74,11 +95,6 @@
       "communityTelegram": {
         "title": "Telegram",
         "href": "https://t.me/webbprotocol",
-        "newWindow": true
-      },
-      "communityCommonwealth": {
-        "title": "Commonwealth Gov",
-        "href": "https://commonwealth.im/webb",
         "newWindow": true
       },
       "communityTwitterFounder": {

@@ -4,9 +4,9 @@ import { TelegramIcon, TwitterIcon } from "./Icons";
 function Github() {
   return (
     <a
-      href="https://github.com/webb-tools"
+      href="https://github.com/webb-tools/tangle"
       className="hidden p-2 text-current sm:flex hover:opacity-75"
-      title="Webb GitHub repo"
+      title="Tangle GitHub repo"
       target="_blank"
       rel="noreferrer"
     >
@@ -21,7 +21,7 @@ function Telegram() {
     <a
       href="https://t.me/webbprotocol"
       className="hidden p-2 text-current sm:flex hover:opacity-75"
-      title="Webb GitHub Telegram"
+      title="The Core Dev Webb's Telegram"
       target="_blank"
       rel="noreferrer"
     >
@@ -34,9 +34,9 @@ function Telegram() {
 function Twitter() {
   return (
     <a
-      href="https://twitter.com/webbprotocol"
+      href="https://twitter.com/tangle_network"
       className="hidden p-2 text-current sm:flex hover:opacity-75"
-      title="Webb Twitter"
+      title="Tangle Network Twitter"
       target="_blank"
       rel="noreferrer"
     >
@@ -51,7 +51,7 @@ function Discord() {
     <a
       href="https://discord.com/invite/cv8EfJu3Tn"
       className="hidden p-2 text-current sm:flex hover:opacity-75"
-      title="Webb Discord server"
+      title="Discord"
       target="_blank"
       rel="noreferrer"
     >
