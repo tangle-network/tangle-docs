@@ -15,16 +15,16 @@ Before following this guide, ensure that your machine's environment is set up an
 
 ### 1. Fetch the Tangle Network Binary
 
-Use the latest release version in the url in place of `<VERSION>`, you can visit [releases](https://github.com/webb-tools/tangle/releases) page to view the latest info
+Use the latest release version in the url in place of `<VERSION>`, you can visit [releases](https://github.com/webb-tools/tangle/releases) page to view the latest info.
 
 ```
-wget https://github.com/webb-tools/tangle/releases/download/<VERSION>/tangle-testnet-linux-amd64
+wget wget https://github.com/webb-tools/tangle/releases/download/<VERSION>/tangle-linux-amd64
 ```
 
 For example, at the time of writing this document, the latest release is v0.6.1 and the link would be as follows
 
 ```
-wget https://github.com/webb-tools/tangle/releases/download/v0.6.1/tangle-testnet-linux-amd64
+wget https://github.com/webb-tools/tangle/releases/download/v0.6.1/tangle-mainnet-linux-amd64
 ```
 
 ### 2. Install Dependencies
@@ -82,7 +82,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
         ExecStart=/usr/bin/tangle \
           --base-path <BASE_PATH> \
           --name <NODE-NAME> \
-          --chain tangle-testnet \
+          --chain tangle-mainnet \
           --node-key-file "/home/<USERNAME>/node-key" \
           --rpc-cors all \
           --port 9946 \
@@ -150,7 +150,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
         ```sh filename="Acco" copy
 
         ./target/release/tangle key insert --base-path <BASE_PATH> \
-        --chain tangle-testnet \
+        --chain tangle-mainnet \
         --scheme Sr25519 \
         --suri <"12-MNEMONIC-PHARSE"> \
         --key-type acco
@@ -161,7 +161,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
         ```sh filename="Babe" copy
 
         ./target/release/tangle key insert --base-path <BASE_PATH> \
-        --chain tangle-testnet \
+        --chain tangle-mainnet \
         --scheme Sr25519 \
         --suri <"12-MNEMONIC-PHARSE"> \
         --key-type babe
@@ -172,7 +172,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
         ```sh filename="Imonline" copy
 
         ./target/release/tangle key insert --base-path <BASE_PATH> \
-        --chain tangle-testnet \
+        --chain tangle-mainnet \
         --scheme Sr25519 \
         --suri <"12-MNEMONIC-PHARSE"> \
         --key-type imon
@@ -183,7 +183,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
         ```sh filename="Role" copy
 
         ./target/release/tangle key insert --base-path <BASE_PATH> \
-        --chain tangle-testnet \
+        --chain tangle-mainnet \
         --scheme Ecdsa \
         --suri <"12-MNEMONIC-PHARSE"> \
         --key-type role
@@ -194,7 +194,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
         ```sh filename="Grandpa" copy
 
         ./target/release/tangle key insert --base-path /data/validator/<USERNAME> \
-        --chain tangle-testnet \
+        --chain tangle-mainnet \
         --scheme Ed25519 \
         --suri <"12-MNEMONIC-PHARSE"> \
         --key-type gran
@@ -203,7 +203,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
         To ensure you have successfully generated the keys correctly run:
 
         ```sh filename="ls" copy
-        ls ~/data/validator/<USERNAME>/chains/tangle-testnet/keystore/
+        ls ~/data/validator/<USERNAME>/chains/tangle-mainnet/keystore/
         # You should see a some file(s) there, these are the keys.
         ```
 
@@ -239,7 +239,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
         ExecStart=/usr/bin/tangle \
           --base-path <BASE_PATH> \
           --name <NODE-NAME> \
-          --chain tangle-testnet \
+          --chain tangle-mainnet \
           --node-key-file "/home/<USERNAME>/node-key" \
           --port 30333 \
           --validator \
@@ -280,7 +280,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
       2023-03-22 14:55:51 Tangle Standalone Node
       2023-03-22 14:55:51 ✌️  version 0.1.15-54624e3-aarch64-macos
       2023-03-22 14:55:51 ❤️  by Webb Technologies Inc., 2017-2023
-      2023-03-22 14:55:51 📋 Chain specification: Tangle Testnet
+      2023-03-22 14:55:51 📋 Chain specification: Tangle Mainnet
       2023-03-22 14:55:51 🏷  Node name: cooing-morning-2891
       2023-03-22 14:55:51 👤 Role: FULL
       2023-03-22 14:55:51 💾 Database: RocksDb at /Users/local/Library/Application Support/tangle/chains/local_testnet/db/full
@@ -346,7 +346,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
           ExecStart=/usr/bin/tangle \
             --base-path <BASE_PATH> \
             --name <NODE-NAME> \
-            --chain tangle-testnet \
+            --chain tangle-mainnet \
             --node-key-file "/home/<USERNAME>/node-key" \
             --rpc-cors all \
             --port 9946 \

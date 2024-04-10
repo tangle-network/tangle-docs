@@ -44,7 +44,7 @@ To start the node run the following command:
 
 ```sh filename="docker run" copy
 docker run --rm -it -v /var/lib/tangle/:/data ghcr.io/webb-tools/tangle/tangle:main \
-  --chain tangle-testnet \
+  --chain tangle-mainnet \
   --name="YOUR-NODE-NAME" \
   --base-path /data \
   --rpc-cors all \
@@ -87,7 +87,7 @@ should paste your SURI when the command asks for it.
 docker run --rm -it --platform linux/amd64 --network="host"  \
 ghcr.io/webb-tools/tangle/tangle:main \
      key insert --base-path /var/lib/tangle/ \
-    --chain tangle-testnet \
+    --chain tangle-mainnet \
     --scheme Sr25519 \
     --key-type acco
 ```
@@ -98,7 +98,7 @@ ghcr.io/webb-tools/tangle/tangle:main \
 docker run --rm -it --platform linux/amd64 --network="host"  \
 ghcr.io/webb-tools/tangle/tangle:main \
     key insert --base-path /var/lib/tangle/ \
-    --chain tangle-testnet \
+    --chain tangle-mainnet \
     --scheme Sr25519 \
     --key-type babe
 ```
@@ -109,7 +109,7 @@ ghcr.io/webb-tools/tangle/tangle:main \
 docker run --rm -it --platform linux/amd64 --network="host"  \
 ghcr.io/webb-tools/tangle/tangle:main \
     key insert --base-path /var/lib/tangle/ \
-    --chain tangle-testnet \
+    --chain tangle-mainnet \
     --scheme Sr25519 \
     --key-type imon
 ```
@@ -120,7 +120,7 @@ ghcr.io/webb-tools/tangle/tangle:main \
 docker run --rm -it --platform linux/amd64 --network="host"  \
 ghcr.io/webb-tools/tangle/tangle:main \
     tangle key insert --base-path /data \
-    --chain tangle-testnet \
+    --chain tangle-mainnet \
     --scheme Ecdsa \
     --key-type role
 ```
@@ -131,7 +131,7 @@ ghcr.io/webb-tools/tangle/tangle:main \
 docker run --rm -it --platform linux/amd64 --network="host"  \
 ghcr.io/webb-tools/tangle/tangle:main \
     tangle key insert --base-path /data \
-    --chain tangle-testnet \
+    --chain tangle-mainnet \
     --scheme Ed25519 \
     --key-type gran
 ```
@@ -139,7 +139,7 @@ ghcr.io/webb-tools/tangle/tangle:main \
 To ensure you have successfully generated the keys correctly run:
 
 ```sh filename="ls" copy
-ls ~/data/validator/<USERNAME>/chains/tangle-testnet/keystore/
+ls ~/data/validator/<USERNAME>/chains/tangle-mainnet/keystore/
 # You should see a some file(s) there, these are the keys.
 ```
 
@@ -153,7 +153,7 @@ To start the node run the following command:
 docker run --platform linux/amd64 --network="host" \
 ghcr.io/webb-tools/tangle/tangle:main \
 --base-path=/data \
---chain tangle-testnet \
+--chain tangle-mainnet \
 --name="YOUR-NODE-NAME" \
 --execution wasm \
 --wasm-execution compiled \
@@ -176,7 +176,7 @@ blocks being produced on the Tangle network!
 2023-03-22 14:55:51 Tangle Standalone Node
 2023-03-22 14:55:51 ✌️  version 0.1.15-54624e3-aarch64-macos
 2023-03-22 14:55:51 ❤️  by Webb Technologies Inc., 2017-2023
-2023-03-22 14:55:51 📋 Chain specification: Tangle Testnet
+2023-03-22 14:55:51 📋 Chain specification: Tangle Mainnet
 2023-03-22 14:55:51 🏷  Node name: cooing-morning-2891
 2023-03-22 14:55:51 👤 Role: FULL
 2023-03-22 14:55:51 💾 Database: RocksDb at /Users/local/Library/Application Support/tangle/chains/local_testnet/db/full

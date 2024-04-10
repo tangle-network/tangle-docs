@@ -5,181 +5,66 @@ description: An overview of Tangle Network software.
 
 import { Tabs, Tab } from "/components/Tabs";
 import Callout from "/components/Callout";
-
-# Software and Dependencies
-
-## Binaries
-
-Every release of tangle node includes a Precompiled binary, its currently limited to amd-64 architecture but we plan to
-support more soon. You can view all releases [here](https://github.com/webb-tools/tangle/releases).
-
-In the below commands, substitute `LATEST_RELEASE` with the version you want to use, the current latest version is `0.6.1`
-
-**Get tangle binary**
-
-Use this if running a full node or validating.
-
-```sh filename="Get binary" copy
-export LATEST_RELEASE=v0.6.1
-wget https://github.com/webb-tools/tangle/releases/download/${LATEST_RELEASE}/tangle-testnet-linux-amd64
-```
-
-**Get tangle binary with txpool feature**
-
-The tx-pool feature allows transaction tracing and is only relavant if you are running an EVM explorer.
-
-```sh filename="Get binary txpool" copy
-export LATEST_RELEASE=v0.6.1
-wget https://github.com/webb-tools/tangle/releases/download/${LATEST_RELEASE}/tangle-txpool-linux-amd64
-```
-
-### Synchronize Chain Data
-
-Once installed, you can begin syncing your node by running the following command. **Your path may vary depend on whether you used the binary, or built from source**:
-
-```sh filename="Syncing node" copy
-./tangle
-```
-
-Once your node has fully syncronized with Tangle Network you may proceed to setup the
-necessary accounts to operate a validator or other operations.
-
-## Alternative: Build From Source
-
-In order to build a Tangle node from source your machine must have specific dependencies installed. This guide
-outlines those requirements.
-
-#### Rust Dependency
-
-This guide uses [https://rustup.rs](https://rustup.rs) installer and the `rustup` tool to manage the Rust toolchain. Rust is required to
-compile a Tangle node.
-
-First install and configure `rustup`:
-
-```sh filename="Install Rust" copy
-# Install
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
-# Configure
-source ~/.cargo/env
-```
-
-Configure the Rust toolchain to default to the latest stable version, add nightly and the nightly wasm target:
-
-```sh filename="Configure Rust" copy
-rustup default nightly
-rustup update
-rustup update nightly
-rustup target add wasm32-unknown-unknown --toolchain nightly
-```
-
-#### Substrate Dependencies
-
-<Tabs items={["linux", "darwin", "windows"]} storageKey="selected-arch-release">
-  <Tab>
-
-    Debian version:
-    ```sh filename=" Debian" copy
-    sudo apt install --assume-yes git clang curl libssl-dev llvm libudev-dev make protobuf-compiler
-    ```
-    Arch version:
-    ```sh filename="Arch" copy
-    pacman -Syu --needed --noconfirm curl git clang make protobuf
-    ```
-    Fedora version:
-    ```sh filename="Fedora" copy
-    sudo dnf update
-    sudo dnf install clang curl git openssl-devel make protobuf-compiler
-    ```
-    Opensuse version:
-    ```sh filename="Opensuse" copy
-    sudo zypper install clang curl git openssl-devel llvm-devel libudev-devel make protobuf
-    ```
-
-    Remember that different distributions might use different package managers and bundle packages in different ways.
-    For example, depending on your installation selections, Ubuntu Desktop and Ubuntu Server might have different packages
-    and different requirements. However, the packages listed in the command-line examples are applicable for many common Linux
-    distributions, including Debian, Linux Mint, MX Linux, and Elementary OS.
-
-  </Tab>
-  <Tab>
-
-    Assumes user has Homebrew already installed.
-
-    ```sh filename="Brew" copy
-    brew update
-    brew install openssl gmp protobuf cmake
-    ```
-
-  </Tab>
-  <Tab>
-
-    For Windows users please refer to the official Substrate documentation:
-    [Windows](https://docs.substrate.io/install/windows/)
-
-  </Tab>
-</Tabs>
-
+---
+title: Node Software and Binaries
+description: An overview of Tangle Network software and how to run a node.
 ---
 
-Once the development environment is set up, you can build the Tangle node from source.
+# Running a Tangle Node
 
-```sh filename="Clone repo" copy
-git clone https://github.com/webb-tools/tangle.git
-```
+This guide provides an overview of the Tangle Network software and instructions on how to run a node.
 
-```sh filename="Build" copy
-cargo build --release
-```
+## Prerequisites
 
-> NOTE: You _must_ use the release builds! The optimizations here are required
-> as in debug mode, it is expected that nodes are not able to run fast enough to produce blocks.
+Before running a Tangle node, ensure that your machine meets the following requirements:
 
-You will now have the `tangle` binary built in `target/release/` dir
+- Operating System: Linux (recommended), macOS, or Windows
+- Hardware: Sufficient CPU, RAM, and storage capacity to synchronize and store the blockchain data
 
-### Synchronize Chain Data
+## Installing the Tangle Node Binary
 
-Once installed, you can begin syncing your node by running the following command. **Your path may vary depend on whether you used the binary, or built from source**:
+To install the Tangle node binary, follow these steps:
 
-```sh filename="Syncing node" copy
-./target/release/tangle
-```
+1. Download the latest release binary from the [Tangle releases page](https://github.com/webb-tools/tangle/releases). The current latest version is 1.0.0.
 
-Once your node has fully syncronized with Tangle Network you may proceed to setup the
-necessary accounts to operate a validator or other operations.
+   ```sh filename="Get binary" copy
+   wget https://github.com/webb-tools/tangle/releases/download/v1.0.0/tangle-default-linux-amd64
 
-### Configuring your Build from Source with Feature Flags
+   ```
 
-Some features of tangle node are setup behind feature flags, to enable these features you will have to build the binary with these flags enabled
+2. Make the downloaded binary executable
+   `chmod +x tangle-default-linux-amd64`
 
-1. **txpool**
-   This feature flag is useful to help trace and debug evm transactions on the chain, you should build node with this flag if you intend to use the node for any evm transaction following
+## Running the Tangle Node
 
-```sh filename="Build txpool" copy
-cargo build --release --features txpool
-```
+To start your Tangle node and begin synchronizing with the network, run the following command:
+`./tangle-default-linux-amd64`
 
-2. **relayer**
-   This feature flag is used to start the embedded tx relayer with tangle node, you should build node with this flag if you intend to run a node with a relayer which can be used for transaction relaying or data querying
+Your node will start synchronizing with the Tangle Network. Once the synchronization process is complete, your node will be fully operational.
 
-```sh filename="Build relayer" copy
-cargo build --release --features relayer
-```
+### Running a Node with SystemD or Docker
 
-3. **light-client**
-   This feature flag is used to start the embedded light client with tangle node, you should build node with this flag if you intend to run a node with a light client relayer to sync EVM data on Tangle
+For production environments, it is recommended to run your Tangle node using a process manager like SystemD or Docker. This ensures that your node runs consistently and automatically restarts in case of any issues.
 
-```sh filename="Build light" copy
-cargo build --release --features light-client
-```
+Please refer to the following guides for instructions on running a Tangle node with SystemD or Docker:
 
-### Additional Information
+- Running a Tangle Node with SystemD
+- Running a Tangle Node with Docker
 
-**Default Ports for a Tangle Full-Node:**
+## Default Ports for a Tangle Node
 
-| Description | Port        |
-| ----------- | ----------- |
-| P2P         | 30333 (TCP) |
-| RPC         | 9933        |
-| WS          | 9944        |
-| Prometheus  | 9615        |
+The following table lists the default ports used by a Tangle node:
+
+## Feature Flags
+
+The Tangle node software includes several feature flags that enable additional functionality. Here are some notable feature flags:
+
+- `txpool`: Enables transaction tracing and debugging for EVM transactions.
+- `relayer`: Starts an embedded transaction relayer for transaction relaying and data querying.
+- `light-client`: Starts an embedded light client for syncing EVM data on Tangle.
+
+To build the Tangle node with specific feature flags enabled, use the following command:
+
+`cargo build --release --features <feature-flag>`
+
+Replace <feature-flag> with the desired feature flag(s) you want to enable.
