@@ -1,46 +1,57 @@
-# Setting an On-Chain Identity Using Polkadot.js Apps
+# On-Chain Identity on the Tangle Network
 
-This guide provides a step-by-step process for setting an on-chain identity on the Tangle Network using the Polkadot.js Apps interface. An on-chain identity allows other network participants to verify your identity through on-chain data, enhancing trust and security within the ecosystem.
+## Introduction
 
-## Prerequisites
+The Tangle Network provides a naming system that allows participants to add personal information to their on-chain account and subsequently ask for verification of this information by registrars. This feature enhances trust and security within the ecosystem by allowing network participants to verify each other's identities through on-chain data.
 
-Before you start, ensure you have:
+## Understanding Identity on the Tangle Network
 
-- A Polkadot.js wallet extension installed in your browser.
-- Some TNT tokens in your wallet to pay for transaction fees.
+### Setting an Identity
 
-## Step 1: Access Polkadot.js Apps
+Users must reserve funds in a bond to store their information on-chain: ~1-6 TNT and some TNT per each field beyond the legal name. These funds are locked, not spent - they are returned when the identity is cleared.
 
-1. Open your web browser and navigate to [Polkadot.js Apps](https://polkadot.js.org/apps/).
+### Judgements
+
+After a user injects their information on-chain, they can request judgement from a registrar. Users declare a maximum fee that they are willing to pay for judgement, and registrars whose fee is below that amount can provide a judgement.
+
+Registrars can select up to six levels of confidence in their attestation:
+
+1. Unknown: The default value, no judgement made yet.
+2. Reasonable: The data appears reasonable, but no in-depth checks (e.g., formal KYC process) were performed.
+3. Known Good: The registrar has certified that the information is correct (this step involves verification of state-issued identity documents).
+4. Out of Date: The information used to be good but is now out of date.
+5. Low Quality: The information is low quality or imprecise but can be fixed with an update.
+6. Erroneous: The information is erroneous and may indicate malicious intent.
+
+A seventh state, "fee paid", is for when a user has requested judgement and it is in progress. Information that is in this state or "erroneous" is "sticky" and cannot be modified; it can only be removed by the complete removal of the identity.
+
+### Registrars
+
+Registrars can set a fee for their services and limit their attestation to certain fields. For example, a registrar could charge [placeholder fee] TNT to verify one's legal name, email, and GPG key.
+
+There is currently 1 registrar on the Tangle Network:
+
+1. Registrar `0`:
+   - Account: `tgDhkcoQaPqWM9NSKr8WjyRmy2gFCnt1tym4RuUR8SUNEH5vD`
+   - Fee: 0 TNT
+
+### Sub-Identities
+
+Users can also link accounts by setting "sub-accounts", each with its own identity, under a primary account. The system reserves a bond for each sub-account. An example of how you might use this would be a validation company running multiple validators.
+
+An account can have a maximum of 100 sub-accounts. Note that a deposit of 1 TNT is required for every sub-account.
+
+## Setting Your On-Chain Identity Using Polkadot.js Apps
+
+Follow these steps to set your on-chain identity:
+
+1. Access Polkadot.js Apps by opening your web browser and navigating to Tangle Network on [Polkadot.js Apps](https://polkadot.js.org/apps/?rpc=wss://rpc.tangle.tools#/accounts).
 2. Connect your Polkadot.js extension wallet by clicking on the "Accounts" tab in the Polkadot.js Apps interface.
+3. Navigate to the "Accounts" page and locate the account you wish to set an identity for. Click on the three dots on the right side to open a dropdown menu and select "Set on-chain identity."
+4. Fill in the identity information form with details such as your legal name, email, Twitter handle, website, Riot (Matrix) username, etc. You do not need to fill out all fields, just the ones relevant to your identity.
+5. After filling out the form, scroll down and click "Set Identity" to proceed. Your Polkadot.js extension will prompt you to sign the transaction. Review the information and fees, then sign the transaction to confirm your identity setup.
 
-## Step 2: Navigate to the Accounts Page
-
-1. In the Polkadot.js Apps interface, find the "Accounts" tab on the top navigation bar.
-2. Click on "Accounts" to view your wallet accounts.
-
-## Step 3: Set Your On-Chain Identity
-
-1. Locate the account you wish to set an identity for and click on the three dots on the right side to open a dropdown menu.
-2. Select "Set on-chain identity."
-
-## Step 4: Fill in Your Identity Information
-
-1. A form will appear, prompting you to enter various pieces of identity information such as:
-   - Legal Name
-   - Email
-   - Twitter
-   - Website
-   - Riot (Matrix)
-   - etc.
-2. Fill in the information you wish to have verified on-chain. Note: You do not need to fill out all fields, just the ones relevant to your identity.
-
-## Step 5: Submit the Transaction
-
-1. After filling out the form, scroll down and click "Set Identity" to proceed.
-2. Your Polkadot.js extension will prompt you to sign the transaction. Review the information and fees, then sign the transaction to confirm your identity setup.
-
-## Step 6: Verification (Optional)
+## Verification (Optional)
 
 After setting your on-chain identity, you may want to get it verified by a registrar. This step is optional but adds an additional layer of trust to your identity.
 
@@ -51,4 +62,4 @@ After setting your on-chain identity, you may want to get it verified by a regis
 
 ## Conclusion
 
-Setting an on-chain identity using Polkadot.js Apps is a straightforward process that enhances your visibility and trustworthiness within the Tangle Network ecosystem. Remember, the information you provide will be publicly visible on the blockchain, so only include details you're comfortable sharing.
+Setting an on-chain identity on the Tangle Network is a valuable way to enhance your visibility and trustworthiness within the ecosystem. By understanding the identity system and following the steps to set and verify your identity using Polkadot.js Apps, you can take advantage of this feature. Remember, the information you provide will be publicly visible on the blockchain, so only include details you're comfortable sharing.
