@@ -4,5 +4,6 @@
   "restaking-rewards": "Restaking Rewards",
   "restaking-reward-calc": {
     "display": "hidden"
-  }
+  },
+  "blueprints": "Blueprints"
 }
