@@ -193,7 +193,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 
         ```sh filename="Grandpa" copy
 
-        ./target/release/tangle key insert --base-path /data/validator/<USERNAME> \
+        ./target/release/tangle key insert --base-path <BASE_PATH> \
         --chain tangle-testnet \
         --scheme Ed25519 \
         --suri <"12-MNEMONIC-PHARSE"> \
@@ -203,7 +203,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
         To ensure you have successfully generated the keys correctly run:
 
         ```sh filename="ls" copy
-        ls ~/data/validator/<USERNAME>/chains/tangle-testnet/keystore/
+        ls <BASE_PATH>/chains/tangle-testnet/keystore/
         # You should see a some file(s) there, these are the keys.
         ```
 
