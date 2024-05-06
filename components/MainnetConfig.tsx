@@ -11,6 +11,7 @@ const NetworkCard = ({
   chainId,
   rpcUrl,
   wssUrl,
+  wssUrl2,
   explorerUrls,
   fundingInfo,
 }) => {
@@ -50,6 +51,7 @@ const NetworkCard = ({
             <th className={styles.tableHeader}>Public WSS URL</th>
             <td className={styles.tableCell}>
               <Link href={wssUrl}>{wssUrl}</Link>
+              <Link href={wssUrl2}>{wssUrl2}</Link>
             </td>
           </tr>
           {explorerUrls.map((explorer, index) => (
@@ -80,6 +82,7 @@ const NetworkInfo = () => {
       chainId: "5845",
       rpcUrl: "https://rpc.tangle.tools",
       wssUrl: "wss://rpc.tangle.tools",
+      wssUrl2: "wss://tangle-mainnet-rpc.dwellir.com/",
       explorerUrls: [
         { name: "BlockScout", url: "https://testnet-explorer.tangle.tools" }, // Update this
         {
