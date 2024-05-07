@@ -1,36 +1,57 @@
 {
-  "*": {
-    "type": "page"
-  },
   "index": {
-    "display":"hidden",
     "title": "Home",
-    "type": "page",
-    "theme": {
-      "layout": "raw",
-      "sidebar": false,
-      "toc": true
-    }
+    "display": "hidden",
+    "type": "page"
   },
   "developers": {
     "title": "Developers",
-    "type": "page"
+    "type": "page",
+    "items": {
+      "index": {
+        "title": "Overview",
+        "href": "/developers"
+      }
+    }
   },
   "restake": {
     "title": "Restake",
-    "type": "page"
+    "type": "page",
+    "items": {
+      "index": {
+        "title": "Overview",
+        "href": "/restake"
+      }
+    }
   },
   "operators": {
     "title": "Operators",
-    "type": "page"
+    "type": "page",
+    "items": {
+      "index": {
+        "title": "Overview",
+        "href": "/operators"
+      }
+    }
   },
   "network": {
     "title": "Network",
-    "type": "page"
+    "type": "page",
+    "items": {
+      "index": {
+        "title": "Overview",
+        "href": "/network"
+      }
+    }
   },
-  "resourcesMenu": {
+  "resources": {
     "title": "Resources",
-    "type": "page"
+    "type": "page",
+    "items": {
+      "index": {
+        "title": "Overview",
+        "href": "/resources"
+      }
+    }
   }
-  
 }
