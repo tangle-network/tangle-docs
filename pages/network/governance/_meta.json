@@ -1,0 +1,20 @@
+{
+  "overview": "Overview of On-chain Governance",
+  "democracy-voting": "Voting in Democracy",
+  "governance-interfaces": "Governance Interfaces",
+  "governance-parameters": "On-chain Governance Parameters",
+  "proposal-creation": "Create a Proposal",
+  "governance-procedures": "Other Procedures",
+  "democracy": {
+    "title": "Democracy",
+    "href": "https://polkadot.js.org/apps/?rpc=wss://rpc.tangle.tools#/democracy"
+  },
+  "treasury": {
+    "title": "Treasury",
+    "href": "https://polkadot.js.org/apps/?rpc=wss://rpc.tangle.tools#/treasury"
+  },
+  "council": {
+    "title": "Council",
+    "href": "https://polkadot.js.org/apps/?rpc=wss://rpc.tangle.tools#/council"
+  }
+}
