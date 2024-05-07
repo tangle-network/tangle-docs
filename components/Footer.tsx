@@ -231,8 +231,8 @@ export function FooterContent() {
                     y2="29.367"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop stop-color="#8E59FF" />
-                    <stop offset="1" stop-color="#6888F9" />
+                    <stop stopColor="#8E59FF" />
+                    <stop offset="1" stopColor="#6888F9" />
                   </linearGradient>
                   <linearGradient
                     id="paint1_linear_2775_22293"
@@ -242,8 +242,8 @@ export function FooterContent() {
                     y2="-1.36739"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop stop-color="#8E59FF" />
-                    <stop offset="1" stop-color="#6888F9" />
+                    <stop stopColor="#8E59FF" />
+                    <stop offset="1" stopColor="#6888F9" />
                   </linearGradient>
                   <clipPath id="clip0_2775_22293">
                     <rect
@@ -288,8 +288,8 @@ export function FooterContent() {
                     y2="29.367"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop stop-color="#8E59FF" />
-                    <stop offset="1" stop-color="#6888F9" />
+                    <stop stopColor="#8E59FF" />
+                    <stop offset="1" stopColor="#6888F9" />
                   </linearGradient>
                   <linearGradient
                     id="paint1_linear_2775_765"
@@ -299,8 +299,8 @@ export function FooterContent() {
                     y2="-1.36739"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop stop-color="#8E59FF" />
-                    <stop offset="1" stop-color="#6888F9" />
+                    <stop stopColor="#8E59FF" />
+                    <stop offset="1" stopColor="#6888F9" />
                   </linearGradient>
                   <clipPath id="clip0_2775_765">
                     <rect
