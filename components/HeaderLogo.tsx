@@ -3,7 +3,7 @@ function HeaderLogo() {
     //className="dark:hidden"
     <>
       <a
-        href="https://tangle.tools"
+        href="https://docs.tangle.tools"
         target="_blank"
         rel="noreferrer"
         title="Tangle Homepage"
