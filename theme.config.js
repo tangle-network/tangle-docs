@@ -20,7 +20,7 @@ const theme = {
     return {
       description: frontMatter.description,
       defaultTitle,
-      titleTemplate: `%s – Tangle Network`,
+      titleTemplate: `%s - Tangle Network`,
     };
   },
   toc: {
@@ -103,12 +103,13 @@ const theme = {
       if (type === "separator") {
         return <div style={{ fontWeight: 600 }}>{title}</div>;
       }
-      if (title === "Introduction") {
-        return <>❓ {title}</>;
-      }
       return <>➖ {title}</>;
     },
     defaultMenuCollapseLevel: 1,
+    // Control the visibility of the sidebar
+    shouldDisplay: (pathname) => {
+      return pathname !== "/";
+    },
   },
   navbar: {
     component: Navigation,
