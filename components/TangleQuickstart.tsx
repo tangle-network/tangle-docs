@@ -17,7 +17,7 @@ export const QuickDeployArea = () => {
           description: `Deploy a Tangle node in two steps`,
           name: "Quick Deployment",
         }}
-        href="/docs/node/quickstart"
+        href="/node/quickstart"
       ></DetailedFeatureLink>
     </div>
   );
@@ -32,7 +32,7 @@ export const DeployArea = () => {
           description: `Deploy a Tangle node in minutes using Docker.`,
           name: "Deploy with Docker",
         }}
-        href="/docs/node/docker-node"
+        href="/node/docker-node"
       ></DetailedFeatureLink>
       <DetailedFeatureLink
         feature={{
@@ -40,7 +40,7 @@ export const DeployArea = () => {
           description: `Run a Tangle node using Systemd.`,
           name: "Run with Systemd",
         }}
-        href="/docs/node/systemd"
+        href="/node/systemd"
       />
     </div>
   );
@@ -78,7 +78,7 @@ export const MonitoringArea = () => {
           description: `Power your metrics and alerting with the leading open-source monitoring solution.`,
           name: "Prometheus Setup",
         }}
-        href="/docs/node/monitoring/prometheus/"
+        href="/node/monitoring/prometheus/"
       ></DetailedFeatureLink>
       <DetailedFeatureLink
         feature={{
@@ -86,7 +86,7 @@ export const MonitoringArea = () => {
           description: `Handle alerts sent by client applications such as the Prometheus server`,
           name: "AlertManager Setup",
         }}
-        href="/docs/node/monitoring/alert-manager/"
+        href="/node/monitoring/alert-manager/"
       ></DetailedFeatureLink>
       <DetailedFeatureLink
         feature={{
@@ -94,7 +94,7 @@ export const MonitoringArea = () => {
           description: `Visualize results from multiple data sources simultaneously.`,
           name: "Grafana Dashboards",
         }}
-        href="/docs/node/monitoring/grafana/"
+        href="/node/monitoring/grafana/"
       ></DetailedFeatureLink>
       <DetailedFeatureLink
         feature={{
@@ -102,7 +102,7 @@ export const MonitoringArea = () => {
           description: `Horizontally scalable, highly available, multi-tenant log aggregation system.`,
           name: "Loki Log Management",
         }}
-        href="/docs/node/monitoring/loki/"
+        href="/node/monitoring/loki/"
       ></DetailedFeatureLink>
     </div>
   );

@@ -31,13 +31,13 @@ if image assets are added to a given section you must provide both a dark and li
 
 **Updating existing content**
 
-1. Navigate to the desired page to update (e.g. `/pages/docs/overview.mdx`)
+1. Navigate to the desired page to update (e.g. `/pages/overview.mdx`)
 2. Make applicable changes
 3. Test those changes locally `yarn install && yarn dev`
 
 **Adding content for existing section**
 
-1. Navigate to the desired documentation section (e.g. `/pages/docs/overview.mdx/`)
+1. Navigate to the desired documentation section (e.g. `/pages/overview.mdx/`)
 2. Create a new mdx file that represents new page for desired section (e.g. `advanced.mdx`)
 3. Write desired content for the new mdx file
 4. Update the `_meta.json` file within the section directory to include your new page into the navigation
@@ -81,8 +81,8 @@ navigation.
 5.  **Learn more about Nextra, Next, and nextra-theme-docs**
 
     - [Documentation](https://nextra.site/docs)
-    - [Themes](https://nextra.site/docs/docs-theme)
-    - [Guides](https://nextra.site/docs/guide)
+    - [Themes](https://nextra.site/docs-theme)
+    - [Guides](https://nextra.site/guide)
 
 <h2 id="contribute"> Contributing </h2>
 
