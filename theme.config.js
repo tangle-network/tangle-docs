@@ -104,12 +104,7 @@ const theme = {
         return <div style={{ fontWeight: 600 }}>{title}</div>;
       }
       return <>➖ {title}</>;
-    },
-    defaultMenuCollapseLevel: 1,
-    // Control the visibility of the sidebar
-    shouldDisplay: (pathname) => {
-      return pathname !== "/";
-    },
+    }
   },
   navbar: {
     component: Navigation,
