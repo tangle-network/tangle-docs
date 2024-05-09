@@ -57,7 +57,7 @@ navigation.
 
 2.  **Install dependencies**
 
-    Navigate into your new site’s directory and install all dependencies.
+    Navigate into your new site's directory and install all dependencies.
 
     ```bash
     cd tangle-docs/
@@ -66,7 +66,7 @@ navigation.
 
 3.  **Fire the engine**
 
-    Navigate into your new site’s directory and use the following command to start the development server locally.
+    Navigate into your new site's directory and use the following command to start the development server locally.
 
     ```bash
     yarn dev # alias for `yarn start` and `yarn develop`
