@@ -81,8 +81,8 @@ navigation.
 5.  **Learn more about Nextra, Next, and nextra-theme-docs**
 
     - [Documentation](https://nextra.site/docs)
-    - [Themes](https://nextra.site/docs-theme)
-    - [Guides](https://nextra.site/guide)
+    - [Themes](https://nextra.site/docs/docs-theme)
+    - [Guides](https://nextra.site/docs/guide)
 
 <h2 id="contribute"> Contributing </h2>
 

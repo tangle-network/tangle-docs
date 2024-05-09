@@ -10,7 +10,7 @@ All upgrades and important technical information are announced on Discord and Tw
 
 ## What are the hardware requirements?
 
-See [Hardware](https://docs.tangle.tools/node/hardware/) and [Getting Started with Validating](https://docs.tangle.tools/node/validator/requirements/) for more information.
+See [Hardware](./hardware.mdx) and [Getting Started with Validating](../validator/requirements.mdx) for more information.
 
 ## What about backup nodes?
 
@@ -18,7 +18,7 @@ We recommend that you run two machines with the same specifications, in differen
 
 ## What are the different networks?
 
-There are two networks, each will require dedicated hardware. The Tangle Testnet is free and should be used to familiarize yourself with the setup. See [network configation page for more details.](/network-information-configuration)
+There are two networks, each will require dedicated hardware. The Tangle Testnet is free and should be used to familiarize yourself with the setup. See [network configation page for more details.](../../resources/network-information-configuration.mdx)
 
 ## What ports do I allow on my firewall?
 
@@ -39,7 +39,7 @@ Yes, [see our Releases page.](https://github.com/webb-tools/tangle/releases)
 
 ## What are the recommendations for monitoring my node?
 
-Monitoring is critical for success as a node operator. See our full [Monitoring guide](https://docs.tangle.tools/node/monitoring/quickstart/)
+Monitoring is critical for success as a node operator. See our full [Monitoring guide](../monitoring/quickstart.mdx)
 
 ## What are the KPIs I should be monitoring?
 
@@ -47,7 +47,7 @@ The main key performance indicator for a node operator is the number of blocks p
 
 ## How should I set up alerting?
 
-Alerting is critical for your success as a node operator, see our full guide to using our recommended [AlertManager](https://docs.tangle.tools/node/monitoring/alert-manager/)
+Alerting is critical for your success as a node operator, see our full guide to using our recommended [AlertManager](../monitoring/alert-manager.mdx)
 
 ## What is the failover process if my primary node is down?
 
@@ -55,15 +55,15 @@ When the primary server is down, the best way to perform a failover to the backu
 
 ## What should I look for in the logs?
 
-For full support, see our guides on [Logging](https://docs.tangle.tools/node/monitoring/loki/).
+For full support, see our guides on [Logging](../monitoring/loki.mdx).
 
 ## How much stake do I need to become a validator in the active set?
 
-Per era, the NPoS system selects a certain number of nodes with the most TNT to validate. Therefore, the minimum amount required to become an active nominator and earn rewards may change from era to era. You can check the active validator set's stake at [https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ftestnet-rpc.webb.tools#/staking](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ftestnet-rpc.webb.tools#/staking)
+Per era, the NPoS system selects a certain number of nodes with the most TNT to validate. Therefore, the minimum amount required to become an active nominator and earn rewards may change from era to era. You can check the active validator set's stake at [https://polkadot.js.org/apps/?rpc=wss://rpc.tangle.tools#/staking](https://polkadot.js.org/apps/?rpc=wss://rpc.tangle.tools#/staking)
 
 ## How do I set an identity on my account?
 
-Setting an identity on-chain will help to identify your node and attract delegations. You can set an identity by following the instructions on [Polkadot's Identity Documentation](https://wiki.polkadot.network/learn-identity)
+Setting an identity on-chain will help to identify your node and attract delegations. You can set an identity by following the instructions on [Polkadot's Identity Documentation](https://wiki.polkadot.network/docs/learn-identity)
 
 ## How to move validator to another machine?
 
@@ -94,3 +94,8 @@ To stop validating, follow these steps:
 2. Wait for the unbonding period to complete (usually 28 days).
 3. Once the unbonding period is over, you can stop your validator node and safely shut down the machine.
 4. Your staked funds will be available for withdrawal after the unbonding period.
+
+
+## How are validators elected or chosen to be in the active set on Tangle?
+The election algorithm is complex, but relies on stake and the number of nominations - it is not simply who has the most tokens. 
+[See the Polkadot SDK wiki for more information.](https://wiki.polkadot.network/docs/learn-phragmen#what-is-the-sequential-phragm%C3%A9n-method)

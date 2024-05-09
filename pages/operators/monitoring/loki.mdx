@@ -13,8 +13,8 @@ review the **Tangle Node Quickstart** setup guide [here](https://docs.tangle.too
 
 In this guide we will configure the following modules to scrape metrics from the running Tangle node.
 
-- **Loki** provides log aggregation system and metrics. [Download](https://grafana.com/loki/latest/setup/install/)
-- **Promtail** is the agent responsible for gathering logs, and sending them to Loki.[Download](https://grafana.com/loki/latest/send-data/promtail/installation/)
+- **Loki** provides log aggregation system and metrics. [Download](https://grafana.com/docs/loki/latest/setup/install/)
+- **Promtail** is the agent responsible for gathering logs, and sending them to Loki.[Download](https://grafana.com/docs/loki/latest/send-data/promtail/installation/)
 
 Let's first start by downloading the latest releases of the above mentioned modules (Loki, Promtail download pages).
 
@@ -153,7 +153,7 @@ For implementation examples, [refer to our GitHub.](https://github.com/webb-tool
 ### Loki
 
 Loki's configuration details what ports to listen to, how to store the logs, and other configuration options.
-There are many other config options for Loki, [read more.](https://grafana.com/loki/latest/configuration/)
+There are many other config options for Loki, [read more.](https://grafana.com/docs/loki/latest/configuration/)
 
 Let's create the file:
 
@@ -216,7 +216,7 @@ table_manager:
 
 The Promtail configuration details what logs to send to Loki. In the below configuration we are indicating
 to send the logs to Loki from the `/var/log/dkg` directory. This directory can be changed based on what logs you
-want to pick up. There are many other config options for Promtail, refer to the [Promtail documentation](https://grafana.com/loki/latest/clients/promtail/configuration/)
+want to pick up. There are many other config options for Promtail, refer to the [Promtail documentation](https://grafana.com/docs/loki/latest/clients/promtail/configuration/)
 
 Let's create the file:
 
