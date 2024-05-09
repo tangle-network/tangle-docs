@@ -1,12 +1,24 @@
 {
+  "-- intro": {
+    "type": "separator",
+    "title": "Introduction"
+  },
   "developer-overview": "Understanding Tangle for Developers",
   "services": "Actively Validated Services (AVS)",
-  "deploy-using-hardhat": "Deploy on Tangle with Hardhat",
-  "json-rpc-endpoints": "RPC Endpoints",
-  "transaction-fees": "Transaction Fees",
-  "addresses": "EVM and Address Conversion",
-  "integrate": "Integrate Tangle",
+  "usecases": "Use Cases",
+  "-- technicals": {
+    "type": "separator",
+    "title": "Technicals"
+  },
   "pallets": "Pallets",
   "precompiles": "Precompiles",
-  "usecases": "Use Cases"
+  "-- guides": {
+    "type": "separator",
+    "title": "Resources & Guides"
+  },
+  "json-rpc-endpoints": "RPC Endpoints",
+  "deploy-using-hardhat": "Deploy on Tangle with Hardhat",
+  "integrate": "Integrate Tangle",
+  "addresses": "EVM and Address Conversion",
+  "transaction-fees": "Calculating Transaction Fees"
 }

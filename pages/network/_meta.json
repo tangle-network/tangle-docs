@@ -3,10 +3,27 @@
   "tokenomics": "Tokenomics",
   "account-manage": "Create & Manage Account",
   "set-identity": "On-chain Identity",
+  "-- launch": {
+    "type": "separator",
+    "title": "Network Launch"
+  },
   "claim-airdrop": "Claim the Airdrop",
   "launch": "About the Launch",
-  "network-parameters": "Network Parameters",
+
+  "-- staking": {
+    "type": "separator",
+    "title": "Staking"
+  },
   "nominator": "Nominating your TNT",
   "staking-intro": "Introduction to Staking",
-  "governance": "On-chain Governance"
+  "-- governance": {
+    "type": "separator",
+    "title": "Governance"
+  },
+  "governance": "On-chain Governance",
+  "-- various": {
+    "type": "separator",
+    "title": "Miscellaenous"
+  },
+  "network-parameters": "Network Parameters"
 }
