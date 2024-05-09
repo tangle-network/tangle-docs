@@ -9,7 +9,7 @@ import Callout from "../../../components/Callout";
 # Monitoring Tangle Node
 
 The following is a guide outlining the steps to setup monitoring for an Tangle node. If you do not have Tangle node setup yet, please
-review the **How to run an Tangle node** setup guide [here](https://docs.tangle.tools/node/quickstart/). It is important to note that
+review the **How to run an Tangle node** setup guide [here](../node-basics/quickstart.mdx). It is important to note that
 this guide's purpose is to help you get started with monitoring your Tangle node, not to advise on how to setup a node securely. Please
 take additional security and privacy measures into consideration.
 
@@ -33,7 +33,7 @@ Here is how our final configuration will look like at the end of this guide.
 The quickest way to setup monitoring for your node is to use our provided `docker-compose` file. The docker image starts all the above monitoring
 tools with the exception of `Node exporter`. `node-exporter` is ommitted since some metrics are not available when running inside a docker container.
 
-Follow the instructions [here](https://docs.tangle.tools/node/monitoring/prometheus/) to start the prometheus node exporter.
+Follow the instructions [here](./prometheus.mdx) to start the prometheus node exporter.
 
 ### Prerequisites
 
