@@ -1,5 +1,6 @@
+import React from "react";
 import { useRouter } from "next/router";
-import { useConfig, useTheme } from "nextra-theme-docs";
+import { DocsThemeConfig, useConfig, useTheme } from "nextra-theme-docs";
 import { Footer } from "./components/Footer";
 import Navigation from "./components/Navigation";
 import HeaderLogo from "./components/HeaderLogo";
@@ -7,12 +8,9 @@ import { Discord, Github, Twitter } from "./components/Social";
 
 const SITE_ROOT = "https://docs.tangle.tools";
 
-/**
- * @type {import('nextra-theme-docs').DocsThemeConfig}
- */
-const theme = {
+const theme: DocsThemeConfig = {
   docsRepositoryBase: "https://github.com/webb-tools/tangle-docs/tree/main",
-  useNextSeoProps: function SEO() {
+  useNextSeoProps() {
     const { frontMatter } = useConfig();
 
     const defaultTitle = frontMatter.overrideTitle;
@@ -28,7 +26,7 @@ const theme = {
   },
   logo: HeaderLogo,
   logoLink: false,
-  head: function Head() {
+  head() {
     const router = useRouter();
     const { systemTheme = "dark" } = useTheme();
     const fullUrl =
@@ -99,12 +97,8 @@ const theme = {
     text: "Edit this page on GitHub",
   },
   sidebar: {
-    titleComponent({ title, type }) {
-      if (type === "separator") {
-        return <div style={{ fontWeight: 600 }}>{title}</div>;
-      }
-      return <>➖ {title}</>;
-    }
+    defaultMenuCollapseLevel: 1,
+    autoCollapse: true,
   },
   navbar: {
     component: Navigation,
@@ -127,4 +121,5 @@ const theme = {
     loading: "Loading...",
   },
 };
+
 export default theme;

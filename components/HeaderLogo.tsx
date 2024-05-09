@@ -1,12 +1,12 @@
 function HeaderLogo() {
   return (
-    //className="dark:hidden"
-    <>
+    <div className="flex items-center align-middle">
       <a
         href="https://docs.tangle.tools"
         target="_blank"
         rel="noreferrer"
         title="Tangle Homepage"
+        className="mr-2" // Add some right margin to create spacing
       >
         <svg
           width="130"
@@ -64,7 +64,11 @@ function HeaderLogo() {
           </defs>
         </svg>
       </a>
-    </>
+
+      <span className="bg-blue-100 text-blue-800 text-lg font-semibold mt-1 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-2">
+        DOCS
+      </span>
+    </div>
   );
 }
 

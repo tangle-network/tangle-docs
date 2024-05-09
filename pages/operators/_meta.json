@@ -1,6 +1,6 @@
 {
-    "node-basics": "Node Basics",
-    "validator": "Running a Validator",
-    "service-operator": "Running an AVS Operator",
-    "monitoring": "Node Monitoring"
+  "node-basics": "Node Basics",
+  "validator": "Running a Validator",
+  "service-operator": "Running an AVS Operator",
+  "monitoring": "Node Monitoring"
 }

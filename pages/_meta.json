@@ -1,57 +1,31 @@
 {
+  "*": {},
   "index": {
     "title": "Home",
     "display": "hidden",
-    "type": "page"
+    "type": "page",
+    "theme": {
+      "layout": "raw"
+    }
   },
   "developers": {
     "title": "Developers",
-    "type": "page",
-    "items": {
-      "index": {
-        "title": "Overview",
-        "href": "/developers"
-      }
-    }
+    "type": "page"
   },
   "restake": {
     "title": "Restake",
-    "type": "page",
-    "items": {
-      "index": {
-        "title": "Overview",
-        "href": "/restake"
-      }
-    }
+    "type": "page"
   },
   "operators": {
     "title": "Operators",
-    "type": "page",
-    "items": {
-      "index": {
-        "title": "Overview",
-        "href": "/operators"
-      }
-    }
+    "type": "page"
   },
   "network": {
     "title": "Network",
-    "type": "page",
-    "items": {
-      "index": {
-        "title": "Overview",
-        "href": "/network"
-      }
-    }
+    "type": "page"
   },
   "resources": {
     "title": "Resources",
-    "type": "page",
-    "items": {
-      "index": {
-        "title": "Overview",
-        "href": "/resources"
-      }
-    }
+    "type": "page"
   }
 }

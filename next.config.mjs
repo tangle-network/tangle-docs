@@ -26,10 +26,10 @@ const nextConfig = {
 
 const withNextra = nextra({
   theme: "nextra-theme-docs",
-  themeConfig: "./theme.config.js",
+  themeConfig: "./theme.config.tsx",
   staticImage: true,
   flexsearch: true,
-  latex: true, // Ensure this is enabled to use Nextra's native LaTeX support
+  latex: true,
 });
 
 export default withPlausibleProxy()(withNextra(nextConfig));

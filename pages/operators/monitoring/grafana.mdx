@@ -3,8 +3,8 @@ title: Grafana Dashboard Setup
 description: Create visual dashboards for the metrics captured by Prometheus.
 ---
 
-import { Tabs, Tab } from "../../../../components/Tabs";
-import Callout from "../../../../components/Callout";
+import { Tabs, Tab } from "../../../components/Tabs";
+import Callout from "../../../components/Callout";
 
 # Grafana Setup
 
@@ -107,7 +107,7 @@ sudo grafana-cli plugins install camptocamp-prometheus-alertmanager-datasource
 
 ### Grafana
 
-The Grafana’s service is automatically created during extraction of the deb package, you do not need to create it manually.
+The Grafana's service is automatically created during extraction of the deb package, you do not need to create it manually.
 
 Launch a daemon reload to take the services into account in systemd:
 

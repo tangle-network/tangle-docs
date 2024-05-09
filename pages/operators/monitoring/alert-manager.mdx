@@ -3,8 +3,8 @@ title: Alert Manager Setup
 description: Create alerts to notify the team when issues arise. 
 ---
 
-import { Tabs, Tab } from "../../../../components/Tabs";
-import Callout from "../../../../components/Callout";
+import { Tabs, Tab } from "../../../components/Tabs";
+import Callout from "../../../components/Callout";
 
 # Alert Manager Setup
 
@@ -139,7 +139,7 @@ For implementation examples, [refer to our GitHub.](https://github.com/webb-tool
 
 The first thing we need to do is add `rules.yml` file to our Prometheus configuration:
 
-Let’s create the `rules.yml` file that will give the rules for Alert manager:
+Let's create the `rules.yml` file that will give the rules for Alert manager:
 
 ```sh filename="nano" copy
 sudo touch /etc/prometheus/rules.yml
@@ -210,7 +210,7 @@ To do so, navigate to:
 
 The Alert manager config file is used to set the external service that will be called when an alert is triggered. Here, we are going to use the Gmail and Slack notification created previously.
 
-Let’s create the file:
+Let's create the file:
 
 ```sh filename="nano" copy
 sudo touch /etc/alertmanager/alertmanager.yml

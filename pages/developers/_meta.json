@@ -1,10 +1,11 @@
 {
   "developer-overview": "Understanding Tangle for Developers",
+  "services": "Actively Validated Services (AVS)",
   "deploy-using-hardhat": "Deploy on Tangle with Hardhat",
   "json-rpc-endpoints": "RPC Endpoints",
   "transaction-fees": "Transaction Fees",
+  "addresses": "EVM and Address Conversion",
   "integrate": "Integrate Tangle",
-  "services": "Actively Validated Services (AVS)",
   "pallets": "Pallets",
   "precompiles": "Precompiles",
   "usecases": "Use Cases"

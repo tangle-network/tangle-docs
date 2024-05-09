@@ -3,8 +3,8 @@ title: Loki Log Management
 description: A service dedidated to aggregate and query system logs.
 ---
 
-import { Tabs, Tab } from "../../../../components/Tabs";
-import Callout from "../../../../components/Callout";
+import { Tabs, Tab } from "../../../components/Tabs";
+import Callout from "../../../components/Callout";
 
 # Loki Log Management
 
@@ -155,7 +155,7 @@ For implementation examples, [refer to our GitHub.](https://github.com/webb-tool
 Loki's configuration details what ports to listen to, how to store the logs, and other configuration options.
 There are many other config options for Loki, [read more.](https://grafana.com/loki/latest/configuration/)
 
-Let’s create the file:
+Let's create the file:
 
 ```sh filename="nano" copy
 sudo touch /etc/loki/config.yml
@@ -218,7 +218,7 @@ The Promtail configuration details what logs to send to Loki. In the below confi
 to send the logs to Loki from the `/var/log/dkg` directory. This directory can be changed based on what logs you
 want to pick up. There are many other config options for Promtail, refer to the [Promtail documentation](https://grafana.com/loki/latest/clients/promtail/configuration/)
 
-Let’s create the file:
+Let's create the file:
 
 ```sh filename="nano" copy
 sudo touch /etc/promtail/config.yml

@@ -7,7 +7,7 @@ import type { AppProps } from "next/app";
 import type { ReactElement, ReactNode } from "react";
 import "../custom.css";
 import "../styles.css";
-import { GoogleAnalytics } from '@next/third-parties/google'
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -52,7 +52,7 @@ export default function Nextra({ Component, pageProps }: NextraAppProps) {
         <>
           <Component {...pageProps} />
           <GoogleAnalytics gaId="G-JEQ15MLV6B" />
-        </>
+        </>,
       )}
     </PlausibleProvider>
   );

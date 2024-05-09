@@ -5,7 +5,7 @@ module.exports = {
     "./components/**/*.{js,tsx}",
     "./nextra-theme-docs/**/*.{js,tsx}",
     "./pages/**/*.{md,mdx,tsx}",
-    "./theme.config.js",
+    "./theme.config.tsx",
   ],
   theme: {
     extend: {

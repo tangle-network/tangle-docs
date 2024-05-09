@@ -5,7 +5,6 @@
   "systemd": "Deploy with systemd",
   "docker-node": "Deploy with Docker",
   "monitoring": "Node Monitoring",
-  "nominator": "Nominate",
   "flags": "Flags",
   "troubleshooting": "Troubleshooting",
   "faq": "FAQs"
