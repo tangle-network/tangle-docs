@@ -30,7 +30,7 @@ const LandingPage = () => {
         <div className="hidden lg:flex  z-0 ">
           <div className="flex flex-col content-end z-0 h-full">
             <Image
-              src="/../public/images/DocsLandingGraphic.png"
+              src="../public/images/DocsLandingGraphic.png"
               alt="A visualization of the Tangle Network"
               width={1000}
               height={1000}
