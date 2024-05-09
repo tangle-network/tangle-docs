@@ -9,7 +9,7 @@ import { Tabs } from 'nextra/components'
 
 You can run your **full** or **validator** node as a systemd process so that it will automatically restart on server reboots or crashes, helping to avoid getting slashed. This guide now includes additional steps for setting up dependencies and Rust configuration, ensuring a smoother setup process.
 
-Before following this guide, ensure that your machine's environment is set up and the Tangle binary is compiled. If you haven't done so, please refer to the [Requirements](https://docs.tangle.tools/node/hardware/) page.
+Before following this guide, ensure that your machine's environment is set up and the Tangle binary is compiled. If you haven't done so, please refer to the [Requirements](./hardware.mdx) page.
 
 ## Setup
 
@@ -133,7 +133,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
  
     #### Generate and Store Keys
 
-        We need to generate the required keys for our node. For more information on these keys, please see the [Required Keys](https://wiki.polkadot.network/learn-cryptography) section.
+        We need to generate the required keys for our node. For more information on these keys, please see the [Required Keys](https://wiki.polkadot.network/docs/learn-cryptography) section.
         The keys we need to generate include the following:
 
         - Role key (Ecdsa)
@@ -325,7 +325,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
       #### Bond TNT and setup validator Account
 
       After your node is synced, you are ready to setup keys and onboard as a validator, make sure to complete the steps
-      at [Start Validating](https://docs.tangle.tools/node/validator/requirements/) to start validating.
+      at [Start Validating](../validator/requirements.mdx) to start validating.
 
   </Tabs.Tab>
   <Tabs.Tab>
@@ -364,11 +364,11 @@ Congratulations! You have officially setup a Tangle Network node using Systemd.
 
 ## Monitoring
 
-To setup monitoring for your node, please refer to the [monitoring](https://docs.tangle.tools/node/monitoring/quickstart/) page.
+To setup monitoring for your node, please refer to the [monitoring](../monitoring/quickstart.mdx) page.
 
 ## Begin Validating
 
-Now that your node is setup, [continue onto our Validator guides to understand token bonding and more.](https://docs.tangle.tools/node/validator/requirements/)
+Now that your node is setup, [continue onto our Validator guides to understand token bonding and more.](../validator/requirements.mdx)
 
 ## Support and Questions
 
