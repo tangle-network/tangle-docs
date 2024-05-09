@@ -1,4 +1,5 @@
 import Image from "next/image";
+import DocsLandingGraphic from '../public/images/DocsLandingGraphic.png';
 
 const LandingPage = () => {
   return (
@@ -30,10 +31,10 @@ const LandingPage = () => {
         <div className="hidden lg:flex  z-0 ">
           <div className="flex flex-col content-end z-0 h-full">
             <Image
-              src="../public/images/DocsLandingGraphic.png"
+              src={DocsLandingGraphic}
               alt="A visualization of the Tangle Network"
               width={1000}
-              height={1000}
+              height={600}
               className="md:content-end max-w-screen-md z-0 "
             />
           </div>
