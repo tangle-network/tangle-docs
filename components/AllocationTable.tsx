@@ -60,7 +60,7 @@ export default function AllocationTable() {
     <div className="overflow-x-auto m-5">
       <table className="w-full border-collapse text-left text-sm text-gray-800 dark:text-gray-300">
         <thead>
-          <Row>
+          <TotalRow>
             <HeaderCell>Allocation Category</HeaderCell>
             <HeaderCell>Entity Name</HeaderCell>
             <HeaderCell>Allocated Share (%)</HeaderCell>
@@ -72,7 +72,7 @@ export default function AllocationTable() {
             <HeaderCell>Cliff-Release Tokens</HeaderCell>
             <HeaderCell>Monthly Vesting Rate</HeaderCell>
             <HeaderCell>Total Tokens Allocated</HeaderCell>
-          </Row>
+          </TotalRow>
         </thead>
         <tbody>
           <Row isEven={false}>
