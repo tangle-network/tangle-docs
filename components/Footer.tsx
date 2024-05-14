@@ -4,7 +4,7 @@ import { ThemeSwitch } from "nextra-theme-docs";
 
 const Footer = () => {
   return (
-    <footer className="w-full pt-28">
+    <footer className="w-full pt-2">
       <DiscordBanner />
       <div className="w-full p-4 h-6 bg-tangleLogoTextColor border-t border-gray-700 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">
         <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
