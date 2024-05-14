@@ -1,18 +1,18 @@
 ---
-title: Restaking Rewards
-description: Learn about the restaking system in the Tangle Network, which encourages validators to execute multi-party computation (MPC) service roles, and understand the reward mechanisms and benefits for validators and nominators.
+title: Restaking Incentives
+description: Learn about the restaking system in the Tangle Network, which encourages operators to execute multi-party computation (MPC) service roles, and understand the reward mechanisms and benefits for operators and delegators.
 ---
 
-# Restaking Rewards
+# Restaking Incentives
 
 ## Introduction
 
-In addition to staking rewards, the Tangle Network also offers a restaking system designed to encourage validators to execute multi-party computation (MPC) service roles. This documentation provides a detailed overview of the restaking process, reward mechanisms, and the benefits for validators and nominators participating in the Tangle blockchain network.
+In addition to staking rewards, the Tangle Network offers a restaking system designed to encourage operators to execute Actively Validated Services (AVS) instances. This documentation provides an overview of the restaking process, reward mechanisms, and the benefits for operators and delegators participating in the Tangle blockchain network.
 
 ### Eligibility
 
-- Validators on the Tangle blockchain can establish a restaking profile by allocating 50% of their locked and nominated stake towards restaking.
-- Nominators associated with these validators receive proportional rewards, enhancing the benefits of participating in the restaking system.
+- operators on the Tangle blockchain can establish a restaking profile by allocating 50% of their locked and nominated stake towards restaking.
+- delegators associated with these operators receive proportional rewards, enhancing the benefits of participating in the restaking system.
 
 ### Reward Subtypes
 
@@ -22,17 +22,17 @@ The reward distribution mechanism for restakers is bifurcated into two segments:
 
 #### Active Participation Rewards
 
-The main form of reward is the income from providing services. These are fees users pay to have restaked validators perform MPC and ZK services. Rewards are based on the validator's participation in and completion of total job opportunities, benefiting the most active and reliable restakers.
+The main form of reward is the income from providing services. These are fees users pay to have restaked operators perform MPC and ZK services. Rewards are based on the validator's participation in and completion of total job opportunities, benefiting the most active and reliable restakers.
 
-- The total jobs completed (TJC) by all active validators are calculated.
+- The total jobs completed (TJC) by all active operators are calculated.
 - Each validator's share (VS) of the rewards is determined by the proportion of their completed jobs relative to the TJC.
 - The validator reward (VR) is computed as: VR = VS × Total Rewards
 
 #### Continuous Restaking Rewards:
 
-In addition, To motivate validators to opt into MPC service roles, Tangle rewards them with additional inflationary rewards on top of their standard validation rewards, merely for restaking their tokens.Rewards are allocated in proportion to the overall restaking distribution, maintaining the incentive for continuous restaking. The reward rate for this is programatically limited to a range of 0.1% and 2%, in a similar style to the core staking rewards system of Substrate blockchains.
+In addition, To motivate operators to opt into MPC service roles, Tangle rewards them with additional inflationary rewards on top of their standard validation rewards, merely for restaking their tokens.Rewards are allocated in proportion to the overall restaking distribution, maintaining the incentive for continuous restaking. The reward rate for this is programatically limited to a range of 0.1% and 2%, in a similar style to the core staking rewards system of Substrate blockchains.
 
-- The total restake (TR) in the system is calculated by summing all validators' restaked amounts.
+- The total restake (TR) in the system is calculated by summing all operators' restaked amounts.
 - The restake-to-stake ratio (RSR) is computed as: RSR = TR / Total Stake in the Era
 - The missing restake ratio (MRR) is calculated as: MRR = Maximum Restake Ratio - RSR
 - The adjusted total rewards (ATR) are computed based on the MRR to ensure proper reward distribution.

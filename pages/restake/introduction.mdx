@@ -2,9 +2,9 @@
 
 Restaking is an innovative concept in blockchain technology that allows validators to reuse their staked tokens to provide additional services and earn rewards without unstaking from the original network. This enhances the efficiency and utility of staked assets.
 
-In a typical proof-of-stake blockchain, validators lock up (stake) tokens to participate in block production and earn staking rewards. Those staked tokens cannot be used for any other purpose. Restaking changes this by enabling those same staked tokens to be "restaked" to provide other services and earn additional rewards on top of the base staking rewards.
+In a typical proof-of-stake blockchain, validators lock up tokens to participate in block production and earn staking rewards. Those staked tokens cannot be used for any other purpose. Restaking changes this by enabling those same staked tokens to be "restaked" to provide other services and earn additional rewards on top of the base staking rewards.
 
-This is achieved by the validator opting-in to restake a portion of their staked tokens into a restaking protocol or application. The staked tokens still remain staked on the original chain and earn their base rewards. But they are now also being used to provide security, computation, or other services to the restaking protocol, allowing the validator to earn additional restaking rewards.
+This is achieved by the validator opting-in to restake a portion of their staked tokens into a restaking protocol or application, becoming an "operator". The staked tokens still remain staked on the original chain and earn their base rewards. But they are now also being used to provide security, computation, or other services to the restaking protocol, allowing the now-operator to earn additional restaking rewards.
 
 ## Benefits of restaking include:
 
@@ -15,17 +15,18 @@ This is achieved by the validator opting-in to restake a portion of their staked
 
 ## How Tangle Network Uses Restaking
 
-Tangle Network has implemented a unique restaking system to allow its validator set to provide multi-party computation (MPC) services to power advanced cryptographic applications. This is referred to as MPC-as-a-service (MPCaaS).
+Tangle Network has implemented a unique restaking system to allow its validator set to provide Actively Validated Services (AVS) to power advanced decentralized applications. Users can restake their TNT tokens to run service instances based on blueprints created by developers.
 
-Active Tangle validators can opt-in to restake 50% of their staked TNT tokens to provide MPC services such as threshold signatures, zero-knowledge proofs and more. In return, they earn service fees and additional inflation rewards on top of their base validation rewards.
+Tangle noderunners can opt-in to restake a portion of their staked TNT tokens to provide AVS instances such as oracles, privacy-preserving computation, and more. In return, they earn service fees and additional inflation rewards on top of their base validation rewards.
 
 ### Here's how it works:
 
-1. Validators create a restaking profile by allocating their restaked TNT to specific MPC service roles they want to provide (e.g. signing, proof generation, etc.)
-2. Developers/users can request MPC services from Tangle's restaked validators for a fee. Requested jobs are assigned to restaked validators.
-3. Validators must complete the MPC jobs they are assigned. Failure to do so results in slashing of their stake.
-4. Participating validators earn the service fees and proportional inflation rewards based on their restaked amounts and jobs completed.
+1. Developers create blueprints that define the specifications and requirements for AVS instances.
+2. Operators create a restaking profile by allocating their restaked TNT to specific blueprints they want to support.
+3. Users can request AVS instances from Tangle's restaked Operators for a fee. Requested instances are assigned to restaked operators based on the blueprint's criteria.
+4. Operators must execute the AVS instances they are assigned. Failure to do so may result in penalties or reduced rewards.
+5. Participating operators earn the service fees and proportional inflation rewards based on their restaked amounts and instances executed.
 
-This restaking model allows Tangle to offer unique MPC services powered by its decentralized validator set. Developers can leverage these services to easily deploy advanced cryptographic applications like trustless cross-chain bridges, privacy solutions, identity systems and more.
+This restaking model allows Tangle to offer unique AVS instances powered by its decentralized validator set. Developers can leverage these services to easily deploy advanced decentralized applications like trustless cross-chain bridges, privacy solutions, identity systems, and more.
 
-By restaking, Tangle validators gain additional revenue, the network gains efficiency from its staked supply, and the ecosystem gains access to powerful new primitives to fuel innovation. Restaking helps align incentives and harness the security of the underlying proof-of-stake blockchain for exciting new use cases.
+By restaking, Tangle noderunners gain additional revenue, the network gains efficiency from its staked supply, and the ecosystem gains access to powerful new primitives to fuel innovation. Restaking helps align incentives and harness the security of the underlying proof-of-stake blockchain for exciting new use cases.
