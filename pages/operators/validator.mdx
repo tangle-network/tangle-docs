@@ -9,7 +9,7 @@ import Callout from "/components/Callout";
 # Start Validating
 
 <Callout type="info"> 
-**You should be familiar with [account management basics](/account-manage) before proceeding, and ensure you're connected to the correct network, Tangle Network.**
+**You should be familiar with [account management basics](../network/account-manage.mdx) before proceeding, and ensure you're connected to the correct network, Tangle Network.**
 </Callout>
 
 Becoming a validator on a decentralized network like Tangle is a big responsibility and a fairly technical process. **You are accountable for both your stake and the stake of your nominators. Any errors could lead to slashing of tokens, impacting your balance and reputation.** However, there are also rewards - you help secure a decentralized network and can grow your stake through nominations.
@@ -39,10 +39,10 @@ In the future, validators may be able to participate in other forms of reward-wi
 
 <Callout>
 The following guide assumes you have a node operating and synced with the network. If not, see the following:
-1. [Hardware Specifications](../hardware/)
-2. [Node Software](../node-software/)
-3. [Run Node with Docker](../deploy-with-docker/validator-node.mdx)
-4.  **or** [Run Node with Systemd](../systemd/validator-node.mdx)
+1. [Hardware Specifications](./node-basics/hardware.mdx)
+2. [Node Software](./node-basics/node-software.mdx)
+3. [Run Node with Docker](./node-basics/docker-node.mdx)
+4.  **or** [Run Node with Systemd](./node-basics/systemd.mdx)
 
 Once your node is operational, proceed.
 
@@ -59,10 +59,10 @@ Controller accounts are deprecated in Substrate. For more information, [see this
 It is now time to set up our validator. We will do the following:
 
 1. Bond the TNT of the Stash account on the Tangle Network. These TNT will be put at stake for the security of the network and can be slashed.
-2. Select the [staking proxy account](./proxyaccount.mdx) account. This is the account that will decide when to start or stop validating.
+2. Select the [staking proxy account](./validator/proxyaccount.mdx) account. This is the account that will decide when to start or stop validating.
 
 <Callout>
-See how to setup a [proxy account](./proxyaccount.mdx)
+See how to setup a [proxy account](./validator/proxyaccount.mdx)
 </Callout>
 
 First, go to the Staking section. Click on "Account Actions", and then the "+ Stash" button.
@@ -73,7 +73,7 @@ Make sure not to bond all your TNT balance since you will be unable to pay trans
 
 **Stash account** - Select your Stash account. In this example, we will bond 1 TNT, where the minimum bonding amount is 1. Make sure that your Stash account contains at least this much. You can, of course, stake more than this.
 
-**Staking proxy account** - Select the staking [proxy account](./proxyaccount.mdx) created earlier. This account will also need a small amount of TNT in order to start and stop validating.
+**Staking proxy account** - Select the staking [proxy account](./validator/proxyaccount.mdx) created earlier. This account will also need a small amount of TNT in order to start and stop validating.
 
 **Value bonded** - How much TNT from the Stash account you want to bond/stake. Note that you do not need to bond all of the TNT in that account. Also note that you can always bond more TNT later. However, withdrawing any bonded amount requires the duration of the unbonding period. On Kusama, the unbonding period is 7 days. On Polkadot, the planned unbonding period is 28 days.
 
@@ -97,7 +97,7 @@ In order to participate in the tangle protocol, block production, and block fina
 
 [More info about keys](https://wiki.polkadot.network/docs/learn-cryptography#session-keys)
 
-See the guides for [launching Tangle Network with Docker](../node-basics/docker-node.mdx) and [Launching with Systemd](../node-basics/systemd.mdx) for exact guides on this step.
+See the guides for [launching Tangle Network with Docker](./node-basics/docker-node.mdx) and [Launching with Systemd](./node-basics/systemd.mdx) for exact guides on this step.
 
 Once your node and keys are setup and your node is synced, proceed to the following:
 

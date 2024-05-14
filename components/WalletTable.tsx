@@ -66,7 +66,7 @@ const WalletTable = () => {
       </table>
       <h3 className="text-lg mb-4">Network Details for Adding to Wallets</h3>
       <strong className="block"> Substrate Wallets:</strong>
-      Follow the specific wallet's instructions to add the Tangle Network as a
+      Follow the specific wallet instructions to add the Tangle Network as a
       custom network. We work to ensure these wallets have the latest
       information and in-app support to connect.
       <span className="block mt-4">
