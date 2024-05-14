@@ -22,7 +22,7 @@ const HelpDiscordBtn: React.FC = () => {
               />
             </g>
           </svg>
-          <span className="hidden lg:inline text-xs lg:text-sm">Get Help</span>
+          <span className="hidden lg:inline text-xs lg:text-sm">Connect</span>
         </button>
       </div>
     </a>

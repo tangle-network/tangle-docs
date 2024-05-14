@@ -29,7 +29,7 @@ const WALLET_DATA = [
 const WalletTable = () => {
   return (
     <div>
-      <h2 className="text-lg mb-4">Wallets</h2>
+      <h2 className="text-2xl mb-4">Wallets</h2>
       <span className="mb-4">
         The Tangle Network is a versatile blockchain that integrates both
         Substrate and Ethereum Virtual Machine (EVM) functionalities, offering a
@@ -40,9 +40,15 @@ const WalletTable = () => {
       <table className="w-full my-10 border-collapse">
         <thead>
           <tr>
-            <th className="px-4 py-2 bg-slate-100">Wallet</th>
-            <th className="px-4 py-2 bg-slate-100">Supports</th>
-            <th className="px-4 py-2 bg-slate-100">Link</th>
+            <th className="px-4 py-2 text-left bg-slate-100 dark:bg-gray-600 dark:text-white ">
+              Wallet
+            </th>
+            <th className="px-4 py-2 text-left bg-slate-100 dark:bg-gray-600 dark:text-white">
+              Supports
+            </th>
+            <th className="px-4 py-2 text-left bg-slate-100 dark:bg-gray-600 dark:text-white">
+              Link
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -53,7 +59,7 @@ const WalletTable = () => {
               <td className="px-4 py-2">
                 <Link
                   href={wallet.url}
-                  className="underline underline-offset-1 text-linkBlue"
+                  className="underline underline-offset-1 font-semibold dark:text-blue-200 text-linkBlue"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -64,7 +70,7 @@ const WalletTable = () => {
           ))}
         </tbody>
       </table>
-      <h3 className="text-lg mb-4">Network Details for Adding to Wallets</h3>
+      <h3 className="text-2xl mb-4">Network Details for Adding to Wallets</h3>
       <strong className="block"> Substrate Wallets:</strong>
       Follow the specific wallet instructions to add the Tangle Network as a
       custom network. We work to ensure these wallets have the latest

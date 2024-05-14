@@ -1,73 +1,81 @@
-import React from "react";
-import styled from "styled-components";
+import React, { ReactNode } from "react";
 
-const TableContainer = styled.div`
-  overflow-x: auto;
-  margin: 20px;
-`;
+interface HeaderCellProps {
+  children: ReactNode;
+}
 
-const Table = styled.table`
-  width: 100%;
-  border-collapse: collapse;
-  text-align: left;
-  font-size: 14px;
+const HeaderCell = ({ children }: HeaderCellProps) => (
+  <th className="py-2 px-3 bg-gray-100 font-semibold border border-gray-300 dark:bg-gray-700 dark:border-gray-600 whitespace-nowrap">
+    {children}
+  </th>
+);
 
-  @media (max-width: 768px) {
-    font-size: 12px;
-  }
-`;
+interface CellProps {
+  children: ReactNode;
+}
 
-const Header = styled.th`
-  background-color: #f1f1f1;
-  padding: 12px;
-  font-weight: bold;
-  border: 1px solid #ddd;
-  white-space: nowrap;
-`;
+const Cell = ({ children }: CellProps) => (
+  <td className="py-2 px-3 border border-gray-300 dark:border-gray-600 whitespace-nowrap">
+    {children}
+  </td>
+);
 
-const Row = styled.tr`
-  &:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-`;
+interface RowProps {
+  children: ReactNode;
+  isEven: boolean;
+}
 
-const SubtotalRow = styled(Row)`
-  background-color: #e6f2ff !important;
-  font-weight: bold;
-`;
+const Row = ({ children, isEven }: RowProps) => (
+  <tr
+    className={`border-b ${
+      isEven ? "bg-gray-100 dark:bg-gray-700" : "dark:bg-gray-800"
+    }`}
+  >
+    {children}
+  </tr>
+);
 
-const TotalRow = styled(Row)`
-  background-color: #d9ead3;
-  font-weight: bold;
-`;
+interface SubtotalRowProps {
+  children: ReactNode;
+}
 
-const Cell = styled.td`
-  padding: 12px;
-  border: 1px solid #ddd;
-  white-space: nowrap;
-`;
+const SubtotalRow = ({ children }: SubtotalRowProps) => (
+  <tr className="bg-blue-100 font-semibold dark:bg-blue-900 dark:text-blue-300">
+    {children}
+  </tr>
+);
+
+interface TotalRowProps {
+  children: ReactNode;
+}
+
+const TotalRow = ({ children }: TotalRowProps) => (
+  <tr className="bg-green-100 font-semibold dark:bg-green-900 dark:text-green-300">
+    {children}
+  </tr>
+);
 
 export default function AllocationTable() {
   return (
-    <TableContainer>
-      <Table>
+    <div className="overflow-x-auto m-5">
+      <table className="w-full border-collapse text-left text-sm text-gray-800 dark:text-gray-300">
         <thead>
-          <Row>
-            <Header>Allocation Category</Header>
-            <Header>Entity Name</Header>
-            <Header>Allocated Share (%)</Header>
-            <Header>Vesting Plan</Header>
-            <Header>Cliff (Months)</Header>
-            <Header>Vesting Period (Months)</Header>
-            <Header>Immediate Liquidity (%)</Header>
-            <Header>Initial Liquid Tokens</Header>
-            <Header>Cliff-Release Tokens</Header>
-            <Header>Monthly Vesting Rate</Header>
-            <Header>Total Tokens Allocated</Header>
-          </Row>
+          <TotalRow>
+            <HeaderCell>Allocation Category</HeaderCell>
+            <HeaderCell>Entity Name</HeaderCell>
+            <HeaderCell>Allocated Share (%)</HeaderCell>
+            <HeaderCell>Vesting Plan</HeaderCell>
+            <HeaderCell>Cliff (Months)</HeaderCell>
+            <HeaderCell>Vesting Period (Months)</HeaderCell>
+            <HeaderCell>Immediate Liquidity (%)</HeaderCell>
+            <HeaderCell>Initial Liquid Tokens</HeaderCell>
+            <HeaderCell>Cliff-Release Tokens</HeaderCell>
+            <HeaderCell>Monthly Vesting Rate</HeaderCell>
+            <HeaderCell>Total Tokens Allocated</HeaderCell>
+          </TotalRow>
         </thead>
         <tbody>
-          <Row>
+          <Row isEven={false}>
             <Cell>Contributors</Cell>
             <Cell>Webb (Developer)</Cell>
             <Cell>28.56500%</Cell>
@@ -80,7 +88,7 @@ export default function AllocationTable() {
             <Cell>2,380,416.67</Cell>
             <Cell>28,565,000.00</Cell>
           </Row>
-          <Row>
+          <Row isEven={true}>
             <Cell>Contributors</Cell>
             <Cell>Investors</Cell>
             <Cell>13.64000%</Cell>
@@ -93,7 +101,7 @@ export default function AllocationTable() {
             <Cell>1,136,666.67</Cell>
             <Cell>13,640,000.00</Cell>
           </Row>
-          <Row>
+          <Row isEven={false}>
             <Cell>Contributors</Cell>
             <Cell>Indiv. Contributors</Cell>
             <Cell>1.43500%</Cell>
@@ -107,17 +115,17 @@ export default function AllocationTable() {
             <Cell>1,435,000.00</Cell>
           </Row>
           <SubtotalRow>
-            <Cell colSpan={2}>
+            <Cell col-Span={2}>
               <strong>Contributors Total</strong>
             </Cell>
             <Cell>43.64000%</Cell>
-            <Cell colSpan={4}></Cell>
+            <td colSpan={4}></td>
             <Cell>0.00</Cell>
             <Cell>21,820,000.00</Cell>
-            <Cell colSpan={1}></Cell>
+            <td colSpan={1}></td>
             <Cell>43,640,000.00</Cell>
           </SubtotalRow>
-          <Row>
+          <Row isEven={true}>
             <Cell>Governance-Managed</Cell>
             <Cell>On-chain Treasury</Cell>
             <Cell>36.36000%</Cell>
@@ -130,7 +138,7 @@ export default function AllocationTable() {
             <Cell>n/a</Cell>
             <Cell>36,360,000.00</Cell>
           </Row>
-          <Row>
+          <Row isEven={false}>
             <Cell>Governance-Managed</Cell>
             <Cell>Foundation</Cell>
             <Cell>15.00000%</Cell>
@@ -144,17 +152,17 @@ export default function AllocationTable() {
             <Cell>15,000,000.00</Cell>
           </Row>
           <SubtotalRow>
-            <Cell colSpan={2}>
+            <Cell col-Span={2}>
               <strong>Governance-Managed Total</strong>
             </Cell>
             <Cell>51.36000%</Cell>
-            <Cell colSpan={4}></Cell>
+            <td colSpan={4}></td>
             <Cell>750,000.00</Cell>
             <Cell>593,750.00</Cell>
-            <Cell colSpan={1}></Cell>
+            <td colSpan={1}></td>
             <Cell>51,360,000.00</Cell>
           </SubtotalRow>
-          <Row>
+          <Row isEven={true}>
             <Cell>Airdrop Pool</Cell>
             <Cell>Leaderboard Participants</Cell>
             <Cell>2.00000%</Cell>
@@ -167,7 +175,7 @@ export default function AllocationTable() {
             <Cell>82,608.70</Cell>
             <Cell>2,000,000.00</Cell>
           </Row>
-          <Row>
+          <Row isEven={false}>
             <Cell>Airdrop Pool</Cell>
             <Cell>DOT Validators Snapshot</Cell>
             <Cell>1.00000%</Cell>
@@ -180,7 +188,7 @@ export default function AllocationTable() {
             <Cell>41,304.35</Cell>
             <Cell>1,000,000.00</Cell>
           </Row>
-          <Row>
+          <Row isEven={true}>
             <Cell>Airdrop Pool</Cell>
             <Cell>EDG Genesis Participants</Cell>
             <Cell>1.00000%</Cell>
@@ -193,7 +201,7 @@ export default function AllocationTable() {
             <Cell>41,304.35</Cell>
             <Cell>1,000,000.00</Cell>
           </Row>
-          <Row>
+          <Row isEven={false}>
             <Cell>Airdrop Pool</Cell>
             <Cell>EDG 2023 Snapshot</Cell>
             <Cell>1.00000%</Cell>
@@ -207,28 +215,28 @@ export default function AllocationTable() {
             <Cell>1,000,000.00</Cell>
           </Row>
           <SubtotalRow>
-            <Cell colSpan={2}>
+            <Cell col-Span={2}>
               <strong>Airdrop Pools Subtotal</strong>
             </Cell>
             <Cell>5.00000%</Cell>
-            <Cell colSpan={4}></Cell>
+            <td colSpan={4}></td>
             <Cell>250,000.00</Cell>
             <Cell>197,916.67</Cell>
             <Cell>206,521.74</Cell>
             <Cell>5,000,000.00</Cell>
           </SubtotalRow>
           <TotalRow>
-            <Cell colSpan={2}>
+            <Cell col-Span={2}>
               <strong>Total Supply</strong>
             </Cell>
             <Cell>100.00000%</Cell>
-            <Cell colSpan={4}></Cell>
+            <td colSpan={4}></td>
             <Cell>1,000,000.00</Cell>
-            <Cell colSpan={2}></Cell>
+            <td colSpan={2}></td>
             <Cell>100,000,000.00</Cell>
           </TotalRow>
         </tbody>
-      </Table>
-    </TableContainer>
+      </table>
+    </div>
   );
 }
