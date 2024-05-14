@@ -211,7 +211,7 @@ const NetworkTabs = () => {
               <tbody>
                 {(items as any[]).map((item, index) => (
                   <tr
-                    className={`${index % 2 === 0 ? 'bg-gray-50 dark:bg-gray-700' : ''} border-b`}
+                    className={`${index % 2 === 0 ? "bg-gray-50 dark:bg-gray-700" : ""} border-b`}
                     key={index}
                   >
                     <td className="px-4 py-2 whitespace-nowrap bg-slate-100 dark:bg-gray-600 border border-gray-300 dark:border-gray-700">
@@ -247,7 +247,9 @@ const NetworkTabs = () => {
             Mainnet
           </a>
         </li>
-        <li className="inline-flex text-xl items-center justify-center pt-8 px-4  border-b-2 border-transparent rounded-t-lg group">          <a
+        <li className="inline-flex text-xl items-center justify-center pt-8 px-4  border-b-2 border-transparent rounded-t-lg group">
+          {" "}
+          <a
             href="#"
             onClick={() => handleTabClick("testnet")}
             className={`inline-block p-4 rounded-t-lg ${
@@ -260,7 +262,9 @@ const NetworkTabs = () => {
             Testnet
           </a>
         </li>
-        <li className="inline-flex text-xl items-center justify-center pt-8 px-4  border-b-2 border-transparent rounded-t-lg group">          <a
+        <li className="inline-flex text-xl items-center justify-center pt-8 px-4  border-b-2 border-transparent rounded-t-lg group">
+          {" "}
+          <a
             href="#"
             onClick={() => handleTabClick("wallets")}
             className={`inline-block p-4 rounded-t-lg ${

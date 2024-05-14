@@ -40,9 +40,15 @@ const WalletTable = () => {
       <table className="w-full my-10 border-collapse">
         <thead>
           <tr>
-            <th className="px-4 py-2 text-left bg-slate-100 dark:bg-gray-600 dark:text-white ">Wallet</th>
-            <th className="px-4 py-2 text-left bg-slate-100 dark:bg-gray-600 dark:text-white">Supports</th>
-            <th className="px-4 py-2 text-left bg-slate-100 dark:bg-gray-600 dark:text-white">Link</th>
+            <th className="px-4 py-2 text-left bg-slate-100 dark:bg-gray-600 dark:text-white ">
+              Wallet
+            </th>
+            <th className="px-4 py-2 text-left bg-slate-100 dark:bg-gray-600 dark:text-white">
+              Supports
+            </th>
+            <th className="px-4 py-2 text-left bg-slate-100 dark:bg-gray-600 dark:text-white">
+              Link
+            </th>
           </tr>
         </thead>
         <tbody>

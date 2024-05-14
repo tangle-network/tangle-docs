@@ -6,7 +6,7 @@ import { BetweenVerticalEnd, SquareDashedBottomCode } from "lucide-react";
 const OperatorIntroCards = () => {
   const cards = [
     {
-      icon: <SquareDashedBottomCode/>,
+      icon: <SquareDashedBottomCode />,
       title: <span className="text-xl font-bold ">Service Operators</span>,
       description: "Run Blueprint instances and earn job revenue.",
       link: "../service-operator/service-provider/",
@@ -28,18 +28,18 @@ const OperatorIntroCards = () => {
   ];
 
   return (
-<div className="flex flex-col sm:flex-row justify-center items-stretch gap-5 my-20 p-5 md:p-0">
-  {cards.map((card, index) => (
-    <div key={index} className="flex-1">
-      <CallToActionCard
-        icon={card.icon}
-        title={card.title}
-        description={card.description}
-        link={card.link}
-      />
+    <div className="flex flex-col sm:flex-row justify-center items-stretch gap-5 my-20 p-5 md:p-0">
+      {cards.map((card, index) => (
+        <div key={index} className="flex-1">
+          <CallToActionCard
+            icon={card.icon}
+            title={card.title}
+            description={card.description}
+            link={card.link}
+          />
+        </div>
+      ))}
     </div>
-  ))}
-</div>
   );
 };
 
