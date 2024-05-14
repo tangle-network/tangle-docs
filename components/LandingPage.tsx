@@ -1,99 +1,152 @@
 import Image from "next/image";
-import DocsLandingGraphic from '../public/images/DocsLandingGraphic.png';
+import DocsLandingGraphic from "../public/images/DocsLandingGraphic.png";
+import { SiBlueprint } from "react-icons/si";
+import { GiToken } from "react-icons/gi";
+import { FaWallet } from "react-icons/fa";
+import { RiToolsLine } from "react-icons/ri";
+import { MdApps } from "react-icons/md";
+import { MdAppShortcut } from "react-icons/md";
+import { GrNodes } from "react-icons/gr";
+import { GiPlatform } from "react-icons/gi";
+import CallToActionCard from "./CallToActionCard";
+import TangleNetworkMap from "../public/images/TangleNetworkMap.png";
+
+const getStartedCards = [
+  {
+    icon: <SiBlueprint />,
+    title: "Get started building Blueprints",
+    description:
+      "Blueprints are the template object implemented as software in the Tangle codebase.",
+    link: "../developers/blueprints",
+  },
+  {
+    icon: <GiToken />,
+    title: "Restake TNT or other assets",
+    description:
+      "Restaking secures the actively validated services on Tangle, and earns rewards.",
+    link: "../restake/introduction",
+  },
+  {
+    icon: <GrNodes />,
+    title: "Run a Node, Validator, or Service Operator",
+    description:
+      "Noderunners can earn staking rewards, secure the network, and operators earn income from services.",
+    link: "../operators/introduction",
+  },
+  {
+    icon: <GiPlatform />,
+    title: "Learn more about the network and platform",
+    description:
+      "Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.",
+    link: "../network/overview",
+  },
+];
+
+const resourcesCards = [
+  {
+    icon: <FaWallet />,
+    title: "TNT, Wallets and More",
+    description: "Your source for Wallets, apps, staking and more.",
+    link: "../resources",
+  },
+  {
+    icon: <RiToolsLine />,
+    title: "Developer Tools",
+    description: "RPCs, faucets, and block explorers.",
+    link: "../developers/integrate",
+  },
+  {
+    icon: <MdAppShortcut />,
+    title: "Tangle App",
+    description: "Nominate your TNT at Tangle App",
+    link: "http://app.tangle.tools/",
+  },
+  {
+    icon: <MdApps />,
+    title: "Polkadot Apps",
+    description:
+      "For advanced interactions, Polkadot Apps supports Tangle Network.",
+    link: "https://polkadot.js.org/apps/?rpc=wss://rpc.tangle.tools#/explorer",
+  },
+];
 
 const LandingPage = () => {
   return (
-    <div className="max-w-screen-xl mx-auto mt-20">
-      {/* Header and Image Row */}
-      <div className="flex flex-col items-center z-10 font-bold p-5 lg:p-0 lg:flex-row lg:items-end justify-between">
-        <div className="flex flex-col items-start mb-8 gap-1 space-y-4 lg:space-y-6">
-          <p className="text-sm font-bol md:absolute text-gray-400 pl-1 lg:text-sm">
-            TANGLE DOCUMENTATION
-          </p>
-          <h1 className="text-3xl font-normal text-gray-900 dark:text-white md:text-3xl lg:text-5xl">
-            Your Guide to the{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-blue-700">
-              Modular Restaking Infrastructure
-            </span>
-          </h1>
-          <p className="text-lg font-bold md:font-normal text-gray-700 lg:text-lg dark:text-gray-400">
-            Create and market modular services that securely deploy across any
-            blockchain ecosystem.
-          </p>
-          <button
-            type="button"
-            className="text-white flex justify-center content-center !bg-gradient-to-br ml-1 from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium relative flex-wrap rounded-lg text-md px-5 py-2.5 text-center"
-          >
-            Claim Airdrop
-          </button>
-        </div>
+    <div className="">
+      <div className="max-w-screen-xl flex flex-col justify-between mx-auto mt-20">
+        {/* Header and Image Row */}
+        <div className="flex flex-col items-center z-10 font-bold p-5 lg:p-0 lg:flex-row lg:items-end justify-between">
+          <div className="flex flex-col pl-7 items-start mb-8 mr-28 gap-1 space-y-4 lg:space-xy-6">
+            <p className="text-sm font-bol md:absolute text-gray-400 pl-1 lg:text-sm">
+              TANGLE DOCUMENTATION
+            </p>
+            <h1 className="text-3xl font-normal text-gray-900 dark:text-white md:text-3xl lg:text-5xl">
+              Your Guide to the{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-blue-700">
+                Modular Restaking Infrastructure
+              </span>
+            </h1>
+            <p className="text-lg font-bold md:font-normal text-gray-700 lg:text-lg dark:text-gray-400">
+              Create and monetize services that deploy securely across any
+              blockchain ecosystem.
+            </p>
+          </div>
 
-        <div className="hidden lg:flex  z-0 ">
-          <div className="flex flex-col content-end z-0 h-full">
-            <Image
-              src={DocsLandingGraphic}
-              alt="A visualization of the Tangle Network"
-              width={1000}
-              height={600}
-              className="md:content-end max-w-screen-md z-0 "
-            />
+          <div className="hidden lg:flex  z-0 ">
+            <div className="flex flex-col content-end z-0 h-full">
+              <Image
+                src={TangleNetworkMap}
+                alt="A visualization of the Tangle Network"
+                className="md:content-end object-scale-down z-0 "
+              />
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Horizontal Line */}
-      <div className=" opacity-0 sm:opacity-100 border-b border-gray-300 mb-8"></div>
+        {/* Horizontal Line */}
+        <div className=" opacity-0 relative sm:opacity-100 border-b border-gray-300 mb-12"></div>
 
-      {/* Call-to-Action Cards Row */}
-      <div className="flex flex-col sm:flex-row items-center gap-5 mb-8">
-        <a
-          href="#"
-          className="block max-w-sm min-h-44 p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
-        >
-          <h5 className="mb-2 md:text-lg lg:text-xl font-semibold tracking-tight text-violet-700 dark:text-white">
-            Get started building Blueprints
-          </h5>
-          <p className="text-sm font-normal text-gray-900 dark:text-gray-400">
-            Blueprints are the template object implemented as software in the
-            Tangle codebase.
-          </p>
-        </a>
-        <a
-          href="#"
-          className="block max-w-sm min-h-44 p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
-        >
-          <h5 className="mb-2 md:text-lg lg:text-xl font-semibold tracking-tight text-violet-700 dark:text-white">
-            Restake TNT or other assets.
-          </h5>
-          <p className="text-sm font-normal text-gray-900 dark:text-gray-400">
-            Restaking secures the actively validated services on Tangle, and
-            earns rewards.
-          </p>
-        </a>
-        <a
-          href="#"
-          className="block max-w-sm min-h-44 p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
-        >
-          <h5 className="mb-2 md:text-lg lg:text-xl font-semibold tracking-tight text-violet-700 dark:text-white">
-            Run a Node, Validator, or Service Operator
-          </h5>
-          <p className="text-sm font-normal text-gray-900 dark:text-gray-400">
-            Noderunners can earn staking rewards, secure the network, and
-            operators earn income from services.
-          </p>
-        </a>
-        <a
-          href="#"
-          className="block max-w-sm min-h-44 p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
-        >
-          <h5 className="mb-2 md:text-lg lg:text-xl font-semibold tracking-tight text-violet-700 dark:text-white">
-            Learn more about the network.
-          </h5>
-          <p className="text-sm font-normal text-gray-900 dark:text-gray-400">
-            Here are the biggest enterprise technology acquisitions of 2021 so
-            far, in reverse chronological order.
-          </p>
-        </a>
+        {/* Call-to-Action Cards Row */}
+        <div className="container">
+          <h3 className="text-xl inline-flex mb-10 underline underline-offset-8 font-semibold text-gray-500 dark:text-white">
+            Get Started
+          </h3>
+          <div className="relative flex flex-grow p-5 md:p-0">
+            <div className="flex flex-col flex-grow sm:flex-row items-center gap-5 mb-8">
+              {getStartedCards.map((card, index) => (
+                <CallToActionCard
+                  key={index}
+                  icon={card.icon}
+                  title={card.title}
+                  description={card.description}
+                  link={card.link}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Resources Cards Row */}
+        <div className="container">
+          <h3 className="text-xl inline-flex mb-10 underline underline-offset-8 font-semibold text-gray-500 dark:text-white">
+            Resources
+          </h3>
+          <div className="relative flex flex-grow p-5 md:p-0">
+            <div className="flex flex-col flex-grow sm:flex-row items-center gap-5 mb-8">
+              {resourcesCards.map((card, index) => (
+                <CallToActionCard
+                  key={index}
+                  icon={card.icon}
+                  title={card.title}
+                  description={card.description}
+                  link={card.link}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="container"></div>
       </div>
     </div>
   );
