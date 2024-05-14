@@ -73,7 +73,7 @@ const resourcesCards = [
 const LandingPage = () => {
   return (
     <div className="">
-      <div className="max-w-screen-xl flex flex-col justify-between mx-auto mt-20">
+      <div className="max-w-screen-xl flex flex-col align-center mx-auto mt-10">
         {/* Header and Image Row */}
         <div className="flex flex-col items-center z-10 font-bold p-5 lg:p-0 lg:flex-row lg:items-end justify-between">
           <div className="flex flex-col pl-7 items-start mb-8 mr-28 gap-1 space-y-4 lg:space-xy-6">
@@ -92,15 +92,16 @@ const LandingPage = () => {
             </p>
           </div>
 
-          <div className="hidden lg:flex  z-0 ">
-            <div className="flex flex-col content-end z-0 h-full">
-              <Image
-                src={TangleNetworkMap}
-                alt="A visualization of the Tangle Network"
-                className="md:content-end object-scale-down z-0 "
-              />
-            </div>
-          </div>
+          <div className="hidden lg:flex relative">
+  <div className="flex relative bottom-0">
+    <Image
+      src={TangleNetworkMap}
+      alt="A visualization of the Tangle Network"
+      className="md:content-end z-0 w-full h-auto"
+      style={{ maxWidth: '90%' }}
+    />
+  </div>
+</div>
         </div>
 
         {/* Horizontal Line */}
