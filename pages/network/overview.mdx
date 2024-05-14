@@ -1,65 +1,67 @@
 ## Introduction
 
-Tangle Network is an advanced blockchain platform designed for MPC coprocessors and infrastructure. It seamlessly integrates Multi-Party Computation (MPC) primitives with an innovative restaking mechanism, empowering developers to create groundbreaking privacy-enhancing solutions within a decentralized, crypto-economically secure landscape.
+Tangle Network is an advanced blockchain platform designed to provide secure, decentralized infrastructure services. It seamlessly integrates cutting-edge cryptographic primitives with an innovative restaking mechanism, empowering developers to create groundbreaking solutions within a decentralized, crypto-economically secure landscape.
 
-**Scale with MPC:**
-Integrate Tangle's MPC-as-a-Service into your projects for scalable, secure development environments. Tangle serves as a core infrastructure for ZK applications across ecosystems.
+**Build Composable Service:**
+Leverage Tangle's modular architecture to create and combine complex service components called Blueprints. From oracles and bridges to novel zero-knowledge applications, developers have a canvas for innovative decentralized services.
 
-**Build with MPC:**
-Contribute to Tangle's modular protocol, expanding its capabilities through innovative upgrades. Enable cross-chain interactions via bridges, IBC, XCM, and ensure EVM compatibility for seamless interoperability.
+**Earn by Contributing Blueprints**
+Tangle's restaking model incentivizes developers to build pioneering Blueprints that provide value across ecosystems. As users instantiate Blueprints, their creators earn a share of the rewards, fostering an ecosystem of high-quality services.
 
-**Earn with MPC:**
-Earn rewards by providing essential cryptographic services in Tangle's restaking framework. The system incentivizes high-quality MPC services through direct restaking on available roles.
+**Earn as a Service Operator**
+Operators can earn rewards by staking assets and providing validator services to secure Blueprint instances requested by users. The more stakes allocated to productive Blueprints, the greater the earnings potential.
 
-**Collaborate with MPC**
-Join Tangle's diverse community of developers, researchers, dApp users, bridge users, and token holders. Participate in an advanced governance model, underpinned by a Distributed Key Generation protocol, which secures cross-chain applications.
+**Maximize Asset Utilization**
+Tangle enables maximizing utilization of staked assets from any ecosystem. Restakers earn inflationary rewards for their stakes proportional to the value secured, incentivizing widespread participation.
 
 ## Key Features
 
-- **MPC-as-a-Service (MaaS)**: : Tangle natively supports various multi-party computation primitives and zero-knowledge proving services, positioning the network as a core infrastructure for ZK applications across multiple ecosystems.
+- **Active Validator Services (AVS)**: Tangle natively supports various cryptographic primitives and validator services across ecosystems through our innovative Blueprint model.
 
-- **Restaking**: Tangle's restaking system seamlessly integrates with its MPCaaS infrastructure, incentivizing node operators to provide high-quality MPC services by allowing them to restake directly on available roles.
+- **Restaking**: Tangle's restaking system seamlessly integrates with its AVS infrastructure, incentivizing node operators to provide high-quality validator services by allowing them to restake directly on available roles.
 
-- **Interoperability**: Tangle enables fluid cross-chain interactions, from asset bridging to advanced cross-chain communication, through technologies such as private bridges, zkBridges, IBC pallets, and XCM.
+- **Interoperability**: Tangle enables fluid cross-chain interactions, from asset bridging to advanced cross-chain communication, through technologies such as bridges, IBC pallets, and XCM.
 
 - **EVM Compatibility**: The Ethereum Virtual Machine (EVM) serves as a conduit for compatibility and interoperability with Ethereum-based tools and applications, allowing developers to construct DApps, generate NFTs, and utilize ERC20 tokens across diverse networks.
 
-## Services
+## How Services Work
 
-![MPC Flow](/images/MPCaaS-flow.png)
+![Service Instance Flow](/images/ServiceInstanceFlow.png)
 
-Tangle Network offers a range of services to support the development and deployment of advanced cryptographic applications:
+Tangle Network employs a modular architecture to enable the creation and deployment of complex cryptographic services called Blueprints:
 
-- **Signing as a Service (TSSaaS)**: Tangle provides threshold signatures as a service, enabling the creation of decentralized bridges, oracles, and custody solutions with robust security.
+#### Blueprints
 
-- **zkSNARKs as a Service (zkSaaS)**: Tangle offers proof generation as a service, allowing developers to outsource the proof generation process to a privacy-preserving infrastructure, addressing computational challenges faced by resource-constrained devices.
+A Blueprint is a specification that defines a service, similar to an actively validated service (AVS). However, Blueprints themselves are not live service instances. Developers create Blueprints by specifying a "gadget" binary, the jobs involved, a set of smart contracts for registration and requesting instances, and additional metadata. [Read more about Blueprints](../developers/blueprints.mdx)
 
-Tangle Network introduces an innovative platform to support cross-chain Zero-Knowledge (ZK) applications and enhance privacy in the blockchain ecosystem. With its unique offering of MPCaaS, restaking mechanism, and commitment to interoperability, Tangle is well-positioned to become a core infrastructure for enabling privacy-first and interoperable blockchain solutions.
+#### Restaking on Blueprints
 
-## Roadmap
+Operators require qualfied stake to participate in Roles that enable Blueprint-based services, ensuring security. The restaked assets serve as stake to incentivize good operator behavior.
 
-The following is subject to change as DAO governance supports different initiatives.
+#### Requesting Service Instances
 
-**COMPLETE: Phase 1**
+Users then deploy live service instances using a Blueprint. The requester specifies any criteria like the number of operators or other operator attributes. A specific subset of restaked operators is then selected to run that service instance.
 
-- Launch democracy governance.
-- Finalize Tangle Token Distribution
-- Launch Incentivized testnet
+#### Incentives
 
-**Phase 2**
+Restaked operators perform the service and earn inflationary rewards for securing Blueprints proportional to their staked capital. Importantly, developers who create popular Blueprints also earn a share of these rewards, incentivizing valuable Blueprint creation.
 
-- Launch mainnet on **April 10, 2024** and allocate TNT tokens.
-- Deploy threshold signature scheme (TSS) as a service.
-- Deploy restaking: linking validators to the MPC services.
+This separation into Blueprints and instances allows services to be defined once but instantiated multiple times by different users with varying operator requirements. Blueprint developers benefit from their work being utilized widely across ecosystems and applications.
 
-**Phase 3**
+## Use Cases
 
-- Launch cross-chain transfers.
-- Initialize proof generation (ZKSaaS) as a service.
-- Deploy ETH2 Light Client
+Tangle Network is designed to support a wide range of complex cryptographic services and applications built by developers. Some key service areas include:
 
-**Phase 4**
+- **Privacy Infrastructure**: Tangle provides a foundation for enabling privacy-preserving solutions through technologies like multi-party computation (MPC) and zero-knowledge proofs.
 
-- Remove Sudo and fully delegate authority to the on-chain community.
-- Expand MPC service offerings.
-- Integrate with EigenLayer.
+- **Oracles**: Build decentralized oracle services that can securely feed off-chain data to blockchains using Tangle's threshold signatures and MPC primitives.
+
+- **Custody Solutions**: Leverage Tangle's cryptographic services to create distributed custody solutions with robust security guarantees.
+
+- **Bridges**: Develop cross-chain bridges and asset movement solutions using Tangle's MPC co-processors and private bridging capabilities.
+
+- **Zero-Knowledge Services**: Implement applications leveraging zero-knowledge proofs, such as zero-knowledge machine learning (ZKML) projects, using Tangle's proof generation services.
+
+- **Novel Cryptographic Applications**: Tangle's modular architecture and rich cryptographic library enable developers to build innovative applications requiring advanced cryptographic primitives.
+
+The core vision of Tangle is to provide a comprehensive infrastructure for developers to create and monetize a wide array of cutting-edge services secured by the network's novel restaking mechanism. Developers are incentivized to contribute valuable service blueprints, which can then be instantiated and utilized across ecosystems by operators staking assets from various networks.
