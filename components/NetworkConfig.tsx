@@ -168,7 +168,7 @@ const NetworkTabs = () => {
       case "wss":
         return (
           <div className="flex items-center">
-            <span className="mr-2 bg-slate-200 font-mono text-sm py-1 px-3">
+            <span className="mr-2 bg-slate-200 font-mono dark:bg-black dark:text-white text-sm py-1 px-3">
               {value.url}
             </span>
             <BlockCopyButton name={value.url} code={value.url} />
@@ -178,7 +178,7 @@ const NetworkTabs = () => {
         return (
           <Link
             href={value.url}
-            className="underline underline-offset-1 text-linkBlue font-semibold"
+            className="underline underline-offset-1 dark:text-blue-200 text-linkBlue font-semibold"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -207,14 +207,17 @@ const NetworkTabs = () => {
         {Object.entries(sections).map(([section, items]) => (
           <div key={section} className="mb-8">
             <h3 className="text-xl font-semibold mb-2">{section}</h3>
-            <table className="w-full border-collapse">
+            <table className="w-full border-collapse bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-300">
               <tbody>
                 {(items as any[]).map((item, index) => (
-                  <tr className="border-b" key={index}>
-                    <td className="px-4 py-2 whitespace-nowrap bg-slate-100">
+                  <tr
+                    className={`${index % 2 === 0 ? 'bg-gray-50 dark:bg-gray-700' : ''} border-b`}
+                    key={index}
+                  >
+                    <td className="px-4 py-2 whitespace-nowrap bg-slate-100 dark:bg-gray-600 border border-gray-300 dark:border-gray-700">
                       {item.property}
                     </td>
-                    <td className="px-4 py-2 truncate text-ellipsis">
+                    <td className="px-4 py-2 truncate text-ellipsis border border-gray-300 dark:border-gray-700">
                       {renderValue(item.value)}
                     </td>
                   </tr>
@@ -229,8 +232,8 @@ const NetworkTabs = () => {
 
   return (
     <div className="mt-10">
-      <ul className="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">
-        <li className="inline-flex text-xl items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg group">
+      <ul className="flex flex-wrap mb-8 text-sm border-b-2 font-medium text-center text-gray-500 dark:text-gray-400">
+        <li className="inline-flex text-xl items-center justify-center pt-8 px-4  border-b-2 border-transparent rounded-t-lg group">
           <a
             href="#"
             onClick={() => handleTabClick("mainnet")}
@@ -244,8 +247,7 @@ const NetworkTabs = () => {
             Mainnet
           </a>
         </li>
-        <li className="inline-flex text-xl items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg group">
-          <a
+        <li className="inline-flex text-xl items-center justify-center pt-8 px-4  border-b-2 border-transparent rounded-t-lg group">          <a
             href="#"
             onClick={() => handleTabClick("testnet")}
             className={`inline-block p-4 rounded-t-lg ${
@@ -258,8 +260,7 @@ const NetworkTabs = () => {
             Testnet
           </a>
         </li>
-        <li className="inline-flex items-center justify-center p-4 border-b-2 border-transparent text-xl rounded-t-lg group">
-          <a
+        <li className="inline-flex text-xl items-center justify-center pt-8 px-4  border-b-2 border-transparent rounded-t-lg group">          <a
             href="#"
             onClick={() => handleTabClick("wallets")}
             className={`inline-block p-4 rounded-t-lg ${
