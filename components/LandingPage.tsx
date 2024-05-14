@@ -93,15 +93,15 @@ const LandingPage = () => {
           </div>
 
           <div className="hidden lg:flex relative">
-  <div className="flex relative bottom-0">
-    <Image
-      src={TangleNetworkMap}
-      alt="A visualization of the Tangle Network"
-      className="md:content-end z-0 w-full h-auto"
-      style={{ maxWidth: '90%' }}
-    />
-  </div>
-</div>
+            <div className="flex relative bottom-0">
+              <Image
+                src={TangleNetworkMap}
+                alt="A visualization of the Tangle Network"
+                className="md:content-end z-0 w-full h-auto"
+                style={{ maxWidth: "90%" }}
+              />
+            </div>
+          </div>
         </div>
 
         {/* Horizontal Line */}
