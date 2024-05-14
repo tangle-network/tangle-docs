@@ -14,8 +14,12 @@
     "jsx": "preserve",
     "incremental": true,
     "allowJs": false,
+    "paths": {
+      "@/*": ["./src/*"]
+    },
     "types": ["next"]
   },
+
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }

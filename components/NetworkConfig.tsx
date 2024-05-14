@@ -1,213 +1,288 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import styles from "./NetworkConfig.module.css";
+import { BlockCopyButton } from "./ui/block-copy-button";
+import { FlaskConical, WalletMinimal, Waypoints } from "lucide-react";
+import WalletTable from "./WalletTable";
 
-const NetworkCard = ({ mainnet, testnet }) => {
+const NETWORK_DATA = {
+  mainnet: [
+    { property: "Interfaces and Apps", value: "" },
+    {
+      property: "Tangle App",
+      value: {
+        type: "link",
+        url: "https://app.tangle.tools",
+        text: "Tangle App",
+      },
+    },
+    {
+      property: "Polkadot Apps",
+      value: {
+        type: "link",
+        url: "https://polkadot.js.org/apps/?rpc=wss://rpc.tangle.tools#/explorer",
+        text: "Tangle on Polkadot Apps",
+      },
+    },
+    { property: "Block Explorers", value: "" },
+    {
+      property: "EVM Explorer",
+      value: {
+        type: "link",
+        url: "https://explorer.tangle.tools",
+        text: "Explorer.Tangle.Tools",
+      },
+    },
+    {
+      property: "Substrate Block Explorer",
+      value: {
+        type: "link",
+        url: "https://tangle.statescan.io/",
+        text: "Tangle on Statescan",
+      },
+    },
+    { property: "Asset Details", value: "" },
+    { property: "Native Asset Symbol", value: "TNT" },
+    { property: "Native Asset Decimals", value: "18" },
+    { property: "Developer Resources", value: "" },
+    { property: "Address Prefix", value: { type: "wss", url: "tg" } },
+    { property: "Network Type", value: "Substrate aka Polkadot SDK with EVM" },
+    { property: "Chain ID", value: { type: "wss", url: "5845" } },
+    { property: "Standard Account", value: "*25519" },
+    {
+      property: "Public RPC URL",
+      value: { type: "wss", url: "https://rpc.tangle.tools" },
+    },
+    {
+      property: "Public WSS URL",
+      value: { type: "wss", url: "wss://rpc.tangle.tools" },
+    },
+    {
+      property: "Public WSS URL by Dwellir",
+      value: { type: "wss", url: "wss://tangle-mainnet-rpc.dwellir.com" },
+    },
+    {
+      property: "Runtime Types",
+      value: {
+        type: "link",
+        url: "https://www.npmjs.com/package/@webb-tools/tangle-substrate-types",
+        text: "@webb-tools/tangle-substrate-types",
+      },
+    },
+    {
+      property: "Telemetry",
+      value: {
+        type: "link",
+        url: "https://telemetry.polkadot.io/#list/0x3d22af97d919611e03bbcbda96f65988758865423e89b2d99547a6bb61452db3",
+        text: "Telemetry",
+      },
+    },
+    {
+      property: "GitHub Repo",
+      value: {
+        type: "link",
+        url: "https://github.com/webb-tools/tangle",
+        text: "Tangle Repository",
+      },
+    },
+  ],
+  testnet: [
+    { property: "Interfaces and Apps", value: "" },
+    {
+      property: "Tangle App",
+      value: {
+        type: "link",
+        url: "https://app.tangle.tools",
+        text: "App.Tangle.Tools",
+      },
+    },
+    { property: "Block Explorers", value: "" },
+    {
+      property: "EVM Explorers",
+      value: {
+        type: "link",
+        url: "https://testnet-explorer.tangle.tools",
+        text: "Testnet-Explorer.Tangle.Tools",
+      },
+    },
+    {
+      property: "Substrate Explorer",
+      value: {
+        type: "link",
+        url: "https://tangle-testnet.statescan.io/",
+        text: "Tangle Testnet on Statescan",
+      },
+    },
+    { property: "Asset Details", value: "" },
+    { property: "Native Asset Symbol", value: "tTNT" },
+    { property: "Native Asset Decimals", value: "18" },
+    { property: "Developer Resources", value: "" },
+    { property: "Address Prefix", value: "tg" },
+    { property: "Network Type", value: "Substrate aka Polkadot SDK with EVM" },
+    { property: "Chain ID", value: "3799" },
+    { property: "Address Prefix", value: "tg" },
+    { property: "Standard Account", value: "*25519" },
+    {
+      property: "Public RPC URL",
+      value: { type: "wss", url: "https://testnet-rpc.tangle.tools" },
+    },
+    {
+      property: "Public WSS URL",
+      value: { type: "wss", url: "wss://testnet-rpc.tangle.tools" },
+    },
+    {
+      property: "Runtime Types",
+      value: {
+        type: "link",
+        url: "https://www.npmjs.com/package/@webb-tools/tangle-substrate-types",
+        text: "@webb-tools/tangle-substrate-types",
+      },
+    },
+    {
+      property: "Telemetry",
+      value: {
+        type: "link",
+        url: "https://telemetry.polkadot.io/#list/0x3d22af97d919611e03bbcbda96f65988758865423e89b2d99547a6bb61452db3",
+        text: "Polkadot Telemetry",
+      },
+    },
+    {
+      property: "GitHub Repo",
+      value: {
+        type: "link",
+        url: "https://github.com/webb-tools/tangle",
+        text: "Tangle Repository",
+      },
+    },
+  ],
+};
+
+const NetworkTabs = () => {
   const [activeTab, setActiveTab] = useState("mainnet");
-  const [isMainnetLive, setIsMainnetLive] = useState(false);
 
-  // Function to check if mainnet is live
-  const checkMainnetStatus = () => {
-    const launchTime = new Date("2024-04-10T02:00:00Z"); // 10am EST on April 10, 2024
-    const currentTime = new Date();
-
-    if (currentTime >= launchTime) {
-      setIsMainnetLive(true);
-    }
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
   };
 
-  // Check mainnet status on component mount and every minute
-  useEffect(() => {
-    checkMainnetStatus();
-    const interval = setInterval(checkMainnetStatus, 60000); // 60000 ms = 1 minute
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const renderTabContent = () => {
-    if (activeTab === "mainnet") {
-      return (
-        <div className={styles.networkTabContent}>
-          <div className={styles.networkType}>{mainnet.cardTitle}</div>
-          <div className={styles.titleContainer}>
-            <h2 className={styles.networkTitle}>{mainnet.network}</h2>
-            <span className={styles.mainnetStatus}>
-              {isMainnetLive ? "Live Now" : "Launching April 10, 2024"}
+  const renderValue = (value) => {
+    switch (value.type) {
+      case "wss":
+        return (
+          <div className="flex items-center">
+            <span className="mr-2 bg-slate-200 font-mono text-sm py-1 px-3">
+              {value.url}
             </span>
+            <BlockCopyButton name={value.url} code={value.url} />
           </div>
-          <table className={styles.table}>
-            <tbody>
-              <tr className={styles.tableRow}>
-                <th className={styles.tableHeader}>Network Type</th>
-                <td className={styles.tableCell}>{mainnet.type}</td>
-              </tr>
-              <tr className={styles.tableRow}>
-                <th className={styles.tableHeader}>Native Asset Symbol</th>
-                <td className={styles.tableCell}>{mainnet.symbol}</td>
-              </tr>
-              <tr className={styles.tableRow}>
-                <th className={styles.tableHeader}>Native Asset Decimals</th>
-                <td className={styles.tableCell}>{mainnet.decimals}</td>
-              </tr>
-              <tr className={styles.tableRow}>
-                <th className={styles.tableHeader}>Chain ID</th>
-                <td className={styles.tableCell}>{mainnet.chainId}</td>
-              </tr>
-              <tr className={styles.tableRow}>
-                <th className={styles.tableHeader}>Public RPC URL</th>
-                <td className={styles.tableCell}>
-                  <Link href={mainnet.rpcUrl}>{mainnet.rpcUrl}</Link>
-                </td>
-              </tr>
-              <tr className={styles.tableRow}>
-                <th className={styles.tableHeader}>Public WSS URL</th>
-                <td className={styles.tableCell}>
-                  <Link href={mainnet.wssUrl}>{mainnet.wssUrl}</Link>
-                </td>
-              </tr>
-              {mainnet.explorerUrls.map((explorer, index) => (
-                <tr key={index}>
-                  <th className={styles.tableHeader}>
-                    {index === 0 ? "Interfaces & Explorers" : ""}
-                  </th>
-                  <td className={styles.tableCell}>
-                    <Link href={explorer.url}>{explorer.name}</Link>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      );
-    } else {
-      return (
-        <div className={styles.networkTabContent}>
-          <div className={styles.networkType}>{testnet.cardTitle}</div>
-          <div className={styles.titleContainer}>
-            <h2 className={styles.networkTitle}>{testnet.network}</h2>
-          </div>
-          <table className={styles.table}>
-            <tbody>
-              <tr className={styles.tableRow}>
-                <th className={styles.tableHeader}>Network Type</th>
-                <td className={styles.tableCell}>{testnet.type}</td>
-              </tr>
-              <tr className={styles.tableRow}>
-                <th className={styles.tableHeader}>Native Asset Symbol</th>
-                <td className={styles.tableCell}>{testnet.symbol}</td>
-              </tr>
-              <tr className={styles.tableRow}>
-                <th className={styles.tableHeader}>Native Asset Decimals</th>
-                <td className={styles.tableCell}>{testnet.decimals}</td>
-              </tr>
-              <tr className={styles.tableRow}>
-                <th className={styles.tableHeader}>Chain ID</th>
-                <td className={styles.tableCell}>{testnet.chainId}</td>
-              </tr>
-              <tr className={styles.tableRow}>
-                <th className={styles.tableHeader}>Public RPC URL</th>
-                <td className={styles.tableCell}>
-                  <Link href={testnet.rpcUrl}>{testnet.rpcUrl}</Link>
-                </td>
-              </tr>
-              <tr className={styles.tableRow}>
-                <th className={styles.tableHeader}>Public WSS URL</th>
-                <td className={styles.tableCell}>
-                  <Link href={testnet.wssUrl}>{testnet.wssUrl}</Link>
-                </td>
-              </tr>
-              {testnet.explorerUrls.map((explorer, index) => (
-                <tr key={index}>
-                  <th className={styles.tableHeader}>
-                    {index === 0 ? "Interfaces & Explorers" : ""}
-                  </th>
-                  <td className={styles.tableCell}>
-                    <Link href={explorer.url}>{explorer.name}</Link>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      );
+        );
+      case "link":
+        return (
+          <Link
+            href={value.url}
+            className="underline underline-offset-1 text-linkBlue font-semibold"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {value.text || value.url}
+          </Link>
+        );
+      default:
+        return <span>{value.toString()}</span>;
     }
   };
 
-  return (
-    <div className={styles.networkCard}>
-      <div className={styles.tabsContainer}>
-        <button
-          className={`${styles.tabButton} ${
-            activeTab === "mainnet" ? styles.activeTab : ""
-          }`}
-          onClick={() => setActiveTab("mainnet")}
-        >
-          Mainnet
-        </button>
-        <button
-          className={`${styles.tabButton} ${
-            activeTab === "testnet" ? styles.activeTab : ""
-          }`}
-          onClick={() => setActiveTab("testnet")}
-        >
-          Testnet
-        </button>
-      </div>
-      {renderTabContent()}
-    </div>
-  );
-};
+  const renderTable = (data) => {
+    const sections = {};
 
-const NetworkInfo = () => {
-  // Define the network details here or fetch from an API
-  const networks = {
-    mainnet: {
-      cardTitle: "Network Information",
-      network: "Tangle Network",
-      type: "Mainnet",
-      symbol: "TNT",
-      decimals: 18,
-      chainId: "5845",
-      rpcUrl: "https://rpc.tangle.tools",
-      wssUrl: "wss://rpc.tangle.tools",
-      explorerUrls: [
-        { name: "BlockScout", url: "https://explorer.tangle.tools" },
-        {
-          name: "PolkadotJS",
-          url: "https://polkadot.js.org/apps/?rpc=wss://rpc.tangle.tools#/explorer",
-        },
-      ],
-      fundingInfo: {
-        url: "https://faucet.tangle.tools/",
-      },
-    },
-    testnet: {
-      cardTitle: "Network Information",
-      network: "Tangle Network",
-      type: "Testnet",
-      symbol: "tTNT",
-      decimals: 18,
-      chainId: "3799",
-      rpcUrl: "https://testnet-rpc.tangle.tools",
-      wssUrl: "wss://testnet-rpc.tangle.tools",
-      explorerUrls: [
-        { name: "BlockScout", url: "https://testnet-explorer.tangle.tools" },
-        {
-          name: "PolkadotJS",
-          url: "https://polkadot.js.org/apps/?rpc=wss://testnet-rpc.tangle.tools#/explorer",
-        },
-      ],
-      fundingInfo: {
-        url: "https://faucet.tangle.tools/",
-      },
-    },
+    data.forEach((item) => {
+      if (item.value === "") {
+        sections[item.property] = [];
+      } else {
+        const lastSection = Object.keys(sections).pop();
+        sections[lastSection].push(item);
+      }
+    });
+
+    return (
+      <>
+        {Object.entries(sections).map(([section, items]) => (
+          <div key={section} className="mb-8">
+            <h3 className="text-xl font-semibold mb-2">{section}</h3>
+            <table className="w-full border-collapse">
+              <tbody>
+                {(items as any[]).map((item, index) => (
+                  <tr className="border-b" key={index}>
+                    <td className="px-4 py-2 whitespace-nowrap bg-slate-100">
+                      {item.property}
+                    </td>
+                    <td className="px-4 py-2 truncate text-ellipsis">
+                      {renderValue(item.value)}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ))}
+      </>
+    );
   };
 
   return (
-    <div className={styles.networkInfo}>
-      <NetworkCard mainnet={networks.mainnet} testnet={networks.testnet} />
+    <div className="mt-10">
+      <ul className="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">
+        <li className="inline-flex text-xl items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg group">
+          <a
+            href="#"
+            onClick={() => handleTabClick("mainnet")}
+            className={`inline-block p-4 rounded-t-lg ${
+              activeTab === "mainnet"
+                ? "text-blue-600 bg-gray-100 active dark:bg-gray-800 dark:text-blue-500"
+                : "hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+            }`}
+          >
+            <Waypoints className="w-4 h-4 inline me-2 text-blue-600 dark:text-blue-500" />
+            Mainnet
+          </a>
+        </li>
+        <li className="inline-flex text-xl items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg group">
+          <a
+            href="#"
+            onClick={() => handleTabClick("testnet")}
+            className={`inline-block p-4 rounded-t-lg ${
+              activeTab === "testnet"
+                ? "text-blue-600 bg-gray-100 active dark:bg-gray-800 dark:text-blue-500"
+                : "hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+            }`}
+          >
+            <FlaskConical className="w-4 inline h-4 me-2 text-blue-600 dark:text-blue-500" />
+            Testnet
+          </a>
+        </li>
+        <li className="inline-flex items-center justify-center p-4 border-b-2 border-transparent text-xl rounded-t-lg group">
+          <a
+            href="#"
+            onClick={() => handleTabClick("wallets")}
+            className={`inline-block p-4 rounded-t-lg ${
+              activeTab === "wallets"
+                ? "text-blue-600 bg-gray-100 active dark:bg-gray-800 dark:text-blue-500"
+                : "hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+            }`}
+          >
+            <WalletMinimal className="w-4 inline h-4 me-2 text-blue-600 dark:text-blue-500" />
+            Wallets
+          </a>
+        </li>
+      </ul>
+
+      <div className="table-auto w-full">
+        {activeTab === "wallets" ? (
+          <WalletTable />
+        ) : (
+          renderTable(NETWORK_DATA[activeTab])
+        )}
+      </div>
     </div>
   );
 };
 
-export default NetworkInfo;
+export default NetworkTabs;

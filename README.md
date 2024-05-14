@@ -31,13 +31,13 @@ if image assets are added to a given section you must provide both a dark and li
 
 **Updating existing content**
 
-1. Navigate to the desired page to update (e.g. `/pages/docs/overview.mdx`)
+1. Navigate to the desired page to update (e.g. `/pages/overview.mdx`)
 2. Make applicable changes
 3. Test those changes locally `yarn install && yarn dev`
 
 **Adding content for existing section**
 
-1. Navigate to the desired documentation section (e.g. `/pages/docs/overview.mdx/`)
+1. Navigate to the desired documentation section (e.g. `/pages/overview.mdx/`)
 2. Create a new mdx file that represents new page for desired section (e.g. `advanced.mdx`)
 3. Write desired content for the new mdx file
 4. Update the `_meta.json` file within the section directory to include your new page into the navigation
@@ -57,7 +57,7 @@ navigation.
 
 2.  **Install dependencies**
 
-    Navigate into your new site’s directory and install all dependencies.
+    Navigate into your new site's directory and install all dependencies.
 
     ```bash
     cd tangle-docs/
@@ -66,7 +66,7 @@ navigation.
 
 3.  **Fire the engine**
 
-    Navigate into your new site’s directory and use the following command to start the development server locally.
+    Navigate into your new site's directory and use the following command to start the development server locally.
 
     ```bash
     yarn dev # alias for `yarn start` and `yarn develop`
