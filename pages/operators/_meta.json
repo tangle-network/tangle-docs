@@ -1,4 +1,5 @@
 {
+  "introduction": "Get Started",
   "node-basics": "Node Basics",
   "validator": "Running a Validator",
   "service-operator": "Running an AVS Operator",
