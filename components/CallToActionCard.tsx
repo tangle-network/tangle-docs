@@ -4,7 +4,7 @@ const CallToActionCard = ({ icon, title, description, link }) => {
   return (
     <a
       href={link}
-      className="max-w-sm min-h-44  flex items-start hover:bg-gray-100 dark:bg-gray-800  dark:hover:bg-gray-700"
+      className="max-w-sm min-h-44 p-2 flex items-start hover:bg-gray-100  dark:hover:bg-gray-700"
     >
       <div className="flex items-start">
         <div className="mr-4">
