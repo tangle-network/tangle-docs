@@ -3,7 +3,7 @@
     "type": "separator",
     "title": "Introduction"
   },
-  "developer-overview": "Understanding Tangle for Developers",
+  "blueprints": "Blueprints",
   "services": "Actively Validated Services (AVS)",
   "usecases": "Use Cases",
   "-- technicals": {
@@ -16,9 +16,20 @@
     "type": "separator",
     "title": "Resources & Guides"
   },
-  "json-rpc-endpoints": "RPC Endpoints",
+  "integrate": "Endpoints and Other Resources",
   "deploy-using-hardhat": "Deploy on Tangle with Hardhat",
-  "integrate": "Integrate Tangle",
+  "json-rpc-endpoints": "RPC Methods",
   "addresses": "EVM and Address Conversion",
-  "transaction-fees": "Calculating Transaction Fees"
+  "transaction-fees": "Calculating Transaction Fees",
+  "-- contribute": {
+    "type": "separator",
+    "title": "Contribute"
+  },
+  "contribute": "Bug Reports",
+  "github": {
+    "title": "Tangle on Github",
+    "type": "page",
+    "href": "https://github.com/webb-tools/tangle",
+    "newWindow": true
+  }
 }

@@ -1,5 +1,6 @@
 {
-  "requirements": "Start Validating",
+  "introduction": "Start Validating",
+  "npos": "NPoS Validator Election",
   "upgrade-node": "Upgrade your Validator",
   "proxyaccount": "Proxy Accounts",
   "validator-rewards": "Rewards"
