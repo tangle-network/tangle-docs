@@ -10,6 +10,25 @@ const nextConfig = {
     legacyBrowsers: false,
   },
   trailingSlash: true,
+  async redirects() {
+    return [
+      {
+        source: "/restake",
+        destination: "/restake/introduction/",
+        permanent: true,
+      },
+      {
+        source: "/developers",
+        destination: "/developers/developer-overview/",
+        permanent: true,
+      },
+      {
+        source: "/operators",
+        destination: "/operators/introduction/",
+        permanent: true,
+      },
+    ];
+  },
   rewrites() {
     return {
       // beforeFiles: [

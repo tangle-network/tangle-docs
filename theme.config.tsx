@@ -1,10 +1,11 @@
 import React from "react";
 import { useRouter } from "next/router";
 import { DocsThemeConfig, useConfig, useTheme } from "nextra-theme-docs";
-import { Footer } from "./components/Footer";
+import Footer from "./components/Footer";
 import Navigation from "./components/Navigation";
 import HeaderLogo from "./components/HeaderLogo";
 import { Discord, Github, Twitter } from "./components/Social";
+import HelpDiscordBtn from "./components/HelpDiscordBtn";
 
 const SITE_ROOT = "https://docs.tangle.tools";
 
@@ -121,7 +122,7 @@ const theme: DocsThemeConfig = {
     component: Navigation,
     extraContent: (
       <>
-        <LaunchAppButton />
+        <HelpDiscordBtn />
       </>
     ),
   },
