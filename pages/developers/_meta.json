@@ -19,7 +19,7 @@
   "integrate": "Endpoints and Other Resources",
   "deploy-using-hardhat": "Deploy on Tangle with Hardhat",
   "json-rpc-endpoints": "RPC Methods",
-  "addresses": "EVM and Address Conversion",
+  "addresses": "Account Addresses",
   "transaction-fees": "Calculating Transaction Fees",
   "-- contribute": {
     "type": "separator",
