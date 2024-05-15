@@ -74,7 +74,7 @@ navigation.
 
 4.  **Open the code and start customizing!**
 
-    Your site is now running at `http://localhost:3000/docs`.
+    Your site is now running at `http://localhost:3000/`.
 
     Edit to see your site update in real-time on save.
 
