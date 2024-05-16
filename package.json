@@ -1,8 +1,8 @@
 {
-  "name": "docs",
-  "version": "1.0.0",
+  "name": "tangle-docs",
+  "version": "2.0.0",
   "private": true,
-  "description": "Webb docs",
+  "description": "Tangle Network Documentation",
   "scripts": {
     "dev": "next",
     "start": "next start",
@@ -14,13 +14,15 @@
     "format": "prettier --write \"{components,pages}/**/*.{mdx,ts,js,jsx,tsx,json}\" ",
     "format:check": "prettier --check \"{components,pages}/**/*.{mdx,ts,js,jsx,tsx,json}\" "
   },
-  "author": "Webb Team",
+  "author": "Tangle Foundation",
   "license": "MPL-2.0",
   "dependencies": {
     "@headlessui/react": "^1.7.7",
     "@heroicons/react": "1.0.6",
     "@mdx-js/react": "^2.2.1",
     "@next/third-parties": "^14.2.3",
+    "@polkadot/util": "^12.6.2",
+    "@polkadot/util-crypto": "^12.6.2",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-tooltip": "^1.0.7",
     "@react-aria/ssr": "3.4.0",
