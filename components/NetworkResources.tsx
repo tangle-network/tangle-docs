@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { BlockCopyButton } from "./ui/block-copy-button";
-import { FlaskConical, WalletMinimal, Waypoints } from "lucide-react";
+import { FlaskConical, WalletMinimal, Waypoints, SendToBack } from "lucide-react";
 import WalletTable from "./WalletTable";
+import EvmToSubstrateConverter from './EvmToSubstrateConverter'
+
 
 const NETWORK_DATA = {
   mainnet: [
@@ -277,17 +279,37 @@ const NetworkTabs = () => {
             Wallets
           </a>
         </li>
+        <li className="inline-flex text-xl items-center justify-center pt-8 px-4  border-b-2 border-transparent rounded-t-lg group">
+          {" "}
+          <a
+            href="#"
+            onClick={() => handleTabClick("evmToSubstrate")}
+            className={`inline-block p-4 rounded-t-lg ${
+              activeTab === "evmToSubstrate"
+                ? "text-blue-600 bg-gray-100 active dark:bg-gray-800 dark:text-blue-500"
+                : "hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+            }`}
+          >
+            <SendToBack className="w-4 inline h-4 me-2 text-blue-600 dark:text-blue-500" />
+            EVM-Substrate Transfers
+          </a>
+        </li>
       </ul>
 
       <div className="table-auto w-full">
-        {activeTab === "wallets" ? (
-          <WalletTable />
-        ) : (
-          renderTable(NETWORK_DATA[activeTab])
-        )}
-      </div>
+      {activeTab === "wallets" ? (
+        <WalletTable />
+      ) : activeTab === "evmToSubstrate" ? (
+        <EvmToSubstrateConverter />
+      ) : (
+        renderTable(NETWORK_DATA[activeTab])
+      )}
+    </div>
     </div>
   );
 };
 
 export default NetworkTabs;
+
+
+<EvmToSubstrateConverter />
