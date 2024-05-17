@@ -1,10 +1,6 @@
 import React, { useState } from "react";
-import {
-  blake2AsU8a,
-  encodeAddress,
-  decodeAddress,
-} from "@polkadot/util-crypto";
-import { hexToU8a, stringToU8a, u8aConcat, u8aToHex } from "@polkadot/util";
+import { blake2AsU8a, encodeAddress } from "@polkadot/util-crypto";
+import { hexToU8a, stringToU8a, u8aConcat } from "@polkadot/util";
 import {
   Card,
   CardContent,
@@ -16,35 +12,45 @@ import {
 import { Button } from "./ui/button";
 import { BlockCopyButton } from "./ui/block-copy-button";
 import Link from "next/link";
-import { Callout } from 'nextra/components'
+import { Callout } from "nextra/components";
+
+const TANGLE_PREFIX = 5845;
+
+const evmToTangle = (evmAddress) => {
+  const addr = hexToU8a(evmAddress);
+  const data = stringToU8a("evm:");
+  const res = blake2AsU8a(u8aConcat(data, addr));
+  const tangleAddress = encodeAddress(res, TANGLE_PREFIX);
+  return tangleAddress;
+};
 
 const AddressConverter = () => {
   const [evmAddress, setEvmAddress] = useState("");
-  const [substrateAddress, setSubstrateAddress] = useState("");
-  const [substrateAddressToConvert, setSubstrateAddressToConvert] =
-    useState("");
-  const [evmAddressResult, setEvmAddressResult] = useState("");
+  const [tangleAddress, setTangleAddress] = useState("");
 
-  const convertEvmToSubstrate = () => {
+  const convertAddress = () => {
     if (!evmAddress) {
-      setSubstrateAddress("Please enter an EVM address.");
+      setTangleAddress("Please enter an EVM address.");
       return;
     }
-    const addr = hexToU8a(evmAddress);
-    const data = stringToU8a("evm:");
-    const res = blake2AsU8a(u8aConcat(data, addr));
-    const output = encodeAddress(res, 42);
-    setSubstrateAddress(output);
+
+    try {
+      const convertedAddress = evmToTangle(evmAddress);
+      setTangleAddress(convertedAddress);
+    } catch (error) {
+      setTangleAddress("Invalid EVM address.");
+    }
   };
 
   return (
     <div className="mt-8">
       <Card>
         <CardHeader>
-          <CardTitle>EVM-to-Substrate Address Converter</CardTitle>
+          <CardTitle>EVM to Tangle Address Converter</CardTitle>
           <CardDescription>
-            Enter an EVM Address to convert to the SS58 Substrate format. To
-            convert an SS58 address to a public key, you can use{" "}
+            Enter an EVM address to convert it to the Tangle Network's prefixed
+            form. To convert an SS58 address to a public key or other networks,
+            you can use{" "}
             <Link
               className="underline font-semibold text-linkBlue"
               href="https://ss58.org/"
@@ -73,34 +79,45 @@ const AddressConverter = () => {
             </div>
             <div className="flex-1">
               <label
-                htmlFor="substrateAddress"
+                htmlFor="tangleAddress"
                 className="block mb-1 font-semibold"
               >
-                Substrate Address:
+                Tangle Address:
               </label>
               <div
-                id="substrateAddress"
+                id="tangleAddress"
                 className="bg-gray-200 px-4 py-2 font-mono rounded w-full text-gray-800"
               >
-                {substrateAddress || "Waiting..."}
+                {tangleAddress || "Waiting..."}
               </div>
             </div>
             <div className="ml-0 self-end flex">
               <BlockCopyButton
-                name="Substrate Address"
-                code={substrateAddress}
+                name="Tangle Address"
+                code={tangleAddress}
                 className="h-10 w-10 rounded [&_svg]:size-4"
               />
             </div>
           </div>
         </CardContent>
         <CardFooter>
-          <Button className="w-full" onClick={convertEvmToSubstrate}>
+          <Button className="w-full" onClick={convertAddress}>
             Convert
           </Button>
         </CardFooter>
-                <Callout type="warning" emoji="⚠️"> Please note that the conversion from an EVM address to a Substrate address using the provided tool is a one-way operation, and you cannot derive the original EVM address from a Substrate address. <br/> <Link className="underline text-linkBlue" href="/developers/addresses">Learn more about Addresses on Tangle.</Link></Callout>
-</Card>
+        <Callout type="warning" emoji="⚠️">
+          Please note that the conversion from an EVM address to a Tangle
+          address using the provided tool is a one-way operation, and you cannot
+          derive the original EVM address from a Tangle address.
+          <br />
+          <Link
+            className="underline text-linkBlue"
+            href="/developers/addresses"
+          >
+            Learn more about Addresses on Tangle.
+          </Link>
+        </Callout>
+      </Card>
     </div>
   );
 };
