@@ -16,6 +16,7 @@ import {
 import { Button } from "./ui/button";
 import { BlockCopyButton } from "./ui/block-copy-button";
 import Link from "next/link";
+import { Callout } from 'nextra/components'
 
 const AddressConverter = () => {
   const [evmAddress, setEvmAddress] = useState("");
@@ -98,7 +99,8 @@ const AddressConverter = () => {
             Convert
           </Button>
         </CardFooter>
-      </Card>
+                <Callout type="warning" emoji="⚠️"> Please note that the conversion from an EVM address to a Substrate address using the provided tool is a one-way operation, and you cannot derive the original EVM address from a Substrate address. <br/> <Link className="underline text-linkBlue" href="/developers/addresses">Learn more about Addresses on Tangle.</Link></Callout>
+</Card>
     </div>
   );
 };
