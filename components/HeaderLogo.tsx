@@ -6,11 +6,11 @@ function HeaderLogo() {
         target="_blank"
         rel="noreferrer"
         title="Tangle Homepage"
-        className="mr-2" // Add some right margin to create spacing
+        className="" // Add some right margin to create spacing
       >
         <svg
           width="130"
-          height="60"
+          height="55"
           viewBox="0 0 453 200"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -66,7 +66,7 @@ function HeaderLogo() {
         </svg>
       </a>
 
-      <span className="bg-blue-100 text-blue-800 text-lg font-semibold mt-1 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-2">
+      <span className="bg-blue-100 text-blue-800 text-md font-semibold  px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-2">
         DOCS
       </span>
     </div>

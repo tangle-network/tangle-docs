@@ -1,6 +1,5 @@
 import React from "react";
 import DiscordBanner from "./DiscordBanner";
-import { ThemeSwitch } from "nextra-theme-docs";
 
 const Footer = () => {
   return (
@@ -19,9 +18,6 @@ const Footer = () => {
             <a href="mailto:hello@tangle.tools" className="hover:underline">
               Contact
             </a>
-          </li>
-          <li>
-            <ThemeSwitch className="border-gray-700 border mix-blend-plus-lighter" />
           </li>
         </ul>
       </div>
