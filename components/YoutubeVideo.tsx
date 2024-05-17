@@ -1,17 +1,10 @@
 // YouTubeVideo.js
-import React from 'react';
-import LiteYouTubeEmbed from 'react-lite-youtube-embed';
-import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
+import React from "react";
+import LiteYouTubeEmbed from "react-lite-youtube-embed";
+import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 
 const YouTubeVideo = ({ id, title }) => {
-  return (
-    <LiteYouTubeEmbed
-      id={id}
-      title={title}
-      poster="maxresdefault"
-      webp
-    />
-  );
+  return <LiteYouTubeEmbed id={id} title={title} poster="maxresdefault" webp />;
 };
 
 export default YouTubeVideo;

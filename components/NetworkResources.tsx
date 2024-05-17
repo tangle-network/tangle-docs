@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { BlockCopyButton } from "./ui/block-copy-button";
-import { FlaskConical, WalletMinimal, Waypoints, SendToBack } from "lucide-react";
+import {
+  FlaskConical,
+  WalletMinimal,
+  Waypoints,
+  SendToBack,
+} from "lucide-react";
 import WalletTable from "./WalletTable";
-import EvmToSubstrateConverter from './EvmToSubstrateConverter'
-
+import EvmToSubstrateConverter from "./EvmToSubstrateConverter";
 
 const NETWORK_DATA = {
   mainnet: [
@@ -74,7 +78,7 @@ const NETWORK_DATA = {
       property: "Telemetry",
       value: {
         type: "link",
-        url: "https://telemetry.polkadot.io/#list/0x3d22af97d919611e03bbcbda96f65988758865423e89b2d99547a6bb61452db3",
+        url: "https://telemetry.polkadot.io/#list/0x44f68476df71ebf765b630bf08dc1e0fedb2bf614a1aa0563b3f74f20e47b3e0",
         text: "Telemetry",
       },
     },
@@ -297,19 +301,18 @@ const NetworkTabs = () => {
       </ul>
 
       <div className="table-auto w-full">
-      {activeTab === "wallets" ? (
-        <WalletTable />
-      ) : activeTab === "evmToSubstrate" ? (
-        <EvmToSubstrateConverter />
-      ) : (
-        renderTable(NETWORK_DATA[activeTab])
-      )}
-    </div>
+        {activeTab === "wallets" ? (
+          <WalletTable />
+        ) : activeTab === "evmToSubstrate" ? (
+          <EvmToSubstrateConverter />
+        ) : (
+          renderTable(NETWORK_DATA[activeTab])
+        )}
+      </div>
     </div>
   );
 };
 
 export default NetworkTabs;
 
-
-<EvmToSubstrateConverter />
+<EvmToSubstrateConverter />;
