@@ -6,21 +6,27 @@
   "blueprints": "Blueprints",
   "services": "Actively Validated Services (AVS)",
   "usecases": "Use Cases",
+  "-- specification-developers": {
+    "type": "separator",
+    "title": "Specification Developers"
+  },
+  "gadget-tutorial": "Create a Gadget",
+  "-- solution-developers": {
+    "type": "separator",
+    "title": "Solution Developers"
+  },
+  "integrate": "Endpoints and Integration",
+  "deploy-using-hardhat": "Deploy Contracts with Hardhat",
+  "transaction-fees": "Calculating Transaction Fees",
+  "evm-substrate-transfers": "EVM-Substrate Transfers",
   "-- technicals": {
     "type": "separator",
     "title": "Technicals"
   },
+  "addresses": "Account Addresses",
   "pallets": "Pallets",
   "precompiles": "Precompiles",
-  "-- guides": {
-    "type": "separator",
-    "title": "Resources & Guides"
-  },
-  "integrate": "Endpoints and Other Resources",
-  "deploy-using-hardhat": "Deploy on Tangle with Hardhat",
   "json-rpc-endpoints": "RPC Methods",
-  "addresses": "Account Addresses",
-  "transaction-fees": "Calculating Transaction Fees",
   "-- contribute": {
     "type": "separator",
     "title": "Contribute"
