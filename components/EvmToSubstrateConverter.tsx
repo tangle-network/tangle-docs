@@ -48,8 +48,9 @@ const AddressConverter = () => {
         <CardHeader>
           <CardTitle>EVM to Tangle Address Converter</CardTitle>
           <CardDescription>
-            Enter an EVM address to convert it to the prefixed form unique to Tangle Network. To convert an SS58 address to a public key or other networks,
-            you can use{" "}
+            Enter an EVM address to convert it to the prefixed form unique to
+            Tangle Network. To convert an SS58 address to a public key or other
+            networks, you can use{" "}
             <Link
               className="underline font-semibold text-linkBlue"
               href="https://ss58.org/"
