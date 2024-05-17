@@ -1,0 +1,29 @@
+import React from 'react';
+import { render } from 'react-dom';
+import YouTubeVideo from '../../components/YouTubeVideo';
+
+
+# Gadget Tutorial Series
+
+## Introduction to Gadgets
+<YouTubeVideo id="g35Lyn9ahps" title="Part 1: Introduction to Gadgets and Protocols | Tangle Gadget Tutorial Series"/>
+In this introductory tutorial, we will dive into the concept of gadgets and protocols, guiding you through the process of building a sample or demo protocol. Gadgets are software components that interact with a blockchain to perform specific jobs, each corresponding to a protocol. We will explore how these protocols are executed based on the roles subscribed by the gadgets, cover the structure of protocols, and provide examples from our repository.
+
+## Asynchronous Protocol Structure
+<YouTubeVideo id="4uOyRywlEHg" title="Part 2: Asynchronous Protocol Structure | Gadget Tutorial Series" />
+This video explores the implementation details of protocol configuration and the functions required for the internal network. We discuss protocol-specific functions related to metadata, such as protocol name, role filter, and phase filter. Through a convenient macro, we demonstrate how to execute the protocol and recommend approaches for adding tests. We also delve into key generation and signing implementation, including additional parameters, the create next job function, and the protocol packet.
+
+## Keygen
+<YouTubeVideo id="NTfrMR0PBzI" title="Part 3: Asynchronous Protocol Implementation — KeyGen I | Gadget Tutorial Series" />
+We explain the concept of protocol multiplexing and its implementation. Understanding how to differentiate messages between concurrent protocols is crucial, and we show how to efficiently multiplex using a function. The importance of the networking section in the config is highlighted, along with a crucial tip for obtaining the network.
+
+<YouTubeVideo id="yPoHqKmNdVc" title="Part 4: Asynchronous Protocol Implementation — KeyGen II | Tangle Gadget Tutorial Series" />
+We discuss the asynchronous protocol's post-hook section, executed only if the preceding protocol is successful. We detail how to retrieve the result and save it in the local key store, generate a unique key using the SHA-256 function, set the key value, build a result for the blockchain, and submit the job result.
+
+## Signing
+<YouTubeVideo id="N14KAturmsY" title="Part 5: Asynchronous Protocol Implementation — Signing | Gadget Tutorial Series" />
+We explore the generate protocol from function for signing, covering the boilerplate, signing protocol, and steps involved in signing a message. The process of signing a message using XOR sign and collecting signatures is demonstrated, providing practical insights into the signing process.
+
+## Distributed Key Generation 
+<YouTubeVideo id="6EYmxXNJusE" title="Part 6: Tangle Pallet Protocol Implementation | Gadget Tutorial Series" />
+We will dive into the intricacies of implementing Distributed Key Generation (DKG) signature verification within the Tangle Network, focusing on the pallet portion of a stub protocol. By the end of this video, you will be equipped with the knowing how to add your protocol to the Tangle Network and the gadget protocol.
