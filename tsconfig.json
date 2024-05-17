@@ -15,7 +15,8 @@
     "incremental": true,
     "allowJs": false,
     "paths": {
-      "@/*": ["./src/*"]
+      "@/components/*": ["./components/*"],
+      "@/lib/utils/*": ["./lib/utils/*"]
     },
     "types": ["next"]
   },
