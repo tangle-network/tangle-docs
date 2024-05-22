@@ -9,7 +9,7 @@ const nextConfig = {
   experimental: {
     legacyBrowsers: false,
   },
-  trailingSlash: true,
+  trailingSlash: false,
   async redirects() {
     return [
       {

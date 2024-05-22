@@ -3,13 +3,13 @@ import React from "react";
 const HelpDiscordBtn: React.FC = () => {
   return (
     <a href="https://discord.com/invite/cv8EfJu3Tn">
-      <div className="flex items-center justify-center pl-3 max-h-2">
-        <button className="flex items-center bg-white border border-gray-300 rounded-lg shadow-md px-3 py-1 text-sm font-medium text-gray-800 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+      <div className="flex items-center justify-center pl-1">
+        <button className="flex items-center h-7 bg-white border border-gray-300 rounded-md shadow-md px-3 py-1 text-sm font-medium text-gray-800 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
           <svg
-            className="h-6 w-6 mr-0 md:mr-2"
+            className="h-5 w-6 mr-0 md:mr-2"
             xmlns="http://www.w3.org/2000/svg"
-            width="500px"
-            height="500px"
+            width="400px"
+            height="400px"
             viewBox="0 -28.5 256 256"
             version="1.1"
             preserveAspectRatio="xMidYMid"
@@ -22,7 +22,7 @@ const HelpDiscordBtn: React.FC = () => {
               />
             </g>
           </svg>
-          <span className="hidden lg:inline text-xs lg:text-sm">Connect</span>
+          <span className="hidden lg:inline text-xs lg:text-sm">Join</span>
         </button>
       </div>
     </a>

@@ -4,8 +4,8 @@ import { DocsThemeConfig, useConfig, useTheme } from "nextra-theme-docs";
 import Footer from "./components/Footer";
 import Navigation from "./components/Navigation";
 import HeaderLogo from "./components/HeaderLogo";
-import { Discord, Github, Twitter } from "./components/Social";
 import HelpDiscordBtn from "./components/HelpDiscordBtn";
+import { ThemeSwitch } from "nextra-theme-docs";
 
 const SITE_ROOT = "https://docs.tangle.tools";
 
@@ -123,6 +123,7 @@ const theme: DocsThemeConfig = {
     extraContent: (
       <>
         <HelpDiscordBtn />
+        <ThemeSwitch className="border-gray-200 dark:border-gray-600 border mix-blend-plus-lighter" />
       </>
     ),
   },
