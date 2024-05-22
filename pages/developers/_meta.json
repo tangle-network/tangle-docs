@@ -5,6 +5,7 @@
   },
   "blueprints": "Blueprints",
   "services": "Actively Validated Services (AVS)",
+  "differences": "Tangle vs. Eigenlayer",
   "usecases": "Use Cases",
   "-- specification-developers": {
     "type": "separator",
