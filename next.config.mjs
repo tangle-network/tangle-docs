@@ -51,4 +51,42 @@ const withNextra = nextra({
   latex: true,
 });
 
+module.exports = withNextra({
+  i18n: {
+    locales: [
+      "af",
+      "ar",
+      "ca",
+      "zh-CN",
+      "zh-TW",
+      "cs",
+      "da",
+      "nl",
+      "en",
+      "fi",
+      "fr",
+      "de",
+      "el",
+      "he",
+      "hu",
+      "it",
+      "ja",
+      "ko",
+      "no",
+      "pl",
+      "pt",
+      "pt-BR",
+      "ro",
+      "ru",
+      "sr",
+      "es",
+      "sv",
+      "tr",
+      "uk",
+      "vi",
+    ],
+    defaultLocale: "en",
+  },
+});
+
 export default withPlausibleProxy()(withNextra(nextConfig));

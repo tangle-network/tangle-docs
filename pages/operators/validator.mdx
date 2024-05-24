@@ -6,212 +6,229 @@ description: An overview of Tangle Network's validator registration process.
 import { Tabs, Tab } from "/components/Tabs";
 import Callout from "/components/Callout";
 
-# Start Validating
 
-<Callout type="info"> 
-**You should be familiar with [account management basics](../network/account-manage.mdx) before proceeding, and ensure you're connected to the correct network, Tangle Network.**
-</Callout>
 
-Becoming a validator on a decentralized network like Tangle is a big responsibility and a fairly technical process. **You are accountable for both your stake and the stake of your nominators. Any errors could lead to slashing of tokens, impacting your balance and reputation.** However, there are also rewards - you help secure a decentralized network and can grow your stake through nominations.
+<TranslationWrapper>
+{({ t }) => (
+  <>
+    <h1>{t('Start Validating')}</h1>
 
-To become a validator, you need substantial system administration skills to set up infrastructure and resolve anomalies independently. Follow security best practices, as this is crucial for success. The validator role involves more than just running a node.
+    <Callout type="info">
+      {t('You should be familiar with [account management basics](../network/account-manage.mdx) before proceeding, and ensure you're connected to the correct network, Tangle Network.')}
+    </Callout>
 
-You don't have to go it alone. Connect with experienced teams and fellow validators in communities like the Tangle [Discord Validator channel.](https://discord.com/invite/cv8EfJu3Tn) They can provide invaluable insights and support. Carefully weigh the risks and rewards, prepare thoroughly, and leverage the community.
+    {t('Becoming a validator on a decentralized network like Tangle is a big responsibility and a fairly technical process. **You are accountable for both your stake and the stake of your nominators. Any errors could lead to slashing of tokens, impacting your balance and reputation.** However, there are also rewards - you help secure a decentralized network and can grow your stake through nominations.')}
 
-Generally, the process for becoming a validator involves three steps:
+    {t('To become a validator, you need substantial system administration skills to set up infrastructure and resolve anomalies independently. Follow security best practices, as this is crucial for success. The validator role involves more than just running a node.')}
 
-1. **Bonding Tokens:** Before a node can become a validator, the node operator usually needs to bond (or stake) a certain amount of tokens. This is a way of putting up collateral that can be slashed (or forfeited) if the validator behaves maliciously or fails to properly validate transactions and blocks. Bonding is a way of ensuring that validators have a vested interest in properly maintaining the network.
+    {t('You don't have to go it alone. Connect with experienced teams and fellow validators in communities like the Tangle [Discord Validator channel.](https://discord.com/invite/cv8EfJu3Tn) They can provide invaluable insights and support. Carefully weigh the risks and rewards, prepare thoroughly, and leverage the community.')}
 
-<Callout type="info"> 
-**How much TNT do I need to be an active Validator?**
+    {t('Generally, the process for becoming a validator involves three steps:')}
 
-To be elected to the active validator set (to recieve block rewards), you need a minimum stake behind your validator. This can come from yourself or nominators. This means at a minimum, you'll need enough TNT for stash and staking accounts with the existential deposit, plus extra for fees. The rest can come from nominators. To understand validator election, check the [NPoS election algorithms page.](https://wiki.polkadot.network/docs/learn-phragmen#what-is-the-sequential-phragm%C3%A9n-method)
+    <ol>
+      <li>{t('**Bonding Tokens:** Before a node can become a validator, the node operator usually needs to bond (or stake) a certain amount of tokens. This is a way of putting up collateral that can be slashed (or forfeited) if the validator behaves maliciously or fails to properly validate transactions and blocks. Bonding is a way of ensuring that validators have a vested interest in properly maintaining the network.')}</li>
 
-In the future, validators may be able to participate in other forms of reward-winning activities without participating in block rewards.
+      <Callout type="info">
+        {t('**How much TNT do I need to be an active Validator?**')}
 
-</Callout>
+        {t('To be elected to the active validator set (to recieve block rewards), you need a minimum stake behind your validator. This can come from yourself or nominators. This means at a minimum, you'll need enough TNT for stash and staking accounts with the existential deposit, plus extra for fees. The rest can come from nominators. To understand validator election, check the [NPoS election algorithms page.](https://wiki.polkadot.network/docs/learn-phragmen#what-is-the-sequential-phragm%C3%A9n-method)')}
 
-2. **Setting Up Validator Infrastructure:** This includes ensuring that the node is properly configured, connected to the network, has the necessary keys set up, etc. Part of this setup will involve generating and injecting session keys (like RoleKey, Babe, Grandpa, etc.) which are crucial for various consensus and validation processes.
+        {t('In the future, validators may be able to participate in other forms of reward-winning activities without participating in block rewards.')}
+      </Callout>
 
-3. **Nominating or Registering as a Validator:** After bonding tokens and setting up the validator node, the operator then registers or nominate their node as a validator candidate. This involves submitting a transaction to the network indicating their intention to validate.
+      <li>{t('**Setting Up Validator Infrastructure:** This includes ensuring that the node is properly configured, connected to the network, has the necessary keys set up, etc. Part of this setup will involve generating and injecting session keys (like RoleKey, Babe, Grandpa, etc.) which are crucial for various consensus and validation processes.')}</li>
 
-# Launch a Validator
+      <li>{t('**Nominating or Registering as a Validator:** After bonding tokens and setting up the validator node, the operator then registers or nominate their node as a validator candidate. This involves submitting a transaction to the network indicating their intention to validate.')}</li>
+    </ol>
 
-<Callout>
-The following guide assumes you have a node operating and synced with the network. If not, see the following:
-1. [Hardware Specifications](./node-basics/hardware.mdx)
-2. [Node Software](./node-basics/node-software.mdx)
-3. [Run Node with Docker](./node-basics/docker-node.mdx)
-4.  **or** [Run Node with Systemd](./node-basics/systemd.mdx)
+    <h1>{t('Launch a Validator')}</h1>
 
-Once your node is operational, proceed.
+    <Callout>
+      {t('The following guide assumes you have a node operating and synced with the network. If not, see the following:')}
+      <ol>
+        <li>{t('[Hardware Specifications](./node-basics/hardware.mdx)')}</li>
+        <li>{t('[Node Software](./node-basics/node-software.mdx)')}</li>
+        <li>{t('[Run Node with Docker](./node-basics/docker-node.mdx)')}</li>
+        <li>{t('**or** [Run Node with Systemd](./node-basics/systemd.mdx)')}</li>
+      </ol>
+      {t('Once your node is operational, proceed.')}
+    </Callout>
 
-</Callout>
+    <h2>{t('1. Bond TNT or tTNT')}</h2>
 
-## 1. Bond TNT or tTNT
+    {t('To validate, you will use a 'Stash' account and a 'staking proxy.' Make sure this account has enough funds to pay the fees for making transactions. Keep most of your funds in the stash account since it is meant to be the custodian of your staking funds. While you are not required to use a staking proxy, it is highly recommended. For this, you will create two accounts and make sure each of them have at least enough funds to pay the fees for making transactions.')}
 
-To validate, you will use a 'Stash' account and a 'staking proxy.' Make sure this account has enough funds to pay the fees for making transactions. Keep most of your funds in the stash account since it is meant to be the custodian of your staking funds. While you are not required to use a staking proxy, it is highly recommended. For this, you will create two accounts and make sure each of them have at least enough funds to pay the fees for making transactions.
+    <Callout>
+      {t('Controller accounts are deprecated in Substrate. For more information, [see this discussion.](https://forum.polkadot.network/t/staking-controller-deprecation-plan-staking-ui-leads-comms/2748)')}
+    </Callout>
 
-<Callout>
-Controller accounts are deprecated in Substrate. For more information, [see this discussion.](https://forum.polkadot.network/t/staking-controller-deprecation-plan-staking-ui-leads-comms/2748)
-</Callout>
+    {t('It is now time to set up our validator. We will do the following:')}
 
-It is now time to set up our validator. We will do the following:
+    <ol>
+      <li>{t('Bond the TNT of the Stash account on the Tangle Network. These TNT will be put at stake for the security of the network and can be slashed.')}</li>
+      <li>{t('Select the [staking proxy account](./validator/proxyaccount.mdx) account. This is the account that will decide when to start or stop validating.')}</li>
+    </ol>
 
-1. Bond the TNT of the Stash account on the Tangle Network. These TNT will be put at stake for the security of the network and can be slashed.
-2. Select the [staking proxy account](./validator/proxyaccount.mdx) account. This is the account that will decide when to start or stop validating.
+    <Callout>
+      {t('See how to setup a [proxy account](./validator/proxyaccount.mdx)')}
+    </Callout>
 
-<Callout>
-See how to setup a [proxy account](./validator/proxyaccount.mdx)
-</Callout>
+    {t('First, go to the Staking section. Click on "Account Actions", and then the "+ Stash" button.')}
 
-First, go to the Staking section. Click on "Account Actions", and then the "+ Stash" button.
+    <Callout>
+      {t('Make sure not to bond all your TNT balance since you will be unable to pay transaction fees from your bonded balance. Always maintain an unbonded amount for fees.')}
+    </Callout>
 
-<Callout>
-Make sure not to bond all your TNT balance since you will be unable to pay transaction fees from your bonded balance. Always maintain an unbonded amount for fees.
-</Callout>
+    {t('**Stash account** - Select your Stash account. In this example, we will bond 1 TNT, where the minimum bonding amount is 1. Make sure that your Stash account contains at least this much. You can, of course, stake more than this.')}
 
-**Stash account** - Select your Stash account. In this example, we will bond 1 TNT, where the minimum bonding amount is 1. Make sure that your Stash account contains at least this much. You can, of course, stake more than this.
+    {t('**Staking proxy account** - Select the staking [proxy account](./validator/proxyaccount.mdx) created earlier. This account will also need a small amount of TNT in order to start and stop validating.')}
 
-**Staking proxy account** - Select the staking [proxy account](./validator/proxyaccount.mdx) created earlier. This account will also need a small amount of TNT in order to start and stop validating.
+    {t('**Value bonded** - How much TNT from the Stash account you want to bond/stake. Note that you do not need to bond all of the TNT in that account. Also note that you can always bond more TNT later. However, withdrawing any bonded amount requires the duration of the unbonding period. On Kusama, the unbonding period is 7 days. On Polkadot, the planned unbonding period is 28 days.')}
 
-**Value bonded** - How much TNT from the Stash account you want to bond/stake. Note that you do not need to bond all of the TNT in that account. Also note that you can always bond more TNT later. However, withdrawing any bonded amount requires the duration of the unbonding period. On Kusama, the unbonding period is 7 days. On Polkadot, the planned unbonding period is 28 days.
+    {t('**Payment destination** - The account where the rewards from validating are sent. More info here. Payouts can go to any custom address. If you'd like to redirect payments to an account that is neither the staking [proxy account](./validator/proxyaccount.mdx) nor the stash account, set one up. Note that it is extremely unsafe to set an exchange address as the recipient of the staking rewards.')}
 
-**Payment destination** - The account where the rewards from validating are sent. More info here. Payouts can go to any custom address. If you'd like to redirect payments to an account that is neither the staking [proxy account](./validator/proxyaccount.mdx) nor the stash account, set one up. Note that it is extremely unsafe to set an exchange address as the recipient of the staking rewards.
+    {t('Once everything is filled in properly, click `Bond` and sign the transaction with your Stash account.')}
 
-Once everything is filled in properly, click `Bond` and sign the transaction with your Stash account.
+    {t('After a few seconds, you should see an `ExtrinsicSuccess` message.')}
 
-After a few seconds, you should see an `ExtrinsicSuccess` message.
+    {t('Your bonded account will available under `Stashes.` You should now see a new card with all your accounts (note: you may need to refresh the screen). The bonded amount on the right corresponds to the funds bonded by the Stash account.')}
 
-Your bonded account will available under `Stashes.` You should now see a new card with all your accounts (note: you may need to refresh the screen). The bonded amount on the right corresponds to the funds bonded by the Stash account.
+    <h2>{t('2. Generate your Keys and Import them to the Keystore')}</h2>
 
-## 2. Generate your Keys and Import them to the Keystore
+    {t('In order to participate in the tangle protocol, block production, and block finalization, you will be required to set up several keys. These keys include:')}
 
-In order to participate in the tangle protocol, block production, and block finalization, you will be required to set up several keys. These keys include:
+    <ul>
+      <li>{t('Role key (Ecdsa)')}</li>
+      <li>{t('Babe key (Sr25519)')}</li>
+      <li>{t('Account key (Sr25519)')}</li>
+      <li>{t('Grandpa key (Ed25519)')}</li>
+      <li>{t('ImOnline key (Sr25519)')}</li>
+    </ul>
 
-- Role key (Ecdsa)
-- Babe key (Sr25519)
-- Account key (Sr25519)
-- Grandpa key (Ed25519)
-- ImOnline key (Sr25519)
+    {t('[More info about keys](https://wiki.polkadot.network/docs/learn-cryptography#session-keys)')}
 
-[More info about keys](https://wiki.polkadot.network/docs/learn-cryptography#session-keys)
+    {t('See the guides for [launching Tangle Network with Docker](./node-basics/docker-node.mdx) and [Launching with Systemd](./node-basics/systemd.mdx) for exact guides on this step.')}
 
-See the guides for [launching Tangle Network with Docker](./node-basics/docker-node.mdx) and [Launching with Systemd](./node-basics/systemd.mdx) for exact guides on this step.
+    {t('Once your node and keys are setup and your node is synced, proceed to the following:')}
 
-Once your node and keys are setup and your node is synced, proceed to the following:
+    <h2>{t('3. Register with the Network')}</h2>
 
-## 3. Register with the Network
+    {t('Session keys are a critical aspect of the Tangle Network's consensus mechanism, are are composes of the several keys we generate immediately previous, each with a different function. These keys enable your validator node to participate in consensus, and a misconfiguration can lead to missed rewards or even penalties. You can use RPC methods like `hasKey` to check for a specific key or `hasSessionKeys` to check the full session key public key string.')}
 
-Session keys are a critical aspect of the Tangle Network's consensus mechanism, are are composes of the several keys we generate immediately previous, each with a different function. These keys enable your validator node to participate in consensus, and a misconfiguration can lead to missed rewards or even penalties. You can use RPC methods like `hasKey` to check for a specific key or `hasSessionKeys` to check the full session key public key string.
+    {t('**Starting Your Node**')}
 
-**Starting Your Node**
+    {t('After your node is fully synchronized with the network, stop the process using Ctrl-C. You'll now start your node by designating itself as a validator:')}
 
-After your node is fully synchronized with the network, stop the process using Ctrl-C. You'll now start your node by designating itself as a validator:
+    <pre>
+      <code>{t('tangle --validator --name "YourNodeNameOnTelemetry"')}</code>
+    </pre>
 
-```
-tangle --validator --name "YourNodeNameOnTelemetry"
-```
+    {t('The output will be similar to:')}
 
-The output will be similar to:
+    <pre>
+      <code>
+        {t('[timestamp] Tangle Network Standalone')}
+        {t('[timestamp] ✌️ version x.x.x')}
+        {t('[timestamp] ❤️ by Webb Technologies')}
+        {t('[timestamp] 📋 Chain specification: Tangle Network')}
+        {t('[timestamp] 🏷 Node name: YourNodeName')}
+        {t('... and so on')}
+      </code>
+    </pre>
 
-```
-[timestamp] Tangle Network Standalone
-[timestamp] ✌️ version x.x.x
-[timestamp] ❤️ by Webb Technologies
-[timestamp] 📋 Chain specification: Tangle Network
-[timestamp] 🏷 Node name: YourNodeName
-... and so on
-```
+    {t('Note that you can give your validator any name that you like. However, since this name will appear on telemetry and is visible to others, choose a unique name.')}
 
-Note that you can give your validator any name that you like. However, since this name will appear on telemetry and is visible to others, choose a unique name.
+    <h3>{t('Register your Session Key with the Network for your Node')}</h3>
 
-### Register your Session Key with the Network for your Node
+    {t('To participate in consensus, you need to inform the chain about your session keys and map them to your node.')}
 
-To participate in consensus, you need to inform the chain about your session keys and map them to your node.
+    <strong>{t('Option 1: PolkadotJS Apps')}</strong>
 
-**Option 1: PolkadotJS Apps**
+    <ol>
+      <li>{t('Connect to Your Validator Node: Start by connecting the PolkadotJS explorer to your validator node.')}</li>
+      <li>{t('Access the Toolbox: Navigate to the `Toolbox` tab.')}</li>
+      <li>{t('Select `RPC Calls`. Rotate the Keys: From the dropdown menu, choose `author > rotateKeys()`.')}</li>
+      <li>{t('Execute the RPC call. **Important: Save the output.** This represents your session keys and will be essential for the next steps.')}</li>
+    </ol>
 
-1. Connect to Your Validator Node:
-   Start by connecting the PolkadotJS explorer to your validator node.
-2. Access the Toolbox:
-   Navigate to the `Toolbox` tab.
-3. Select `RPC Calls`.
-   Rotate the Keys:
-   From the dropdown menu, choose `author > rotateKeys()``.
-4. Execute the RPC call.
-   **Important: Save the output.** This represents your session keys and will be essential for the next steps.
+    <strong>{t('Option 2: CLI')}</strong>
 
-**Option 2: CLI**
+    {t('If you're working on a remote server and need to rotate your session keys, you can use the following command:')}
 
-If you're working on a remote server and need to rotate your session keys, you can use the following command:
+    <pre>
+      <code>{t('curl -H "Content-Type: application/json" -d \'{"id":1, "jsonrpc":"2.0", "method": "author_rotateKeys", "params":[]}\' http://localhost:9933')}</code>
+    </pre>
 
-```sh
-curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "author_rotateKeys", "params":[]}' http://localhost:9933
-```
+    {t('**Note:** Adjust http://localhost:9933 if your node's address differs.')}
 
-**Note:** Adjust http://localhost:9933 if your node's address differs.
+    {t('This command prompts your node to generate a new set of session keys. The concatenated public parts of these keys will be returned as the result.')}
 
-This command prompts your node to generate a new set of session keys. The concatenated public parts of these keys will be returned as the result.
+    <h3>{t('Submitting the setKeys Transaction')}</h3>
 
-### Submitting the setKeys Transaction
+    {t('To inform the chain about your session keys:')}
 
-To inform the chain about your session keys:
+    <ol>
+      <li>{t('Navigate to `Staking > Account Actions`')}</li>
+      <li>{t('Set Session Key')}</li>
+      <ul>
+        <li>{t('Click on `Set Session Key` for the account you've designated as your staking proxy.')}</li>
+        <li>{t('Enter the output from `author_rotateKeys` in the appropriate field.')}</li>
+        <li>{t('Click `Set Session Key`.')}</li>
+      </ul>
+    </ol>
 
-1. Navigate to `Staking > Account Actions`
-2. Set Session Key
+    {t('Once you've submitted this transaction, your node is now recognized as a validator and is prepared to engage in the Tangle network's consensus process.')}
 
-- Click on `Set Session Key` for the account you've designated as your staking proxy.
-- Enter the output from `author_rotateKeys` in the appropriate field.
-- Click `Set Session Key`.
+    <Callout type="info">
+      {t('**Verify Node Status**')}
+      {t('To confirm that your node is live and synchronized, head to Tangle Telemetry- [currently you can view Testnet Telemetry only,](https://telemetry.polkadot.io/#list/0xea63e6ac7da8699520af7fb540470d63e48eccb33f7273d2e21a935685bf1320) and locate your node. Given the myriad of nodes on the Tangle Network, ensure you've chosen a unique name for easier identification. For instance, if you've named your node `tangletechtest`, it should be visible when searched.')}
+    </Callout>
 
-Once you've submitted this transaction, your node is now recognized as a validator and is prepared to engage in the Tangle network's consensus process.
+    <h2>{t('Setup via Validator Tab')}</h2>
 
-<Callout type="info">
-**Verify Node Status**
-To confirm that your node is live and synchronized, head to Tangle Telemetry- [currently you can view Testnet Telemetry only,](https://telemetry.polkadot.io/#list/0xea63e6ac7da8699520af7fb540470d63e48eccb33f7273d2e21a935685bf1320) and locate your node. Given the myriad of nodes on the Tangle Network, ensure you've chosen a unique name for easier identification. For instance, if you've named your node `tangletechtest`, it should be visible when searched.
-</Callout>
+    {t('This step finalizes and enters you into the validator queue.')}
 
-## Setup via Validator Tab
+    <ol>
+      <li>{t('Navigate to `Staking>Account Actions`')}</li>
+      <li>{t('Look for your validator node, and click `Validate`')}</li>
+    </ol>
 
-This step finalizes and enters you into the validator queue.
+    {t('Here, you'll need to input the keys generated from the `rotateKeys` step, which is the hexadecimal output from the `author_rotateKeys` process. These keys will remain in a "pending" state until they are incorporated at the beginning of a new era.')}
 
-1. Navigate to `Staking>Account Actions`
-2. Look for your validator node, and click `Validate`
+    {t('**Define your "reward commission percentage."** This denotes the commission rate applicable to your validator's rewards. **Note on Commission:** A commission rate of 100% indicates that you intend for your validator not to receive any nominations. This could discourage nominators and should be set judiciously.')}
 
-Here, you'll need to input the keys generated from the `rotateKeys` step, which is the hexadecimal output from the `author_rotateKeys` process. These keys will remain in a "pending" state until they are incorporated at the beginning of a new era.
+    {t('**Payment Preferences:** Specify the percentage of rewards you wish to claim. The remaining balance will be divided among your nominators.')}
 
-**Define your "reward commission percentage."** This denotes the commission rate applicable to your validator's rewards. **Note on Commission:** A commission rate of 100% indicates that you intend for your validator not to receive any nominations. This could discourage nominators and should be set judiciously.
+    {t('You also have the option to accept or decline new nominations via the "allows new nominations" setting.')}
 
-**Payment Preferences:** Specify the percentage of rewards you wish to claim. The remaining balance will be divided among your nominators.
+    {t('Click on `Bond & Validate` to enter the set of validators.')}
 
-You also have the option to accept or decline new nominations via the "allows new nominations" setting.
+    {t('**Confirm your Validator**')}
+    {t('Navigating to the "Staking" tab will display a list of active validators operating on the network. At the top, you'll see available validator slots and the count of nodes that have expressed their intent to validate. To check your node's status, switch to the "Waiting" tab.')}
 
-Click on `Bond & Validate` to enter the set of validators.
+    <Callout type="info">
+      {t('**"Waiting" on the Staking Queue**')}
 
-**Confirm your Validator**
-Navigating to the "Staking" tab will display a list of active validators operating on the network. At the top, you'll see available validator slots and the count of nodes that have expressed their intent to validate. To check your node's status, switch to the "Waiting" tab.
+      {t('The validator roster is updated every era (roughly 6 hours in Tangle Testnet). In the subsequent era, if there's an available slot and your node is chosen to join the validator set, it will be activated as a validator. Otherwise, it will stay in the waiting queue. If your validator doesn't get selected for a specific era, it remains in the queue for the next one. No restart is required. However, you might consider increasing the staked Tangle tokens or seeking more nominators to enhance the chances of your validator's selection.')}
+    </Callout>
 
-<Callout type="info">
-**"Waiting" on the Staking Queue**
+    <h1>{t('Additional Setup')}</h1>
 
-The validator roster is updated every era (roughly 6 hours in Tangle Testnet). In the subsequent era, if there's an available slot and your node is chosen to join the validator set, it will be activated as a validator. Otherwise, it will stay in the waiting queue. If your validator doesn't get selected for a specific era, it remains in the queue for the next one. No restart is required. However, you might consider increasing the staked Tangle tokens or seeking more nominators to enhance the chances of your validator's selection.
+    <h2>{t('Setting identity')}</h2>
 
-</Callout>
+    {t('While not required, we highly recommend that validators and node operators set an identity, which is critical for receiving nominations and being seen as a trustworthy node.')}
 
-# Additional Setup
+    <ol>
+      <li>{t('Go to the Polkadot.js portal: `Accounts`')}</li>
+      <li>{t('Open the 3 dots next to your address: `Set on-chain Identity`')}</li>
+      <li>{t('Enter all fields you want to set.')}</li>
+      </ol>
 
-## Setting identity
+ <h3>{t('Request Judgement')}</h3>
 
-While not required, we highly recommend that validators and node operators set an identity, which is critical for receiving nominations and being seen as a trustworthy node.
-
-1. Go to the Polkadot.js portal: `Accounts`
-2. Open the 3 dots next to your address: `Set on-chain Identity`
-3. Enter all fields you want to set.
-4. Send the transaction.
-
-#### Request judgment
-
-1. Go to the Polkadot.js portal: `Developer > Extrinsic`
-2. Select your account and extrinsic type: `identity / requestJudgment`
-3. Send the transaction.
+1. Go to the Polkadot.js portal: `Developer > Extrinsic`</li>
+2. Select your account and extrinsic type: `identity / requestJudgment`</li>
+3. Send the transaction.</li>
+<>
+)}
+</TranslationWrapper>
