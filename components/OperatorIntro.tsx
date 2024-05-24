@@ -9,21 +9,21 @@ const OperatorIntroCards = () => {
       icon: <SquareDashedBottomCode />,
       title: <span className="text-xl font-bold ">Service Operators</span>,
       description: "Run Blueprint instances and earn job revenue.",
-      link: "../service-operator/service-provider/",
+      link: "../operators/service-operator/service-provider",
     },
     {
       icon: <BetweenVerticalEnd />,
       title: <span className="text-xl font-bold ">Validators</span>,
       description:
         "Secure the network by participating in Nominated Proof-of-Stake (nPoS).",
-      link: "../validator/introduction",
+      link: "../operators/validator/introduction",
     },
     {
       icon: <GrNodes />,
       title: <span className="text-xl font-bold ">Run a Node</span>,
       description:
         "Get started with Tangle by running a node, a great way to get familiar with operating.",
-      link: "../node-basics/quickstart",
+      link: "../operators/node-basics/quickstart",
     },
   ];
 
