@@ -123,7 +123,7 @@ const theme: DocsThemeConfig = {
     extraContent: (
       <>
         <HelpDiscordBtn />
-        <ThemeSwitch className="border-gray-200 dark:border-gray-600 border mix-blend-plus-lighter" />
+        <ThemeSwitch className="border-gray-200 hidden md:inline dark:border-gray-600 border mix-blend-plus-lighter" />
       </>
     ),
   },
