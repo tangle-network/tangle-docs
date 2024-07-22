@@ -1,6 +1,6 @@
+import { CodeIcon } from "@heroicons/react/outline";
 import { DetailedFeatureLink } from "./Feature";
 import { GitHubIcon } from "./Icons";
-import { ChartBarIcon, CodeIcon, BookOpenIcon } from "@heroicons/react/outline";
 
 export const RepoArea = () => {
   return (
@@ -12,7 +12,7 @@ export const RepoArea = () => {
           name: "Tangle Network Repo",
         }}
         href="https://github.com/webb-tools/tangle"
-      ></DetailedFeatureLink>
+      />
       <DetailedFeatureLink
         feature={{
           Icon: GitHubIcon,
@@ -20,7 +20,7 @@ export const RepoArea = () => {
           name: "Tangle Docs Repo",
         }}
         href="https://github.com/webb-tools/tangle-docs"
-      ></DetailedFeatureLink>
+      />
     </div>
   );
 };

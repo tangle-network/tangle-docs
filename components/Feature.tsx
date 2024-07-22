@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import Link from "next/link";
 import type { Feature } from "./LegacyFeatures";
+import { cn } from "@/lib/utils";
 
 type FeatureProps = {
   feature: Omit<Feature, "page">;
@@ -44,7 +45,11 @@ const DetailedFeatureInner = (props: { feature: FeatureProps["feature"] }) => {
   );
 };
 
-const featureWrapperClasses = `relative block overflow-hidden p-10 bg-white shadow-lg rounded-xl dark:bg-lightDark no-underline text-black dark:text-white`;
+const featureWrapperClasses = cn(
+  "bg-white dark:bg-stone-950",
+  "relative block overflow-hidden p-10 shadow-lg",
+  "rounded-xl no-underline text-black dark:text-white",
+);
 
 export const DetailedFeatureLink = (props: {
   href: string;
