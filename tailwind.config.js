@@ -1,7 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx,html,css}",
+    "./components/**/*.{ts,tsx,html,css}",
+    "./theme.config.tsx",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -67,6 +71,9 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      screens: {
+        xs: "475px",
       },
     },
   },

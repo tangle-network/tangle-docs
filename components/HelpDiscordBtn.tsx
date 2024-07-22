@@ -1,12 +1,12 @@
 import React from "react";
 
-const HelpDiscordBtn: React.FC = () => {
+const HelpDiscordBtn: React.FC<{ className?: string }> = ({ className }) => {
   return (
-    <a href="https://discord.com/invite/cv8EfJu3Tn">
-      <div className="flex items-center justify-center pl-1">
-        <button className="flex items-center h-7 bg-white border border-gray-300 rounded-md shadow-md px-3 py-1 text-sm font-medium text-gray-800 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+    <a href="https://discord.com/invite/cv8EfJu3Tn" className={className}>
+      <div className="flex items-center justify-center">
+        <button className="flex items-center px-3 py-1 text-sm font-medium text-gray-800 bg-white border border-gray-300 rounded-md shadow-md h-7 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
           <svg
-            className="h-5 w-6 mr-0 md:mr-2"
+            className="w-6 h-5 mr-0 lg:mr-2"
             xmlns="http://www.w3.org/2000/svg"
             width="400px"
             height="400px"
@@ -22,7 +22,7 @@ const HelpDiscordBtn: React.FC = () => {
               />
             </g>
           </svg>
-          <span className="hidden lg:inline text-xs lg:text-sm">Join</span>
+          <span className="hidden text-xs lg:inline lg:text-sm">Join</span>
         </button>
       </div>
     </a>

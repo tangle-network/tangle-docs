@@ -1,13 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import {
-  ChartBarIcon,
-  BookOpenIcon,
-  ServerIcon,
-  BeakerIcon,
-} from "@heroicons/react/outline";
-import styles from "./CommonActions.module.css";
+import { BookOpenIcon, ServerIcon } from "@heroicons/react/outline";
 import { FaGithub } from "react-icons/fa";
+import { cn } from "@/lib/utils";
 
 const features = [
   {
@@ -61,20 +56,48 @@ const features = [
   // },
 ];
 
-const Card = ({ Icon, title, description, href, action }) => (
-  <div className={styles.card}>
-    <div className={styles.cardHeader}>
-      <h3 className={styles.title}>{title}</h3>
-    </div>
+const Card = ({ Icon, title, description: _description, href, action }) => (
+  <div
+    className={cn(
+      "border grid grid-rows-[auto_1fr_auto]",
+      "transition-shadow duration-[0.3s] ease-[ease-in-out]",
+      "shadow-[0_4px_8px_0_rgb(0_0_0_/_8%),0_6px_20px_0_rgb(0_0_0_/_1%)]",
+      "overflow-hidden mt-0 mb-1 mx-0 rounded-lg border-solid",
+      "border-[#c0c0c0] dark:border-[#4b5563]",
+      "bg-[#f5f5f5] dark:bg-white",
+      "dark:text-black",
+      "w-full [@media(min-width:480px)]:flex-[1_1_235px] [@media(min-width:480px)]:max-w-[calc(_50%_-_1rem_)]",
+    )}
+  >
+    <h3
+      className={cn(
+        "text-white flex items-center p-4",
+        "bg-[linear-gradient(163deg,#6a34fe,#a991ff)]",
+        "text-[1.05rem] font-bold text-left",
+      )}
+    >
+      {title}
+    </h3>
+
     {/*}   <p className={styles.description}>{description}</p>
     {/* Wrap the entire footer content with Link */}
-    <Link href={href} passHref className={styles.cardFooter}>
-      <div className={styles.footerContent}>
-        <Icon className={styles.icon} aria-hidden="true" />
+    <Link
+      href={href}
+      passHref
+      className={cn(
+        "flex justify-between items-center no-underline text-inherit",
+        "px-4 py-[0.3rem] border-t-[rgb(202,202,202)] border-t",
+      )}
+    >
+      <div className="flex items-center font-semibold">
+        <Icon
+          className="h-[1em] w-[1em] align-middle text-[#cf00ef] mr-[0.5em]"
+          aria-hidden="true"
+        />
         {action}
       </div>
       {/* Arrow */}
-      <span className={styles.cardArrow}>→</span>
+      <span className="text-[1.4em] text-[rgb(183,183,183)]">→</span>
     </Link>
   </div>
 );
@@ -82,7 +105,7 @@ const Card = ({ Icon, title, description, href, action }) => (
 // CommonActions component that renders a grid of Cards
 export const CommonActions = () => {
   return (
-    <div className={styles.actionCardGrid}>
+    <div className="flex flex-wrap gap-4 mx-auto pt-[30px]">
       {features.map((feature, index) => (
         <Card key={index} {...feature} />
       ))}
