@@ -2,13 +2,11 @@ import EvmToSubstrateConverter from '../../components/EvmToSubstrateConverter'
 import { Callout } from 'nextra/components'
 import Link from 'next/link'
 
-# Account Addresses on Tangle
+# EVM Account Addresses on Tangle
 
-If you're interacting with a Frontier-enabled Substrate chain like Tangle Network, you might encounter different address formats, such as SS58, Ethereum-style (H160), and Substrate-style (H256) addresses.
+If you're interacting with a Frontier-enabled Substrate chain like Tangle Network, there are two account formats to be aware of: EVM accounts (H160) and Tangle native accounts (H256). You can hold Tangle assets in EVM addresses or native addresses and transfer them between the two, but it's important to understand how they are represented in relation to one another.
 
-To help you navigate between these formats, we've provided a handy conversion tool below. Simply enter your Ethereum address (H160), and the tool will generate the corresponding Substrate address (SS58) used on the Tangle Network chain.
-
-<EvmToSubstrateConverter />
+To help you navigate between these formats, we've provided a handy **Address Converter** tool in [Resources](/resources/). Simply enter your Ethereum address (H160), and the tool will generate the corresponding Substrate address used on the Tangle Network chain.
 
 ## Address Formats in Frontier-enabled Substrate Chains
 

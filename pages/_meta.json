@@ -8,6 +8,10 @@
       "layout": "raw"
     }
   },
+  "network": {
+    "title": "Network",
+    "type": "page"
+  },
   "developers": {
     "title": "Developers",
     "type": "page"
@@ -18,10 +22,6 @@
   },
   "operators": {
     "title": "Operators",
-    "type": "page"
-  },
-  "network": {
-    "title": "Network",
     "type": "page"
   },
   "resources": {

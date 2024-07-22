@@ -295,7 +295,7 @@ const NetworkTabs = () => {
             }`}
           >
             <SendToBack className="w-4 inline h-4 me-2 text-blue-600 dark:text-blue-500" />
-            EVM-Substrate Transfers
+            Address Converter
           </a>
         </li>
       </ul>
@@ -314,5 +314,3 @@ const NetworkTabs = () => {
 };
 
 export default NetworkTabs;
-
-<EvmToSubstrateConverter />;
