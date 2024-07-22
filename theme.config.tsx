@@ -174,7 +174,7 @@ const theme: DocsThemeConfig = {
         <HelpDiscordBtn className="hidden xs:inline-block" />
         <ThemeSwitch
           lite
-          className="hidden border border-gray-200 xs:inline-block md:hidden lg:inline-block dark:border-gray-600 mix-blend-plus-lighter"
+          className="hidden border xs:inline-block md:hidden lg:inline-block dark:border-gray-600"
         />
       </>
     ),
