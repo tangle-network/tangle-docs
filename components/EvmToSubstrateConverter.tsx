@@ -52,7 +52,7 @@ const AddressConverter = () => {
             Tangle Network. To convert an SS58 address to a public key or other
             networks, you can use{" "}
             <Link
-              className="underline font-semibold text-linkBlue"
+              className="font-semibold underline text-linkBlue"
               href="https://ss58.org/"
             >
               SS58.org
@@ -62,16 +62,13 @@ const AddressConverter = () => {
         <CardContent>
           <div className="flex items-center space-x-4">
             <div className="flex-1">
-              <label
-                htmlFor="evmAddress"
-                className="block mb-1 text-gray-800 font-semibold"
-              >
+              <label htmlFor="evmAddress" className="block mb-1 font-semibold">
                 EVM Address:
               </label>
               <input
                 type="text"
                 id="evmAddress"
-                className="bg-gray-200 text-gray-800 font-mono px-4 py-2 rounded w-full"
+                className="w-full px-4 py-2 font-mono text-gray-800 bg-gray-200 rounded"
                 value={evmAddress}
                 onChange={(e) => setEvmAddress(e.target.value)}
                 placeholder="Enter EVM address"
@@ -86,12 +83,12 @@ const AddressConverter = () => {
               </label>
               <div
                 id="tangleAddress"
-                className="bg-gray-200 px-4 py-2 font-mono rounded w-full text-gray-800"
+                className="w-full px-4 py-2 font-mono text-gray-800 bg-gray-200 rounded"
               >
                 {tangleAddress || "Waiting..."}
               </div>
             </div>
-            <div className="ml-0 self-end flex">
+            <div className="flex self-end ml-0">
               <BlockCopyButton
                 name="Tangle Address"
                 code={tangleAddress}
