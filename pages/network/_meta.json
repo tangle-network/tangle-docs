@@ -1,21 +1,19 @@
 {
   "overview": "Overview",
   "tokenomics": "Tokenomics",
-  "account-manage": "Create & Manage Account",
+  "account-manage": "Create & Manage Accounts",
   "set-identity": "On-chain Identity",
+  "-- restaking infrastructure": {
+    "type": "separator",
+    "title": "Restaking Infrastructure"
+  },
+  "differences": "Tangle vs. Eigenlayer",
   "-- launch": {
     "type": "separator",
     "title": "Network Launch"
   },
   "claim-airdrop": "Claim the Airdrop",
   "launch": "About the Launch",
-
-  "-- staking": {
-    "type": "separator",
-    "title": "Staking"
-  },
-  "nominator": "Nominating your TNT",
-  "staking-intro": "Introduction to Staking",
   "-- governance": {
     "type": "separator",
     "title": "Governance"

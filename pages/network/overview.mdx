@@ -1,6 +1,8 @@
+![Tangle Banner](/images/banners/TangleBanner.png)
+
 ## Introduction
 
-Tangle Network is an advanced blockchain platform designed to provide secure, decentralized infrastructure services. It seamlessly integrates cutting-edge cryptographic primitives with an innovative restaking mechanism, empowering developers to create groundbreaking solutions within a decentralized, crypto-economically secure landscape.
+Tangle Network is an advanced blockchain platform designed to provide secure, decentralized infrastructure services. We like to think of Tangle as a decentralized cloud infrastructure provider that is built and governed by developers and the Tangle community. It seamlessly integrates cutting-edge cryptographic primitives with an innovative restaking mechanism, empowering developers to create groundbreaking solutions within a decentralized, crypto-economically secure landscape.
 
 **Build Composable Service:**
 Leverage Tangle's modular architecture to create and combine complex service components called Blueprints. From oracles and bridges to novel zero-knowledge applications, developers have a canvas for innovative decentralized services.
@@ -16,11 +18,11 @@ Tangle enables maximizing utilization of staked assets from any ecosystem. Resta
 
 ## Key Features
 
-- **Active Validator Services (AVS)**: Tangle natively supports various cryptographic primitives and validator services across ecosystems through our innovative Blueprint model.
+- **Actively Validated Services (AVS)**: Tangle natively supports various cryptographic primitives and validator services across ecosystems through our innovative Blueprint model. Build services using our [gadget](https://github.com/webb-tools/gadget) framework, which also integrated with Eigenlayer and other restaking networks.
 
-- **Restaking**: Tangle's restaking system seamlessly integrates with its AVS infrastructure, incentivizing node operators to provide high-quality validator services by allowing them to restake directly on available roles.
+- **Restaking**: Tangle's permissionless restaking system allows asset holders the ability to secure AVS infrastructure with any fungible asset, incentivizing node operators to provide high-quality validator services.
 
-- **Interoperability**: Tangle enables fluid cross-chain interactions, from asset bridging to advanced cross-chain communication, through technologies such as bridges, IBC pallets, and XCM.
+- **Interoperability**: Tangle enables fluid cross-chain interactions, from asset bridging to advanced cross-chain communication, through technologies such as MPC bridges, IBC pallets, and XCM.
 
 - **EVM Compatibility**: The Ethereum Virtual Machine (EVM) serves as a conduit for compatibility and interoperability with Ethereum-based tools and applications, allowing developers to construct DApps, generate NFTs, and utilize ERC20 tokens across diverse networks.
 
@@ -32,25 +34,27 @@ Tangle Network employs a modular architecture to enable the creation and deploym
 
 #### Blueprints
 
-A Blueprint is a specification that defines a service, similar to an actively validated service (AVS). However, Blueprints themselves are not live service instances. Developers create Blueprints by specifying a "gadget" binary, the jobs involved, a set of smart contracts for registration and requesting instances, and additional metadata. [Read more about Blueprints](../developers/blueprints.mdx)
+A Blueprint is a specification that defines a service, similar to an actively validated service (AVS). However, Blueprints themselves are not live service instances. Developers create Blueprints by specifying a "gadget" binary, the jobs involved, a set of smart contracts for registration and requesting instances, and additional metadata. Users can instance AVSes from Blueprints, similar to EC2 instances, by configuring the operator set and paying the necessary fees. [Read more about Blueprints](../developers/blueprints.mdx)
 
 #### Restaking on Blueprints
 
-Operators require qualfied stake to participate in Roles that enable Blueprint-based services, ensuring security. The restaked assets serve as stake to incentivize good operator behavior.
+Asset issuers restake their assets on operators who run services based on Blueprints. Asset issuers can restake any fungible asset and can restake these assets on a single operator at a time. Operators register for services and agree through the smart contract logic to run Blueprint service instances when requested. [Read more about restaking](../restake/introduction.mdx)
 
 #### Requesting Service Instances
 
-Users then deploy live service instances using a Blueprint. The requester specifies any criteria like the number of operators or other operator attributes. A specific subset of restaked operators is then selected to run that service instance.
+Users deploy live service instances using a Blueprint's request functionality. The requester specifies any criteria like the number of operators or other operator attributes. A specific subset of restaked operators is then selected to run that service instance.
+
+We aim to support fine-grained controls over requesting instances, such as specifying the number of operators, the operator set, and other operator attributes. This allows users to customize their service instances based on their requirements.
 
 #### Incentives
 
-Restaked operators perform the service and earn inflationary rewards for securing Blueprints proportional to their staked capital. Importantly, developers who create popular Blueprints also earn a share of these rewards, incentivizing valuable Blueprint creation.
+Operators perform the service and earn inflationary rewards for executing Blueprint service instances. Importantly, developers who create popular Blueprints also earn a share of these rewards, incentivizing valuable Blueprint creation.
 
 This separation into Blueprints and instances allows services to be defined once but instantiated multiple times by different users with varying operator requirements. Blueprint developers benefit from their work being utilized widely across ecosystems and applications.
 
 ## Use Cases
 
-Tangle Network is designed to support a wide range of complex cryptographic services and applications built by developers. Some key service areas include:
+Tangle Network is designed to function as a highly-specialized crypto cloud platform. It is meant to support a wide range of complex cryptographic services and applications built by developers in a reusable and instanceable fashion. Some key service areas include:
 
 - **Privacy Infrastructure**: Tangle provides a foundation for enabling privacy-preserving solutions through technologies like multi-party computation (MPC) and zero-knowledge proofs.
 

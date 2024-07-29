@@ -5,7 +5,6 @@
   },
   "blueprints": "Blueprints",
   "services": "Actively Validated Services (AVS)",
-  "differences": "Tangle vs. Eigenlayer",
   "usecases": "Use Cases",
   "-- specification-developers": {
     "type": "separator",
@@ -17,17 +16,7 @@
     "title": "Solution Developers"
   },
   "integrate": "Endpoints and Integration",
-  "deploy-using-hardhat": "Deploy Contracts with Hardhat",
-  "transaction-fees": "Calculating Transaction Fees",
-  "evm-substrate-transfers": "EVM-Substrate Transfers",
-  "-- technicals": {
-    "type": "separator",
-    "title": "Technicals"
-  },
-  "addresses": "Account Addresses",
-  "pallets": "Pallets",
-  "precompiles": "Precompiles",
-  "json-rpc-endpoints": "RPC Methods",
+  "technicals": "EVM Development",
   "-- contribute": {
     "type": "separator",
     "title": "Contribute"

@@ -2,7 +2,6 @@
 
 import "katex/dist/katex.min.css";
 import type { NextPage } from "next";
-import PlausibleProvider from "next-plausible";
 import type { AppProps } from "next/app";
 import type { ReactElement, ReactNode } from "react";
 import "../globals.css";
@@ -29,7 +28,7 @@ export default function Nextra({ Component, pageProps }: NextraAppProps) {
   const getLayout = Component.getLayout || ((page) => page);
 
   return (
-    <PlausibleProvider domain="docs.tangle.tools">
+    <>
       <svg height="0px" width="0px" style={{ position: "absolute" }}>
         {" "}
         {/* Adjust style as needed */}
@@ -53,6 +52,6 @@ export default function Nextra({ Component, pageProps }: NextraAppProps) {
           <GoogleAnalytics gaId="G-JEQ15MLV6B" />
         </>,
       )}
-    </PlausibleProvider>
+    </>
   );
 }

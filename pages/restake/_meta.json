@@ -1,6 +1,29 @@
 {
-  "introduction": "Intro to Restaking",
-  "concepts": "Core Concepts",
+  "-- introduction": {
+    "type": "separator",
+    "title": "Introduction"
+  },
+  "introduction": "Overview",
+  "-- staking": {
+    "type": "separator",
+    "title": "Validator Staking"
+  },
+  "staking-intro": "Introduction to Staking",
+  "nominator": "Nominating your TNT",
+  "-- restaking": {
+    "type": "separator",
+    "title": "Restaking"
+  },
+  "restake-introduction": "Intro to Restaking",
+  "restake-concepts": "Core Concepts",
   "restaking-rewards": "Incentives",
-  "assets": "Supported Assets"
+  "assets": "Supported Assets",
+  "-- liquid staking": {
+    "type": "separator",
+    "title": "Liquid Staking"
+  },
+  "lst-introduction": "Intro to Liquid Staking",
+  "lst-concepts": "Core Concepts",
+  "lst-rewards": "Incentives",
+  "lst-assets": "Supported Assets"
 }
