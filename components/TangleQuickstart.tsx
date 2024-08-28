@@ -60,10 +60,10 @@ export const SupportArea = () => {
       <DetailedFeatureLink
         feature={{
           Icon: TelegramIcon,
-          description: `Want to connect with Webb Developers, or have questions? Join our Telegram group.`,
+          description: `Want to connect with Tangle Developers, or have questions? Join our Telegram group.`,
           name: "Join our Telegram group.",
         }}
-        href="https://t.me/webbprotocol"
+        href="https://t.me/tanglenet"
       />
     </div>
   );

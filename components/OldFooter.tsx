@@ -67,7 +67,7 @@ const navigation = {
     },
     {
       name: "Telegram",
-      href: "https://t.me/webbprotocol",
+      href: "https://t.me/tanglenet",
     },
     {
       name: "Discord",

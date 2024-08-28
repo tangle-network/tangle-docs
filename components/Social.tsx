@@ -19,7 +19,7 @@ function Github() {
 function Telegram() {
   return (
     <a
-      href="https://t.me/webbprotocol"
+      href="https://t.me/tanglenet"
       className="hidden p-2 text-current sm:flex hover:opacity-75"
       title="The Core Dev Webb's Telegram"
       target="_blank"
