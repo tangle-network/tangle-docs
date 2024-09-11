@@ -17,13 +17,18 @@
   "restake-introduction": "Intro to Restaking",
   "restake-concepts": "Core Concepts",
   "restaking-rewards": "Incentives",
+  "restake-pool-join": "Join as Operator",
+  "restake-how-to": "How to Restake",
   "assets": "Supported Assets",
   "-- liquid staking": {
     "type": "separator",
     "title": "Liquid Staking"
   },
-  "lst-introduction": "Intro to Liquid Staking",
   "lst-concepts": "Core Concepts",
+  "lst-working": "How Liquid Staking Works",
+  "lst-pool-create": "Create a Liquid Staking Pool",
+  "lst-pool-join": "Join a Liquid Staking Pool",
   "lst-rewards": "Incentives",
   "lst-assets": "Supported Assets"
+
 }

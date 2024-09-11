@@ -14,18 +14,52 @@ These components work together to create a powerful incentive system that encour
 
 Operators are noderunners that have tokens at stake and choose to restake them to enable participation in roles, which conduct the jobs produced by a blueprint instance. In esssence, Operators are service providers whose effectiveness and security is guarenteed by their restaked assets.
 
+### Joining as an Operator
+To participate in restaking, a user can join as an operator by providing a bond amount through the join_operators function. This registers the user as an operator and locks their bond, which is necessary for participating in the network and receiving rewards.
+
+**Function:** `join_operators` <br/>
+**Description:** Allows an account to join as an operator by providing a stake. <br/>
+**Event Triggered:** `OperatorJoined` <br/>
+
+### Leaving as an Operator
+Operators can choose to leave the network, scheduling their exit with the schedule_leave_operators function. This marks their intention to exit, which can later be executed or canceled.
+
+**Function:** `schedule_leave_operators` <br/>
+**Description:** Schedules an operator to leave the network. <br/>
+**Event Triggered:** `OperatorLeavingScheduled` <br/>
+
+Operators can then execute their leave with `execute_leave_operators`, which finalizes their exit and releases their bonded tokens. If they change their mind, they can cancel their scheduled exit using `cancel_leave_operators`.
+
+
 ## Delegators / Stakers
 
 Delegators are similar to stakers in a consensus system like [NPoS](../operators/validator/npos.mdx), but they delegate their tokens to an operator, and participate in the rewards and risks similar to staking on a validator.
 
+This can be done through the delegate function, which allocates assets to the chosen operator.
+
+**Function:** `delegate` <br/>
+**Description:** Allows a user to delegate an asset amount to an operator. <br/>
+**Event Triggered:** `Delegated` <br/>
+
+
+Delegators can also schedule a reduction in their delegated assets using schedule_delegator_unstake, and finalize the reduction with execute_delegator_unstake. Both actions can also be canceled with cancel_delegator_unstake.
+
+**Function:** `schedule_delegator_unstake` <br/>
+**Description:** Schedules a reduction of a delegator’s stake. <br/>
+**Event Triggered:** `ScheduledDelegatorBondLess` <br/>
+
+
+**Function:** `execute_delegator_unstake` <br/>
+**Description:** Executes a scheduled reduction of a delegator’s stake. <br/>
+**Event Triggered:** `ExecutedDelegatorBondLess` <br/>
+
+**Function:** `cancel_delegator_unstake` <br/>
+**Description:** Cancels a scheduled reduction of a delegator’s stake. <br/>
+**Event Triggered:** `CancelledDelegatorBondLess` <br/>
+
 ## Blueprints
 
 Blueprints are specifications that define a service and its requirements. Developers create Blueprints by specifying the necessary components, such as a program binary, its tasks, smart contracts, and metadata. Blueprints are designed to be reusable, allowing multiple service instances to be deployed from a single Blueprint.
-[Read more about Blueprints](../developers/blueprints.mdx)
-
-## Restaking
-
-Restaking is the process of staking assets to participate in the Tangle Network as an operator or delegator. Operators stake their own assets or assets delegated to them by delegators to secure Blueprints and earn rewards. Restaking helps to compound returns over time, as a portion of the earned rewards are automatically added to the staked amount.
 [Read more about Blueprints](../developers/blueprints.mdx)
 
 ## Service Instances
