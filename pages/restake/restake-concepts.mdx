@@ -15,6 +15,7 @@ These components work together to create a powerful incentive system that encour
 Operators are noderunners that have tokens at stake and choose to restake them to enable participation in roles, which conduct the jobs produced by a blueprint instance. In esssence, Operators are service providers whose effectiveness and security is guarenteed by their restaked assets.
 
 ### Joining as an Operator
+
 To participate in restaking, a user can join as an operator by providing a bond amount through the join_operators function. This registers the user as an operator and locks their bond, which is necessary for participating in the network and receiving rewards.
 
 **Function:** `join_operators` <br/>
@@ -22,6 +23,7 @@ To participate in restaking, a user can join as an operator by providing a bond 
 **Event Triggered:** `OperatorJoined` <br/>
 
 ### Leaving as an Operator
+
 Operators can choose to leave the network, scheduling their exit with the schedule_leave_operators function. This marks their intention to exit, which can later be executed or canceled.
 
 **Function:** `schedule_leave_operators` <br/>
@@ -29,7 +31,6 @@ Operators can choose to leave the network, scheduling their exit with the schedu
 **Event Triggered:** `OperatorLeavingScheduled` <br/>
 
 Operators can then execute their leave with `execute_leave_operators`, which finalizes their exit and releases their bonded tokens. If they change their mind, they can cancel their scheduled exit using `cancel_leave_operators`.
-
 
 ## Delegators / Stakers
 
@@ -41,13 +42,11 @@ This can be done through the delegate function, which allocates assets to the ch
 **Description:** Allows a user to delegate an asset amount to an operator. <br/>
 **Event Triggered:** `Delegated` <br/>
 
-
 Delegators can also schedule a reduction in their delegated assets using schedule_delegator_unstake, and finalize the reduction with execute_delegator_unstake. Both actions can also be canceled with cancel_delegator_unstake.
 
 **Function:** `schedule_delegator_unstake` <br/>
 **Description:** Schedules a reduction of a delegator’s stake. <br/>
 **Event Triggered:** `ScheduledDelegatorBondLess` <br/>
-
 
 **Function:** `execute_delegator_unstake` <br/>
 **Description:** Executes a scheduled reduction of a delegator’s stake. <br/>

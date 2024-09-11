@@ -35,7 +35,6 @@ The network allows developers to create blueprints for restaking services. These
 - **Function:** `whitelist_blueprint_for_rewards`
 - **Description:** Whitelists a blueprint, allowing services using this blueprint to be eligible for reward distribution.
 
-
 ## Distributing Rewards
 
 Rewards are distributed to delegators based on the total amount staked in a reward pool and the pool's APY and cap configuration. The `distribute_rewards` function handles the distribution process, ensuring that all delegators receive their fair share of rewards based on the assets they have staked.
@@ -43,7 +42,6 @@ Rewards are distributed to delegators based on the total amount staked in a rewa
 ### Distribution Process
 
 1. **Gather Delegation Data:** The system collects the information for all delegations for the current round by iterating through operator snapshots and mapping delegations to their respective assets.
-   
 2. **Retrieve Reward Configuration:** The system checks the reward configuration for each asset to determine the APY and cap for the associated reward pool.
 
 3. **Calculate Rewards:** If the total amount staked in a pool exceeds the cap, rewards are calculated based on the cap. The total reward is calculated by multiplying the staked amount by the APY.
@@ -56,7 +54,8 @@ Rewards are distributed to delegators based on the total amount staked in a rewa
 - **Individual Reward Calculation:** Each delegator's reward is calculated as a percentage of the total reward based on the delegator’s stake in relation to the cap.
 
 ### Example:
-- If a pool has a cap of 1000 tokens and an APY of 10%, the total reward distributed will be 100 tokens (10% of 1000). 
+
+- If a pool has a cap of 1000 tokens and an APY of 10%, the total reward distributed will be 100 tokens (10% of 1000).
 - If a delegator staked 100 tokens, they will receive 10 tokens as a reward (10% of the total reward).
 
 ## Managing Assets in Pools
