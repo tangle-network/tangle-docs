@@ -44,8 +44,8 @@ This document outlines the functionality and key processes involved in liquid st
 - **Maximum Commission**: The maximum allowable commission can be set with the `set_commission_max` function, ensuring that future commissions are bound by this limit.
 - **Commission Change Rate**: The rate at which commission changes can be controlled using the `set_commission_change_rate` function.
 
-
 ### 7. **Adjusting Pool Deposits**
+
 - Pools must maintain an existential deposit (ED) in the reward account to ensure proper functionality. The `adjust_pool_deposit` function allows users to either top up the deficit or withdraw any excess deposit from the pool.
 
 ### 8. **Claim Permissions**
@@ -55,4 +55,5 @@ This document outlines the functionality and key processes involved in liquid st
 ### What is commission change rate?
 
 The maximum rate increase allowed for a single commission update. Note that once set, the pool admin can only lower it. When setting the Change Rate, it will also be possible to set a minDelay quantified as the number of blocks (since last commission update) after which it is possible to change the commission (i.e. the minimum delay between commission updates). Note that once set, the pool admin can only increase it.
+
 <br />Max Commission and Change Rate must not be necessarily set. It is the choice of the pool admin to set those parameters and provide transparency to the pool members about the pool's commission policy.
