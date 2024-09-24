@@ -1,0 +1,136 @@
+# Blueprint Macro System Documentation
+
+## The #job Macro
+
+The `#job` macro is used to define individual tasks or jobs within a blueprint. It allows you to specify various parameters and metadata for each job. #[job(id = <job_id>, params(<param_list>), result(<result_type>), verifier(evm = "<contract_name>"))]
+pub fn job_name(<parameters>) -> Result<<return_type>, <error_type>> {
+// Job implementation
+}
+
+- id: A unique identifier for the job.
+- params: A list of parameters that the job accepts.
+- result: The type of result the job produces (often represented by an underscore \_).
+- verifier: Specifies an EVM contract for job verification.
+
+### Examples
+
+1. Keygen Job:
+
+```rust
+#[job(id = 0, params(n, t), result(_))]
+pub fn keygen(ctx: &MyContext, n: u16, t: u16) -> Result<Vec<u8>, Error> {
+    let _ = (n, t, ctx);
+    Ok(vec![0; 33])
+}
+```
+
+2. Sign Job:
+
+```rust
+#[job(id = 1, params(keygen_id, data), result(_))]
+pub async fn sign(keygen_id: u64, data: Vec<u8>) -> Result<Vec<u8>, Error> {
+    let _ = (keygen_id, data);
+    Ok(vec![0; 65])
+}
+```
+
+3. Run Gaia Node Job:
+
+```rust
+#[sdk::job(id = 1, params(data), result(_), verifier(evm = "GaiaAiAgentBlueprint"))]
+pub async fn run_gaia_node_job(data: Vec<u8>) -> Result<String, Infallible> {
+    let (_, outputs) = runner::run_gaia_node().await?;
+    Ok(serde_json::to_string(&outputs)?)
+}
+```
+
+## The #report Macro
+
+The `#report` macro is used to define reporting functions that can be called after job execution to provide insights or summaries. #[report(
+job_id = <job_id>,
+params(<param_list>),
+result(<result_type>),
+report_type = "<report_type>",
+verifier(evm = "<contract_name>"),
+interval = <interval>,
+metric_thresholds(<threshold_list>)
+)]
+fn report_name(<parameters>) -> <return_type> {
+// Report generation logic
+}
+
+- `job_id`: The ID of the job this report is associated with (optional).
+- `params`: A list of parameters that the report accepts.
+- `result`: The type of result the report produces.
+- `verifier`: Specifies an EVM contract for report verification.
+- `interval`: Specifies how often the report should be generated (for periodic reports).
+- `metric_thresholds`: Defines thresholds for various metrics (for QoS reports).
+
+### Examples
+
+1. Keygen Report:
+
+```rust
+#[report(
+    job_id = 0,
+    params(n, t, msgs),
+    result(_),
+    report_type = "job",
+    verifier(evm = "KeygenContract")
+)]
+fn report_keygen(n: u16, t: u16, msgs: Vec<Vec<u8>>) -> u32 {
+    let _ = (n, t, msgs);
+    0
+}
+```
+
+2. Service Health Report:
+
+```rust
+#[report(
+    params(uptime, response_time, error_rate),
+    result(Vec<u8>),
+    report_type = "qos",
+    interval = 3600,
+    metric_thresholds(uptime = 99, response_time = 1000, error_rate = 5)
+)]
+fn report_service_health(uptime: f64, response_time: u64, error_rate: f64) -> Vec<u8> {
+    // Report logic
+}
+```
+
+## Additional Macros
+
+### Registration Hook
+
+```rust
+#[registration_hook(evm = "RegistrationContract")]
+pub fn on_register(pubkey: Vec<u8>);
+```
+
+### Request Hook
+
+```rust
+#[request_hook(evm = "RequestContract")]
+pub fn on_request(nft_id: u64);
+```
+
+### Benchmark
+
+```rust
+#[benchmark(job_id = 0, cores = 2)]
+fn keygen_2_of_3() {
+    // Benchmark logic
+}
+```
+
+## Best Practices
+
+1. Use meaningful job IDs and ensure they are unique within your blueprint.
+2. Leverage the `params` attribute to clearly define the inputs for each job and report.
+3. Use the `verifier` attribute to specify EVM contracts for job and report verification when applicable.
+4. For QoS reports, utilize the `interval` and `metric_thresholds` attributes to define reporting frequency and performance targets.
+5. Implement error handling in your jobs, returning appropriate `Result` types.
+6. Use async functions for jobs that involve I/O operations or may take longer to execute.
+7. Leverage the various hook macros (`registration_hook`, `request_hook`) to customize blueprint behavior at different lifecycle stages.
+8. Use the `benchmark` macro to create performance tests for your jobs.
