@@ -6,13 +6,9 @@
   "blueprints": "Blueprints",
   "services": "Actively Validated Services (AVS)",
   "usecases": "Use Cases",
-  "-- specification-developers": {
-    "type": "separator",
-    "title": "Specification Developers"
-  },
   "-- gadget-tutorial": {
     "type": "separator",
-    "title": "Gadget AVS / Blueprint Tutorials"
+    "title": "Blueprint (AVS) Tutorials"
   },
   "tangle-blueprint": "Build a Tangle Blueprint",
   "eigenlayer-avs": "Build an Eigenlayer AVS",

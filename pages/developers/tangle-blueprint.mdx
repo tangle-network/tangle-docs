@@ -1,12 +1,18 @@
+---
+title: Blueprint Development on Tangle
+---
+
 # Blueprint Macro System Documentation
 
 ## The #job Macro
 
-The `#job` macro is used to define individual tasks or jobs within a blueprint. It allows you to specify various parameters and metadata for each job. #[job(id = <job_id>, params(<param_list>), result(<result_type>), verifier(evm = "<contract_name>"))]
+The `#[job]` macro is used to define individual tasks or jobs within a blueprint. It allows you to specify various parameters and metadata for each job.
+```
+#[job(id = <job_id>, params(<param_list>), result(<result_type>), verifier(evm = "<contract_name>"))]
 pub fn job_name(<parameters>) -> Result<<return_type>, <error_type>> {
 // Job implementation
 }
-
+```
 - id: A unique identifier for the job.
 - params: A list of parameters that the job accepts.
 - result: The type of result the job produces (often represented by an underscore \_).
@@ -46,7 +52,7 @@ pub async fn run_gaia_node_job(data: Vec<u8>) -> Result<String, Infallible> {
 
 ## The #report Macro
 
-The `#report` macro is used to define reporting functions that can be called after job execution to provide insights or summaries. #[report(
+The `#[report]` macro is used to define reporting functions that can be called after job execution to provide insights or summaries. #[report(
 job_id = <job_id>,
 params(<param_list>),
 result(<result_type>),
