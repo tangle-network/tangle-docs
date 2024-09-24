@@ -8,10 +8,10 @@ title: Blueprint Development on Tangle
 
 The `#[job]` macro is used to define individual tasks or jobs within a blueprint. It allows you to specify various parameters and metadata for each job.
 
-```
+```rust
 #[job(id = <job_id>, params(<param_list>), result(<result_type>), verifier(evm = "<contract_name>"))]
 pub fn job_name(<parameters>) -> Result<<return_type>, <error_type>> {
-// Job implementation
+    // Job implementation
 }
 ```
 
