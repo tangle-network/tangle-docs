@@ -1,8 +1,7 @@
 {
-    "jobs": "Job Macro",
-    "reports": "Report Macro",
-    "hooks": "Hooks",
-    "event-listeners": "Event Listeners",
-    "testing": "Testing"
-  }
-  
+  "jobs": "Job Macro",
+  "reports": "Report Macro",
+  "hooks": "Hooks",
+  "event-listeners": "Event Listeners",
+  "testing": "Testing"
+}
