@@ -10,7 +10,12 @@
     "type": "separator",
     "title": "Specification Developers"
   },
-  "gadget-tutorial": "Create a Gadget",
+  "-- gadget-tutorial": {
+    "type": "separator",
+    "title": "Gadget AVS / Blueprint Tutorials"
+  },
+  "tangle-blueprint": "Build a Tangle Blueprint",
+  "eigenlayer-avs": "Build an Eigenlayer AVS",
   "-- solution-developers": {
     "type": "separator",
     "title": "Solution Developers"
