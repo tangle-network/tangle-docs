@@ -18,7 +18,6 @@ The `#[report]` macro is used to define individual reporting functions within a 
     params(<param_list>),
     result(<result_type>),
     event_listener(<EventListenerType>),
-    protocol(<protocol_name>)
 )]
 pub fn report_name(<parameters>) -> Result<<return_type>, <error_type>> {
     // Report implementation
@@ -29,7 +28,6 @@ pub fn report_name(<parameters>) -> Result<<return_type>, <error_type>> {
 - ***`params`***: A list of parameters that the report function accepts.
 - ***`result`***: The type of result the report produces (often represented by an underscore _).
 - ***`event_listener`***: Specifies the event listener that triggers the report generation.
-- ***`protocol`***: Specifies the protocol (e.g., Tangle, Eigenlayer) to which the report will be submitted.
 
 ### Event Listeners for Reports
 
@@ -54,7 +52,6 @@ For more information on implementing custom event listeners, refer to the [Event
     params(job_id, operator_address),
     result(),
     event_listener(JobSpecificListener),
-    protocol(Tangle)
 )]
 pub fn job_failure_report(job_id: u64, operator_address: Address) -> Result<(), Error> {
     // Implementation to generate and submit a report for a failed job
@@ -72,7 +69,6 @@ pub fn job_failure_report(job_id: u64, operator_address: Address) -> Result<(), 
     params(),
     result(),
     event_listener(PeriodicListener),
-    protocol(Eigenlayer)
 )]
 pub async fn uptime_report() -> Result<(), Error> {
     // Implementation to generate and submit a periodic uptime report
@@ -91,7 +87,6 @@ pub async fn uptime_report() -> Result<(), Error> {
     params(event_data),
     result(),
     event_listener(EVMContractEventListener),
-    protocol(Tangle)
 )]
 pub async fn contract_violation_report(event_data: Vec<u8>) -> Result<(), Error> {
     // Implementation to generate and submit a report based on a contract event
@@ -123,7 +118,6 @@ impl ProtocolHandler for CustomProtocolHandler {
     params(custom_data),
     result(),
     event_listener(CustomEventListener),
-    protocol(CustomProtocol)
 )]
 pub fn custom_protocol_report(custom_data: CustomData) -> Result<(), Error> {
     // Implementation using a custom protocol handler
