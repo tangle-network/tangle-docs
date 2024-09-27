@@ -1,46 +1,59 @@
 ---
-title: Blueprint Development on Tangle
+title: Jobs Macro
 ---
 
 # Blueprint Jobs Macro System Documentation
+
+The goal with the job macro is to provide an easy and intuitive interface for creating a task based AVS service. Developers can specify jobs they want their AVS to complete and streamline transaction submission of these jobs onchain to their respective protocol, be it Tangle, Eigenlayer. The system is flexible and allows developers to listen to events from a variety of sources such as Tangle's job submission/execution system, an EVM smart contract's events, periodic timers for cron-job like tasks, as well as a way to define custom event listeners.
+
+Developers should add business logic for their AVS into the function body of their jobs. These functions are triggered every time the respective event listener fires. Jobs can be synchronous or asynchronous, and care should be taken if jobs are asynchronous and access shared state such as databases or data from onchain sources from multiple blockchains. The jobs system is continuously being improved and the API may continue to change. We welcome you to share feature requests and PRs on [our github](https://github.com/webb-tools/gadget/issues).
 
 ## The #[job] Macro
 
 The `#[job]` macro is used to define individual tasks or jobs within a blueprint. It allows you to specify various parameters and metadata for each job.
 
 ```rust
-#[job(id = <job_id>, params(<param_list>), result(<result_type>), verifier(evm = "<contract_name>"))]
+#[job(
+    id = <job_id>,
+    params(<param_list>),
+    result(<result_type>),
+    event_listener(TangleJobCallListener)
+    verifier(evm = "<contract_name>")
+)]
 pub fn job_name(<parameters>) -> Result<<return_type>, <error_type>> {
     // Job implementation
 }
 ```
 
-- id: A unique identifier for the job.
-- params: A list of parameters that the job accepts.
-- result: The type of result the job produces (often represented by an underscore \_).
-- verifier: Specifies an EVM contract for job verification.
+- ***`id`***: A unique identifier for the job.
+- ***`params`***: A list of parameters that the job accepts.
+- ***`result`***: The type of result the job produces (often represented by an underscore \_).
+- ***`event_listener`***: Specifies the event listener that triggers the job.
+- ***`verifier`***: Specifies an EVM contract for job verification (for use w/ Tangle).
 
-The default implementation targets deployment on Tangle and specifies an EVM contract for verification. The contract name is cross-referenced with the name of a contract in a `foundry` project and should be identical in order to deploy seamlessly to Tangle.
+### Tangle Blueprint Jobs
+The default implementation targets deployment on Tangle and specifies an EVM contract for verification specified with the ***`verifier`*** parameter. The contract name is cross-referenced with the name of a contract in a `foundry` project and should be identical in order to integrate seamlessly to Tangle. For other restaking protocols and job verification mechanisms, developers should use or implement custom handlers. An example of doing this to replicate Tangle's default implementation is as follows:
 
-### Custom Event Listener (Eigenlayer)
-
-You can specify a custom EVM event listener for the job, which is particularly needed when building an AVS on Eigenlayer. 
 ```rust
+struct CustomTangleJobCallListener {
+    instance: <contract_instance>,
+}
+
+impl EventListener for CustomJobCallListener {
+    fn next_event();
+    fn handle_event();
+}
+
 #[job(
-    id = 1,
+    id = <job_id>,
     params(<param_list>),
-    result(_),
-    event_handler(
-        instance = IncredibleSquaringTaskManager,
-        event = IncredibleSquaringTaskManager::NewTaskCreated,
-        event_converter = convert_event_to_inputs,
-        callback = IncredibleSquaringTaskManager::IncredibleSquaringTaskManagerCalls::respondToTask
-    ),
+    result(<result_type>),
+    event_listener(CustomTangleJobCallListener)
 )]
-
+pub fn job_name(<parameters>) -> Result<<return_type>, <error_type>> {
+    // Job implementation
+}
 ```
-
-```rust
 
 ### Examples
 
