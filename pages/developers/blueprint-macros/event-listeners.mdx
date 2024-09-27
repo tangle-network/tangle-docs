@@ -3,12 +3,15 @@ title: Event Listeners for Blueprints and AVS
 ---
 
 ## Event Listeners for Blueprints and AVS
+
 The SDK supports a variety of event listeners out of the box for creating jobs, slashing reports, and hooks useful for developing complex multi-party services. These include EVM contract listeners and periodic and time-based listeners.
 
 Developers can also build their own custom event listeners to trigger jobs and reports.
 
 ### EVM Contract Listeners
-You can specify a custom EVM event listener for the job, which is particularly needed when building an AVS on Eigenlayer. 
+
+You can specify a custom EVM event listener for the job, which is particularly needed when building an AVS on Eigenlayer.
+
 ```rust
 #[derive(AlloyContractEventListener)]
 struct CustomContractListener {
@@ -31,12 +34,12 @@ pub fn job_name(<parameters>) -> Result<<return_type>, <error_type>> {
 
 EVM contract listeners can also be implemented with an additional layer of middleware known by implementing the `LayeredMiddleware` trait. This consume the event listener and adds an additional opportunity to process the data in more complex and custom ways, such as calling an external API or computing over the event.
 
-
 ### Layered Middleware for EVM Contract Listeners
 
 Layered middleware can be used with EVM contract listeners to add complex processing logic, such as interacting with external APIs or performing AI-based decision making. Here's an example of how to implement a layered middleware for an EVM contract event:
 
 **Gas Price Middleware**: Implement a filter for preventing job execution when gas prices exceed some threshold.
+
 ```rust
 // Define a custom EVM contract listener
 #[derive(AlloyContractEventListener)]
@@ -110,14 +113,10 @@ pub fn monitor_gas_price(threshold: u64) -> Result<bool, Error> {
     // Perform actions based on high gas price...
     Ok(true)
 }
+```
 
 **AI Smart Execution**: Implement a middleware that decides whether to execute the job or not based on the event metadata.
 ```rust
-use alloy_primitives::Address;
-use ethers::prelude::*;
-use reqwest;
-use serde_json::json;
-
 // Define a custom EVM contract listener
 #[derive(AlloyContractEventListener)]
 struct AiFilterContractListener {
@@ -131,6 +130,11 @@ struct AiFilterContractListener {
 
 impl AiFilterContractListener {
     async fn query_llama_model(&self, event_data: &str) -> Result<bool, Error> {
+        use alloy_primitives::Address;
+        use ethers::prelude::*;
+        use reqwest;
+        use serde_json::json;
+
         let client = reqwest::Client::new();
         let prompt = format!("Given the event data {}, should we execute the compute task or is it spam? Respond only with `'yes, execute`' or `'no`'", event_data);
 
@@ -205,7 +209,6 @@ pub fn job_name(<parameters>) -> Result<<return_type>, <error_type>> {
     // Job implementation
 }
 ```
-
 
 ### Periodic listeners
 

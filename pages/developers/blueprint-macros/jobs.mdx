@@ -25,14 +25,15 @@ pub fn job_name(<parameters>) -> Result<<return_type>, <error_type>> {
 }
 ```
 
-- ***`id`***: A unique identifier for the job.
-- ***`params`***: A list of parameters that the job accepts.
-- ***`result`***: The type of result the job produces (often represented by an underscore \_).
-- ***`event_listener`***: Specifies the event listener that triggers the job.
-- ***`verifier`***: Specifies an EVM contract for job verification (for use w/ Tangle).
+- **_`id`_**: A unique identifier for the job.
+- **_`params`_**: A list of parameters that the job accepts.
+- **_`result`_**: The type of result the job produces (often represented by an underscore \_).
+- **_`event_listener`_**: Specifies the event listener that triggers the job.
+- **_`verifier`_**: Specifies an EVM contract for job verification (for use w/ Tangle).
 
 ### Tangle Blueprint Jobs
-The default implementation targets deployment on Tangle and specifies an EVM contract for verification specified with the ***`verifier`*** parameter. The contract name is cross-referenced with the name of a contract in a `foundry` project and should be identical in order to integrate seamlessly to Tangle. For other restaking protocols and job verification mechanisms, developers should use or implement custom handlers. An example of doing this to replicate Tangle's default implementation is as follows:
+
+The default implementation targets deployment on Tangle and specifies an EVM contract for verification specified with the **_`verifier`_** parameter. The contract name is cross-referenced with the name of a contract in a `foundry` project and should be identical in order to integrate seamlessly to Tangle. For other restaking protocols and job verification mechanisms, developers should use or implement custom handlers. An example of doing this to replicate Tangle's default implementation is as follows:
 
 ```rust
 struct CustomTangleJobCallListener {
