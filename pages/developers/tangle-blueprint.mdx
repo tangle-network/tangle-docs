@@ -253,8 +253,6 @@ Finally, implement the main function:
 
 This main.rs file sets up the AVS client for our cryptographic service. It handles the registration process, runs the service, and listens for events on the Tangle network. The `TangleGadgetRunner` struct implements the `GadgetRunner` trait, which provides the core functionality for running the AVS.
 
-This main.rs file sets up the AVS client for our cryptographic service. It handles the registration process, runs the service, and listens for events on the Tangle network. The TangleGadgetRunner struct implements the GadgetRunner trait, which provides the core functionality for running the AVS.
-
 The registration process registers the operator on the Tangle network with the specified preferences. The run function sets up an event watcher that listens for events related to our cryptographic service and handles them accordingly.
 
 The main function ties everything together, setting up the environment, registering the operator if needed, and then running the service. The check_for_test function is included to support test mode functionality.
