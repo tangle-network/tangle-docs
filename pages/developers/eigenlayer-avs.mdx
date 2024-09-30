@@ -33,7 +33,6 @@ Use the `#[job]` macro to define a function that will handle specific events. In
     params(number_to_be_squared, task_created_block, quorum_numbers, quorum_threshold_percentage),
     result(_),
     event_handler(
-        protocol = "eigenlayer",
         instance = IncredibleSquaringTaskManager,
         event = IncredibleSquaringTaskManager::NewTaskCreated,
         event_converter = convert_event_to_inputs,
