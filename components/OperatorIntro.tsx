@@ -5,12 +5,12 @@ import { BetweenVerticalEnd, SquareDashedBottomCode } from "lucide-react";
 
 const OperatorIntroCards = () => {
   const cards = [
-    {
-      icon: <SquareDashedBottomCode />,
-      title: <span className="text-xl font-bold ">Service Operators</span>,
-      description: "Run Blueprint instances and earn job revenue.",
-      link: "../operators/service-operator/service-provider",
-    },
+    // {
+    //   icon: <SquareDashedBottomCode />,
+    //   title: <span className="text-xl font-bold ">Service Operators</span>,
+    //   description: "Run Blueprint instances and earn job revenue.",
+    //   link: "../operators/service-operator/service-provider",
+    // },
     {
       icon: <BetweenVerticalEnd />,
       title: <span className="text-xl font-bold ">Validators</span>,
