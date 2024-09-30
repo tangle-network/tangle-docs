@@ -104,12 +104,14 @@ pub fn on_register(pubkey: Vec<u8>) {
 ### 1.7 Implement Request Hooks
 
 Request hooks are triggered when a request is made to your AVS. Here's an example:
+```rust
 use gadget_sdk::request_hook;
 
 #[request_hook(evm = "RequestContract")]
 pub fn on_request(nft_id: u64) {
-// Handle request logic here
+    // Handle request logic here
 }
+```
 
 ### 1.8 Add Benchmarks
 
