@@ -116,6 +116,7 @@ pub fn monitor_gas_price(threshold: u64) -> Result<bool, Error> {
 ```
 
 **AI Smart Execution**: Implement a middleware that decides whether to execute the job or not based on the event metadata.
+
 ```rust
 // Define a custom EVM contract listener
 #[derive(AlloyContractEventListener)]
@@ -230,7 +231,7 @@ pub fn job_name(<parameters>) -> Result<<return_type>, <error_type>> {
 
 Periodic listeners can also be implemented with the `LayeredMiddleware` abstraction. A developer might use this to check whether a smart contract value has changed or if a offchain data source has updated to a new desirable state for processing.
 
-```rust
+````rust
 #[derive(PeriodicListener)]
 struct CustomPeriodicListener {
     interval: Duration,
@@ -316,4 +317,4 @@ impl ListenerMiddleware for CustomPeriodicListener {
 pub fn job_name(<parameters>) -> Result<<return_type>, <error_type>> {
     // Job implementation
 }
-```
+````

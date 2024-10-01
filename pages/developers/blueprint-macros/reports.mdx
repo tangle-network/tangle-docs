@@ -24,10 +24,10 @@ pub fn report_name(<parameters>) -> Result<<return_type>, <error_type>> {
 }
 ```
 
-- ***`id`***: A unique identifier for the report. This can be used to associate reports with specific jobs or behaviors.
-- ***`params`***: A list of parameters that the report function accepts.
-- ***`result`***: The type of result the report produces (often represented by an underscore _).
-- ***`event_listener`***: Specifies the event listener that triggers the report generation.
+- **_`id`_**: A unique identifier for the report. This can be used to associate reports with specific jobs or behaviors.
+- **_`params`_**: A list of parameters that the report function accepts.
+- **_`result`_**: The type of result the report produces (often represented by an underscore \_).
+- **_`event_listener`_**: Specifies the event listener that triggers the report generation.
 
 ### Event Listeners for Reports
 
@@ -46,6 +46,7 @@ For more information on implementing custom event listeners, refer to the [Event
 ### Examples
 
 1. Job-specific Slashing Report:
+
 ```rust
 #[report(
     id = 0,
