@@ -103,8 +103,8 @@ impl ListenerMiddleware for GasPriceMiddleware {
 // Define the job using the custom EVM listener with gas price middleware
 #[job(
     id = "high_gas_price_job",
-    params(threshold: u64),
-    result(bool),
+    params(threshold),
+    result(_),
     event_listener(CustomEVMListener, middleware = GasPriceMiddleware),
 )]
 pub fn monitor_gas_price(threshold: u64) -> Result<bool, Error> {
