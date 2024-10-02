@@ -6,7 +6,12 @@ title: Build an Eigenlayer AVS
 
 ## Introduction
 
-EVM event listeners are crucial for interacting with smart contracts on Ethereum-compatible networks. In the context of Eigenlayer and the blueprint macro system, these listeners allow your Gadget to respond to specific events emitted by Eigenlayer contracts. This documentation will guide you through setting up and using EVM event listeners for Eigenlayer support, using examples from the incredible squaring implementation.
+This will guide you through setting up and using EVM event listeners for Eigenlayer support, using examples from the
+incredible squaring implementation.
+
+EVM event listeners are crucial for interacting with smart contracts on Ethereum-compatible networks.
+In the context of Eigenlayer and the blueprint macro system, these listeners allow your Gadget to respond to specific
+events emitted by Eigenlayer contracts.
 
 ## Setting Up EVM Event Listeners
 
@@ -25,7 +30,7 @@ sol!(
 
 ### 2. Job Definition with Event Handler
 
-Use the `#[job]` macro to define a function that will handle specific events. Include the `event_handler` attribute to specify the event details:
+Use the [`#[job]`](./blueprint-macros/jobs.mdx) macro to define a function that will handle specific events. Include the `event_handler` attribute to specify the event details:
 
 ```rust
 #[job(
