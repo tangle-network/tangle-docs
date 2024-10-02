@@ -225,7 +225,22 @@ impl GadgetRunner for TangleGadgetRunner {
 
 Add helper functions for creating the GadgetRunner and checking for test mode:
 
+<!-- TODO: Get these into the SDK -->
+
 ```rust
+async fn create_gadget_runner(
+    config: ContextConfig,
+) -> (
+    GadgetConfiguration<parking_lot::RawRwLock>,
+    Box<dyn GadgetRunner<Error = Error>>,
+) {
+    let env = gadget_sdk::config::load(config).expect("Failed to load environment");
+    match env.protocol {
+        Protocol::Tangle => (env.clone(), Box::new(TangleGadgetRunner { env })),
+        _ => panic!("Unsupported protocol"),
+    }
+}
+
 fn check_for_test(
     _env: &GadgetConfiguration<parking_lot::RawRwLock>,
     config: &ContextConfig,
