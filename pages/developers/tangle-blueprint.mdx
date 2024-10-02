@@ -173,7 +173,7 @@ Create a new file named `main.rs` in your project's `src` directory. This file w
 Start by adding the necessary imports and defining the `TangleGadgetRunner` struct:
 
 ```rust
-use gadget_sdk::config::{ContextConfig, GadgetCLICoreSettings, GadgetConfiguration, StdGadgetConfiguration};
+use gadget_sdk::config::{ContextConfig, GadgetCLICoreSettings, StdGadgetConfiguration};
 use gadget_sdk::{
     config::Protocol,
     events_watcher::{substrate::SubstrateEventWatcher, tangle::TangleEventsWatcher},
@@ -190,7 +190,7 @@ use gadget_sdk::run::GadgetRunner;
 use gadget_sdk::tangle_subxt::subxt::tx::Signer;
 
 struct TangleGadgetRunner {
-    env: GadgetConfiguration<parking_lot::RawRwLock>,
+    env: StdGadgetConfiguration,
 }
 ```
 
@@ -204,7 +204,7 @@ impl GadgetRunner for TangleGadgetRunner {
     type Error = Error;
 
     fn config(&self) -> &StdGadgetConfiguration {
-        todo!()
+        &self.env
     }
 
     async fn register(&mut self) -> std::result::Result<(), Self::Error> {
