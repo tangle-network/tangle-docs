@@ -4,7 +4,7 @@ title: Context and Context Extensions in Gadget SDK
 
 ## What is a `Context`?
 
-In the Gadget SDK, a Context is a crucial concept that encapsulates the environment and dependencies required for a job to execute successfully. It represents a collection of objects, services, and configurations that are not direct inputs to the job but are necessary for its proper functioning.
+In the Gadget SDK, a `Context` simply holds any a job may have, that aren't direct inputs.
 
 A Context can include various elements such as:
 
@@ -130,7 +130,7 @@ struct Context {
 #[job(id = 2, params(x), result(_))]
 pub fn x_squared(ctx: &Context, x: u64) -> Result<u64, Infallible> {
     let keystore = ctx.keystore(); // Access the keystore using the extension method
-    // Use the keystore here ..
+    // Use the keystore here ...
     let x_squared = x.pow(2);
     Ok(x_squared)
 }
@@ -163,17 +163,13 @@ use reqwest::Client;
 
 // Define the HttpClientContext trait
 pub trait HttpClientContext {
-    fn http_client(&self) -> &Client;
+    fn http_client(&self) -> Client;
 }
 
 // Implement the trait for our Context
 impl HttpClientContext for Context {
-    fn http_client(&self) -> Arc<Client> {
-        // Use lazy_static to ensure the client is only created once
-        lazy_static::lazy_static! {
-            static ref HTTP_CLIENT: Client = Client::new();
-        }
-        &HTTP_CLIENT
+    fn http_client(&self) -> Client {
+        self.http_client.clone()
     }
 }
 
@@ -186,8 +182,6 @@ pub async fn fetch_url(ctx: &Context, url: String) -> Result<String, reqwest::Er
     Ok(body)
 }
 ```
-
-Notice here we used `lazy_static` to ensure the client is only created once, improving efficiency.
 
 ## Summary and Conclusion
 
