@@ -173,7 +173,6 @@ Create a new file named `main.rs` in your project's `src` directory. This file w
 Start by adding the necessary imports and defining the `TangleGadgetRunner` struct:
 
 ```rust
-use color_eyre::{eyre::eyre, Result};
 use gadget_sdk::config::{ContextConfig, GadgetCLICoreSettings, GadgetConfiguration, StdGadgetConfiguration};
 use gadget_sdk::{
     config::Protocol,
@@ -202,13 +201,13 @@ Implement the `GadgetRunner` trait for `TangleGadgetRunner`:
 ```rust
 #[async_trait::async_trait]
 impl GadgetRunner for TangleGadgetRunner {
-    type Error = color_eyre::eyre::Report;
+    type Error = Error;
 
     fn config(&self) -> &StdGadgetConfiguration {
         todo!()
     }
 
-    async fn register(&mut self) -> Result<()> {
+    async fn register(&mut self) -> std::result::Result<(), Self::Error> {
         // Registration logic here
     }
 
