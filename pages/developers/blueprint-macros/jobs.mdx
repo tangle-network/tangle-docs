@@ -4,9 +4,18 @@ title: Jobs Macro
 
 # Blueprint Jobs Macro System Documentation
 
-The goal with the job macro is to provide an easy and intuitive interface for creating a task based AVS service. Developers can specify jobs they want their AVS to complete and streamline transaction submission of these jobs onchain to their respective protocol, be it Tangle, Eigenlayer. The system is flexible and allows developers to listen to events from a variety of sources such as Tangle's job submission/execution system, an EVM smart contract's events, periodic timers for cron-job like tasks, as well as a way to define custom event listeners.
+The goal with the job macro is to provide an easy and intuitive interface for creating a task based AVS service.
 
-Developers should add business logic for their AVS into the function body of their jobs. These functions are triggered every time the respective event listener fires. Jobs can be synchronous or asynchronous, and care should be taken if jobs are asynchronous and access shared state such as databases or data from onchain sources from multiple blockchains. The jobs system is continuously being improved and the API may continue to change. We welcome you to share feature requests and PRs on [our github](https://github.com/webb-tools/gadget/issues).
+Developers can specify jobs for their AVS to complete and streamline on-chain transaction submissions to protocols like
+Tangle or Eigenlayer. The system is flexible and allowing developers to listen to events from a variety of sources such
+as Tangle's job submission/execution system, an EVM smart contract's events, periodic timers for cron-job like tasks,
+as well as a way to define custom event listeners.
+
+These job functions are triggered every time the respective event listener fires, and can be synchronous or asynchronous.
+Care should be taken if jobs are asynchronous and access shared state like databases or data from multiple blockchains.
+
+The jobs system is continuously being improved and the API may continue to change.
+We welcome you to share feature requests and PRs on [our github](https://github.com/webb-tools/gadget/issues).
 
 ## The #[job] Macro
 
@@ -33,7 +42,15 @@ pub fn job_name(<parameters>) -> Result<<return_type>, <error_type>> {
 
 ### Tangle Blueprint Jobs
 
-The default implementation targets deployment on Tangle and specifies an EVM contract for verification specified with the **_`verifier`_** parameter. The contract name is cross-referenced with the name of a contract in a `foundry` project and should be identical in order to integrate seamlessly to Tangle. For other restaking protocols and job verification mechanisms, developers should use or implement custom handlers. An example of doing this to replicate Tangle's default implementation is as follows:
+The default implementation targets deployment on Tangle and specifies an EVM contract for verification specified with
+the **_`verifier`_** parameter.
+
+The contract name is cross-referenced with the name of a contract in a [`foundry`](https://book.getfoundry.sh/) project
+and should be identical in order to integrate seamlessly to Tangle.
+
+For other restaking protocols and job verification mechanisms, developers should use or implement custom handlers.
+
+An example of doing this to replicate Tangle's default implementation is as follows:
 
 ```rust
 struct CustomTangleJobCallListener {
@@ -58,7 +75,7 @@ pub fn job_name(<parameters>) -> Result<<return_type>, <error_type>> {
 
 ### Examples
 
-1. Keygen Job:
+#### Keygen Job
 
 ```rust
 #[job(id = 0, params(n, t), result(_))]
@@ -68,7 +85,7 @@ pub fn keygen(ctx: &MyContext, n: u16, t: u16) -> Result<Vec<u8>, Error> {
 }
 ```
 
-2. Sign Job:
+#### Sign Job
 
 ```rust
 #[job(id = 1, params(keygen_id, data), result(_))]
@@ -78,7 +95,7 @@ pub async fn sign(keygen_id: u64, data: Vec<u8>) -> Result<Vec<u8>, Error> {
 }
 ```
 
-3. Run Gaia Node Job:
+#### Run Gaia Node Job
 
 ```rust
 #[sdk::job(id = 1, params(data), result(_), verifier(evm = "GaiaAiAgentBlueprint"))]
