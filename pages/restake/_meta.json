@@ -20,6 +20,7 @@
   "join_a_pool": "Join a Liquid Staking Pool",
   "lst-rewards": "Incentives",
   "lst-assets": "Supported Assets",
+  "lst_developers": "Developer Docs",
   "-- restaking": {
     "type": "separator",
     "title": "Restaking"
@@ -29,5 +30,6 @@
   "incentives": "Incentives",
   "join_operator": "Operator Docs",
   "how_to_restake": "How to Restake",
-  "assets": "Supported Assets"
+  "assets": "Supported Assets",
+  "restake_developers": "Developer Docs"
 }
