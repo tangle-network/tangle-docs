@@ -27,7 +27,7 @@
   "restake-introduction": "Intro to Restaking",
   "restake-concepts": "Core Concepts",
   "restaking-rewards": "Incentives",
-  "restake-pool-join": "Join as Operator",
-  "restake-how-to": "How to Restake",
+  "join_operator": "Operator Docs",
+  "how_to_restake": "How to Restake",
   "assets": "Supported Assets"
 }
