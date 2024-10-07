@@ -104,7 +104,7 @@ contract JoinPoolExample {
     function joinPool(uint256 amount, uint256 poolId) public returns (uint256) {
         // Call the join function on the precompile contract
         uint256 statusCode = precompile.join(amount, poolId);
-        
+
         // Handle the status code as needed
         require(statusCode == 0, "Join pool failed");
 

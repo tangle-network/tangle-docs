@@ -10,7 +10,6 @@ The latest version of the precompile can be found [here](https://github.com/webb
 
 This interface is designed to be used by Solidity contracts to interact with the MultiAssetDelegation pallet, enabling complex asset management and staking operations on the Tangle network.
 
-
 #### Interface
 
 ```solidity
@@ -112,7 +111,7 @@ contract DepositExample {
     function depositAsset(uint256 assetId, uint256 amount) public returns (uint256) {
         // Call the deposit function on the precompile contract
         uint256 statusCode = precompile.deposit(assetId, amount);
-        
+
         // Handle the status code as needed
         require(statusCode == 0, "Deposit failed");
 
