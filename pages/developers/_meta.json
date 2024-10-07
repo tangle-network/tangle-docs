@@ -11,6 +11,7 @@
     "title": "Blueprint (AVS) Tutorials"
   },
   "blueprint-macros": "Understanding Blueprint Macros",
+  "blueprint-event-listeners": "Blueprint Event Listeners",
   "tangle-blueprint": "Build a Tangle Blueprint",
   "eigenlayer-avs": "Build an Eigenlayer AVS",
   "-- solution-developers": {
