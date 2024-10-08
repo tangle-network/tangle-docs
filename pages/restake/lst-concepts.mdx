@@ -1,12 +1,10 @@
-# Tangle Liquid Stake Concepts
-
-## Liquid Staking on Tangle Network
+# Liquid Staking on Tangle Network
 
 ## Introduction
 
 Liquid staking on Tangle Network allows users to participate in staking while still maintaining liquidity of their staked assets. This mechanism is implemented via delegation pools, enabling participants to stake their tokens in a pool, earn rewards, and retain the ability to unbond or transfer staked assets without waiting for the traditional staking lock-up periods.
 
-This document outlines the functionality and key processes involved in liquid staking on Tangle, based on the relevant code provided.
+![Liquid Staking Introduction](./images/lst-intro.png)
 
 ## Key Components of Liquid Staking
 
@@ -20,12 +18,12 @@ This document outlines the functionality and key processes involved in liquid st
 
 ### 2. **Bonding and Staking**
 
-- Users can **bond** their assets to a pool using the `join` function, effectively staking their tokens in exchange for pool rewards. The bond amount is transferred to the pool's account and increases the pool's total bond.
+- Users can **bond** their assets to a pool using the `join` function, effectively staking their tokens in exchange for pool rewards. The bond amount is transferred to the pool's account and increases the pool's total bond and the user receives pool tokens (LST) in return.
 - Additional funds can be **bonded** using the `bond_extra` function. This allows users to add more tokens to their existing stake, either from free balance or pending rewards.
 
 ### 3. **Unbonding**
 
-- Users can **unbond** their staked tokens with the `unbond` function, which allows them to withdraw up to a specified amount of their staked assets. The system ensures that rewards are automatically collected during the unbonding process to prevent forfeiture.
+- Users can **unbond** their staked tokens with the `unbond` function, which allows them to withdraw up to a specified amount of their staked assets. When unbonding, users submit their LST tokens, which are then burned. The system ensures that the initial deposit plus any rewards are automatically collected and returned during the withdraw unbonding process.
 - **Permissionless unbonding**: Under specific conditions, such as when a pool is blocked or destroying, users can unbond their tokens permissionlessly.
 
 ### 4. **Withdrawals**
@@ -39,7 +37,7 @@ This document outlines the functionality and key processes involved in liquid st
 
 ### 6. **Rewards and Commission**
 
-- **Commission**: Pools can set a commission percentage using the `set_commission` function. This determines the amount of rewards that are paid to the pool's commission account.
+- **Commission**: Pools can set a commission percentage using the `set_commission` function. This determines the amount of rewards that are paid to the pool's commission account from the total rewards.
 - **Claiming Commission**: Pending commission can be claimed using the `claim_commission` function, which adds the claimed amount to the total claimed commission and resets pending commission to zero.
 - **Maximum Commission**: The maximum allowable commission can be set with the `set_commission_max` function, ensuring that future commissions are bound by this limit.
 - **Commission Change Rate**: The rate at which commission changes can be controlled using the `set_commission_change_rate` function.
@@ -56,4 +54,4 @@ This document outlines the functionality and key processes involved in liquid st
 
 The maximum rate increase allowed for a single commission update. Note that once set, the pool admin can only lower it. When setting the Change Rate, it will also be possible to set a minDelay quantified as the number of blocks (since last commission update) after which it is possible to change the commission (i.e. the minimum delay between commission updates). Note that once set, the pool admin can only increase it.
 
-<br />Max Commission and Change Rate must not be necessarily set. It is the choice of the pool admin to set those parameters and provide transparency to the pool members about the pool's commission policy.
+Max Commission and Change Rate must not be necessarily set. It is the choice of the pool admin to set those parameters and provide transparency to the pool members about the pool's commission policy.

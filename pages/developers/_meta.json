@@ -6,11 +6,14 @@
   "blueprints": "Blueprints",
   "services": "Actively Validated Services (AVS)",
   "usecases": "Use Cases",
-  "-- specification-developers": {
+  "-- gadget-tutorial": {
     "type": "separator",
-    "title": "Specification Developers"
+    "title": "Blueprint (AVS) Tutorials"
   },
-  "gadget-tutorial": "Create a Gadget",
+  "blueprint-macros": "Understanding Blueprint Macros",
+  "blueprint-event-listeners": "Blueprint Event Listeners",
+  "tangle-blueprint": "Build a Tangle Blueprint",
+  "eigenlayer-avs": "Build an Eigenlayer AVS",
   "-- solution-developers": {
     "type": "separator",
     "title": "Solution Developers"
