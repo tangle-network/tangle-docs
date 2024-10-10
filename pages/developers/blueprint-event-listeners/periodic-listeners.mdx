@@ -36,7 +36,7 @@ A `PeriodicEventListener` is a wrapper that takes 4 type parameters:
 pub struct PeriodicEventListener<const MSEC: usize, T, Event, Ctx>
 ```
 
-We can make a `PeriodicEventListener` that ticks every 5000ms to check the status of a web server using [reqwest](crates.io/crates/reqwest).
+We can make a `PeriodicEventListener` that ticks every 5000ms to check the status of a web server using [reqwest](https://crates.io/crates/reqwest).
 
 Start by defining our inner event listener (`T` = `WebPoller`, in this case)
 
