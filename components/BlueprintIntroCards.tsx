@@ -20,7 +20,7 @@ const BlueprintIntroCards = () => {
         <span className="text-xl font-bold ">Build a Tangle Blueprint</span>
       ),
       description:
-        "Get started building on Tangle with Blueprints, resuable AVS templates. Build innovative applications using Tangle's advanced macro system",
+        "Get started building on Tangle with Blueprints, resuable AVS templates. Build innovative applications using our advanced macro system",
       link: "../developers/tangle-blueprint",
     },
     {
@@ -29,7 +29,7 @@ const BlueprintIntroCards = () => {
         <span className="text-xl font-bold ">Build an Eigenlayer AVS</span>
       ),
       description:
-        "Build an Eigenlayer AVS with Tangle's Blueprint SDK and hook into a variety of EVM compatible utilities for task automation, slashing, and more.",
+        "Build an Eigenlayer AVS with the Tangle Blueprint SDK and hook into a variety of EVM compatible utilities for task automation, slashing, and more.",
       link: "../developers/eigenlayer-avs",
     },
   ];
