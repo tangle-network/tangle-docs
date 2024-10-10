@@ -1,4 +1,5 @@
 ## Multiple Event Listeners
+
 Arbitrarily many event listeners can be used in a single job. This is useful when you want to listen to multiple sources to handle job logic
 
 For example, using the example of the `PeriodicEventListener` above, we can add a `TangleEventListener` to the job:
@@ -20,4 +21,4 @@ pub fn hello_event_listener(
 }
 ```
 
-In this case, both the TangleEventListener, which is listening to the Tangle network, and the PeriodicEventListener, which is polling a web server, will be used in *parallel* to listen for events.
+In this case, both the `TangleEventListener`, which is listening to the Tangle network, and the `PeriodicEventListener`, which is polling a web server, will be used in _parallel_ to listen for events.

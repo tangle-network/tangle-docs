@@ -22,16 +22,23 @@ Periodic Listeners are particularly useful for tasks such as:
 - Automated reporting at set intervals
 
 ### PeriodicEventListener
+
 Some programs may only be interested in checking for events at regular intervals. In this case, the `PeriodicEventListener` can be used to simplify the process.
 
 A `PeriodicEventListener` is a wrapper that takes 4 type parameters:
 
-* `MSEC`: The number of milliseconds between each event check.
-* `T`: The inner event listener type
-* `Event`: The event type
-* `Ctx`: The context type
+- `MSEC`: The number of milliseconds between each event check.
+- `T`: The inner event listener type
+- `Event`: The event type
+- `Ctx`: The context type
+
+```rust
+pub struct PeriodicEventListener<const MSEC: usize, T, Event, Ctx>
+```
 
 We can make a `PeriodicEventListener` that ticks every 5000ms to check the status of a web server using [reqwest](crates.io/crates/reqwest).
+
+Start by defining our inner event listener (`T` = `WebPoller`, in this case)
 
 ```rust
 use gadget_sdk::event_listener::periodic::PeriodicEventListener;
@@ -45,6 +52,9 @@ pub struct WebPoller {
 Then, implement `EventListener` for `WebPoller`:
 
 ```rust
+// We don't need a context here, so use ()
+pub type MyContext = ();
+
 impl EventListener<serde_json::Value, MyContext> for WebPoller {
     /// Build the event listener. Note that this time, we don't necessarily need the context
     async fn new(_context: &MyContext) -> Result<Self, Error>
