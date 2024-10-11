@@ -57,11 +57,11 @@ Let's look at the key files:
 
 This file contains the core logic of your Blueprint, including job definitions, report structures, and event listeners. Here's an example of a simple "Hello World" job:
 
-1. **Jobs**: Define the main computational tasks of your Blueprint. For more details on creating jobs, see our [Blueprint Job Tutorial](../developers/blueprint-macros#jobs).
+1. **Jobs**: Define the main computational tasks of your Blueprint. For more details on creating jobs, see our [Blueprint Job Documentation](../developers/blueprint-macros/jobs).
 
-2. **Reports**: Structure the output of your jobs. Learn more about reports in our [Blueprint Report Documentation](../developers/blueprint-macros#reports).
+2. **Reports**: Define offchain reporting logic for the custom slashing functionality of your Blueprint. Learn more about reports in our [Blueprint Report Documentation](../developers/blueprint-macros/reports).
 
-3. **Event Listeners**: Set up listeners to react to on-chain events. For a deep dive into event listeners, check out our [Event Listener Guide](../developers/blueprint-event-listeners).
+3. **Event Listeners**: Set up listeners to react to on-chain events, offchain events, cron-job like listeners, and even custom event triggers. For a deep dive into event listeners, check out our [Event Listener Documentation](../developers/blueprint-event-listeners/introduction).
 
 Here's a basic example incorporating these elements:
 
@@ -169,23 +169,19 @@ Congratulations! You've created, built, and deployed your first Tangle Blueprint
 
 2. Implement reporting mechanisms using the [Reports Macro](/developers/blueprint-macros/reports) to ensure the integrity of your AVS.
 
-3. Dive deeper into [Event Listeners](/developers/blueprint-macros/event-listeners) to understand how to trigger your jobs and reports based on various events.
+3. Dive deeper into [Event Listeners](/developers/blueprint-event-listeners/introduction) to understand how to trigger your jobs and reports based on various events.
 
 4. Learn about [Context and Context Extensions](/developers/blueprint-macros/context) to manage dependencies and state in your Blueprint.
 
-5. Implement [Custom Registration Hooks](/developers/blueprint-macros/jobs#custom-registration-hooks) to handle operator registration logic.
+5. If you're interested in building for EigenLayer, check out our guide on [Building an EigenLayer AVS](/developers/eigenlayer-avs).
 
-6. Explore [Request Hooks](/developers/blueprint-macros/jobs#implement-request-hooks) to manage incoming requests to your AVS.
+6. Implement tests for your Blueprint using `tokio::test`. Learn more about [Testing Blueprints](/developers/blueprint-macros/testing).
 
-7. If you're interested in building for EigenLayer, check out our guide on [Building an EigenLayer AVS](/developers/eigenlayer-avs).
+7. Explore the Tangle network's features and how they interact with your Blueprint. Understand [EVM and Native Addresses](/developers/technicals/addresses) and [EVM to Substrate transfers](/developers/technicals/evm-substrate-transfers).
 
-8. Implement tests for your Blueprint using `tokio::test`. Learn more about [Testing Blueprints](/developers/blueprint-macros/testing).
+8. Familiarize yourself with [EVM Precompiles](/developers/technicals/precompiles) available on Tangle Network.
 
-9. Explore the Tangle network's features and how they interact with your Blueprint. Understand [EVM and Native Addresses](/developers/technicals/addresses) and [EVM to Substrate transfers](/developers/technicals/evm-substrate-transfers).
-
-10. Familiarize yourself with [EVM Precompiles](/developers/technicals/precompiles) available on Tangle Network.
-
-11. Learn about [Deploying Contracts with Hardhat](/developers/technicals/deploy-using-hardhat) for more advanced contract deployment scenarios.
+9. Learn about [Deploying Contracts with Hardhat](/developers/technicals/deploy-using-hardhat) for more advanced contract deployment scenarios.
 
 For more advanced topics and in-depth information, check out our other documentation pages and the [Rust async book](https://rust-lang.github.io/async-book/).
 
