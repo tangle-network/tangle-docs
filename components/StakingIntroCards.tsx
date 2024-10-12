@@ -13,18 +13,18 @@ const StakingIntroCards = () => {
       link: "../restake/staking-intro",
     },
     {
-      icon: <BetweenVerticalEnd className="text-blue-500" size={24} />,
-      title: "Liquid Staking",
-      description:
-        "Explore Tangle's liquid staking protocols for validator-specific staking operations and liquid staked tokens (LSTs).",
-      link: "../restake/lst-concepts",
-    },
-    {
       icon: <GrNodes className="text-blue-500" size={24} />,
       title: "Restaking",
       description:
         "Discover Tangle's permissionless and asset-configurable restaking system for Blueprints and shared security.",
       link: "../restake/restake-introduction",
+    },
+    {
+      icon: <BetweenVerticalEnd className="text-blue-500" size={24} />,
+      title: "Liquid Staking",
+      description:
+        "Explore Tangle's liquid staking protocols for validator-specific staking operations and liquid staked tokens (LSTs).",
+      link: "../restake/lst-concepts",
     },
   ];
 
