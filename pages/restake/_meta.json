@@ -9,27 +9,27 @@
     "title": "Validator Staking"
   },
   "staking-intro": "Introduction to Staking",
-  "nominator": "Nominating your TNT",
-  "-- liquid staking": {
-    "type": "separator",
-    "title": "Liquid Staking"
-  },
-  "lst-concepts": "Introduction",
-  "lst-working": "How Liquid Staking Works",
-  "create_a_pool": "Create a Liquid Staking Pool",
-  "join_a_pool": "Join a Liquid Staking Pool",
-  "lst-rewards": "Incentives",
-  "lst-assets": "Supported Assets",
-  "lst_developers": "Developer Docs",
   "-- restaking": {
     "type": "separator",
     "title": "Restaking"
   },
-  "restake-introduction": "Intro to Restaking",
+  "restake-introduction": "Introduction to Restaking",
   "restake-concepts": "Core Concepts",
   "incentives": "Incentives",
   "join_operator": "Operator Docs",
   "how_to_restake": "How to Restake",
   "assets": "Supported Assets",
-  "restake_developers": "Developer Docs"
+  "restake_developers": "Developer Docs",
+  "nominator": "Nominating your TNT",
+  "-- liquid staking": {
+    "type": "separator",
+    "title": "Liquid Staking"
+  },
+  "lst-concepts": "Introduction to Liquid Staking",
+  "lst-working": "How Liquid Staking Works",
+  "create_a_pool": "Create a Liquid Staking Pool",
+  "join_a_pool": "Join a Liquid Staking Pool",
+  "lst-rewards": "Incentives",
+  "lst-assets": "Supported Assets",
+  "lst_developers": "Developer Docs"
 }
