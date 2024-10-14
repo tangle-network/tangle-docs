@@ -4,11 +4,13 @@ title: Context and Context Extensions in Gadget SDK
 
 ## What is a `Context`?
 
-In the Gadget SDK, a `Context` simply holds any a job may have, that aren't direct inputs.
+In the Gadget SDK, a `Context` simply holds utilities a job may need that aren't direct inputs.
 
 A Context can include various elements such as:
 
 - HTTP clients for making network requests
+- Access to a keystore
+- Smart contract bindings and wrappers
 - Database connections for data persistence
 - Loggers for recording application events
 - Configuration objects for environment-specific settings
@@ -36,9 +38,9 @@ The Context pattern offers several significant benefits in software design and d
 
 5. Reusability: Jobs that rely on a Context can be more easily reused in different scenarios by simply providing a different Context.
 
-### Example: "Is it down for everyone or just me?" Service
+### Example: Uptime Service
 
-Let's examine an example of a blueprint similar to the "Down for Everyone or Just Me!" service. This example demonstrates how a Context can be used to provide an HTTP client to a job.
+An example service we can demonstrate contexts for is an uptime service or **`Is it down for everyone or just me?`**. The job the a user requests is a `url` and the function of the service is to check the uptime of this url. In order to check the uptime of the url, it is required to have access to an HTTP client for sending the request. Below, we've created a custom context that can be used to provide an HTTP client to a job.
 
 ```rust
 // Define the Context struct with an HTTP client
