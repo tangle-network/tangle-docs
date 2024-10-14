@@ -4,23 +4,19 @@
     "title": "Introduction"
   },
   "introduction": "Overview",
-  "-- staking": {
-    "type": "separator",
-    "title": "Validator Staking"
-  },
   "staking-intro": "Introduction to Staking",
+  "nominator": "Nominating your TNT",
+  "restake-concepts": "Restaking core concepts",
   "-- restaking": {
     "type": "separator",
     "title": "Restaking"
   },
   "restake-introduction": "Introduction to Restaking",
-  "restake-concepts": "Core Concepts",
   "incentives": "Incentives",
   "join_operator": "Operator Docs",
   "how_to_restake": "How to Restake",
   "assets": "Supported Assets",
   "restake_developers": "Developer Docs",
-  "nominator": "Nominating your TNT",
   "-- liquid staking": {
     "type": "separator",
     "title": "Liquid Staking"

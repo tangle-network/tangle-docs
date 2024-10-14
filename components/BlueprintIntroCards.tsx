@@ -32,10 +32,14 @@ const BlueprintIntroCards = () => {
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 my-12">
       {cards.map((card, index) => (
         <Link href={card.link} key={index} className="block">
-          <div className="border border-black p-4 h-full flex flex-col transition-colors duration-300 hover:bg-purple-100">
+          <div className="border border-black dark:border-white p-4 h-full flex flex-col transition-colors duration-300 hover:bg-purple-100 dark:hover:bg-purple-900">
             <div className="flex-shrink-0 mb-2">{card.icon}</div>
-            <h3 className="text-xl font-bold mb-4">{card.title}</h3>
-            <p className="text-sm flex-grow">{card.description}</p>
+            <h3 className="text-xl font-bold mb-4 text-black dark:text-white">
+              {card.title}
+            </h3>
+            <p className="text-sm flex-grow text-black dark:text-white">
+              {card.description}
+            </p>
           </div>
         </Link>
       ))}
