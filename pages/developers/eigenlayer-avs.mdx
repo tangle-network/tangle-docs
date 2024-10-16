@@ -1,0 +1,125 @@
+---
+title: Build an Eigenlayer AVS
+---
+
+# Building EVM Event Listeners for Eigenlayer Support
+
+## Introduction
+
+This will guide you through setting up and using EVM event listeners for Eigenlayer support, using examples from the
+incredible squaring implementation.
+
+EVM event listeners are crucial for interacting with smart contracts on Ethereum-compatible networks.
+In the context of Eigenlayer and the blueprint macro system, these listeners allow your Gadget to respond to specific
+events emitted by Eigenlayer contracts.
+
+## Setting Up EVM Event Listeners
+
+### 1. Contract Definition
+
+First, define the contract interface using the `sol!` macro. This generates Rust bindings for your smart contract.
+
+```rust
+sol!(
+    #[allow(missing_docs)]
+    #[sol(rpc)]
+    IncredibleSquaringTaskManager,
+    "contracts/out/IncredibleSquaringTaskManager.sol/IncredibleSquaringTaskManager.json"
+);
+```
+
+### 2. Job Definition with Event Handler
+
+Use the [`#[job]`](./blueprint-macros/jobs.mdx) macro to define a function that will handle specific events. Include the `event_listener` attribute to specify the event details:
+
+```rust
+#[job(
+    id = 1,
+    params(number_to_be_squared, task_created_block, quorum_numbers, quorum_threshold_percentage),
+    result(_),
+    event_listener(
+        instance = IncredibleSquaringTaskManager,
+        event = IncredibleSquaringTaskManager::NewTaskCreated,
+        event_converter = convert_event_to_inputs,
+        callback = IncredibleSquaringTaskManager::IncredibleSquaringTaskManagerCalls::respondToTask
+    ),
+)]
+pub async fn xsquare(
+    number_to_be_squared: U256,
+    task_created_block: u32,
+    quorum_numbers: Bytes,
+    quorum_threshold_percentage: u32,
+) -> Result<respondToTaskCall, Infallible> {
+    // Implementation details...
+}
+```
+
+### 3. Event Converter Function
+
+Implement a function to convert the event data into the format expected by your job function:
+
+```rust
+pub fn convert_event_to_inputs(
+    event: IncredibleSquaringTaskManager::NewTaskCreated,
+) -> (U256, u32, Bytes, u32) {
+    let number_to_be_squared = event.task.numberToBeSquared;
+    let task_created_block = event.task.taskCreatedBlock;
+    let quorum_numbers = event.task.quorumNumbers;
+    let quorum_threshold_percentage = event.task.quorumThresholdPercentage;
+    (
+        number_to_be_squared,
+        task_created_block,
+        quorum_numbers,
+        quorum_threshold_percentage,
+    )
+}
+```
+
+## Implementing the Event Listener
+
+### 1. Set Up the Provider
+
+Create an HTTP provider to connect to the Ethereum network:
+
+```rust
+let http_provider = ProviderBuilder::new()
+    .with_recommended_fillers()
+    .wallet(wallet.clone())
+    .on_http(self.env.rpc_endpoint.parse()?)
+    .root()
+    .clone()
+    .boxed();
+```
+
+### 2. Create the Contract Instance
+
+Instantiate the contract using the generated bindings:
+
+```rust
+let contract: IncredibleSquaringTaskManager::IncredibleSquaringTaskManagerInstance =
+    IncredibleSquaringTaskManager::IncredibleSquaringTaskManagerInstance::new(contract_address, provider);
+```
+
+### 3. Set Up the Event Watcher
+
+Use the `EventWatcher` to listen for and handle events:
+
+```rust
+EventWatcher::run(
+    &EigenlayerEventWatcher,
+    contract,
+    vec![Box::new(x_square_eigen)],
+)
+.await?;
+```
+
+## Best Practices and Considerations
+
+1. **Error Handling**: Implement robust error handling in your event listener functions to manage potential failures gracefully.
+2. **Asynchronous Operations**: Use `async/await` for operations that may take time, such as network requests or complex computations.
+3. **Event Filtering**: Consider implementing additional filtering logic in your event converter function if you need to process only specific events based on certain criteria.
+4. **State Management**: If your Gadget needs to maintain state between events, consider implementing a state management system.
+5. **Testing**: Implement unit tests for your event handling logic, including the event converter function.
+6. **Logging**: Use appropriate logging to track the event handling process and aid in debugging.
+7. **Gas Considerations**: Be aware of the gas costs associated with your on-chain interactions, especially when responding to events with transactions.
+8. **Scalability**: Design your event handling system to scale with the number of events you expect to process.
