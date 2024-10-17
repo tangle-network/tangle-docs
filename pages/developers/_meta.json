@@ -4,7 +4,6 @@
     "title": "Introduction"
   },
   "blueprints": "Blueprints",
-  "eigenlayer": "Eigenlayer Interoperability",
   "services": "Use Cases",
   "-- gadget-tutorial": {
     "type": "separator",
