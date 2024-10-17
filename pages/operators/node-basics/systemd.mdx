@@ -162,53 +162,58 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 
       **Account Keys**
 
-      ```sh filename="Acco" copy
-      ./target/release/tangle key insert --base-path <BASE_PATH> \
-      --chain tangle-mainnet \
-      --scheme Sr25519 \
-      --suri <"12-MNEMONIC-PHARSE"> \
-      --key-type acco
-      ```
+        ```sh filename="Acco" copy
+
+        ./target/release/tangle key insert --base-path <BASE_PATH> \
+        --chain tangle-mainnet \
+        --scheme Sr25519 \
+        --suri <"12-MNEMONIC-PHRASE"> \
+        --key-type acco
+        ```
 
       **Babe Keys**
 
-      ```sh filename="Babe" copy
-      ./target/release/tangle key insert --base-path <BASE_PATH> \
-      --chain tangle-mainnet \
-      --scheme Sr25519 \
-      --suri <"12-MNEMONIC-PHARSE"> \
-      --key-type babe
-      ```
+        ```sh filename="Babe" copy
+
+        ./target/release/tangle key insert --base-path <BASE_PATH> \
+        --chain tangle-mainnet \
+        --scheme Sr25519 \
+        --suri <"12-MNEMONIC-PHRASE"> \
+        --key-type babe
+        ```
 
       **Im-online Keys** - **these keys are optional**
 
-      ```sh filename="Imonline" copy
-      ./target/release/tangle key insert --base-path <BASE_PATH> \
-      --chain tangle-mainnet \
-      --scheme Sr25519 \
-      --suri <"12-MNEMONIC-PHARSE"> \
-      --key-type imon
-      ```
+        ```sh filename="Imonline" copy
+
+        ./target/release/tangle key insert --base-path <BASE_PATH> \
+        --chain tangle-mainnet \
+        --scheme Sr25519 \
+        --suri <"12-MNEMONIC-PHRASE"> \
+        --key-type imon
+        ```
 
       **Role Keys**
 
-      ```sh filename="Role" copy
-      ./target/release/tangle key insert --base-path <BASE_PATH> \
-      --chain tangle-mainnet \
-      --scheme Ecdsa \
-      --suri <"12-MNEMONIC-PHARSE"> \
-      --key-type role
-      ```
+        ```sh filename="Role" copy
+
+        ./target/release/tangle key insert --base-path <BASE_PATH> \
+        --chain tangle-mainnet \
+        --scheme Ecdsa \
+        --suri <"12-MNEMONIC-PHRASE"> \
+        --key-type role
+        ```
 
       **Grandpa Keys**
 
-      ```sh filename="Grandpa" copy
-      ./target/release/tangle key insert --base-path <BASE_PATH> \
-      --chain tangle-mainnet \
-      --scheme Ed25519 \
-      --suri <"12-MNEMONIC-PHARSE"> \
-      --key-type gran
-      ```
+        ```sh filename="Grandpa" copy
+
+        ./target/release/tangle key insert --base-path <BASE_PATH> \
+        --chain tangle-mainnet \
+        --scheme Ed25519 \
+        --suri <"12-MNEMONIC-PHRASE"> \
+        --key-type gran
+        ```
 
       **Node key**
 
