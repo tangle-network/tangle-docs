@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
-import { FiZoomIn, FiZoomOut, FiRefreshCw } from "react-icons/fi";
+import { FiZoomIn, FiZoomOut, FiRefreshCw, FiX } from "react-icons/fi";
 
 interface ExpandableImageProps {
   src: string;
@@ -18,7 +18,6 @@ const ExpandableImage: React.FC<ExpandableImageProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
 
-  // Ensure the src starts with a leading slash or is an absolute URL
   const imageSrc =
     src.startsWith("http") || src.startsWith("/") ? src : `/${src}`;
 
@@ -27,7 +26,7 @@ const ExpandableImage: React.FC<ExpandableImageProps> = ({
     resetZoom();
   };
 
-  const handleModalClick = useCallback(() => {
+  const handleCloseModal = useCallback(() => {
     setIsExpanded(false);
     resetZoom();
   }, []);
@@ -59,18 +58,29 @@ const ExpandableImage: React.FC<ExpandableImageProps> = ({
     [scale],
   );
 
+  const handleKeyDown = useCallback(
+    (event: KeyboardEvent) => {
+      if (event.key === "Escape" && isExpanded) {
+        handleCloseModal();
+      }
+    },
+    [isExpanded, handleCloseModal],
+  );
+
   useEffect(() => {
     const container = containerRef.current;
     if (isExpanded && container) {
       container.addEventListener("wheel", handleScroll, { passive: false });
+      window.addEventListener("keydown", handleKeyDown);
     }
 
     return () => {
       if (container) {
         container.removeEventListener("wheel", handleScroll);
       }
+      window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isExpanded, handleScroll]);
+  }, [isExpanded, handleScroll, handleKeyDown]);
 
   return (
     <>
@@ -81,14 +91,13 @@ const ExpandableImage: React.FC<ExpandableImageProps> = ({
           width={800}
           height={600}
           onClick={handleImageClick}
-          style={{ maxWidth: "100%", height: "auto" }}
-          className="mx-auto"
+          className="mx-auto max-w-full h-auto"
         />
       </div>
       {isExpanded && (
         <div
           className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50"
-          onClick={handleModalClick}
+          onClick={handleCloseModal}
         >
           <div
             ref={containerRef}
@@ -103,12 +112,9 @@ const ExpandableImage: React.FC<ExpandableImageProps> = ({
               ref={imageRef}
               src={imageSrc}
               alt={alt}
+              className="w-full h-full object-contain transition-transform duration-200 ease-out"
               style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "contain",
                 transform: `scale(${scale})`,
-                transition: "transform 0.2s ease-out",
                 cursor: allowZoom && scale > 1 ? "move" : "default",
                 transformOrigin: "center",
                 translate: `${position.x}px ${position.y}px`,
@@ -119,18 +125,21 @@ const ExpandableImage: React.FC<ExpandableImageProps> = ({
                 <button
                   onClick={handleZoomIn}
                   className="bg-white bg-opacity-50 p-2 rounded-full hover:bg-opacity-75 transition-colors"
+                  aria-label="Zoom in"
                 >
                   <FiZoomIn size={24} />
                 </button>
                 <button
                   onClick={handleZoomOut}
                   className="bg-white bg-opacity-50 p-2 rounded-full hover:bg-opacity-75 transition-colors"
+                  aria-label="Zoom out"
                 >
                   <FiZoomOut size={24} />
                 </button>
                 <button
                   onClick={resetZoom}
                   className="bg-white bg-opacity-50 p-2 rounded-full hover:bg-opacity-75 transition-colors"
+                  aria-label="Reset zoom"
                 >
                   <FiRefreshCw size={24} />
                 </button>
