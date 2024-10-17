@@ -5,19 +5,19 @@ description: Integrating EigenLayer AVSs into Tangle
 
 # Overview: Incorporating EigenLayer AVSs into Tangle
 
-We have built a powerful integration with EigenLayer through their Actively Validated Services (AVS).
-We have enabled the ability for Validators to extend their functionality across both Tangle and EigenLayer's Networks. Users and developers can
-leverage AVSs that operate simultaneously on both the EigenLayer and Tangle networks, creating new opportunities for
-cross-chain functionalities.
+We have built a powerful integration with EigenLayer through their actively validated services (AVS). We have
+enabled the ability for validators to extend their functionality across both Tangle and EigenLayer's networks.
+Users and developers can leverage AVSs that operate simultaneously on both the EigenLayer and Tangle networks,
+creating new opportunities for cross-chain functionalities.
 
-This page provides an overview of how Tangle incorporates EigenLayer AVSs, including the creation of the Tangle AVS — an
-EigenLayer AVS that runs a Tangle Validator — as well as the tools we provide for building AVSs in Rust. By combining
-the strengths of EigenLayer’s decentralized security infrastructure with Tangle’s advanced validation and cross-chain
-capabilities, users can interact with both networks via a single AVS.
+This page provides an overview of how Tangle incorporates EigenLayer AVSs, including the creation of the Tangle
+AVS — an EigenLayer AVS that runs a Tangle validator — as well as the tools we provide for building AVSs in Rust.
+By combining the strengths of EigenLayer’s decentralized security infrastructure with Tangle’s advanced validation
+and cross-chain capabilities, users can interact with both networks via a single AVS.
 
 ## What is an EigenLayer AVS?
 
-An Actively Validated Service (AVS) in EigenLayer allows Operators to provide services beyond traditional staking,
+An actively validated service (AVS) in EigenLayer allows operators to provide services beyond traditional staking,
 participating in security and decentralized services across multiple protocols.
 
 More information on AVSs can be found [here](https://docs.eigenlayer.xyz/eigenlayer/avs-guides/avs-developer-guide)
@@ -32,7 +32,7 @@ specialized cross-chain slashing, validator management, and orchestration featur
 
 ### What is the Tangle AVS?
 
-The Tangle AVS is an EigenLayer-compatible AVS that runs a Tangle Validator, allowing participants to interact with
+The Tangle AVS is an EigenLayer-compatible AVS that runs a Tangle validator, allowing participants to interact with
 both the EigenLayer and Tangle networks through a single AVS. This unified AVS provides significant benefits for validators,
 offering enhanced cross-network functionality while maintaining security and scalability.
 
@@ -71,15 +71,9 @@ provides the necessary performance and reliability required to support scalable 
 
 ### Tools for Developing AVSs in Rust:
 
-    1. Rust-Based AVS Implementations:
-        At Tangle, we have developed EigenLayer’s Incredible Squaring AVS in Rust, which serves as a model for building
-        efficient AVSs. This implementation highlights the potential of Rust in delivering high-performance
-        Actively Validated Services that operate seamlessly across decentralized networks.
-
-    2. Custom AVS Development:
-        Developers can utilize our provided tools for creating their own AVSs in Rust. You can find the EigenSDK-RS
-        [here](https://github.com/webb-tools/eigensdk-rs). Whether you want to add custom logic or integrate unique services,
-        our Rust tools give developers the flexibility to innovate within the EigenLayer-Tangle ecosystem.
+Developing AVSs in Rust is straightforward with the help of our [Blueprints](../../developers/blueprints.mdx). We have
+both a Blueprint template and ready-made examples for creating AVSs, as well as other software formats. Regardless of the
+specific goals of your AVS, our tools enable you to achieve more with less code, streamlining the development process.
 
 ## The Intersection of Tangle and EigenLayer: Unified AVS Functionality
 
