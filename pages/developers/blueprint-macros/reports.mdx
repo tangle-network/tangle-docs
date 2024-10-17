@@ -1,0 +1,130 @@
+---
+title: Reports Macro
+---
+
+# Blueprint Reports Macro System Documentation
+
+The report macro is designed to provide a streamlined interface for creating and submitting slashing reports within an AVS (Actively Validated Service). This system allows developers to define specific reporting criteria and automate the process of submitting reports to their respective protocols, such as Tangle or Eigenlayer. The reports system is flexible and can be triggered by various event sources, including job-specific events, general service behaviors, or custom event listeners.
+
+Reports are crucial for maintaining the integrity and security of the AVS by identifying and penalizing malicious or faulty behavior. The report macro system is continuously evolving, and we welcome feature requests and contributions on [our GitHub](https://github.com/tangle-network/gadget/issues).
+
+## The #[report] Macro
+
+The `#[report]` macro is used to define individual reporting functions within a blueprint. It allows you to specify various parameters and metadata for each report.
+
+```rust
+#[report(
+    id = <report_id>,
+    params(<param_list>),
+    result(<result_type>),
+    event_listener(<EventListenerType>),
+)]
+pub fn report_name(<parameters>) -> Result<<return_type>, <error_type>> {
+    // Report implementation
+}
+```
+
+- **_`id`_**: A unique identifier for the report. This can be used to associate reports with specific jobs or behaviors.
+- **_`params`_**: A list of parameters that the report function accepts.
+- **_`result`_**: The type of result the report produces (often represented by an underscore \_).
+- **_`event_listener`_**: Specifies the event listener that triggers the report generation.
+
+### Event Listeners for Reports
+
+Reports can be triggered by various types of event listeners. Here are some examples:
+
+1. **Job-specific Listeners**: These listeners are tied to specific job IDs and trigger reports based on the outcome or behavior of particular jobs.
+
+2. **Periodic Listeners**: These listeners trigger reports at regular intervals, similar to cron jobs.
+
+3. **EVM Contract Event Listeners**: These listeners monitor events from EVM-compatible smart contracts and trigger reports based on specific contract events.
+
+4. **Custom Event Listeners**: Developers can implement custom event listeners to trigger reports based on specific criteria or complex conditions.
+
+For more information on implementing custom event listeners, refer to the [Event Listeners documentation](./event-listeners.mdx).
+
+### Examples
+
+1. Job-specific Slashing Report:
+
+```rust
+#[report(
+    id = 0,
+    params(job_id, operator_address),
+    result(),
+    event_listener(JobSpecificListener),
+)]
+pub fn job_failure_report(job_id: u64, operator_address: Address) -> Result<(), Error> {
+    // Implementation to generate and submit a report for a failed job
+    println!("Generating report for failed job {} by operator {}", job_id, operator_address);
+    // Submit report to Tangle protocol
+    Ok(())
+}
+```
+
+2. Periodic Uptime Report:
+
+```rust
+#[report(
+    id = 1,
+    params(),
+    result(),
+    event_listener(PeriodicListener),
+)]
+pub async fn uptime_report() -> Result<(), Error> {
+    // Implementation to generate and submit a periodic uptime report
+    let uptime_data = collect_uptime_data().await?;
+    println!("Submitting uptime report: {:?}", uptime_data);
+    // Submit report to Eigenlayer protocol
+    Ok(())
+}
+```
+
+3. EVM Contract Event Report:
+
+```rust
+#[report(
+    id = 2,
+    params(event_data),
+    result(),
+    event_listener(EVMContractEventListener),
+)]
+pub async fn contract_violation_report(event_data: Vec<u8>) -> Result<(), Error> {
+    // Implementation to generate and submit a report based on a contract event
+    let violation = parse_contract_event(event_data)?;
+    println!("Reporting contract violation: {:?}", violation);
+    // Submit report to Tangle protocol
+    Ok(())
+}
+```
+
+## Integration with Jobs
+
+Reports can be closely integrated with the [Jobs system](./jobs.mdx) to provide comprehensive monitoring and slashing capabilities. For example, you can create reports that are triggered by specific job outcomes or that monitor the overall performance of your AVS jobs.
+
+## Custom Protocol Integration
+
+While the examples above use Tangle and Eigenlayer as the target protocols, the report macro system is designed to be flexible. Developers can implement custom protocol handlers to submit reports to other systems or to handle report data in specific ways.
+
+```rust
+struct CustomProtocolHandler;
+impl ProtocolHandler for CustomProtocolHandler {
+    fn submit_report(&self, report_data: ReportData) -> Result<(), Error> {
+        // Custom implementation for submitting reports
+    }
+}
+
+#[report(
+    id = 3,
+    params(custom_data),
+    result(),
+    event_listener(CustomEventListener),
+)]
+pub fn custom_protocol_report(custom_data: CustomData) -> Result<(), Error> {
+    // Implementation using a custom protocol handler
+    let report = generate_custom_report(custom_data)?;
+    CustomProtocolHandler.submit_report(report)
+}
+```
+
+By leveraging the report macro system, developers can create robust and flexible reporting mechanisms for their AVS, ensuring the integrity and security of their service across various protocols and use cases.

@@ -1,19 +1,23 @@
-# Introduction to Restaking
+import ExpandableImage from "../../components/ExpandableImage";
 
-Restaking is an innovative concept in blockchain technology that allows validators to reuse their staked tokens to provide additional services and earn rewards without unstaking from the original network. This enhances the efficiency and utility of staked assets.
+# Introduction to Tangle Restaking
 
-In a typical proof-of-stake blockchain, validators lock up tokens to participate in block production and earn staking rewards. Those staked tokens cannot be used for any other purpose. Restaking changes this by enabling those same staked tokens to be "restaked" to provide other services and earn additional rewards on top of the base staking rewards.
+Restaking is an innovative concept in blockchain technology that allows validators to reuse their staked tokens to provide additional services and earn rewards without unstaking from the original network. This enhances the efficiency and utility of staked assets. Restaking can be provided through native staking mechanisms or through staking of existing liquid staked tokens, exposing the stake to additional rewards and slashing conditions.
 
-This is achieved by the validator opting-in to restake a portion of their staked tokens into a restaking protocol or application, becoming an "operator". The staked tokens still remain staked on the original chain and earn their base rewards. But they are now also being used to provide security, computation, or other services to the restaking protocol, allowing the now-operator to earn additional restaking rewards.
+Tangle provides permissionless asset restaking to developers and customers building Blueprints and deploying Blue service instances. Any asset created on and bridged to Tangle can be used as collateral to stake in our restaking infrastructure. These restaked assets, commonly in the form of LSTs, act as security collateral for service instances that are requested on-demand. The restaking providers (the restakers) earn rewards proportional to the rewards issued to the services and Blueprints on Tangle, depending on the usage and utility of the services themselves.
+
+The restaking infrastructure divides assets into pools, which can be created to represent a single asset or a basket of similarly valued assets. Pools of assets are used to secure Tangle Blueprint service instances and are rewarded collectively as pools. This is beneficial when integrating many liquid staked tokens of a single protocol, such as validator-specific liquid staking protocols, or when bundling lots of different LSTs of a single ecosystem such as a basket of ETH LSTs.
 
 ## Benefits of restaking include:
 
-- Increased efficiency of staked capital
-- Additional revenue streams for stakers
-- Boosted security for restaking protocols by leveraging security of the underlying chain
+- Increased efficiency of staked capital by sharing it across instances
+- Additional revenue streams for stakers and operators
+- Boosted security for protocols leveraging new assets as security capital
 - Innovation in new blockchain services by harnessing decentralized resources
 
 ## How Tangle Network Uses Restaking
+
+<ExpandableImage src="/images/restake-workflow.png" alt="Restaking Workflow" />
 
 Tangle Network has implemented a unique restaking system to allow its validator set to provide Actively Validated Services (AVS) to power advanced decentralized applications. Users can restake their TNT tokens to run service instances based on blueprints created by developers.
 

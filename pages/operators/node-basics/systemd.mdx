@@ -15,16 +15,16 @@ Before following this guide, ensure that your machine's environment is set up an
 
 ### 1. Fetch the Tangle Network Binary
 
-Use the latest release version in the url in place of `<VERSION>`, you can visit [releases](https://github.com/webb-tools/tangle/releases) page to view the latest info.
+Use the latest release version in the url in place of `<VERSION>`, you can visit [releases](https://github.com/tangle-network/tangle/releases) page to view the latest info.
 
 ```
-wget wget https://github.com/webb-tools/tangle/releases/download/<VERSION>/tangle-linux-amd64
+wget wget https://github.com/tangle-network/tangle/releases/download/<VERSION>/tangle-linux-amd64
 ```
 
 For example, at the time of writing this document, the latest release is v0.6.1 and the link would be as follows
 
 ```
-wget https://github.com/webb-tools/tangle/releases/download/v0.6.1/tangle-mainnet-linux-amd64
+wget https://github.com/tangle-network/tangle/releases/download/v0.6.1/tangle-mainnet-linux-amd64
 ```
 
 ### 2. Install Dependencies
@@ -52,68 +52,83 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 
 <Tabs items={['Full Node Setup', 'Validator Node Setup', 'Full Node with EVM Trace Setup']}>
   <Tabs.Tab>
-    
-        #### Create the Service Configuration File
-        Run the following commands to create the service configuration file:
 
-        ```sh filename="mv" copy
-        # Move the tangle binary to the bin directory (assumes you are in repo root directory)
-        sudo mv ./target/release/tangle /usr/bin/
-        ```
+    #### Generate node key file
 
-        Add the following contents to the service configuration file. Make sure to replace the **USERNAME** with the username you created in the previous step, add your own node name, and update
-        any paths or ports to your own preference.
+      ```sh filename="node-key" copy
+      ./target/release/tangle key generate-node-key \
+      --file <BASE_PATH>/node-key
+      ```
 
-        **Note:** The below configuration assumes you are targeting the Tangle Network chainspec.
+      To ensure you have successfully generated the key correctly run:
 
-        **Full Node Service Configuration File**
+      ```sh filename="ls" copy
+      ls <BASE_PATH>/node-key
+      ```
 
-        ```sh filename="full.service" copy
-        sudo tee /etc/systemd/system/full.service > /dev/null << EOF
-        [Unit]
-        Description=Tangle Full Node
-        After=network-online.target
-        StartLimitIntervalSec=0
+    #### Create the Service Configuration File
 
-        [Service]
-        User=<USERNAME>
-        Restart=always
-        RestartSec=3
-        ExecStart=/usr/bin/tangle \
-          --base-path <BASE_PATH> \
-          --name <NODE-NAME> \
-          --chain tangle-mainnet \
-          --node-key-file "/home/<USERNAME>/node-key" \
-          --rpc-cors all \
-          --port 9946 \
-          --no-mdns \
-          --telemetry-url "wss://telemetry.polkadot.io/submit/ 1"
+      Run the following commands to create the service configuration file:
 
-        [Install]
-        WantedBy=multi-user.target
-        EOF
-        ```
-        #### Enable the services
+      ```sh filename="mv" copy
+      # Move the tangle binary to the bin directory (assumes you are in repo root directory)
+      sudo mv ./target/release/tangle /usr/bin/
+      ```
 
-        After ensuring the config is correctly written to /etc/systemd/system/full.service, enable and start the service:
+      Add the following contents to the service configuration file. Make sure to replace the **USERNAME** with the username you created in the previous step, add your own node name, and update
+      any paths or ports to your own preference.
 
-        ```sh filename="enable service" copy
-        sudo systemctl daemon-reload
-        sudo systemctl enable full
-        sudo systemctl start full
-        ```
-        **Check the Status of the Service**
-        ```sh filename="status" copy
-        sudo systemctl status full
-        ```
-        You should see the node connecting to the network and syncing with the latest blocks.
+      **Note:** The below configuration assumes you are targeting the Tangle Network chainspec.
 
-        **Tail the Latest Outputs**
-        ```sh filename="logs" copy
-        sudo journalctl -u full.service -f
-        ```
+      **Full Node Service Configuration File**
 
-        #### Network sync
+      ```sh filename="full.service" copy
+      sudo tee /etc/systemd/system/full.service > /dev/null << EOF
+      [Unit]
+      Description=Tangle Full Node
+      After=network-online.target
+      StartLimitIntervalSec=0
+
+      [Service]
+      User=<USERNAME>
+      Restart=always
+      RestartSec=3
+      ExecStart=/usr/bin/tangle \
+        --base-path <BASE_PATH> \
+        --name <NODE-NAME> \
+        --chain tangle-mainnet \
+        --node-key-file "<BASE_PATH>/node-key" \
+        --rpc-cors all \
+        --port 9946 \
+        --no-mdns \
+        --telemetry-url "wss://telemetry.polkadot.io/submit/ 1"
+
+      [Install]
+      WantedBy=multi-user.target
+      EOF
+      ```
+
+    #### Enable the services
+
+      After ensuring the config is correctly written to /etc/systemd/system/full.service, enable and start the service:
+
+      ```sh filename="enable service" copy
+      sudo systemctl daemon-reload
+      sudo systemctl enable full
+      sudo systemctl start full
+      ```
+      **Check the Status of the Service**
+      ```sh filename="status" copy
+      sudo systemctl status full
+      ```
+      You should see the node connecting to the network and syncing with the latest blocks.
+
+      **Tail the Latest Outputs**
+      ```sh filename="logs" copy
+      sudo journalctl -u full.service -f
+      ```
+
+    #### Network sync
 
       After a full node is started, it will start syncing with the current chain state. Depending on the size of the chain when you do this, this step may take anywhere from a few minutes to a few hours.
 
@@ -130,22 +145,22 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 
   </Tabs.Tab>
   <Tabs.Tab>
- 
+
     #### Generate and Store Keys
 
-        We need to generate the required keys for our node. For more information on these keys, please see the [Required Keys](https://wiki.polkadot.network/docs/learn-cryptography) section.
-        The keys we need to generate include the following:
+      We need to generate the required keys for our node. For more information on these keys, please see the [Required Keys](https://wiki.polkadot.network/docs/learn-cryptography) section.
+      The keys we need to generate include the following:
 
-        - Role key (Ecdsa)
-        - Babe key (Sr25519)
-        - Account key (Sr25519)
-        - Grandpa key (Ed25519)
-        - ImOnline key (Sr25519)
+      - Role key (Ecdsa)
+      - Babe key (Sr25519)
+      - Account key (Sr25519)
+      - Grandpa key (Ed25519)
+      - ImOnline key (Sr25519)
 
-        Let's now insert our required secret keys, we will not pass the SURI in the command, instead it will be interactive, where you
-        should paste your SURI when the command asks for it.
+      Let's now insert our required secret keys, we will not pass the SURI in the command, instead it will be interactive, where you
+      should paste your SURI when the command asks for it.
 
-        **Account Keys**
+      **Account Keys**
 
         ```sh filename="Acco" copy
 
@@ -156,7 +171,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
         --key-type acco
         ```
 
-        **Babe Keys**
+      **Babe Keys**
 
         ```sh filename="Babe" copy
 
@@ -167,7 +182,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
         --key-type babe
         ```
 
-        **Im-online Keys** - **these keys are optional**
+      **Im-online Keys** - **these keys are optional**
 
         ```sh filename="Imonline" copy
 
@@ -178,7 +193,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
         --key-type imon
         ```
 
-        **Role Keys**
+      **Role Keys**
 
         ```sh filename="Role" copy
 
@@ -189,7 +204,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
         --key-type role
         ```
 
-        **Grandpa Keys**
+      **Grandpa Keys**
 
         ```sh filename="Grandpa" copy
 
@@ -200,57 +215,65 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
         --key-type gran
         ```
 
-        To ensure you have successfully generated the keys correctly run:
+      **Node key**
 
-        ```sh filename="ls" copy
-        ls <BASE_PATH>/chains/tangle-mainnet/keystore/
-        # You should see a some file(s) there, these are the keys.
-        ```
+      ```sh filename="node-key" copy
+      ./target/release/tangle key generate-node-key \
+      --file <BASE_PATH>/node-key
+      ```
 
-        ## System service setup
+      To ensure you have successfully generated the keys correctly run:
 
-        Run the following commands to create the service configuration file:
+      ```sh filename="ls" copy
+      ls <BASE_PATH>/chains/tangle-mainnet/keystore/
+      # You should see a some file(s) there, these are the keys.
+      ```
 
-        ```sh filename="mv" copy
-        # Move the tangle binary to the bin directory (assumes you are in repo root directory)
-        sudo mv ./target/release/tangle /usr/bin/
-        ```
+    ## System service setup
 
-        Add the following contents to the service configuration file. Make sure to replace the **USERNAME** with the username you created in the previous step, add your own node name, and update any paths or ports to your own preference.
+      Run the following commands to create the service configuration file:
 
-        **Note:** The below configuration assumes you are targeting the Tangle Network chainspec.
+      ```sh filename="mv" copy
+      # Move the tangle binary to the bin directory (assumes you are in repo root directory)
+      sudo mv ./target/release/tangle /usr/bin/
+      ```
 
-        **Caution:** Ensure you insert the keys using the instructions for your node.[generate keys](#generate-and-store-keys)
-        The key autogeneration feature is removed for mainnet releases. The `--auto-insert-keys` is deprecated and you should manually generate and manage your keys.
+      Add the following contents to the service configuration file. Make sure to replace the **USERNAME** with the username you created in the previous step, add your own node name, and update any paths or ports to your own preference.
 
-        **Validator Node**
+      **Note:** The below configuration assumes you are targeting the Tangle Network chainspec.
 
-        ```sh filename="validator.service" copy
-        sudo tee /etc/systemd/system/validator.service > /dev/null << EOF
-        [Unit]
-        Description=Tangle Validator Node
-        After=network-online.target
-        StartLimitIntervalSec=0
+      **Caution:** Ensure you insert the keys using the instructions for your node.[generate keys](#generate-and-store-keys)
+      The key autogeneration feature is removed for mainnet releases. The `--auto-insert-keys` is deprecated and you should manually generate and manage your keys.
 
-        [Service]
-        User=<USERNAME>
-        Restart=always
-        RestartSec=3
-        ExecStart=/usr/bin/tangle \
-          --base-path <BASE_PATH> \
-          --name <NODE-NAME> \
-          --chain tangle-mainnet \
-          --node-key-file "/home/<USERNAME>/node-key" \
-          --port 30333 \
-          --validator \
-          --no-mdns \
-          --telemetry-url "wss://telemetry.polkadot.io/submit/ 1"
+      **Validator Node**
 
-        [Install]
-        WantedBy=multi-user.target
-        EOF
-        ```
-      #### Enable Validator Node
+      ```sh filename="validator.service" copy
+      sudo tee /etc/systemd/system/validator.service > /dev/null << EOF
+      [Unit]
+      Description=Tangle Validator Node
+      After=network-online.target
+      StartLimitIntervalSec=0
+
+      [Service]
+      User=<USERNAME>
+      Restart=always
+      RestartSec=3
+      ExecStart=/usr/bin/tangle \
+        --base-path <BASE_PATH> \
+        --name <NODE-NAME> \
+        --chain tangle-mainnet \
+        --node-key-file "<BASE_PATH>/node-key" \
+        --port 30333 \
+        --validator \
+        --no-mdns \
+        --telemetry-url "wss://telemetry.polkadot.io/submit/ 1"
+
+      [Install]
+      WantedBy=multi-user.target
+      EOF
+      ```
+
+    #### Enable Validator Node
 
       Double check that the config has been written to `/etc/systemd/system/validator.service` correctly.
       If so, enable the service so it runs on startup, and then try to start it now:
@@ -307,7 +330,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
       2023-03-22 14:55:53 discovered: 12D3KooWNHhcCUsZTdTkADmDJbSK9YjbtscHHA8R4jvrbGwjPVez /ip4/192.168.88.12/tcp/30305
       ```
 
-      #### Network sync
+    #### Network sync
 
       After a validator node is started, it will start syncing with the current chain state. Depending on the size of the chain when you do this, this step may take anywhere from a few minutes to a few hours.
 
@@ -322,41 +345,56 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
       2021-06-17 03:08:00 ⚙️  Syncing 37.0 bps, target=#5553768 (22 peers), best: #27059 (0x5b73…6fc9), finalized #26624 (0x9dd9…27f8), ⬇ 14.3kiB/s ⬆ 4.4kiB/s
       ```
 
-      #### Bond TNT and setup validator Account
+    #### Bond TNT and setup validator Account
 
       After your node is synced, you are ready to setup keys and onboard as a validator, make sure to complete the steps
       at [Start Validating](../validator/introduction.mdx) to start validating.
 
   </Tabs.Tab>
   <Tabs.Tab>
-  The following is the service configuration file, use this while completing the Full Node guide.
-            **Note:** To run with evm trace, you should use a binary built with `txpool` flag, refer to [Binaries](./node-software.mdx#binaries) page for more details.
 
-          ```sh filename="full.service" copy
-          sudo tee /etc/systemd/system/full.service > /dev/null << EOF
-          [Unit]
-          Description=Tangle Full Node
-          After=network-online.target
-          StartLimitIntervalSec=0
+    #### Generate node key file
 
-          [Service]
-          User=<USERNAME>
-          Restart=always
-          RestartSec=3
-          ExecStart=/usr/bin/tangle \
-            --base-path <BASE_PATH> \
-            --name <NODE-NAME> \
-            --chain tangle-mainnet \
-            --node-key-file "/home/<USERNAME>/node-key" \
-            --rpc-cors all \
-            --port 9946 \
-            --no-mdns --ethapi trace,debug,txpool
+      ```sh filename="node-key" copy
+      ./target/release/tangle key generate-node-key \
+      --file <BASE_PATH>/node-key
+      ```
 
-          [Install]
-          WantedBy=multi-user.target
-          EOF
-          ```
-            </Tabs.Tab>
+      To ensure you have successfully generated the key correctly run:
+
+      ```sh filename="ls" copy
+      ls <BASE_PATH>/node-key
+      ```
+
+    The following is the service configuration file, use this while completing the Full Node guide.
+    **Note:** To run with evm trace, you should use a binary built with `txpool` flag, refer to [Binaries](./node-software.mdx#binaries) page for more details.
+
+    ```sh filename="full.service" copy
+    sudo tee /etc/systemd/system/full.service > /dev/null << EOF
+    [Unit]
+    Description=Tangle Full Node
+    After=network-online.target
+    StartLimitIntervalSec=0
+
+    [Service]
+    User=<USERNAME>
+    Restart=always
+    RestartSec=3
+    ExecStart=/usr/bin/tangle \
+      --base-path <BASE_PATH> \
+      --name <NODE-NAME> \
+      --chain tangle-mainnet \
+      --node-key-file "<BASE_PATH>/node-key" \
+      --rpc-cors all \
+      --port 9946 \
+      --no-mdns --ethapi trace,debug,txpool
+
+    [Install]
+    WantedBy=multi-user.target
+    EOF
+    ```
+
+  </Tabs.Tab>
 
 </Tabs>
 

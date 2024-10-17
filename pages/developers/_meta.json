@@ -5,13 +5,15 @@
   },
   "blueprints": "Blueprints",
   "eigenlayer": "Eigenlayer Interoperability",
-  "services": "Actively Validated Services (AVS)",
-  "usecases": "Use Cases",
-  "-- specification-developers": {
+  "services": "Use Cases",
+  "-- gadget-tutorial": {
     "type": "separator",
-    "title": "Specification Developers"
+    "title": "Blueprint (AVS) Tutorials"
   },
-  "gadget-tutorial": "Create a Gadget",
+  "getting-started": "Hello World Blueprint",
+  "blueprint-macros": "Understanding Blueprint Macros",
+  "blueprint-event-listeners": "Blueprint Event Listeners",
+  "eigenlayer-avs": "Build an Eigenlayer AVS",
   "-- solution-developers": {
     "type": "separator",
     "title": "Solution Developers"
@@ -26,7 +28,7 @@
   "github": {
     "title": "Tangle on Github",
     "type": "page",
-    "href": "https://github.com/webb-tools/tangle",
+    "href": "https://github.com/tangle-network/tangle",
     "newWindow": true
   }
 }
