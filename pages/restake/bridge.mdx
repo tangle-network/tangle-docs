@@ -1,0 +1,45 @@
+# Bridge
+
+In order to participate in Tangle's restaking infrastructure, users need to first bridge in their assets from EVM-based networks such as Ethereum into Tangle. For this, we have a dedicated bridge & its corresponding DApp page.
+
+## Supported assets
+
+Initially, the bridge will support WETH for transfers between Holesky and Tangle.
+
+Once blueprint functionality is deployed (the Hyperlane Blueprint), users can create and deploy a blueprint instance to support additional assets via warp routes.
+
+More information about adding support for additional assets will be provided in the near future. For now, make sure you've joined our Discord server & Telegram channels to stay updated.
+
+TODO: For custom bridging, how will the users choose what bridge to use if anyone can deploy their warp route instances? The list will need to be of addresses, but those addresses will need to be registered in a specific repo. We don't have that repo yet, so for now we depend on the Hyperlane registry repo in which users can submit their PRs to have their own instances included.
+
+## How the bridge works
+
+Bridging from Ethereum to Tangle works by leveraging Hyperlane warp routes, a cross-...
+
+## Bridge fees
+
+Apart from the network transaction fees (gas fees), ...
+
+Hyperlane warp route fees?
+Are there multiple transactions that need to be made by the user? 2? Do each charge a fee?
+
+## How to use the bridge
+
+### Step 1: Access Tangle Dapp & Connect Wallet
+
+- Open [Tangle Dapp's Bridge page](https://app.tangle.tools/bridge).
+- Connect your wallet to the Dapp by clicking on the **Connect Wallet** button on the top right and selecting your preferred wallet provider.
+
+TODO: Should the user/wallet selected always be EVM-based?
+
+### Step 2: Select the source & destination networks
+
+TODO: Explain that when bringing IN asssets, source chain should never be Tangle, and then when bringing OUT assets, destination chain should never be Tangle.
+
+### Step 3: Enter amount & recipient address
+
+Talk about what it means to be a recipient address, and in what format it should be (depending on the selected source/destination chains).
+
+### Step 4: Review your balance
+
+On the account page.
