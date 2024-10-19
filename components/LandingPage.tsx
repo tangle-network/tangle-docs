@@ -1,5 +1,4 @@
 import Image from "next/image";
-import DocsLandingGraphic from "../public/images/DocsLandingGraphic.png";
 import { SiBlueprint } from "react-icons/si";
 import { GiToken } from "react-icons/gi";
 import { FaWallet } from "react-icons/fa";
