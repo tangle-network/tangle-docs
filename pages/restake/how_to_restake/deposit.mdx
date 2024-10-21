@@ -1,10 +1,8 @@
 ## Deposit Using PolkadotJS
 
-Deposit is the process of allocating assets to the multiasset delegation vault. This deposit is required to participate in restaking (delegate).
+Depositing is the process of allocating assets to the multiasset delegation vault. Deposits are required to participate in restaking (delegate).
 
-### Deposit Assets
-
-To participate in restaking, a user can deposit LST assets to the multiasset delegation vault.
+Users can deposit LST assets to the multiasset delegation vault.
 
 ### Step 1: Access the PolkadotJS Interface
 
@@ -22,7 +20,7 @@ For convenience, here are the PolkadotJS direct links for Tangle Testnet and Mai
 
 ![PolkadotJS Extrinsics](/images/extrinsic.png)
 
-- Under the **MultiAssetDelegation** section, select **Deposit** and enter the amount of assets to deposit.
+- Under the **multiAssetDelegation** section, select **deposit(...)**, enter the asset ID and the amount of assets to deposit.
 
 ![PolkadotJS Deposit](/images/restake/deposit/deposit.png)
 
@@ -30,6 +28,6 @@ Sign and submit the transaction. Make sure the account you are using has enough 
 
 ![PolkadotJS Transaction](/images/restake/deposit/depositsign.png)
 
-If successful, you should see the following screen:
+If successful, you should see the following confirmation toast notification:
 
 ![PolkadotJS Deposit Success](/images/restake/deposit/depositinblock.png)
