@@ -56,8 +56,8 @@ const resourcesCards = [
   },
   {
     icon: <MdAppShortcut />,
-    title: "Tangle App",
-    description: "Nominate your TNT at Tangle App",
+    title: "Tangle DApp",
+    description: "Nominate your TNT at Tangle DApp",
     link: "http://app.tangle.tools/",
   },
   {
