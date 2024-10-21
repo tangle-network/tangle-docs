@@ -1,7 +1,0 @@
-{
-  "deposit-tangle": "Deposit using Tangle DApp",
-  "deposit": "Deposit using PolkadotJS",
-  "delegate": "Delegate using PolkadotJS",
-  "unstake": "Unstake using PolkadotJS",
-  "withdraw": "Withdraw using PolkadotJS"
-}

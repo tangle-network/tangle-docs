@@ -15,7 +15,8 @@
   "restake-introduction": "Introduction to Restaking",
   "incentives": "Incentives",
   "join_operator": "Operator Docs",
-  "how_to_restake": "How to Restake",
+  "how_to_restake_tangle": "How to Restake: Tangle DApp",
+  "how_to_restake_polkadotjs": "How to Restake: PolkadotJS",
   "assets": "Supported Assets",
   "restake_developers": "Developer Docs",
   "-- liquid staking": {
