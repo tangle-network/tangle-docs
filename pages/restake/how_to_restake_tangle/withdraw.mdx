@@ -1,57 +1,53 @@
+import Callout from "/components/Callout";
+
 ## Withdraw Using Tangle DApp
 
-Withdraw is the process of withdrawing assets from the multiasset delegation vault. You can only withdraw your "undelegated" assets. So make sure you have undelegated your assets before withdrawing.
+<Callout type="info">
+You can only withdraw your "undelegated" (unstaked) assets. Make sure you have undelegated your assets before withdrawing. See the [Unstake page](./unstake.mdx) for more information.
+</Callout>
 
-The process of withdrawal is a two step process. First you need to schedule a withdrawal, which will be available after the unstake period. Then after the unstake period, you can actually withdraw the assets.
+Withdrawing is the process of releasing assets from the multiasset delegation vault.
+
+Similar to unstaking, it is composed of two steps:
+1. A withdrawal request is **scheduled**, which will be available for execution after its unstake period.
+2. After the unstake period, you can **execute** the withdrawal to actually release the assets.
 
 ### Schedule Withdraw
 
 The first step to complete a withdraw is to schedule a withdrawal. This is done by calling the `schedule_withdraw` function.
 
-### Step 1: Access the PolkadotJS Interface
+### Step 1: Access Tangle DApp & Connect Wallet
 
-- Open [PolkadotJS Apps](https://polkadot.js.org/apps/).
-- Connect to the Tangle Network by selecting the appropriate network from the dropdown list.
-
-For convenience, here are the PolkadotJS direct links for Tangle Testnet and Mainnet:
-
-- Tangle Testnet: https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ftestnet-rpc.tangle.tools#/explorer
-- Tangle Mainnet: https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.tangle.tools#/explorer
+- Open [Tangle DApp's Restaking: Withdraw page](https://app.tangle.tools/restake/withdraw).
+- Connect your wallet to the DApp by clicking on the **Connect Wallet** button on the top right and selecting your preferred wallet provider.
 
 ### Step 2: Schedule Withdraw
 
-- Navigate to the **Extrinsics** tab on PolkadotJS.
+1. Select the **Withdraw** tab on the Restaking page.
+2. Click on the **Asset** dropdown, and select an asset from the modal.
+3. Enter the amount of assets that you'd like to withdraw.
+4. Review any fees and the withdraw delay before proceeding.
+5. Click on the **Schedule Withdraw** button to initiate the transaction.
 
-![PolkadotJS Extrinsics](/images/extrinsic.png)
+![Withdraw Steps](/images/restake/withdraw/steps.png)
 
-- Under the **MultiAssetDelegation** section, select **ScheduleWithdraw** and enter the amount of assets to withdraw.
+### Step 3: Sign and Submit the Transaction
 
-![PolkadotJS ScheduleWithdraw](/images/restake/how-to-restake-polkadotjs/schedulewithdraw.png)
+- Sign and submit the transaction. Make sure the account you are using has enough balance to cover the transaction fee.
+- If successful, you should see the withdraw request appear in the table at the right side of the page, and also the following confirmation toast notification:
 
-Sign and submit the transaction. Make sure the account you are using has enough balance to cover the transaction fee.
+![Withdraw Transaction Confirmation Toast](/images/restake/withdraw/withdraw-tx-confirmation.png)
 
-### Execute Withdraw
+### Cancel a Withdraw Request
 
-The second step to complete a withdraw is to execute the withdrawal. This is done by calling the `execute_withdraw` function.
+If you've scheduled a withdraw request, you can choose to **cancel** it if you change your mind. To cancel a withdraw request, use the withdraw requests table on the right side of the page. Note that you can cancel a withdraw request even if it has reached its maturity, but as long as it hasn't been executed yet.
 
-### Step 1: Access the PolkadotJS Interface
+Simply select the withdraw request(s) that you'd like to cancel, then click on the **Cancel Withdraw** button to initiate the transaction.
 
-- Open [PolkadotJS Apps](https://polkadot.js.org/apps/).
-- Connect to the Tangle Network by selecting the appropriate network from the dropdown list.
+![Unstake Requests Table: Cancel Withdraw](/images/restake/withdraw/cancel-withdraw.png)
 
-For convenience, here are the PolkadotJS direct links for Tangle Testnet and Mainnet:
+### Execute a Withdraw Request
 
-- Tangle Testnet: https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ftestnet-rpc.tangle.tools#/explorer
-- Tangle Mainnet: https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.tangle.tools#/explorer
+Once a withdraw request has reached its maturity, you can **execute** it to actually withdraw and release the assets.
 
-### Step 2: Execute Withdraw
-
-- Navigate to the **Developer** → **Extrinsics** tab on PolkadotJS.
-
-![PolkadotJS Extrinsics](/images/extrinsic.png)
-
-- Under the **MultiAssetDelegation** section, select **ScheduleWithdraw** and enter the amount of assets to withdraw.
-
-![PolkadotJS ExecuteWithdraw](/images/restake/how-to-restake-polkadotjs/executewithdraw.png)
-
-Sign and submit the transaction. Make sure the account you are using has enough balance to cover the transaction fee.
+Tangle DApp makes this process easy by simply clicking on the **Execute All** button. There's no need to select specific withdraw requests, as this action will execute all withdraw requests that have reached their maturity within a single transaction. If the button is disabled, it means that there are no withdraw requests that have reached their maturity yet.

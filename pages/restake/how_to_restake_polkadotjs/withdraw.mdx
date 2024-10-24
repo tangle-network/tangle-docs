@@ -1,10 +1,16 @@
+import Callout from "/components/Callout";
+
 ## Withdraw Using PolkadotJS
 
-Withdraw is the process of withdrawing assets from the multiasset delegation vault. You can only withdraw your "undelegated" assets. So make sure you have undelegated your assets before withdrawing.
+<Callout type="info">
+You can only withdraw your "undelegated" (unstaked) assets. Make sure you have undelegated your assets before withdrawing. See the [Unstake page](./unstake.mdx) for more information.
+</Callout>
 
-The process of withdrawal is a two step process:
-- First, you need to schedule a withdrawal, which will be available for execution after its unstake period.
-- Then, after the unstake period, you can actually withdraw the assets.
+Withdrawing is the process of releasing assets from the multiasset delegation vault.
+
+Similar to unstaking, it is composed of two steps:
+1. A withdrawal request is **scheduled**, which will be available for execution after its unstake period.
+2. After the unstake period, you can **execute** the withdrawal to actually release the assets.
 
 ### Accessing the PolkadotJS Interface
 
